@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { AllowedIcon } from './icons';
 
 const HomeTicketsSection: React.FC = () => {
   return (
@@ -24,15 +25,27 @@ const HomeTicketsSection: React.FC = () => {
             <div className="p-6 md:p-10 flex flex-col md:flex-row items-stretch">
               <div className="flex-1">
                 <div className="inline-block px-3 py-1 bg-sky-600 text-white text-xs font-bold rounded-full">ABONO</div>
-                <h3 className="mt-4 text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight">Abono General RF 2026</h3>
+                <h3 className="mt-4 text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight">Abono General AQS 2026</h3>
                 <p className="mt-2 text-sm text-sky-200 font-semibold uppercase">Acceso general — 3 días</p>
-                <p className="mt-4 text-gray-200 max-w-xl">Disfruta del festival con acceso total a escenarios, zonas chill, actividades y servicios. Ideal para vivir la experiencia completa.</p>
+                <p className="mt-4 text-gray-200 max-w-xl">Disfruta del festival con acceso total a todos los escenarios, zonas chill y zona de dia. Ideal para vivir la experiencia completa.</p>
 
                 <ul className="mt-4 text-sm text-gray-300 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  <li>• Acceso a todos los escenarios</li>
-                  <li>• Zona de acampada (con ticket)</li>
-                  <li>• Foodtrucks y barras</li>
-                  <li>• Entrada rápida en taquilla</li>
+                  <li className="flex items-start gap-3">
+                    <AllowedIcon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-200">Acceso a todos los escenarios</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <AllowedIcon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-200">Zona de acampada (con suplemento de Acampada)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <AllowedIcon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-200">Foodtrucks en la zona de Día</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <AllowedIcon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-200">Zona Vip (con suplemento Vip)</span>
+                  </li>
                 </ul>
               </div>
 
@@ -42,7 +55,14 @@ const HomeTicketsSection: React.FC = () => {
               </div>
 
               {/* Stub with price */}
-              <div className="w-full md:w-44 flex-none flex items-center justify-center p-4 md:p-6 bg-sky-600 text-white">
+              <div
+                className="w-full md:w-44 flex-none flex items-center justify-center p-4 md:p-6 text-white"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(2,6,23,0.6), rgba(2,6,23,0.6)), url('/img/cangas.jpg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
                 <div className="text-center">
                   <div className="text-xs uppercase tracking-widest">Desde</div>
                   <div className="text-3xl md:text-4xl font-extrabold">€79</div>

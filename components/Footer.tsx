@@ -11,8 +11,18 @@ const Footer: React.FC = () => {
     { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
   ];
   return (
-    <footer className="bg-gray-900 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <footer
+      className="relative"
+      style={{
+        backgroundImage: `url('/img/valle.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="relative z-10 max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-4">
                 <h3 className="text-2xl font-black text-white uppercase tracking-wider text-glow">Aquasella</h3>
@@ -49,7 +59,7 @@ const Footer: React.FC = () => {
             </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <div className="mt-12 pt-8 text-center text-gray-200 text-sm">
           <p>&copy; {new Date().getFullYear()} Aquasella Festival. Todos los derechos reservados.</p>
         </div>
       </div>

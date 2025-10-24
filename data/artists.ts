@@ -15,17 +15,17 @@ export const artists: Artist[] = [
   {
     id: 2,
     name: 'Fatima',
-    style: 'House',
+    style: 'Hard Techno',
     day: 'Sáb',
     image: '/img/fatima.jpg',
-    description: 'Exciting house producer bringing soulful grooves and energetic performances.',
+    description: 'Exciting hard techno producer bringing soulful grooves and energetic performances.',
     schedule: 'Sáb, 20:00 - 21:00',
     stage: 'Sunset Stage'
   },
   {
     id: 3,
     name: 'Hector Oaks',
-    style: 'Techno / Industrial',
+    style: 'Techno',
     day: 'Dom',
     image: '/img/Hector-Oaks.avif',
     description: 'Powerful and uncompromising techno sets with an industrial edge.',
