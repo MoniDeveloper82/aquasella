@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-900 text-gray-200;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .text-glow {
+    text-shadow: 0 0 8px #7EC8E3, 0 0 10px #7EC8E3;
+  }
+  
+  .fade-in-up-delay-1 { 
+    animation-delay: 0.2s; 
+  }
+  
+  .fade-in-up-delay-2 { 
+    animation-delay: 0.4s; 
+  }
+  
+  .fade-in-up-delay-3 { 
+    animation-delay: 0.6s; 
+  }
+}
+
+@layer utilities {
+  .animate-scroll {
+    animation: scroll 60s linear infinite;
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+}
+
+/* Optimized keyframes */
+@keyframes scroll {
+  from { 
+    transform: translateX(0); 
+  }
+  to { 
+    transform: translateX(-50%); 
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scrolling fallback */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
