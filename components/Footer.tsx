@@ -25,7 +25,11 @@ const Footer: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-4">
-                <h3 className="text-2xl font-black text-white uppercase tracking-wider text-glow">Aquasella</h3>
+                <img 
+                  src="/img/HEADER_2.png" 
+                  alt="Aquasella Festival Logo"
+                  className="h-12 md:h-16 lg:h-20 w-auto filter brightness-110 contrast-110"
+                />
                 <p className="text-gray-400">El corazón de la música electrónica en el norte de España.</p>
                 <div className="flex space-x-6">
                  {socialLinks.map(({ Icon, href, label }) => (

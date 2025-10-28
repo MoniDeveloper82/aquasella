@@ -66,8 +66,8 @@ const Header: React.FC = () => {
                 onClick={handleLinkClick}
               >
                 <img 
-                  src="/img/PINOS_LOGOOP2.png" 
-                  alt="Pinos"
+                  src="/img/FOTOPERFIL_AQS.png" 
+                  alt="Aquasella"
                   className="h-28 lg:h-32 xl:h-36 w-auto"
                 />
               </NavLink>
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
                   onClick={handleLinkClick}
                   className={({ isActive }) =>
                     `text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wider transition-colors duration-300 ${
-                      isActive ? 'text-red-500' : 'text-gray-300 hover:text-red-500'
+                      isActive ? 'text-rose-600' : 'text-gray-300 hover:text-rose-600'
                     }`
                   }
                 >
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                 onClick={handleLinkClick}
                 className={({ isActive }) =>
                   `text-4xl font-bold uppercase tracking-widest transition-colors duration-300 ${
-                    isActive ? 'text-red-500' : 'text-gray-300 hover:text-red-500'
+                    isActive ? 'text-rose-600' : 'text-gray-300 hover:text-rose-600'
                   }`
                 }
               >
