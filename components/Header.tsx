@@ -62,10 +62,14 @@ const Header: React.FC = () => {
             <div className="flex-shrink-0">
               <NavLink 
                 to="/" 
-                className="text-2xl font-black text-white uppercase tracking-wider text-glow cursor-pointer"
+                className="cursor-pointer"
                 onClick={handleLinkClick}
               >
-                AQUASELLA
+                <img 
+                  src="/img/aquasella-logo.png" 
+                  alt="Aquasella"
+                  className="h-12 w-auto"
+                />
               </NavLink>
             </div>
             

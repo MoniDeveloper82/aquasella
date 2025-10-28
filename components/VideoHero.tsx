@@ -47,10 +47,21 @@ const VideoHero: React.FC = () => {
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white p-4 pt-20">
         {/* Festival Info */}
         <div className="fade-in-up">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-widest text-glow">
-            Aquasella
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wider mt-4">
+          {/* Logo Image */}
+          <div className="mb-0">
+            <img 
+              src="/img/aquasella-logo.png" 
+              alt="Aquasella Festival Logo"
+              className="w-auto h-64 md:h-80 lg:h-96 xl:h-110 mx-auto filter brightness-110 contrast-110"
+              style={{ 
+                filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.5))',
+                maxWidth: '95vw',
+                height: 'clamp(256px, 20vw, 440px)'
+              }}
+            />
+          </div>
+          
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wider -mt-16 md:-mt-20 lg:-mt-24">
             13 - 16 AGOSTO 2026
           </h2>
           <p className="text-sm md:text-base font-light tracking-widest border-t border-b border-white/50 py-1 mt-2 inline-block">
