@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import HomePage from './pages/Home';
+import LineUpPage from './pages/LineUp';
 import ArtistsPage from './pages/Artists';
+import CartelPage from './pages/Cartel';
+import HorariosPage from './pages/Horarios';
 import InfoPage from './pages/Info';
 import TicketsPage from './pages/Tickets';
 import CampingPage from './pages/services/Camping';
@@ -23,12 +26,28 @@ const router = createHashRouter([
         element: <HomePage />,
       },
       {
-        path: 'artistas',
+        path: 'lineup',
+        element: <LineUpPage />,
+      },
+      {
+        path: 'lineup/artistas',
         element: <ArtistsPage />,
+      },
+      {
+        path: 'lineup/cartel',
+        element: <CartelPage />,
+      },
+      {
+        path: 'lineup/horarios',
+        element: <HorariosPage />,
       },
       {
         path: 'info',
         element: <InfoPage />,
+      },
+      {
+        path: 'tickets',
+        element: <TicketsPage />,
       },
       {
         path: 'services',
@@ -49,10 +68,6 @@ const router = createHashRouter([
       {
         path: 'privacy',
         element: <PrivacyPage />,
-      },
-      {
-        path: 'tickets',
-        element: <TicketsPage />,
       },
     ],
   },

@@ -38,7 +38,7 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { to: '/', label: 'INICIO' },
-    { to: '/artistas', label: 'ARTISTAS' },
+    { to: '/lineup', label: 'LINE UP' },
     { to: '/info', label: 'INFO' },
     { to: '/tickets', label: 'TICKETS' },
   ];
