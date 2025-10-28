@@ -6,12 +6,12 @@ const VideoHero: React.FC = () => {
 
   const handleVideoError = (e: any) => {
     console.error('Video failed to load:', e);
-    console.error('Video source:', '/videos/AFTERMOVIEAQS25.mp4');
+    console.error('Video source:', '/videos/AFTERMOVIEOptimizado.mp4');
     setVideoError(true);
   };
 
   const handleVideoLoaded = () => {
-    console.log('Video loaded successfully:', '/videos/AFTERMOVIEAQS25.mp4');
+    console.log('Video loaded successfully:', '/videos/AFTERMOVIEOptimizado.mp4');
     setVideoLoaded(true);
   };
 
@@ -24,7 +24,7 @@ const VideoHero: React.FC = () => {
         </div>
       )}
 
-      {/* Video element - optimizado pero funcional */}
+      {/* Video optimizado - ahora puede reproducirse automáticamente */}
       {!videoError && (
         <video
           autoPlay
@@ -37,7 +37,7 @@ const VideoHero: React.FC = () => {
           onLoadedData={handleVideoLoaded}
           onCanPlay={handleVideoLoaded}
         >
-          <source src="/videos/AFTERMOVIEAQS25.mp4" type="video/mp4" />
+          <source src="/videos/AFTERMOVIEOptimizado.mp4" type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
       )}
