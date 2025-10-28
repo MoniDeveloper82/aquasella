@@ -41,6 +41,7 @@ const Header: React.FC = () => {
     { to: '/lineup', label: 'LINE UP' },
     { to: '/info', label: 'INFO' },
     { to: '/tickets', label: 'TICKETS' },
+    { to: '/shop', label: 'SHOP' },
   ];
 
   const handleLinkClick = () => {
@@ -91,8 +92,8 @@ const Header: React.FC = () => {
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                aria-controls="mobile-menu"
-                aria-expanded={isMenuOpen}
+                aria-label="Toggle main menu"
+                aria-expanded={isMenuOpen ? "true" : "false"}
               >
                 <span className="sr-only">Open main menu</span>
                 {isMenuOpen ? (

@@ -25,6 +25,16 @@ import PackAsturias from './pages/tickets/PackAsturias';
 import CampingPage from './pages/services/Camping';
 import HowToGetTherePage from './pages/services/HowToGetThere';
 import AllowedItemsPage from './pages/services/AllowedItems';
+import ZonaDescansoPage from './pages/info/ZonaDescanso';
+import InfoGlampingPage from './pages/info/InfoGlamping';
+import InfoLockersPage from './pages/info/InfoLockers';
+import InfoBateriasPage from './pages/info/InfoBaterias';
+import TourOnTheRoadPage from './pages/info/TourOnTheRoad';
+import LocalizacionPage from './pages/info/Localizacion';
+import PlanoPage from './pages/info/Plano';
+import ColaboradoresPage from './pages/info/Colaboradores';
+import HistoriaPage from './pages/info/Historia';
+import ShopPage from './pages/Shop';
 import PrivacyPage from './pages/Privacy';
 import CookiesPage from './pages/Cookies';
 import LegalPage from './pages/Legal';
@@ -69,6 +79,46 @@ const router = createHashRouter([
       {
         path: 'info',
         element: <InfoPage />,
+      },
+      {
+        path: 'info/zona-descanso',
+        element: <ZonaDescansoPage />,
+      },
+      {
+        path: 'info/glamping',
+        element: <InfoGlampingPage />,
+      },
+      {
+        path: 'info/lockers',
+        element: <InfoLockersPage />,
+      },
+      {
+        path: 'info/baterias',
+        element: <InfoBateriasPage />,
+      },
+      {
+        path: 'info/tour-on-the-road',
+        element: <TourOnTheRoadPage />,
+      },
+      {
+        path: 'info/localizacion',
+        element: <LocalizacionPage />,
+      },
+      {
+        path: 'info/plano',
+        element: <PlanoPage />,
+      },
+      {
+        path: 'info/colaboradores',
+        element: <ColaboradoresPage />,
+      },
+      {
+        path: 'info/historia',
+        element: <HistoriaPage />,
+      },
+      {
+        path: 'shop',
+        element: <ShopPage />,
       },
       {
         path: 'tickets',
