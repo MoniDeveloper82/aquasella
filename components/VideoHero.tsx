@@ -11,7 +11,7 @@ const VideoHero: React.FC = () => {
   };
 
   const handleVideoLoaded = () => {
-    console.log('✅ Video optimizado cargado correctamente!');
+    console.log('✅ Video optimizado AFTERMOVIE cargado correctamente!');
     setVideoLoaded(true);
   };
 
