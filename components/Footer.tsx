@@ -14,9 +14,9 @@ const Footer: React.FC = () => {
     <footer
       className="relative"
       style={{
-        backgroundImage: `url('/img/valle.jpg')`,
+        backgroundImage: `url('/img/footer.jpg')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center 70%',
         backgroundRepeat: 'no-repeat',
       }}
     >
