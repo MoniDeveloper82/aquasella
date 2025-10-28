@@ -3,7 +3,21 @@ import React from 'react';
 
 const LocationSection: React.FC = () => {
   return (
-    <section id="localizacion" className="py-20 bg-gray-900">
+    <section 
+      id="localizacion" 
+      className="py-20"
+      style={{
+        backgroundColor: '#000000',
+        backgroundImage: `
+          linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%), 
+          linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%), 
+          linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%), 
+          linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%)
+        `,
+        backgroundSize: '20px 20px',
+        backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
             <h2 className="text-4xl font-black uppercase text-white mb-4 text-glow">Localización</h2>

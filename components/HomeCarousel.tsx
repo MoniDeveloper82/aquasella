@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from './icons';
 
 const carouselImages = [
-  'https://picsum.photos/seed/slide1/1920/1080',
+  '/img/POSTINFOFINAL_AQS.jpg',
   'https://picsum.photos/seed/slide2/1920/1080',
   'https://picsum.photos/seed/slide3/1920/1080',
   'https://picsum.photos/seed/slide4/1920/1080',
@@ -24,7 +24,20 @@ const HomeCarousel: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-900 py-20">
+    <section 
+      className="py-20"
+      style={{
+        backgroundColor: '#000000',
+        backgroundImage: `
+          linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%), 
+          linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%), 
+          linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%), 
+          linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%)
+        `,
+        backgroundSize: '20px 20px',
+        backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
             <h2 className="text-4xl font-black uppercase text-white mb-4 text-glow">Road to the Aquasella 2026</h2>
@@ -39,7 +52,7 @@ const HomeCarousel: React.FC = () => {
                   index === currentIndex ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                <img src={url} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
+                <img src={url} alt={`Slide ${index + 1}`} className="w-full h-full object-contain" />
                 <div className="absolute inset-0 bg-black/10"></div>
               </div>
             ))}

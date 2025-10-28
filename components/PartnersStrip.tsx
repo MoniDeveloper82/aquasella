@@ -13,7 +13,21 @@ const PartnersStrip: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-900 py-12">
+    <div 
+      className="py-12 border-2 border-red-500"
+      style={{
+        backgroundColor: '#000000',
+        backgroundImage: `
+          linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%), 
+          linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%), 
+          linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%), 
+          linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%)
+        `,
+        backgroundSize: '20px 20px',
+        backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
+        boxShadow: '0 0 20px rgba(239, 68, 68, 0.5), inset 0 0 20px rgba(239, 68, 68, 0.1)'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h3 className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">
           Colaboradores
