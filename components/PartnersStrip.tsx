@@ -18,13 +18,13 @@ const PartnersStrip: React.FC = () => {
       style={{
         backgroundColor: '#000000',
         backgroundImage: `
-          linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%), 
-          linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%), 
-          linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%), 
-          linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%)
+          linear-gradient(45deg, rgba(255,255,255,0.08) 25%, transparent 25%), 
+          linear-gradient(-45deg, rgba(255,255,255,0.08) 25%, transparent 25%), 
+          linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.08) 75%), 
+          linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.08) 75%)
         `,
-        backgroundSize: '20px 20px',
-        backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
+        backgroundSize: '15px 15px',
+        backgroundPosition: '0 0, 0 7.5px, 7.5px -7.5px, -7.5px 0px',
         boxShadow: '0 0 20px rgba(239, 68, 68, 0.5), inset 0 0 20px rgba(239, 68, 68, 0.1)'
       }}
     >
