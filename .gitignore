@@ -23,8 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
-# Large video files
-public/videos/*.mp4
+# Large video files (exclude the original heavy file)
+public/videos/AFTERMOVIEAQS25.mp4
 public/videos/*.webm
 public/videos/*.mov
 public/videos/*.avi
+# Allow the optimized video
+!public/videos/AFTERMOVIEOptimizado.mp4
