@@ -58,7 +58,7 @@ const Header: React.FC = () => {
         <nav
           className="w-full px-4 sm:px-6 lg:px-8"
         >
-          <div className="flex items-center justify-between h-28 max-w-7xl mx-auto">
+          <div className="flex items-center justify-between h-32 lg:h-36 xl:h-40 max-w-7xl mx-auto">
             <div className="flex-shrink-0">
               <NavLink 
                 to="/" 
@@ -68,20 +68,20 @@ const Header: React.FC = () => {
                 <img 
                   src="/img/PINOS_LOGOOP2.png" 
                   alt="Pinos"
-                  className="h-24 w-auto"
+                  className="h-28 lg:h-32 xl:h-36 w-auto"
                 />
               </NavLink>
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-12">
+            <div className="hidden md:flex items-center space-x-12 lg:space-x-16 xl:space-x-20">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   onClick={handleLinkClick}
                   className={({ isActive }) =>
-                    `text-lg font-bold uppercase tracking-wider transition-colors duration-300 ${
+                    `text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wider transition-colors duration-300 ${
                       isActive ? 'text-sky-400' : 'text-gray-300 hover:text-sky-400'
                     }`
                   }
@@ -95,15 +95,15 @@ const Header: React.FC = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-3 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="inline-flex items-center justify-center p-4 lg:p-5 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-label="Toggle main menu"
                 aria-expanded={isMenuOpen ? "true" : "false"}
               >
                 <span className="sr-only">Open main menu</span>
                 {isMenuOpen ? (
-                  <XMarkIcon className="block h-8 w-8" />
+                  <XMarkIcon className="block h-10 w-10 lg:h-12 lg:w-12" />
                 ) : (
-                  <MenuIcon className="block h-8 w-8" />
+                  <MenuIcon className="block h-10 w-10 lg:h-12 lg:w-12" />
                 )}
               </button>
             </div>
