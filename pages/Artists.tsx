@@ -81,7 +81,12 @@ const ArtistsPage: React.FC = () => {
             className="bg-gray-800 rounded-lg shadow-2xl overflow-hidden max-w-3xl w-full relative transform transition-all duration-300 scale-95 animate-fade-in"
             onClick={(e) => e.stopPropagation()}
           >
-             <button onClick={closeModal} className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10">
+             <button 
+               onClick={closeModal} 
+               className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
+               title="Cerrar modal"
+               aria-label="Cerrar modal"
+             >
                 <XMarkIcon className="w-8 h-8" />
              </button>
              <div className="md:flex">
