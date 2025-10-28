@@ -7,6 +7,7 @@ const VideoHero: React.FC = () => {
   const handleVideoError = (e: any) => {
     console.error('Video failed to load:', e);
     console.error('Video source:', '/videos/AFTERMOVIEOptimizado.mp4');
+    console.log('Switching to fallback background...');
     setVideoError(true);
   };
 
@@ -17,14 +18,25 @@ const VideoHero: React.FC = () => {
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-gray-900">
-      {/* Fallback background image */}
+      {/* Fallback background con gradientes atractivos */}
       {(videoError || !videoLoaded) && (
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black z-0">
-          {/* Puedes agregar una imagen de fondo aquí si tienes una disponible */}
+        <div className="absolute top-0 left-0 w-full h-full z-0">
+          {/* Gradiente de fondo atractivo */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-black"></div>
+          {/* Animación de ondas */}
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-sky-500/20 to-blue-600/20 animate-pulse"></div>
+          </div>
+          {/* Efecto de partículas */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full animate-ping"></div>
+            <div className="absolute top-3/4 right-1/3 w-1 h-1 bg-sky-300 rounded-full animate-ping delay-1000"></div>
+            <div className="absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-blue-300 rounded-full animate-ping delay-2000"></div>
+          </div>
         </div>
       )}
 
-      {/* Video optimizado - ahora puede reproducirse automáticamente */}
+      {/* Video optimizado - con mejor detección de errores */}
       {!videoError && (
         <video
           autoPlay
@@ -36,8 +48,11 @@ const VideoHero: React.FC = () => {
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
           onCanPlay={handleVideoLoaded}
+          onLoadStart={() => console.log('Video loading started...')}
+          onProgress={() => console.log('Video loading progress...')}
         >
           <source src="/videos/AFTERMOVIEOptimizado.mp4" type="video/mp4" />
+          <source src="/videos/AFTERMOVIEAQS25.mp4" type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
       )}
