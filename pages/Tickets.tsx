@@ -8,7 +8,7 @@ const TicketsPage: React.FC = () => {
       title: 'Venta General',
       description: 'Entradas individuales para todos los días del festival',
       icon: '🎫',
-      color: 'from-blue-600 to-blue-800',
+      color: 'from-rose-600 to-red-800',
       link: '/tickets/venta-general'
     },
     {
@@ -64,7 +64,7 @@ const TicketsPage: React.FC = () => {
       title: 'Bus Oficial',
       description: 'Transporte oficial desde diferentes ciudades',
       icon: '🚌',
-      color: 'from-indigo-600 to-indigo-800',
+      color: 'from-purple-600 to-pink-800',
       link: '/tickets/bus-oficial'
     },
     {

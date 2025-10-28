@@ -67,7 +67,7 @@ const ShopPage: React.FC = () => {
           {categories.map((category) => (
             <button
               key={category}
-              className="px-6 py-2 bg-gray-800 hover:bg-sky-600 rounded-full text-sm font-bold uppercase tracking-wider transition-colors"
+              className="px-6 py-2 bg-gray-800 hover:bg-rose-600 rounded-full text-sm font-bold uppercase tracking-wider transition-colors"
             >
               {category}
             </button>
@@ -78,17 +78,17 @@ const ShopPage: React.FC = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
           {products.map((product) => (
             <div key={product.id} className="bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform">
-              <div className="aspect-square bg-gradient-to-br from-sky-600 to-purple-700 flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-rose-600 to-purple-700 flex items-center justify-center">
                 <div className="text-6xl">🎵</div>
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-lg font-bold">{product.name}</h3>
-                  <span className="bg-sky-600 text-xs px-2 py-1 rounded-full">{product.category}</span>
+                  <span className="bg-rose-600 text-xs px-2 py-1 rounded-full">{product.category}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-2xl font-black text-sky-400">{product.price}</span>
-                  <button className="bg-gradient-to-r from-sky-600 to-purple-600 hover:from-sky-700 hover:to-purple-700 px-4 py-2 rounded-lg font-bold transition-colors">
+                  <span className="text-2xl font-black text-rose-400">{product.price}</span>
+                  <button className="bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-700 hover:to-purple-700 px-4 py-2 rounded-lg font-bold transition-colors">
                     Añadir al Carrito
                   </button>
                 </div>
@@ -119,7 +119,7 @@ const ShopPage: React.FC = () => {
         </div>
 
         {/* Productos destacados */}
-        <div className="bg-gradient-to-r from-sky-600 to-purple-600 rounded-xl p-8 text-center">
+        <div className="bg-gradient-to-r from-rose-600 to-purple-600 rounded-xl p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">🌟 Colección Limitada 2025</h3>
           <p className="text-lg mb-6">
             Productos exclusivos diseñados especialmente para esta edición del festival.
@@ -139,7 +139,7 @@ const ShopPage: React.FC = () => {
             <button className="bg-gray-700 text-gray-300 px-6 py-2 rounded-lg cursor-not-allowed">
               Tienda Online (Próximamente)
             </button>
-            <button className="bg-sky-600 hover:bg-sky-700 px-6 py-2 rounded-lg font-bold transition-colors">
+            <button className="bg-rose-600 hover:bg-rose-700 px-6 py-2 rounded-lg font-bold transition-colors">
               Visita el Stand en el Festival
             </button>
           </div>

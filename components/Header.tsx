@@ -49,7 +49,7 @@ const Header: React.FC = () => {
   };
 
   const headerClass = !isHomePage || scrolled || isMenuOpen
-    ? 'bg-gray-900/90 backdrop-blur-sm shadow-lg'
+    ? 'bg-black/95 backdrop-blur-sm shadow-lg'
     : 'bg-transparent';
 
   return (
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
                   onClick={handleLinkClick}
                   className={({ isActive }) =>
                     `text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wider transition-colors duration-300 ${
-                      isActive ? 'text-sky-400' : 'text-gray-300 hover:text-sky-400'
+                      isActive ? 'text-red-500' : 'text-gray-300 hover:text-red-500'
                     }`
                   }
                 >
@@ -110,10 +110,13 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </header>
+      
+      {/* Halo de luz debajo del header */}
+      <div className="fixed top-32 lg:top-36 xl:top-40 left-0 right-0 h-16 bg-gradient-to-b from-red-500/50 via-red-600/35 to-transparent blur-md z-40"></div>
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-gray-900/95 z-40 flex flex-col items-center justify-center space-y-12 animate-fade-in md:hidden">
+        <div className="fixed inset-0 bg-gradient-to-br from-gray-900/95 via-purple-900/90 to-pink-900/95 z-40 flex flex-col items-center justify-center space-y-12 animate-fade-in md:hidden">
            {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -121,7 +124,7 @@ const Header: React.FC = () => {
                 onClick={handleLinkClick}
                 className={({ isActive }) =>
                   `text-4xl font-bold uppercase tracking-widest transition-colors duration-300 ${
-                    isActive ? 'text-sky-400' : 'text-gray-300 hover:text-sky-400'
+                    isActive ? 'text-red-500' : 'text-gray-300 hover:text-red-500'
                   }`
                 }
               >

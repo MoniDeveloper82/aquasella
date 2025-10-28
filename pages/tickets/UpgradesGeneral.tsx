@@ -45,7 +45,7 @@ const UpgradesGeneralPage: React.FC = () => {
       price: '120€',
       description: 'Plataforma elevada con vista privilegiada',
       features: ['Plataforma elevada', 'Vista sin obstáculos', 'Servicio de bar dedicado', 'Capacidad limitada'],
-      color: 'from-blue-600 to-indigo-600',
+      color: 'from-rose-600 to-purple-600',
       icon: '🎯'
     },
     {

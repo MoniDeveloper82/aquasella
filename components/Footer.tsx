@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                 <p className="text-gray-400">El corazón de la música electrónica en el norte de España.</p>
                 <div className="flex space-x-6">
                  {socialLinks.map(({ Icon, href, label }) => (
-                     <a key={label} href={href} className="text-gray-400 hover:text-sky-400 transition-colors" aria-label={label}>
+                     <a key={label} href={href} className="text-gray-400 hover:text-rose-400 transition-colors" aria-label={label}>
                         <Icon className="h-6 w-6" />
                     </a>
                  ))}
@@ -40,8 +40,8 @@ const Footer: React.FC = () => {
                 <h4 className="font-bold text-lg text-white uppercase tracking-wider">Newsletter</h4>
                 <p className="text-gray-400 mt-2">Recibe las últimas noticias y ofertas exclusivas.</p>
                 <form className="mt-4 flex">
-                    <input type="email" placeholder="tu.email@ejemplo.com" className="w-full bg-gray-800 border border-gray-700 text-white rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500" />
-                    <button type="submit" className="bg-sky-500 hover:bg-sky-600 text-white font-bold px-4 py-2 rounded-r-md transition-colors">
+                    <input type="email" placeholder="tu.email@ejemplo.com" className="w-full bg-gray-800 border border-gray-700 text-white rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-500" />
+                    <button type="submit" className="bg-rose-500 hover:bg-rose-600 text-white font-bold px-4 py-2 rounded-r-md transition-colors">
                         Suscribir
                     </button>
                 </form>
@@ -51,8 +51,8 @@ const Footer: React.FC = () => {
                 <h4 className="font-bold text-lg text-white uppercase tracking-wider">Legal</h4>
             <ul className="mt-2 space-y-2 text-gray-400">
               {/* <li><a href="#" className="hover:text-sky-400 transition-colors">Términos y Condiciones</a></li> */}
-              <li><Link to="/privacy" className="hover:text-sky-400 transition-colors">Política de Privacidad</Link></li>
-                    <li><Link to="/cookies" className="hover:text-sky-400 transition-colors">Política de Cookies</Link></li>
+              <li><Link to="/privacy" className="hover:text-rose-400 transition-colors">Política de Privacidad</Link></li>
+                    <li><Link to="/cookies" className="hover:text-rose-400 transition-colors">Política de Cookies</Link></li>
                     <li><Link to="/legal" className="hover:text-sky-400 transition-colors">Aviso Legal</Link></li>
                     <li><a href="#" className="hover:text-sky-400 transition-colors">Contacto</a></li>
             </ul>

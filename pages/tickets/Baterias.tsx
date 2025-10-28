@@ -30,7 +30,7 @@ const BateriasPage: React.FC = () => {
       capacity: 'Ilimitado',
       description: 'Acceso a estaciones de carga del festival',
       features: ['Puntos de carga estratégicos', 'Múltiples tipos de cable', 'Carga supervisada', 'Acceso prioritario'],
-      color: 'from-blue-600 to-indigo-600',
+      color: 'from-rose-600 to-purple-600',
       icon: '🔌'
     }
   ];

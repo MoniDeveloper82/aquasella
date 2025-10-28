@@ -20,7 +20,7 @@ const UpgradesBonoPage: React.FC = () => {
       originalPrice: '25€',
       description: 'Entrada rápida con precio especial',
       features: ['Descuento de 5€ aplicado', 'Sin colas de acceso', 'Acceso prioritario', 'Válido 4 días'],
-      color: 'from-blue-600 to-teal-600',
+      color: 'from-rose-600 to-pink-600',
       icon: '⚡'
     },
     {

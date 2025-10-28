@@ -17,7 +17,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist, onClick }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
       <div className="absolute bottom-0 left-0 p-4">
         <h3 className="text-lg font-bold text-white uppercase tracking-wide">{artist.name}</h3>
-        <p className="text-sm text-sky-400 font-semibold">{artist.style}</p>
+        <p className="text-sm text-rose-400 font-semibold">{artist.style}</p>
       </div>
     </div>
   );

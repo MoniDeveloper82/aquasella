@@ -20,7 +20,7 @@ const GlampingPage: React.FC = () => {
       capacity: '4 personas',
       description: 'Alojamiento premium para grupos',
       features: ['Tienda espaciosa para 4', 'Literas premium', 'Área de estar', 'Mininevera incluida', 'Baño compartido cercano'],
-      color: 'from-blue-600 to-indigo-700',
+      color: 'from-rose-600 to-purple-700',
       icon: '👥'
     },
     {

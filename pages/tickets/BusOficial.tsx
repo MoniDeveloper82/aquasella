@@ -33,7 +33,7 @@ const BusOficialPage: React.FC = () => {
       departure: 'Estación Norte',
       features: ['Paradas técnicas', 'WiFi y USB', 'Servicio de catering', 'Entretenimiento a bordo'],
       schedule: ['Ida: 13 Agosto 06:00h', 'Vuelta: 17 Agosto 12:00h'],
-      color: 'from-blue-600 to-indigo-800',
+      color: 'from-rose-600 to-purple-800',
       icon: '🌊'
     },
     {

@@ -8,14 +8,14 @@ const LineUpPage: React.FC = () => {
       description: 'Descubre todos los artistas que actuarán en Aquasella 2026',
       link: '/lineup/artistas',
       icon: '🎤',
-      color: 'from-purple-600 to-blue-600'
+      color: 'from-purple-600 to-rose-600'
     },
     {
       title: 'CARTEL',
       description: 'Consulta el cartel oficial del festival',
       link: '/lineup/cartel',
       icon: '🎪',
-      color: 'from-sky-600 to-cyan-600'
+      color: 'from-rose-600 to-pink-600'
     },
     {
       title: 'HORARIOS',

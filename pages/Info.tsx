@@ -8,7 +8,7 @@ const InfoPage: React.FC = () => {
       title: 'Zona de Descanso',
       description: 'Espacios cómodos para relajarte durante el festival',
       icon: '🛋️',
-      color: 'from-blue-600 to-blue-800',
+      color: 'from-rose-600 to-red-800',
       link: '/info/zona-descanso'
     },
     {
@@ -64,7 +64,7 @@ const InfoPage: React.FC = () => {
       title: 'Colaboradores',
       description: 'Partners y patrocinadores que hacen posible Aquasella',
       icon: '🤝',
-      color: 'from-indigo-600 to-indigo-800',
+      color: 'from-purple-600 to-pink-800',
       link: '/info/colaboradores'
     },
     {

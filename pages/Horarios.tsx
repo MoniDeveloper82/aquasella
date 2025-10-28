@@ -32,7 +32,7 @@ const HorariosPage: React.FC = () => {
           {/* Días del festival */}
           {['Jueves 13', 'Viernes 14', 'Sábado 15', 'Domingo 16'].map((dia, index) => (
             <div key={dia} className="bg-gray-800 rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-4 text-sky-400">
+              <h2 className="text-2xl font-bold mb-4 text-rose-400">
                 {dia} de Agosto
               </h2>
               <div className="space-y-3 text-gray-300">
@@ -47,7 +47,7 @@ const HorariosPage: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-sky-900/50 to-blue-900/50 rounded-lg p-8 text-center">
+        <div className="mt-12 bg-gradient-to-r from-rose-900/50 to-purple-900/50 rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">🕒 Próximamente</h3>
           <p className="text-gray-300">
             Los horarios detallados de cada artista se publicarán más cerca de las fechas del festival.

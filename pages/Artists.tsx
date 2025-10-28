@@ -107,7 +107,7 @@ const ArtistsPage: React.FC = () => {
              <div className="md:flex">
                 <img src={selectedArtist.image} alt={selectedArtist.name} className="w-full md:w-1/2 h-64 md:h-auto object-cover" />
                 <div className="p-8">
-                    <h3 className="text-3xl font-black uppercase text-sky-400">{selectedArtist.name}</h3>
+                    <h3 className="text-3xl font-black uppercase text-rose-400">{selectedArtist.name}</h3>
                     <p className="text-lg font-semibold text-gray-300 mt-1">{selectedArtist.style}</p>
                     <div className="mt-4 space-y-2 text-gray-400">
                         <p><span className="font-bold text-gray-200">Escenario:</span> {selectedArtist.stage}</p>

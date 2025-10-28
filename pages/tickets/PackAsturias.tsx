@@ -36,7 +36,7 @@ const PackAsturiasPage: React.FC = () => {
         'Perfecto para grupos asturianos',
         'Acceso directo al camping'
       ],
-      color: 'from-blue-600 to-teal-800',
+      color: 'from-rose-600 to-pink-800',
       icon: '🏕️🏔️'
     }
   ];

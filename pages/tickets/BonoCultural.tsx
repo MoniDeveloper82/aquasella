@@ -42,7 +42,7 @@ const BonoCulturalPage: React.FC = () => {
 
         {/* Entradas disponibles con Bono Cultural */}
         <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2 mb-12">
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-br from-rose-600 to-red-800 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-black uppercase tracking-wider mb-4">
               Entrada General 4 Días
             </h3>

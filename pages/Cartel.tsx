@@ -16,7 +16,7 @@ const CartelPage: React.FC = () => {
       title: 'Cartel por Días',
       description: 'Descubre qué artistas actuarán cada día del festival',
       icon: '📅',
-      color: 'from-blue-600 to-blue-800',
+      color: 'from-rose-600 to-red-800',
       link: '/lineup/cartel/dias'
     },
     {

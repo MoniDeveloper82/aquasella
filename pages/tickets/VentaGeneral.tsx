@@ -9,7 +9,7 @@ const VentaGeneralPage: React.FC = () => {
       price: '120€',
       description: 'Acceso completo a los 4 días del festival',
       features: ['Acceso a todos los escenarios', 'Horario: 13/08 - 16/08', 'Sin camping incluido'],
-      color: 'from-blue-600 to-blue-800'
+      color: 'from-rose-600 to-red-800'
     },
     {
       id: 'general-1-dia',

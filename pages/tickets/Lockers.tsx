@@ -10,7 +10,7 @@ const LockersPage: React.FC = () => {
       size: '30x30x40 cm',
       description: 'Perfecto para objetos esenciales',
       features: ['Móvil y cargador', 'Cartera y llaves', 'Documentación', 'Pequeños objetos personales'],
-      color: 'from-blue-600 to-blue-800',
+      color: 'from-rose-600 to-red-800',
       icon: '📱'
     },
     {

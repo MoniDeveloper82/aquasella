@@ -15,7 +15,7 @@ const TicketsSection: React.FC = () => {
            <p className="text-gray-400 text-lg font-semibold">El iframe del proveedor de entradas iría aquí.</p>
         </div>
          <p className="text-xs text-gray-500 mt-6">
-          Al comprar una entrada, aceptas nuestros <a href="#" className="underline hover:text-sky-400">Términos y Condiciones</a> y nuestra <a href="#" className="underline hover:text-sky-400">Política de Privacidad</a>.
+          Al comprar una entrada, aceptas nuestros <a href="#" className="underline hover:text-rose-400">Términos y Condiciones</a> y nuestra <a href="#" className="underline hover:text-rose-400">Política de Privacidad</a>.
         </p>
       </div>
     </section>
