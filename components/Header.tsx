@@ -58,7 +58,7 @@ const Header: React.FC = () => {
         <nav
           className="w-full px-4 sm:px-6 lg:px-8"
         >
-          <div className="flex items-center justify-between h-20 max-w-7xl mx-auto">
+          <div className="flex items-center justify-between h-28 max-w-7xl mx-auto">
             <div className="flex-shrink-0">
               <NavLink 
                 to="/" 
@@ -66,22 +66,22 @@ const Header: React.FC = () => {
                 onClick={handleLinkClick}
               >
                 <img 
-                  src="/img/aquasella-logo.png" 
-                  alt="Aquasella"
-                  className="h-12 w-auto"
+                  src="/img/PINOS_LOGOOP2.png" 
+                  alt="Pinos"
+                  className="h-24 w-auto"
                 />
               </NavLink>
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-12">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   onClick={handleLinkClick}
                   className={({ isActive }) =>
-                    `text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${
+                    `text-lg font-bold uppercase tracking-wider transition-colors duration-300 ${
                       isActive ? 'text-sky-400' : 'text-gray-300 hover:text-sky-400'
                     }`
                   }
@@ -95,15 +95,15 @@ const Header: React.FC = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="inline-flex items-center justify-center p-3 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-label="Toggle main menu"
                 aria-expanded={isMenuOpen ? "true" : "false"}
               >
                 <span className="sr-only">Open main menu</span>
                 {isMenuOpen ? (
-                  <XMarkIcon className="block h-6 w-6" />
+                  <XMarkIcon className="block h-8 w-8" />
                 ) : (
-                  <MenuIcon className="block h-6 w-6" />
+                  <MenuIcon className="block h-8 w-8" />
                 )}
               </button>
             </div>
@@ -113,14 +113,14 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-gray-900/95 z-40 flex flex-col items-center justify-center space-y-8 animate-fade-in md:hidden">
+        <div className="fixed inset-0 bg-gray-900/95 z-40 flex flex-col items-center justify-center space-y-12 animate-fade-in md:hidden">
            {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 onClick={handleLinkClick}
                 className={({ isActive }) =>
-                  `text-3xl font-bold uppercase tracking-widest transition-colors duration-300 ${
+                  `text-4xl font-bold uppercase tracking-widest transition-colors duration-300 ${
                     isActive ? 'text-sky-400' : 'text-gray-300 hover:text-sky-400'
                   }`
                 }
