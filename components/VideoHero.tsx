@@ -45,7 +45,7 @@ const VideoHero: React.FC = () => {
 
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white p-4 pt-20">
         {/* Festival Info */}
-        <div className="opacity-0 fade-in-up">
+        <div className="fade-in-up">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-widest text-glow">
             Aquasella
           </h1>
