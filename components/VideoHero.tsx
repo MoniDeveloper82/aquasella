@@ -48,7 +48,7 @@ const VideoHero: React.FC = () => {
         {/* Festival Info */}
         <div className="fade-in-up">
           {/* Main Aquasella Logo */}
-          <div className="-mb-48 md:-mb-60 lg:-mb-72 xl:-mb-80 2xl:-mb-96">
+          <div className="-mb-48 md:-mb-60 lg:-mb-72 xl:-mb-84 2xl:-mb-96">
             <img 
               src="/img/aquasella_logometalfinal (1).png" 
               alt="Aquasella Festival Logo"
@@ -74,7 +74,9 @@ const VideoHero: React.FC = () => {
               }}
             />
           </div>
-          <p className="text-sm md:text-base font-light tracking-widest border-t border-b border-white/50 py-1 -mt-12 md:-mt-16 lg:-mt-20 inline-block">
+
+          {/* Location Text */}
+          <p className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-light tracking-widest border-t border-b border-white/50 py-1 -mt-32 md:-mt-44 lg:-mt-56 xl:-mt-68 2xl:-mt-80 inline-block">
             ARRIONDAS, ASTURIAS
           </p>
         </div>
