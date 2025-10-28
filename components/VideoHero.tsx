@@ -1,24 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const VideoHero: React.FC = () => {
+  const [videoError, setVideoError] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  const handleVideoError = (e: any) => {
+    console.error('Video failed to load:', e);
+    console.error('Video source:', '/videos/AFTERMOVIEAQS25.mp4');
+    setVideoError(true);
+  };
+
+  const handleVideoLoaded = () => {
+    console.log('Video loaded successfully:', '/videos/AFTERMOVIEAQS25.mp4');
+    setVideoLoaded(true);
+  };
+
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        poster="/videos/albeniz.poster.jpg"
-      >
-        {/* Provide multiple sources so the browser can pick the first it supports.
-            The browser will only play one source (it chooses the first supported type).
-            Keep the most modern/efficient format first (webm), then fall back to mp4. */}
-        <source src="/videos/albenizresumen.webm" type="video/webm" />
-        <source src="/videos/albenizresumen.mp4" type="video/mp4" />
-        Tu navegador no soporta video HTML5.
-      </video>
+    <section className="relative w-full h-screen overflow-hidden bg-gray-900">
+      {/* Fallback background image */}
+      {(videoError || !videoLoaded) && (
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black z-0">
+          {/* Puedes agregar una imagen de fondo aquí si tienes una disponible */}
+        </div>
+      )}
+
+      {/* Video element - optimizado pero funcional */}
+      {!videoError && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+          onError={handleVideoError}
+          onLoadedData={handleVideoLoaded}
+          onCanPlay={handleVideoLoaded}
+        >
+          <source src="/videos/AFTERMOVIEAQS25.mp4" type="video/mp4" />
+          Tu navegador no soporta video HTML5.
+        </video>
+      )}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/60 z-10"></div>
 
