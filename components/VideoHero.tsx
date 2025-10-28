@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const VideoHero: React.FC = () => {
   const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoAttempted, setVideoAttempted] = useState(false);
+
+  // Intentar cargar el video después de que el componente se monte
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!videoLoaded && !videoError) {
+        console.log('Attempting to load video after delay...');
+        setVideoAttempted(true);
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [videoLoaded, videoError]);
 
   const handleVideoError = (e: any) => {
     console.error('Video failed to load:', e);
@@ -18,6 +31,13 @@ const VideoHero: React.FC = () => {
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-gray-900">
+      {/* Indicador de carga de video (solo para debug) */}
+      {!videoLoaded && !videoError && (
+        <div className="absolute top-4 left-4 z-50 bg-black/50 text-white text-xs px-2 py-1 rounded">
+          Cargando video...
+        </div>
+      )}
+
       {/* Fallback background con gradientes atractivos */}
       {(videoError || !videoLoaded) && (
         <div className="absolute top-0 left-0 w-full h-full z-0">
@@ -36,22 +56,26 @@ const VideoHero: React.FC = () => {
         </div>
       )}
 
-      {/* Video optimizado - con mejor detección de errores */}
+      {/* Video optimizado - con estrategia mejorada para Vercel */}
       {!videoError && (
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
-          className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+          preload="auto"
+          className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-2000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
           onCanPlay={handleVideoLoaded}
           onLoadStart={() => console.log('Video loading started...')}
           onProgress={() => console.log('Video loading progress...')}
+          onLoadedMetadata={() => console.log('Video metadata loaded')}
+          onWaiting={() => console.log('Video waiting for data...')}
         >
+          {/* Priorizar el video optimizado */}
           <source src="/videos/AFTERMOVIEOptimizado.mp4" type="video/mp4" />
+          {/* Fallback al video original si el optimizado falla */}
           <source src="/videos/AFTERMOVIEAQS25.mp4" type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
