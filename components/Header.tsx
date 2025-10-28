@@ -116,7 +116,12 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-gradient-to-br from-gray-900/95 via-purple-900/90 to-pink-900/95 z-40 flex flex-col items-center justify-center space-y-12 animate-fade-in md:hidden">
+        <div 
+          className="fixed inset-0 z-40 flex flex-col items-center justify-center space-y-12 animate-fade-in md:hidden"
+          style={{
+            background: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 20%, #dc2626 40%, #ef4444 60%, #f87171 80%, #fca5a5 100%)'
+          }}
+        >
            {navLinks.map((link) => (
               <NavLink
                 key={link.to}

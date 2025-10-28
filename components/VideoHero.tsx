@@ -31,6 +31,8 @@ const VideoHero: React.FC = () => {
           loop
           playsInline
           preload="auto"
+          controls={false}
+          disablePictureInPicture
           className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
