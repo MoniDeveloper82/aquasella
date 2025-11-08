@@ -91,7 +91,7 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
             {/* subtle static sheen to give general metallic feel */}
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 25%, rgba(255,255,255,0) 60%)', mixBlendMode: 'overlay', opacity: 0.9 }} />
             {/* moving highlight */}
-            <div
+                <div
               aria-hidden
               style={{
                 position: 'absolute',
@@ -102,22 +102,22 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
                 background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0) 100%)',
                 transform: 'skewY(-2deg)',
                 opacity: 0.9,
-                animation: 'shimmer 8s linear infinite'
+                animation: paused ? 'none' : `shimmer 14s linear infinite`
               }}
             />
             <style>{`@keyframes shimmer { from { transform: translateX(-70%) skewY(-2deg);} to { transform: translateX(170%) skewY(-2deg);} }`}</style>
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-700 to-red-800">
-            <style>{`@keyframes marquee { from { transform: translateX(100%);} to { transform: translateX(-100%);} }`}</style>
+            <style>{`@keyframes marquee2 { 0% { transform: translateX(0%);} 100% { transform: translateX(-50%);} }`}</style>
             <div ref={containerRef} className="h-12 md:h-14 lg:h-16 w-full overflow-hidden">
               {items.map((it, i) => (
                 <div key={i} className={`w-full h-full ${i === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} aria-hidden={i === index ? 'false' : 'true'}>
                   <div className="h-full flex items-center">
                     <div
-                      className="inline-block"
+                      className="inline-block marquee-track"
                       style={{
                         whiteSpace: 'nowrap',
-                        animation: `${paused ? 'none' : `marquee ${marqueeDuration}s linear infinite`}`,
+                        animation: `${paused ? 'none' : `marquee2 ${marqueeDuration}s linear infinite`}`,
                         animationDelay: paused ? undefined : `-${Math.max(0, Math.round(marqueeDuration / 2))}s`,
                       }}
                     >
@@ -129,8 +129,17 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
                               <path d="M21 10V8a2 2 0 0 0-2-2h-2.2a1 1 0 0 1-.98-.8L14.4 2H9.6l-1.42 3.2a1 1 0 0 1-.98.8H5a2 2 0 0 0-2 2v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h2.2a1 1 0 0 1 .98.8L9.6 22h4.8l1.42-3.2a1 1 0 0 1 .98-.8H19a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4z" fill="#FFFFFF"/>
                             </svg>
                           </span>
+                          {/** render sequence twice to create seamless loop */}
                           {Array.from({ length: repeatCount }).map((_, k) => (
-                            <span key={k} className="inline-flex items-center pr-8">
+                            <span key={`a-${k}`} className="inline-flex items-center pr-8">
+                              <span className="font-extrabold text-lg md:text-2xl lg:text-3xl tracking-wide text-white mr-3">{it.message}</span>
+                              <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                                <path d="M21 10V8a2 2 0 0 0-2-2h-2.2a1 1 0 0 1-.98-.8L14.4 2H9.6l-1.42 3.2a1 1 0 0 1-.98.8H5a2 2 0 0 0-2 2v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h2.2a1 1 0 0 1 .98.8L9.6 22h4.8l1.42-3.2a1 1 0 0 1 .98-.8H19a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4z" fill="#FFFFFF"/>
+                              </svg>
+                            </span>
+                          ))}
+                          {Array.from({ length: repeatCount }).map((_, k) => (
+                            <span key={`b-${k}`} className="inline-flex items-center pr-8">
                               <span className="font-extrabold text-lg md:text-2xl lg:text-3xl tracking-wide text-white mr-3">{it.message}</span>
                               <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                                 <path d="M21 10V8a2 2 0 0 0-2-2h-2.2a1 1 0 0 1-.98-.8L14.4 2H9.6l-1.42 3.2a1 1 0 0 1-.98.8H5a2 2 0 0 0-2 2v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h2.2a1 1 0 0 1 .98.8L9.6 22h4.8l1.42-3.2a1 1 0 0 1 .98-.8H19a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4z" fill="#FFFFFF"/>
