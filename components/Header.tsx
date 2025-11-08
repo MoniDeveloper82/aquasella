@@ -75,17 +75,18 @@ const Header: React.FC = () => {
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-12 lg:space-x-16 xl:space-x-20">
+            <div className="hidden md:flex items-center space-x-12 lg:space-x-16 xl:space-x-20 header-nav">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   onClick={handleLinkClick}
-                  className={({ isActive }) =>
-                    `text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wider transition-colors duration-300 ${
-                      isActive ? 'text-rose-600' : 'text-gray-300 hover:text-rose-600'
-                    }`
-                  }
+                  className={({ isActive }) => {
+                    // If the link is 'INICIO' use a silver hover; otherwise keep red hover
+                    const hoverClass = link.label === 'INICIO' ? 'hover:text-[#cfcfcf]' : 'hover:text-rose-600';
+                    const extra = link.label === 'INICIO' ? ' silver-hover' : '';
+                    return `text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wider transition-colors duration-300 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
+                  }}
                 >
                   {link.label}
                 </NavLink>
@@ -122,24 +123,31 @@ const Header: React.FC = () => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center space-y-12 animate-fade-in md:hidden"
+          className="fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center space-y-12 animate-fade-in md:hidden header-nav"
         >
            {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 onClick={handleLinkClick}
-                className={({ isActive }) =>
-                  `text-4xl font-bold uppercase tracking-widest transition-colors duration-300 ${
-                    isActive ? 'text-rose-600' : 'text-gray-300 hover:text-rose-600'
-                  }`
-                }
+                className={({ isActive }) => {
+                  const hoverClass = link.label === 'INICIO' ? 'hover:text-[#cfcfcf]' : 'hover:text-rose-600';
+                  const extra = link.label === 'INICIO' ? ' silver-hover' : '';
+                  return `text-4xl font-bold uppercase tracking-widest transition-colors duration-300 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
+                }}
               >
                 {link.label}
               </NavLink>
             ))}
         </div>
       )}
+      
+      {/* ensure silver hover shows even if the link is active (higher specificity) */}
+      <style>{`
+        .header-nav .silver-hover:hover {
+          color: #cfcfcf !important;
+        }
+      `}</style>
     </>
   );
 };
