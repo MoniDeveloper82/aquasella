@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+iimport { Link } from 'react-router-dom';
 import { Artist } from '../types';
 import { artists } from '../data/artists';
 import ArtistCard from '../components/ArtistCard';
@@ -108,7 +108,7 @@ const ArtistsPage: React.FC = () => {
                 <img src={selectedArtist.image} alt={selectedArtist.name} className="w-full md:w-1/2 h-64 md:h-auto object-cover" />
                 <div className="p-8">
                     <h3 className="text-3xl font-black uppercase text-rose-400">{selectedArtist.name}</h3>
-                    <p className="text-lg font-semibold text-gray-300 mt-1">{selectedArtist.style}</p>
+t.style}</p>
                     <div className="mt-4 space-y-2 text-gray-400">
                         <p><span className="font-bold text-gray-200">Escenario:</span> {selectedArtist.stage}</p>
                         <p><span className="font-bold text-gray-200">Horario:</span> {selectedArtist.schedule}</p>

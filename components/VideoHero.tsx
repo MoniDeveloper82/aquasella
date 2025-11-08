@@ -79,8 +79,7 @@ const VideoHero: React.FC = () => {
 
           {/* Location Text */}
           <p className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-light tracking-widest border-t border-b border-white/50 py-1 -mt-32 md:-mt-44 lg:-mt-56 xl:-mt-68 2xl:-mt-80 inline-block">
-            ARRIONDAS, ASTURIAS
-          </p>
+        </p>
         </div>
 
   {/* Tickets info removed from VideoHero. If you'd like it back, you can re-add the JSX or use `HomeTicketsSection`. */}
