@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { MenuIcon, XMarkIcon } from './icons';
+import Banner from './Banner';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -110,6 +111,10 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </header>
+      {/* Banner just under the fixed header: use top margin to account for fixed header height */}
+      <div className="mt-32 lg:mt-36 xl:mt-40">
+        <Banner />
+      </div>
       
       {/* Halo de luz debajo del header */}
       <div className="fixed top-32 lg:top-36 xl:top-40 left-0 right-0 h-16 bg-gradient-to-b from-red-500/50 via-red-600/35 to-transparent blur-md z-40"></div>
