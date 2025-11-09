@@ -30,3 +30,5 @@ public/videos/*.avi
 # Allow the optimized videos
 !public/videos/AFTERMOVIEOptimizado.mp4
 !public/videos/AFTERMOVIEOptimizado.webm
+.ffmpeg/
+ffmpeg-release-essentials.zip
