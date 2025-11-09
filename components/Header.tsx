@@ -88,7 +88,11 @@ const Header: React.FC = () => {
                     return `text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wider transition-colors duration-300 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
                   }}
                 >
-                  {link.label}
+                    {link.label === 'LINE UP' ? (
+                      <img src="/img/letra.png" alt="LINE UP" className="inline-block h-10 lg:h-12 xl:h-14" />
+                    ) : (
+                      link.label
+                    )}
                 </NavLink>
               ))}
             </div>
@@ -135,8 +139,12 @@ const Header: React.FC = () => {
                   const extra = link.label === 'INICIO' ? ' silver-hover' : '';
                   return `text-4xl font-bold uppercase tracking-widest transition-colors duration-300 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
                 }}
-              >
-                {link.label}
+                >
+                {link.label === 'LINE UP' ? (
+                  <img src="/img/letra.png" alt="LINE UP" className="inline-block h-20" />
+                ) : (
+                  link.label
+                )}
               </NavLink>
             ))}
         </div>
