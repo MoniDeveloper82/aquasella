@@ -89,7 +89,7 @@ const Header: React.FC = () => {
                   }}
                 >
                     {link.label === 'LINE UP' ? (
-                      <img src="/img/letra.png" alt="LINE UP" className="inline-block h-10 lg:h-12 xl:h-14" />
+                      <img src="/img/letra.png" alt="LINE UP" className="inline-block h-14 lg:h-16 xl:h-20" />
                     ) : (
                       link.label
                     )}
@@ -141,7 +141,7 @@ const Header: React.FC = () => {
                 }}
                 >
                 {link.label === 'LINE UP' ? (
-                  <img src="/img/letra.png" alt="LINE UP" className="inline-block h-20" />
+                  <img src="/img/letra.png" alt="LINE UP" className="inline-block h-28" />
                 ) : (
                   link.label
                 )}
