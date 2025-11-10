@@ -89,7 +89,7 @@ const Header: React.FC = () => {
                   }}
                 >
                     {link.label === 'LINE UP' ? (
-                      <img src="/img/letra.png" alt="LINE UP" className="inline-block h-14 lg:h-16 xl:h-20" />
+                      <img src="/img/letra.png" alt="LINE UP" className="inline-block h-14 lg:h-16 xl:h-20 letra-img" />
                     ) : (
                       link.label
                     )}
@@ -141,7 +141,7 @@ const Header: React.FC = () => {
                 }}
                 >
                 {link.label === 'LINE UP' ? (
-                  <img src="/img/letra.png" alt="LINE UP" className="inline-block h-28" />
+                  <img src="/img/letra.png" alt="LINE UP" className="inline-block h-28 letra-img" />
                 ) : (
                   link.label
                 )}
@@ -154,6 +154,33 @@ const Header: React.FC = () => {
       <style>{`
         .header-nav .silver-hover:hover {
           color: #cfcfcf !important;
+        }
+        /* Hover effect for LINE UP image */
+        .header-nav .letra-img {
+          transition: transform 180ms ease, filter 220ms ease;
+          will-change: transform, filter;
+          /* ensure the image renders crisply when transformed */
+          transform-origin: center;
+        }
+        /* Default subtle state so the hover red stands out */
+        .header-nav .letra-img {
+          filter: grayscale(30%) brightness(0.95);
+        }
+
+        /* When hovering the link or the image, tint the image red strongly and add a glow */
+        .header-nav a:hover .letra-img,
+        .header-nav .letra-img:hover {
+          transform: scale(1.08);
+          /* stronger red tint using sepia+hue and an added red glow via drop-shadow */
+          filter: sepia(1) saturate(6) hue-rotate(-15deg) brightness(0.95) contrast(1.05) drop-shadow(0 0 12px rgba(255,60,60,0.9));
+        }
+
+        /* Slightly different scaling on small screens */
+        @media (max-width: 767px) {
+          .header-nav a:hover .letra-img,
+          .header-nav .letra-img:hover {
+            transform: scale(1.04);
+          }
         }
       `}</style>
     </>
