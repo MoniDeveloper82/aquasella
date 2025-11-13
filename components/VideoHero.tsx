@@ -12,7 +12,7 @@ const VideoHero: React.FC = () => {
   };
 
   const handleVideoLoaded = () => {
-    console.log('✅ Video heder_small.mp4 cargado correctamente!');
+    console.log('✅ Video heder_small.mp4 cargado correctamente! v2');
     setVideoLoaded(true);
   };
 
