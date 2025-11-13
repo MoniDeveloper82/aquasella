@@ -11,7 +11,7 @@ const VideoHero: React.FC = () => {
   };
 
   const handleVideoLoaded = () => {
-    console.log('✅ Video optimizado AFTERMOVIE cargado correctamente!');
+    console.log('✅ Video heder_hero.mp4 cargado correctamente!');
     setVideoLoaded(true);
   };
 
@@ -35,16 +35,19 @@ const VideoHero: React.FC = () => {
           disablePictureInPicture
           className={`absolute top-0 left-0 w-full h-full z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
-            objectFit: 'cover',
-            objectPosition: 'center 30%',
-            transform: 'scale(1.02)',
-            transformOrigin: 'center center'
+            objectFit: 'contain',
+            objectPosition: 'center center',
+            transform: 'scale(1.0)',
+            transformOrigin: 'center center',
+            width: '100%',
+            height: '100%'
           }}
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
           onCanPlay={handleVideoLoaded}
         >
-          <source src="/videos/heder.mp4" type="video/mp4" />
+          <source src="/videos/heder_hero.mp4" type="video/mp4" />
+          <source src="/videos/AFTERMOVIEOptimizado.mp4" type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
       )}
