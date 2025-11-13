@@ -57,7 +57,7 @@ const VideoHero: React.FC = () => {
           preload="auto"
           controls={false}
           disablePictureInPicture
-          className={`absolute top-0 left-0 w-full h-full z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute top-16 md:top-0 left-0 w-full h-full z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
             objectFit: 'contain',
             objectPosition: 'center center',
@@ -83,7 +83,7 @@ const VideoHero: React.FC = () => {
           Tu navegador no soporta video HTML5.
         </video>
       ) : (
-        <div className="absolute top-0 left-0 w-full h-full z-0">
+        <div className="absolute top-16 md:top-0 left-0 w-full h-full z-0">
           {/* Fallback: GIF animado */}
           <img 
             src="/videos/heder_fallback.gif"
