@@ -17,7 +17,7 @@ const VideoHero: React.FC = () => {
   };
 
   const handleCanPlay = () => {
-    console.log('🎬 Video listo para reproducir');
+    console.log('🎬 Video listo para reproducir - Vercel deployment v3');
     setVideoLoaded(true);
   };
 
