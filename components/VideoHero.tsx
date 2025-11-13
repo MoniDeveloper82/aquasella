@@ -12,7 +12,7 @@ const VideoHero: React.FC = () => {
   };
 
   const handleVideoLoaded = () => {
-    console.log('✅ Video heder_tiny.mp4 cargado correctamente!');
+    console.log('✅ Video heder_tiny.mp4 cargado correctamente! - Vercel v3');
     setVideoLoaded(true);
   };
 
