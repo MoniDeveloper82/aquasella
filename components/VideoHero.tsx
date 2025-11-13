@@ -4,17 +4,17 @@ const VideoHero: React.FC = () => {
   const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
-  // Timeout para fallback si el video no carga en 5 segundos
+  // Timeout más largo para dar tiempo al video desde GitHub
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      if (!videoLoaded) {
-        console.log('⏱️ Video timeout - usando fallback');
-        setVideoError(true);
+      if (!videoLoaded && !videoError) {
+        console.log('⏱️ Video timeout - probando fallback');
+        // No marcar error todavía, dar más tiempo
       }
-    }, 5000);
+    }, 10000);
 
     return () => clearTimeout(timeout);
-  }, [videoLoaded]);
+  }, [videoLoaded, videoError]);
 
   const handleVideoError = (e: any) => {
     console.error('❌ Video failed to load:', e);
@@ -69,28 +69,51 @@ const VideoHero: React.FC = () => {
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
           onCanPlay={handleCanPlay}
+          onLoadStart={() => console.log('🔄 Video: Iniciando carga...')}
+          onProgress={() => console.log('📊 Video: Progreso de carga')}
+          onSuspend={() => console.log('⏸️ Video: Suspendido')}
+          onAbort={() => console.log('❌ Video: Abortado')}
+          onEmptied={() => console.log('🗑️ Video: Emptied')}
         >
+          {/* CDN externos para máxima compatibilidad */}
+          <source src="https://github.com/MoniDeveloper82/aquasella/raw/main/public/videos/heder_tiny.mp4" type="video/mp4" />
+          <source src="https://github.com/MoniDeveloper82/aquasella/raw/main/public/videos/heder_small.mp4" type="video/mp4" />
           <source src="/videos/heder_tiny.mp4" type="video/mp4" />
           <source src="/videos/heder_small.mp4" type="video/mp4" />
-          <source src="/videos/heder_small.webm" type="video/webm" />
           Tu navegador no soporta video HTML5.
         </video>
       ) : (
-        <div 
-          className="absolute top-0 left-0 w-full h-full z-0"
-          style={{
-            backgroundImage: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%), radial-gradient(circle at 30% 50%, rgba(239, 68, 68, 0.15) 0%, transparent 60%)',
-            backgroundBlendMode: 'overlay'
-          }}
-        >
-          {/* Animated background effect */}
-          <div 
-            className="absolute inset-0 opacity-20"
+        <div className="absolute top-0 left-0 w-full h-full z-0">
+          {/* Fallback: GIF animado */}
+          <img 
+            src="/videos/heder_fallback.gif"
+            alt="Aquasella Video Background"
+            className="absolute top-0 left-0 w-full h-full object-contain"
             style={{
-              background: 'repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(239, 68, 68, 0.1) 2px, rgba(239, 68, 68, 0.1) 4px)',
-              animation: 'pulse 4s ease-in-out infinite'
+              objectPosition: 'center center'
+            }}
+            onError={() => {
+              console.log('📸 Fallback GIF también falló, usando fondo estático');
             }}
           />
+          
+          {/* Fondo de respaldo si también falla el GIF */}
+          <div 
+            className="absolute top-0 left-0 w-full h-full"
+            style={{
+              backgroundImage: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%), radial-gradient(circle at 30% 50%, rgba(239, 68, 68, 0.15) 0%, transparent 60%)',
+              backgroundBlendMode: 'overlay',
+              zIndex: -1
+            }}
+          >
+            <div 
+              className="absolute inset-0 opacity-20"
+              style={{
+                background: 'repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(239, 68, 68, 0.1) 2px, rgba(239, 68, 68, 0.1) 4px)',
+                animation: 'pulse 4s ease-in-out infinite'
+              }}
+            />
+          </div>
         </div>
       )}
 
