@@ -135,7 +135,7 @@ const Header: React.FC = () => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center space-y-6 animate-fade-in md:hidden header-nav"
+          className="fixed inset-0 bg-black/95 z-50 flex flex-col items-center justify-center space-y-3 animate-fade-in md:hidden header-nav"
         >
            {navLinks.map((link) => (
               <NavLink
@@ -145,19 +145,19 @@ const Header: React.FC = () => {
                 className={({ isActive }) => {
                   const hoverClass = link.label === 'INICIO' ? 'hover:text-[#cfcfcf]' : 'hover:text-rose-600';
                   const extra = link.label === 'INICIO' ? ' silver-hover' : '';
-                  return `text-4xl font-bold uppercase tracking-widest transition-colors duration-300 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
+                  return `text-2xl font-bold uppercase tracking-wider transition-colors duration-300 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
                 }}
                 >
-                {link.label === 'LINE UP' ? (
-                  <img src="/img/letra.png" alt="LINE UP" className="inline-block h-28 letra-img" />
+                ) : link.label === 'LINE UP' ? (
+                  <img src="/img/letra.png" alt="LINE UP" className="inline-block h-16 letra-img" />
                 ) : link.label === 'INFO' ? (
-                  <img src="/img/info.png" alt="INFO" className="inline-block h-28 info-img" />
+                  <img src="/img/info.png" alt="INFO" className="inline-block h-16 info-img" />
                 ) : link.label === 'TICKETS' ? (
-                  <img src="/img/tickets.png" alt="TICKETS" className="inline-block h-28 tickets-img" />
+                  <img src="/img/tickets.png" alt="TICKETS" className="inline-block h-16 tickets-img" />
                 ) : link.label === 'SHOP' ? (
-                  <img src="/img/shop.png" alt="SHOP" className="inline-block h-28 shop-img" />
+                  <img src="/img/shop.png" alt="SHOP" className="inline-block h-16 shop-img" />
                 ) : link.label === 'INICIO' ? (
-                  <img src="/img/inicio.png" alt="INICIO" className="inline-block h-28 inicio-img" />
+                  <img src="/img/inicio.png" alt="INICIO" className="inline-block h-16 inicio-img" />
                 ) : (
                   link.label
                 )}
