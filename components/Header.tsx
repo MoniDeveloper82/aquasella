@@ -135,7 +135,7 @@ const Header: React.FC = () => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center space-y-12 animate-fade-in md:hidden header-nav"
+          className="fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center space-y-6 animate-fade-in md:hidden header-nav"
         >
            {navLinks.map((link) => (
               <NavLink

@@ -119,8 +119,8 @@ const VideoHero: React.FC = () => {
         {/* Overlay con gradiente */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 z-10"></div>
 
-        {/* Fechas superpuestas al video */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white px-4">
+        {/* Fechas superpuestas al video - posicionadas abajo */}
+        <div className="absolute inset-x-0 bottom-8 md:bottom-12 lg:bottom-16 z-20 flex flex-col items-center justify-end text-center text-white px-4">
           <div className="fade-in-up">
             {/* Main Aquasella Logo - OCULTO */}
             <div className="-mb-48 md:-mb-60 lg:-mb-72 xl:-mb-84 2xl:-mb-96 hidden">
@@ -141,11 +141,11 @@ const VideoHero: React.FC = () => {
               <img 
                 src="/img/FECHAS AQS.png" 
                 alt="Aquasella Festival 2026 - 13-16 Agosto"
-                className="w-auto h-48 md:h-64 lg:h-80 xl:h-96 mx-auto filter brightness-110 contrast-110"
+                className="w-auto h-64 md:h-80 lg:h-96 xl:h-110 2xl:h-128 mx-auto filter brightness-110 contrast-110"
                 style={{ 
                   filter: 'drop-shadow(0 0 20px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 40px rgba(220, 38, 38, 0.4))',
                   maxWidth: '95vw',
-                  height: 'clamp(192px, 15vw, 384px)'
+                  height: 'clamp(256px, 20vw, 512px)'
                 }}
               />
             </div>
