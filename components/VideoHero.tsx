@@ -30,12 +30,15 @@ const VideoHero: React.FC = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          webkit-playsinline="true"
+          preload="metadata"
           controls={false}
           disablePictureInPicture
+          x5-video-player-type="h5"
+          x5-video-orientation="portraint"
           className={`absolute top-0 left-0 w-full h-full z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
-            objectFit: 'contain',
+            objectFit: 'cover',
             objectPosition: 'center center',
             transform: 'scale(1.0)',
             transformOrigin: 'center center',
@@ -46,8 +49,8 @@ const VideoHero: React.FC = () => {
           onLoadedData={handleVideoLoaded}
           onCanPlay={handleVideoLoaded}
         >
+          <source src="/videos/heder_small.mp4" type="video/mp4" />
           <source src="/videos/heder_small.webm" type="video/webm" />
-          <source src="/videos/heder_hero.mp4" type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
       )}
