@@ -5,40 +5,49 @@ const VideoHero: React.FC = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   const handleVideoError = (e: any) => {
-    console.error('Video failed to load:', e);
-    console.error('Trying fallback to original video...');
+    console.error('❌ Video failed to load:', e);
+    console.error('Video error details:', e.target?.error);
+    console.error('Showing fallback background...');
     setVideoError(true);
   };
 
   const handleVideoLoaded = () => {
-    console.log('✅ Video heder_small.webm cargado correctamente!');
+    console.log('✅ Video heder_small.mp4 cargado correctamente!');
+    setVideoLoaded(true);
+  };
+
+  const handleCanPlay = () => {
+    console.log('🎬 Video listo para reproducir');
     setVideoLoaded(true);
   };
 
   return (
     <section className="relative w-full overflow-hidden bg-gray-900" style={{ height: '100vh', minHeight: '100dvh' }}>
-      {/* Fallback background solo si hay error */}
+      {/* Fallback background si hay error o no carga */}
       {(videoError || !videoLoaded) && (
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-900 z-0">
+        <div className="absolute top-0 left-0 w-full h-full z-0">
+          <div 
+            className="w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black"
+            style={{
+              backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 50%)'
+            }}
+          />
         </div>
       )}
 
-      {/* Video optimizado - versión simple que debe funcionar */}
+      {/* Video optimizado */}
       {!videoError && (
         <video
           autoPlay
           muted
           loop
           playsInline
-          webkit-playsinline="true"
-          preload="metadata"
+          preload="auto"
           controls={false}
           disablePictureInPicture
-          x5-video-player-type="h5"
-          x5-video-orientation="portraint"
           className={`absolute top-0 left-0 w-full h-full z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
-            objectFit: 'cover',
+            objectFit: 'contain',
             objectPosition: 'center center',
             transform: 'scale(1.0)',
             transformOrigin: 'center center',
@@ -47,7 +56,7 @@ const VideoHero: React.FC = () => {
           }}
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
-          onCanPlay={handleVideoLoaded}
+          onCanPlay={handleCanPlay}
         >
           <source src="/videos/heder_small.mp4" type="video/mp4" />
           <source src="/videos/heder_small.webm" type="video/webm" />
