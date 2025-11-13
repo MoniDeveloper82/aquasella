@@ -148,7 +148,7 @@ const Header: React.FC = () => {
                   return `text-2xl font-bold uppercase tracking-wider transition-colors duration-300 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
                 }}
                 >
-                ) : link.label === 'LINE UP' ? (
+                {link.label === 'LINE UP' ? (
                   <img src="/img/letra.png" alt="LINE UP" className="inline-block h-16 letra-img" />
                 ) : link.label === 'INFO' ? (
                   <img src="/img/info.png" alt="INFO" className="inline-block h-16 info-img" />
