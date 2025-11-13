@@ -16,7 +16,7 @@ const VideoHero: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-gray-900">
+    <section className="relative w-full overflow-hidden bg-gray-900" style={{ height: '100vh', minHeight: '100dvh' }}>
       {/* Fallback background solo si hay error */}
       {(videoError || !videoLoaded) && (
         <div className="absolute top-0 left-0 w-full h-full bg-gray-900 z-0">
@@ -33,13 +33,18 @@ const VideoHero: React.FC = () => {
           preload="auto"
           controls={false}
           disablePictureInPicture
-          className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute top-0 left-0 w-full h-full z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ 
+            objectFit: 'cover',
+            objectPosition: 'center 30%',
+            transform: 'scale(1.02)',
+            transformOrigin: 'center center'
+          }}
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
           onCanPlay={handleVideoLoaded}
         >
-          <source src="/videos/AFTERMOVIEOptimizado.webm" type="video/webm" />
-          <source src="/videos/AFTERMOVIEOptimizado.mp4" type="video/mp4" />
+          <source src="/videos/heder.mp4" type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
       )}
