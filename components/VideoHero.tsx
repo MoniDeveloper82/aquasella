@@ -119,7 +119,7 @@ const VideoHero: React.FC = () => {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 z-10"></div>
 
-      <div className="relative z-20 flex flex-col items-center justify-start md:justify-center h-full text-center text-white px-4 pt-16 md:pt-12 lg:pt-20">
+      <div className="relative z-20 flex flex-col items-center justify-start md:justify-center h-full text-center text-white px-4 pt-0 md:pt-12 lg:pt-20">
         {/* Festival Info */}
         <div className="fade-in-up">
           {/* Main Aquasella Logo - OCULTO */}
