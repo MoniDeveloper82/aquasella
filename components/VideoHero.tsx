@@ -119,7 +119,7 @@ const VideoHero: React.FC = () => {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 z-10"></div>
 
-      <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white p-4 pt-4 md:pt-12 lg:pt-20">
+      <div className="relative z-20 flex flex-col items-center justify-start md:justify-center h-full text-center text-white px-4 pt-16 md:pt-12 lg:pt-20">
         {/* Festival Info */}
         <div className="fade-in-up">
           {/* Main Aquasella Logo - OCULTO */}
@@ -137,7 +137,7 @@ const VideoHero: React.FC = () => {
           </div>
 
           {/* Logo Image with Dates */}
-          <div className="mb-0 mt-8 md:mt-16 lg:mt-24 xl:mt-32 2xl:mt-40">
+          <div className="mb-0 mt-0 md:mt-16 lg:mt-24 xl:mt-32 2xl:mt-40">
             <img 
               src="/img/FECHAS AQS.png" 
               alt="Aquasella Festival 2026 - 13-16 Agosto"
