@@ -149,15 +149,15 @@ const Header: React.FC = () => {
                 }}
               >
                 {link.label === 'LINE UP' ? (
-                  <span>LINE UP</span>
+                  <img src="/img/letra.png" alt="LINE UP" className="inline-block h-12 letra-img" />
                 ) : link.label === 'INFO' ? (
-                  <span>INFO</span>
+                  <img src="/img/info.png" alt="INFO" className="inline-block h-12 info-img" />
                 ) : link.label === 'TICKETS' ? (
-                  <span>TICKETS</span>
+                  <img src="/img/tickets.png" alt="TICKETS" className="inline-block h-12 tickets-img" />
                 ) : link.label === 'SHOP' ? (
-                  <span>SHOP</span>
+                  <img src="/img/shop.png" alt="SHOP" className="inline-block h-12 shop-img" />
                 ) : link.label === 'INICIO' ? (
-                  <span>INICIO</span>
+                  <img src="/img/inicio.png" alt="INICIO" className="inline-block h-12 inicio-img" />
                 ) : (
                   link.label
                 )}
