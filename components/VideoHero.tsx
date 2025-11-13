@@ -1,23 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const VideoHero: React.FC = () => {
   const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
+  // Timeout para fallback si el video no carga en 5 segundos
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (!videoLoaded) {
+        console.log('⏱️ Video timeout - usando fallback');
+        setVideoError(true);
+      }
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, [videoLoaded]);
+
   const handleVideoError = (e: any) => {
     console.error('❌ Video failed to load:', e);
     console.error('Video error details:', e.target?.error);
-    console.error('Showing fallback background...');
+    console.error('Showing animated fallback background...');
     setVideoError(true);
   };
 
   const handleVideoLoaded = () => {
-    console.log('✅ Video heder_tiny.mp4 cargado correctamente! - Vercel v3');
+    console.log('✅ Video heder_tiny.mp4 cargado correctamente!');
     setVideoLoaded(true);
   };
 
   const handleCanPlay = () => {
-    console.log('🎬 Video listo para reproducir - Vercel deployment v3');
+    console.log('🎬 Video listo para reproducir');
     setVideoLoaded(true);
   };
 
@@ -35,8 +47,8 @@ const VideoHero: React.FC = () => {
         </div>
       )}
 
-      {/* Video optimizado */}
-      {!videoError && (
+      {/* Video optimizado con fallback a imagen */}
+      {!videoError ? (
         <video
           autoPlay
           muted
@@ -63,6 +75,23 @@ const VideoHero: React.FC = () => {
           <source src="/videos/heder_small.webm" type="video/webm" />
           Tu navegador no soporta video HTML5.
         </video>
+      ) : (
+        <div 
+          className="absolute top-0 left-0 w-full h-full z-0"
+          style={{
+            backgroundImage: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%), radial-gradient(circle at 30% 50%, rgba(239, 68, 68, 0.15) 0%, transparent 60%)',
+            backgroundBlendMode: 'overlay'
+          }}
+        >
+          {/* Animated background effect */}
+          <div 
+            className="absolute inset-0 opacity-20"
+            style={{
+              background: 'repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(239, 68, 68, 0.1) 2px, rgba(239, 68, 68, 0.1) 4px)',
+              animation: 'pulse 4s ease-in-out infinite'
+            }}
+          />
+        </div>
       )}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 z-10"></div>
