@@ -11,7 +11,7 @@ const VideoHero: React.FC = () => {
   };
 
   const handleVideoLoaded = () => {
-    console.log('✅ Video heder_hero.mp4 cargado correctamente!');
+    console.log('✅ Video heder_small.webm cargado correctamente!');
     setVideoLoaded(true);
   };
 
@@ -46,8 +46,8 @@ const VideoHero: React.FC = () => {
           onLoadedData={handleVideoLoaded}
           onCanPlay={handleVideoLoaded}
         >
+          <source src="/videos/heder_small.webm" type="video/webm" />
           <source src="/videos/heder_hero.mp4" type="video/mp4" />
-          <source src="/videos/AFTERMOVIEOptimizado.mp4" type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
       )}
