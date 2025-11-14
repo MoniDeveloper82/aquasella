@@ -2,7 +2,6 @@ import React from 'react';
 import VideoHero from '../components/VideoHero';
 import AvancesVideo from '../components/AvancesVideo';
 import HomeTicketsSection from '../components/HomeTicketsSection';
-import LocationSection from '../components/LocationSection';
 import PartnersStrip from '../components/PartnersStrip';
 
 const HomePage: React.FC = () => {
@@ -20,7 +19,6 @@ const HomePage: React.FC = () => {
         <div className="relative z-10">
           <AvancesVideo />
           <HomeTicketsSection />
-          <LocationSection />
           <PartnersStrip />
         </div>
       </div>

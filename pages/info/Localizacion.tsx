@@ -144,12 +144,17 @@ const LocalizacionPage: React.FC = () => {
         {/* Mapa interactivo */}
         <div className="bg-gray-800 rounded-xl p-8 mb-12">
           <h3 className="text-2xl font-bold text-center mb-6">🗺️ Mapa Interactivo</h3>
-          <div className="w-full h-96 bg-gray-700 rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-4xl mb-4">🗺️</div>
-              <p className="text-gray-400 text-lg">Mapa interactivo de Google Maps</p>
-              <p className="text-gray-500 text-sm mt-2">Aquí se integraría el mapa real con la ubicación exacta</p>
-            </div>
+          <div className="mt-6 rounded-lg overflow-hidden shadow-2xl shadow-sky-900/20">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11598.78923363351!2d-5.194511630132837!3d43.28801991414439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4a159954f85e49%3A0x33351336e2056981!2sArriondas%2C%20Asturias%2C%20Spain!5e0!3m2!1sen!2sus!4v1620000000000"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mapa de localización de Aquasella"
+            />
           </div>
         </div>
 
