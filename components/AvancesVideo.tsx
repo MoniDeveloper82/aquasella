@@ -42,13 +42,13 @@ const AvancesVideo: React.FC = () => {
               onCanPlay={() => console.log('✅ Video listo para reproducir')}
               onLoadedData={() => console.log('📊 Video data cargado')}
             >
-              {/* Priorizar videos más pequeños para Vercel */}
-              <source src="/videos/heder_tiny.mp4" type="video/mp4" />
-              <source src="/videos/heder_small.webm" type="video/webm" />
-              <source src="/videos/heder_vercel.webm" type="video/webm" />
-              {/* Videos de avances como fallback */}
+              {/* Video avances ultra comprimido para Vercel */}
+              <source src="/videos/avances1_vercel.webm" type="video/webm" />
+              {/* Fallbacks de avances originales */}
               <source src="/videos/avances1.webm" type="video/webm" />
               <source src="/videos/avances1.mp4" type="video/mp4" />
+              {/* Fallbacks adicionales */}
+              <source src="/videos/heder_tiny.mp4" type="video/mp4" />
               Tu navegador no soporta la reproducción de video.
             </video>
           </div>
