@@ -3,61 +3,70 @@ import React, { useRef, useEffect, useState } from 'react';
 const AvancesVideo: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [showControls, setShowControls] = useState(false);
+  const [forceShow, setForceShow] = useState(false);
 
   useEffect(() => {
+    // Forzar mostrar video después de un breve momento
+    const timer = setTimeout(() => setForceShow(true), 500);
+    
     const video = videoRef.current;
     if (!video) return;
 
-    let attempts = 0;
-    const maxAttempts = 10;
-    
-    const attemptPlay = async () => {
-      attempts++;
-      console.log(`Intento ${attempts} de reproducir video`);
-      
+    // Función super agresiva para forzar reproducción
+    const forceVideoPlay = async () => {
       try {
-        // Asegurar que el video está completamente cargado
+        console.log('🚀 Forzando reproducción de video');
+        
+        // Resetear completamente el video
+        video.currentTime = 0;
         video.load();
         
-        // Múltiples intentos de reproducción
+        // Esperar a que se cargue
+        await new Promise((resolve) => {
+          const onLoaded = () => {
+            video.removeEventListener('loadeddata', onLoaded);
+            resolve(true);
+          };
+          video.addEventListener('loadeddata', onLoaded);
+        });
+        
+        // Reproducir con máxima prioridad
         const playPromise = video.play();
-        if (playPromise !== undefined) {
-          await playPromise;
-        }
+        await playPromise;
         
         setIsVideoLoaded(true);
-        console.log('✅ Video reproduce correctamente');
+        console.log('✅ VIDEO FUNCIONANDO!');
         
       } catch (error) {
-        console.log(`❌ Error intento ${attempts}:`, error);
+        console.log('❌ Error reproduciendo:', error);
         
-        if (attempts < maxAttempts) {
-          // Retry con delay incremental
-          setTimeout(attemptPlay, attempts * 500);
-        } else {
-          console.log('🎮 Activando controles manuales');
-          setShowControls(true);
-        }
+        // Si falla, reintenta en 1 segundo
+        setTimeout(forceVideoPlay, 1000);
       }
     };
 
-    // Intentos inmediatos
-    attemptPlay();
-    setTimeout(attemptPlay, 100);
-    setTimeout(attemptPlay, 1000);
+    // Múltiples estrategias simultáneas
+    forceVideoPlay();
+    setTimeout(forceVideoPlay, 200);
+    setTimeout(forceVideoPlay, 1000);
+    setTimeout(forceVideoPlay, 3000);
     
-    // Intentos en eventos de usuario
-    const handleUserInteraction = () => {
-      attemptPlay();
+    // En cualquier interacción del usuario
+    const onUserInteraction = () => {
+      forceVideoPlay();
     };
     
-    document.addEventListener('click', handleUserInteraction, { once: true });
-    document.addEventListener('touchstart', handleUserInteraction, { once: true });
+    document.addEventListener('click', onUserInteraction);
+    document.addEventListener('touchstart', onUserInteraction);
+    document.addEventListener('keydown', onUserInteraction);
+    document.addEventListener('scroll', onUserInteraction);
     
     return () => {
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('touchstart', handleUserInteraction);
+      clearTimeout(timer);
+      document.removeEventListener('click', onUserInteraction);
+      document.removeEventListener('touchstart', onUserInteraction);
+      document.removeEventListener('keydown', onUserInteraction);
+      document.removeEventListener('scroll', onUserInteraction);
     };
   }, []);
 
@@ -84,49 +93,59 @@ const AvancesVideo: React.FC = () => {
 
           {/* Larger video container to prevent text cropping, using object-contain to maintain aspect ratio */}
           <div className="relative w-full h-auto sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black">
+            {/* Forzar visibilidad del video */}
             <video
               ref={videoRef}
-              className="w-full h-full object-contain object-center bg-black"
+              className={`w-full h-full object-contain object-center bg-black ${forceShow ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
               autoPlay
               muted
               loop
               playsInline
-              preload="auto"
-              controls={showControls}
+              preload="metadata"
+              controls={!isVideoLoaded}
               aria-label="Video de avances Aquasella"
               webkit-playsinline="true"
+              style={{
+                display: 'block',
+                visibility: 'visible',
+                zIndex: 10
+              }}
               onLoadedData={() => {
-                console.log('Video data loaded');
+                console.log('🎬 Video data loaded');
                 if (videoRef.current) {
                   videoRef.current.play().catch(e => console.log('Play failed:', e));
                 }
               }}
               onCanPlay={() => {
-                console.log('Video can play');
+                console.log('▶️ Video can play');
                 if (videoRef.current) {
                   videoRef.current.play().catch(e => console.log('Play failed:', e));
                 }
               }}
+              onPlay={() => {
+                console.log('🎉 VIDEO STARTED PLAYING!');
+                setIsVideoLoaded(true);
+              }}
             >
-              {/* Priorizar el video más pequeño y confiable */}
-              <source src="/videos/avances1_micro.webm" type="video/webm" />
-              <source src="/videos/avances1_vercel.webm" type="video/webm" />
-              <source src="/videos/avances1.webm" type="video/webm" />
+              {/* Solo el video más pequeño para evitar problemas */}
+              <source src="/videos/avances1_micro.webm?v=2" type="video/webm" />
+              <source src="/videos/avances1_vercel.webm?v=2" type="video/webm" />
+              <source src="/videos/avances1.webm?v=2" type="video/webm" />
               Tu navegador no soporta la reproducción de video.
             </video>
             
-            {/* Mostrar estado de carga */}
-            {!isVideoLoaded && !showControls && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-white text-sm opacity-70">
-                  Cargando video...
+            {/* Indicador de estado */}
+            {!isVideoLoaded && forceShow && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                <div className="text-white text-lg font-bold">
+                  🎬 Cargando video avances1...
                 </div>
               </div>
             )}
             
-            {showControls && (
-              <div className="absolute top-4 left-4 text-white text-xs opacity-70 bg-black bg-opacity-50 p-2 rounded">
-                Haz clic en el video para reproducir
+            {isVideoLoaded && (
+              <div className="absolute top-4 right-4 text-green-400 text-xs opacity-70 bg-black bg-opacity-50 p-2 rounded">
+                ✅ Video reproduciendo
               </div>
             )}
           </div>
