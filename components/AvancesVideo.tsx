@@ -31,21 +31,24 @@ const AvancesVideo: React.FC = () => {
               muted
               loop
               playsInline
-              preload="metadata"
-              controls={false}
+              preload="auto"
+              controls={true}
               aria-label="Video de avances Aquasella"
               onError={(e) => {
-                console.log('Error cargando video principal, intentando fallback');
-                // El navegador automáticamente intentará el siguiente source
+                console.error('❌ Error cargando video:', e.target?.currentSrc);
+                console.log('Intentando siguiente fuente...');
               }}
+              onLoadStart={() => console.log('🔄 Iniciando carga video')}
+              onCanPlay={() => console.log('✅ Video listo para reproducir')}
+              onLoadedData={() => console.log('📊 Video data cargado')}
             >
-              {/* Video de avances en WebM optimizado para Vercel */}
-              <source src="/videos/avances1.webm" type="video/webm" />
-              {/* Fallback MP4 del mismo video */}
-              <source src="/videos/avances1.mp4" type="video/mp4" />
-              {/* Fallbacks adicionales si los anteriores fallan */}
+              {/* Priorizar videos más pequeños para Vercel */}
               <source src="/videos/heder_tiny.mp4" type="video/mp4" />
               <source src="/videos/heder_small.webm" type="video/webm" />
+              <source src="/videos/heder_vercel.webm" type="video/webm" />
+              {/* Videos de avances como fallback */}
+              <source src="/videos/avances1.webm" type="video/webm" />
+              <source src="/videos/avances1.mp4" type="video/mp4" />
               Tu navegador no soporta la reproducción de video.
             </video>
           </div>
