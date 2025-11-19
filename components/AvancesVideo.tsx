@@ -7,72 +7,58 @@ const AvancesVideo: React.FC = () => {
 
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      let playAttempts = 0;
-      const maxAttempts = 5;
+    if (!video) return;
+
+    let attempts = 0;
+    const maxAttempts = 10;
+    
+    const attemptPlay = async () => {
+      attempts++;
+      console.log(`Intento ${attempts} de reproducir video`);
       
-      const forcePlay = async () => {
-        try {
-          playAttempts++;
-          console.log(`Intento de reproducción ${playAttempts}:`, video.src);
-          
-          // Forzar recarga completa
-          video.load();
-          
-          // Esperar a que esté listo
-          await new Promise(resolve => {
-            const onCanPlay = () => {
-              video.removeEventListener('canplay', onCanPlay);
-              resolve(true);
-            };
-            video.addEventListener('canplay', onCanPlay);
-          });
-          
-          // Intentar reproducir
-          const playPromise = video.play();
+      try {
+        // Asegurar que el video está completamente cargado
+        video.load();
+        
+        // Múltiples intentos de reproducción
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
           await playPromise;
-          
-          setIsVideoLoaded(true);
-          console.log('Video reproduciendo exitosamente');
-          
-        } catch (error) {
-          console.log(`Error en intento ${playAttempts}:`, error);
-          
-          if (playAttempts < maxAttempts) {
-            setTimeout(() => forcePlay(), 1000 * playAttempts);
-          } else {
-            console.log('Mostrando controles para interacción manual');
-            setShowControls(true);
-          }
         }
-      };
-
-      // Múltiples estrategias de inicio
-      const startVideo = () => {
-        forcePlay();
         
-        // También intentar en eventos de interacción
-        const handleInteraction = () => {
-          forcePlay();
-          document.removeEventListener('click', handleInteraction);
-          document.removeEventListener('touchstart', handleInteraction);
-          document.removeEventListener('scroll', handleInteraction);
-        };
+        setIsVideoLoaded(true);
+        console.log('✅ Video reproduce correctamente');
         
-        document.addEventListener('click', handleInteraction, { once: true });
-        document.addEventListener('touchstart', handleInteraction, { once: true });
-        document.addEventListener('scroll', handleInteraction, { once: true });
-      };
+      } catch (error) {
+        console.log(`❌ Error intento ${attempts}:`, error);
+        
+        if (attempts < maxAttempts) {
+          // Retry con delay incremental
+          setTimeout(attemptPlay, attempts * 500);
+        } else {
+          console.log('🎮 Activando controles manuales');
+          setShowControls(true);
+        }
+      }
+    };
 
-      // Iniciar inmediatamente y en varios eventos
-      startVideo();
-      setTimeout(startVideo, 500);
-      setTimeout(startVideo, 2000);
-      
-      return () => {
-        // Cleanup si es necesario
-      };
-    }
+    // Intentos inmediatos
+    attemptPlay();
+    setTimeout(attemptPlay, 100);
+    setTimeout(attemptPlay, 1000);
+    
+    // Intentos en eventos de usuario
+    const handleUserInteraction = () => {
+      attemptPlay();
+    };
+    
+    document.addEventListener('click', handleUserInteraction, { once: true });
+    document.addEventListener('touchstart', handleUserInteraction, { once: true });
+    
+    return () => {
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('touchstart', handleUserInteraction);
+    };
   }, []);
 
   return (
@@ -100,7 +86,6 @@ const AvancesVideo: React.FC = () => {
           <div className="relative w-full h-auto sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black">
             <video
               ref={videoRef}
-              poster="/img/POSTINFOFINAL_AQS.jpg"
               className="w-full h-full object-contain object-center bg-black"
               autoPlay
               muted
