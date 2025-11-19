@@ -85,22 +85,11 @@ const Header: React.FC = () => {
                     // If the link is 'INICIO' use a silver hover; otherwise keep red hover
                     const hoverClass = link.label === 'INICIO' ? 'hover:text-[#cfcfcf]' : 'hover:text-rose-600';
                     const extra = link.label === 'INICIO' ? ' silver-hover' : '';
-                    return `text-xl lg:text-2xl xl:text-3xl font-bold uppercase tracking-wider transition-colors duration-300 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
+                    return `text-xl lg:text-2xl xl:text-3xl font-semibold uppercase tracking-wider transition-all duration-300 transform hover:scale-105 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
                   }}
+                  style={{ fontFamily: 'ClashDisplay, sans-serif' }}
                 >
-                    {link.label === 'LINE UP' ? (
-                      <img src="/img/letra.png" alt="LINE UP" className="inline-block h-14 lg:h-16 xl:h-20 letra-img" />
-                    ) : link.label === 'INFO' ? (
-                      <img src="/img/info.png" alt="INFO" className="inline-block h-14 lg:h-16 xl:h-20 info-img" />
-                    ) : link.label === 'TICKETS' ? (
-                      <img src="/img/tickets.png" alt="TICKETS" className="inline-block h-14 lg:h-16 xl:h-20 tickets-img" />
-                    ) : link.label === 'SHOP' ? (
-                      <img src="/img/shop.png" alt="SHOP" className="inline-block h-14 lg:h-16 xl:h-20 shop-img" />
-                    ) : link.label === 'INICIO' ? (
-                      <img src="/img/inicio.png" alt="INICIO" className="inline-block h-14 lg:h-16 xl:h-20 inicio-img" />
-                    ) : (
-                      link.label
-                    )}
+                  {link.label}
                 </NavLink>
               ))}
             </div>
@@ -111,7 +100,7 @@ const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="inline-flex items-center justify-center p-4 lg:p-5 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-label="Toggle main menu"
-                aria-expanded={isMenuOpen ? "true" : "false"}
+                aria-expanded={isMenuOpen}
               >
                 <span className="sr-only">Open main menu</span>
                 {isMenuOpen ? (
@@ -135,7 +124,7 @@ const Header: React.FC = () => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black z-50 flex flex-col justify-start pt-32 px-8 animate-fade-in md:hidden"
+          className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex flex-col justify-start pt-32 px-8 animate-fade-in md:hidden"
         >
           <div className="flex flex-col space-y-12">
             {navLinks.map((link) => (
@@ -144,23 +133,13 @@ const Header: React.FC = () => {
                 to={link.to}
                 onClick={handleLinkClick}
                 className={({ isActive }) => {
-                  const hoverClass = link.label === 'INICIO' ? 'hover:text-[#cfcfcf]' : 'hover:text-rose-600';
-                  return `text-white text-3xl font-bold uppercase tracking-wide transition-colors duration-300 border-b border-gray-700 pb-4 ${isActive ? 'text-rose-600' : `${hoverClass}`}`;
+                  const hoverClass = link.label === 'INICIO' ? 'hover:text-[#cfcfcf] mobile-silver-hover' : 'hover:text-rose-600';
+                  const extra = link.label === 'INICIO' ? ' mobile-silver-hover' : '';
+                  return `text-3xl font-semibold uppercase tracking-wider transition-all duration-300 transform hover:scale-105 border-b border-gray-700 pb-4 mobile-nav-item ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
                 }}
+                style={{ fontFamily: 'ClashDisplay, sans-serif' }}
               >
-                {link.label === 'LINE UP' ? (
-                  <img src="/img/letra.png" alt="LINE UP" className="inline-block h-12 letra-img" />
-                ) : link.label === 'INFO' ? (
-                  <img src="/img/info.png" alt="INFO" className="inline-block h-12 info-img" />
-                ) : link.label === 'TICKETS' ? (
-                  <img src="/img/tickets.png" alt="TICKETS" className="inline-block h-12 tickets-img" />
-                ) : link.label === 'SHOP' ? (
-                  <img src="/img/shop.png" alt="SHOP" className="inline-block h-12 shop-img" />
-                ) : link.label === 'INICIO' ? (
-                  <img src="/img/inicio.png" alt="INICIO" className="inline-block h-12 inicio-img" />
-                ) : (
-                  link.label
-                )}
+                {link.label}
               </NavLink>
             ))}
           </div>
@@ -169,81 +148,40 @@ const Header: React.FC = () => {
       
       {/* ensure silver hover shows even if the link is active (higher specificity) */}
       <style>{`
-        /* Ensure each nav link centers its content (text or image) vertically */
         .header-nav a {
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem; /* small spacing if a label is present */
           line-height: 1;
-        }
-        /* Make images behave predictably inside inline-flex containers */
-        .header-nav a img,
-        .header-nav img {
-          display: block;
-          vertical-align: middle;
+          font-family: 'ClashDisplay', sans-serif;
         }
 
         .header-nav .silver-hover:hover {
           color: #cfcfcf !important;
         }
-        /* Hover effect for LINE UP image */
-        .header-nav .letra-img {
-          transition: transform 180ms ease, filter 220ms ease;
-          will-change: transform, filter;
-          /* ensure the image renders crisply when transformed */
-          transform-origin: center;
-          display: block;
-        }
-        /* Default subtle state so the hover red stands out */
-        .header-nav .letra-img,
-        .header-nav .info-img,
-        .header-nav .tickets-img,
-        .header-nav .shop-img,
-        .header-nav .inicio-img {
-          filter: grayscale(30%) brightness(0.95);
+
+        /* Efecto de brillo para el texto del menú desktop */
+        .header-nav a:hover {
+          text-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
         }
 
-        /* Nudge tickets/shop images slightly upward so they visually line up with the others */
-        .header-nav .tickets-img,
-        .header-nav .shop-img {
-          transform: translateY(-3px);
+        .header-nav .silver-hover:hover {
+          text-shadow: 0 0 10px rgba(207, 207, 207, 0.8);
         }
 
-        /* When hovering the link or the image, tint the image red strongly and add a glow */
-        .header-nav a:hover .letra-img,
-        .header-nav .letra-img:hover,
-        .header-nav a:hover .info-img,
-        .header-nav .info-img:hover,
-        .header-nav a:hover .tickets-img,
-        .header-nav .tickets-img:hover,
-        .header-nav a:hover .shop-img,
-        .header-nav .shop-img:hover {
-          /* keep the small upward nudge for tickets/shop while scaling */
-          transform: translateY(-3px) scale(1.08);
-          /* stronger red tint using sepia+hue and an added red glow via drop-shadow */
-          filter: sepia(1) saturate(6) hue-rotate(-15deg) brightness(0.95) contrast(1.05) drop-shadow(0 0 12px rgba(255,60,60,0.9));
+        /* Estilos para el menú móvil - mismos efectos que desktop */
+        .mobile-nav-item {
+          font-family: 'ClashDisplay', sans-serif;
         }
 
-        /* INICIO: silver/tin hover effect instead of red */
-        .header-nav a:hover .inicio-img,
-        .header-nav .inicio-img:hover {
-          transform: scale(1.06);
-          /* desaturate for a silver look, brighten slightly and add a subtle white glow */
-          filter: saturate(0) brightness(1.25) contrast(1.05) drop-shadow(0 0 10px rgba(255,255,255,0.65));
+        /* Efecto de brillo para el menú móvil */
+        .mobile-nav-item:hover {
+          text-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
         }
 
-        /* Slightly different scaling on small screens */
-        @media (max-width: 767px) {
-          .header-nav a:hover .letra-img,
-          .header-nav .letra-img:hover,
-          .header-nav a:hover .info-img,
-          .header-nav .info-img:hover,
-          .header-nav a:hover .tickets-img,
-          .header-nav .tickets-img:hover,
-          .header-nav a:hover .shop-img,
-          .header-nav .shop-img:hover {
-            transform: translateY(-2px) scale(1.04);
-          }
+        /* Efecto plateado para INICIO en móvil */
+        .mobile-silver-hover:hover {
+          color: #cfcfcf !important;
+          text-shadow: 0 0 10px rgba(207, 207, 207, 0.8) !important;
         }
       `}</style>
     </>

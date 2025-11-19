@@ -15,17 +15,18 @@ const AvancesVideo: React.FC = () => {
                   style={{
                     fontSize: 'clamp(2.25rem, 6vw, 5rem)',
                     lineHeight: 1.02,
+                    fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
+                    fontWeight: 'bold',
                   }}>
                 PRIMERAS CONFIRMACIONES
               </h2>
             </div>
 
-          {/* On small screens we use object-contain and let the container size to auto so the video is not cropped.
-              On larger screens we keep a taller fixed-height hero and use object-cover for a cinematic look. */}
-          <div className="relative w-full h-auto sm:h-[55vh] md:h-[60vh] lg:h-[70vh] rounded-none sm:rounded-lg overflow-hidden bg-black">
+          {/* Larger video container to prevent text cropping, using object-contain to maintain aspect ratio */}
+          <div className="relative w-full h-auto sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black">
             <video
               poster="/img/POSTINFOFINAL_AQS.jpg"
-              className="w-full h-full object-contain sm:object-cover object-center bg-black"
+              className="w-full h-full object-contain object-center bg-black"
               autoPlay
               muted
               loop
@@ -34,8 +35,8 @@ const AvancesVideo: React.FC = () => {
               controls={false}
               aria-label="Video de avances Aquasella"
             >
-              {/* Prefer WebM for modern browsers (better compression). If you add avances.webm to public/videos, the browser will pick it. */}
-              <source src="/videos/avances.webm" type="video/webm" />
+              {/* Using MP4 format for compatibility */}
+              <source src="/videos/avances1.mp4" type="video/mp4" />
               <source src="/videos/avances.mp4" type="video/mp4" />
             </video>
           </div>
