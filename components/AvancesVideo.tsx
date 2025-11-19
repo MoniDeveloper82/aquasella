@@ -1,6 +1,36 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const AvancesVideo: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // Forzar la reproducción después de que el componente se monte
+      const playVideo = async () => {
+        try {
+          video.load(); // Forzar recarga del video
+          await video.play();
+        } catch (error) {
+          console.log('Autoplay prevented:', error);
+        }
+      };
+      
+      // Intentar reproducir inmediatamente y después de un pequeño delay
+      playVideo();
+      setTimeout(playVideo, 100);
+      
+      // Listener para cuando el video esté listo
+      video.addEventListener('loadeddata', playVideo);
+      video.addEventListener('canplay', playVideo);
+      
+      return () => {
+        video.removeEventListener('loadeddata', playVideo);
+        video.removeEventListener('canplay', playVideo);
+      };
+    }
+  }, []);
+
   return (
     <section className="py-6 sm:py-10">
       <div className="w-full bg-black">
@@ -25,20 +55,22 @@ const AvancesVideo: React.FC = () => {
           {/* Larger video container to prevent text cropping, using object-contain to maintain aspect ratio */}
           <div className="relative w-full h-auto sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black">
             <video
+              ref={videoRef}
               poster="/img/POSTINFOFINAL_AQS.jpg"
               className="w-full h-full object-contain object-center bg-black"
               autoPlay
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               controls={false}
               aria-label="Video de avances Aquasella"
+              webkit-playsinline="true"
             >
-              {/* Video avances1 optimizado para Vercel */}
-              <source src="/videos/avances1_vercel.webm" type="video/webm" />
-              <source src="/videos/avances1.webm" type="video/webm" />
-              <source src="/videos/avances1.mp4" type="video/mp4" />
+              {/* Video avances1 optimizado para Vercel - priorizando el más pequeño */}
+              <source src="/videos/avances1_vercel.webm" type="video/webm; codecs=vp9" />
+              <source src="/videos/avances1.webm" type="video/webm; codecs=vp9" />
+              <source src="/videos/avances1.mp4" type="video/mp4; codecs=avc1.42E01E" />
               Tu navegador no soporta la reproducción de video.
             </video>
           </div>

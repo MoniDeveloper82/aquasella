@@ -15,8 +15,31 @@
         {
           "key": "Accept-Ranges",
           "value": "bytes"
+        },
+        {
+          "key": "Content-Type",
+          "value": "video/webm"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
+    },
+    {
+      "source": "/videos/.*\\.mp4",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "video/mp4"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/videos/(.*)",
+      "destination": "/videos/$1"
     }
   ]
 }
