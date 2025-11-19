@@ -39,13 +39,13 @@ const AvancesVideo: React.FC = () => {
                 // El navegador automáticamente intentará el siguiente source
               }}
             >
-              {/* Videos optimizados para Vercel (orden por tamaño) */}
+              {/* Video de avances en WebM optimizado para Vercel */}
+              <source src="/videos/avances1.webm" type="video/webm" />
+              {/* Fallback MP4 del mismo video */}
+              <source src="/videos/avances1.mp4" type="video/mp4" />
+              {/* Fallbacks adicionales si los anteriores fallan */}
               <source src="/videos/heder_tiny.mp4" type="video/mp4" />
               <source src="/videos/heder_small.webm" type="video/webm" />
-              <source src="/videos/heder_small.mp4" type="video/mp4" />
-              <source src="/videos/heder_vercel.webm" type="video/webm" />
-              {/* Video original como último fallback */}
-              <source src="/videos/avances1.mp4" type="video/mp4" />
               Tu navegador no soporta la reproducción de video.
             </video>
           </div>
