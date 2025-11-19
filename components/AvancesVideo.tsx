@@ -35,9 +35,12 @@ const AvancesVideo: React.FC = () => {
               controls={false}
               aria-label="Video de avances Aquasella"
             >
-              {/* Using MP4 format for compatibility */}
+              {/* Video de avances original */}
               <source src="/videos/avances1.mp4" type="video/mp4" />
-              <source src="/videos/avances.mp4" type="video/mp4" />
+              {/* Fallbacks por si el video principal no carga */}
+              <source src="/videos/heder_small.mp4" type="video/mp4" />
+              <source src="/videos/heder_tiny.mp4" type="video/mp4" />
+              Tu navegador no soporta la reproducción de video.
             </video>
           </div>
 
