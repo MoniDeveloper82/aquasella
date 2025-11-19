@@ -32,7 +32,7 @@ const AvancesVideo: React.FC = () => {
               loop
               playsInline
               preload="auto"
-              controls={true}
+              controls={false}
               aria-label="Video de avances Aquasella"
               onError={(e) => {
                 console.error('❌ Error cargando video:', e.target?.currentSrc);
