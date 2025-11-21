@@ -142,12 +142,6 @@ const AvancesVideo: React.FC = () => {
                 </div>
               </div>
             )}
-            
-            {isVideoLoaded && (
-              <div className="absolute top-4 right-4 text-green-400 text-xs opacity-70 bg-black bg-opacity-50 p-2 rounded">
-                ✅ Video reproduciendo
-              </div>
-            )}
           </div>
 
           {/* thin black line below the video */}
