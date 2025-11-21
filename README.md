@@ -2,6 +2,8 @@
 
 Repositorio del frontend del festival Aquasella. Contiene la UI (React + Vite), datos de artistas y páginas informativas (FAQ, legal, cookies, etc.).
 
+<!-- Build trigger: 2025-11-21 -->
+
 ## Estructura principal
 
 - `index.tsx` — router (createHashRouter) y rutas de la app.
