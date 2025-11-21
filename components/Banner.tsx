@@ -78,7 +78,7 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
     <div className="w-full">
       <div className="w-full rounded-b-2xl p-0.5 bg-gradient-to-r from-[#bfbfbf] via-[#e6e6e6] to-[#ffffff] overflow-hidden shadow-sm">
         <div
-          className="relative w-full h-12 md:h-14 lg:h-16 overflow-hidden shadow-lg z-[45] cursor-pointer rounded-b-2xl bg-transparent"
+          className="relative w-full h-10 md:h-11 lg:h-12 overflow-hidden shadow-lg z-[45] cursor-pointer rounded-b-2xl bg-transparent"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onClick={() => navigate(items[index]?.ctaLink ?? '/tickets')}
@@ -109,7 +109,7 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-700 to-red-800">
             <style>{`@keyframes marquee2 { 0% { transform: translateX(0%);} 100% { transform: translateX(-50%);} }`}</style>
-            <div ref={containerRef} className="h-12 md:h-14 lg:h-16 w-full overflow-hidden">
+            <div ref={containerRef} className="h-10 md:h-11 lg:h-12 w-full overflow-hidden">
               {items.map((it, i) => (
                 <div key={i} className={`w-full h-full ${i === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} aria-hidden={i === index ? 'false' : 'true'}>
                   <div className="h-full flex items-center">
