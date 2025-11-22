@@ -155,9 +155,23 @@ const TicketsPage: React.FC = () => {
                   {/* Middle section - Title */}
                   <div className="flex-1 flex flex-col justify-center text-center">
                     <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">DISPONIBLE AHORA</p>
-                    <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider mb-4 text-white" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
-                      {section.title}
-                    </h3>
+                    {section.id === 'venta-general' ? (
+                      <div className="flex justify-center mb-4">
+                        <div className="relative inline-block">
+                          {/* Neon flash lines */}
+                          <div className="absolute -top-3 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
+                          <div className="absolute -bottom-3 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
+                          {/* Title box */}
+                          <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider text-white px-8 py-4 border-2 border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.6)]" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+                            {section.title}
+                          </h3>
+                        </div>
+                      </div>
+                    ) : (
+                      <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider mb-4 text-white" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+                        {section.title}
+                      </h3>
+                    )}
                     <p className="text-gray-300 text-sm leading-relaxed mb-6">
                       {section.description}
                     </p>
