@@ -130,16 +130,16 @@ const TicketsPage: React.FC = () => {
                   : 'border-red-900/30 hover:shadow-2xl'
               }`}>
                 {section.id === 'venta-general' ? (
-                  <>
-                    {/* Background image for Venta General - contain to fit better */}
+                  <div className="relative w-full h-full flex items-center justify-center p-4">
+                    {/* Image for Venta General */}
                     <img 
                       src="/img/VENTA.png" 
                       alt="Venta General"
-                      className="absolute inset-0 w-full h-full object-contain"
+                      className="w-full h-full object-contain"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </>
+                  </div>
                 ) : (
                   <>
                     {/* Red accent line at top for others */}
