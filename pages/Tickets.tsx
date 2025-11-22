@@ -89,7 +89,7 @@ const TicketsPage: React.FC = () => {
     <div className="min-h-screen bg-gray-900 text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow font-clash">
             Tickets Aquasella 2026
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
