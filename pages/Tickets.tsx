@@ -129,6 +129,14 @@ const TicketsPage: React.FC = () => {
                   ? 'border-red-500/50 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.5)]' 
                   : 'border-red-900/30 hover:shadow-2xl'
               }`}>
+                {/* Background image for Venta General */}
+                {section.id === 'venta-general' && (
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center opacity-40"
+                    style={{ backgroundImage: "url('/img/VENTA.png')" }}
+                  ></div>
+                )}
+                
                 {/* Red neon lines - only for Venta General */}
                 {section.id === 'venta-general' && (
                   <>
