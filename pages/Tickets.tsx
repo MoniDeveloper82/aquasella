@@ -153,15 +153,17 @@ const TicketsPage: React.FC = () => {
                   </div>
                   
                   {/* Middle section - Title */}
-                  <div className="flex-1 flex flex-col justify-center text-center">
+                  <div className="flex-1 flex flex-col justify-center text-center relative">
                     <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">DISPONIBLE AHORA</p>
                     {section.id === 'venta-general' ? (
-                      <div className="flex justify-center mb-4">
-                        <div className="relative inline-block">
-                          {/* Neon flash lines */}
-                          <div className="absolute -top-3 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
-                          <div className="absolute -bottom-3 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
-                          {/* Title box */}
+                      <div className="relative mb-4">
+                        {/* Neon flash lines - full width of card */}
+                        <div className="absolute -left-8 -right-8 top-1/2 -translate-y-1/2">
+                          <div className="absolute -top-12 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
+                          <div className="absolute -bottom-12 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
+                        </div>
+                        {/* Title box */}
+                        <div className="relative inline-block mx-auto">
                           <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider text-white px-8 py-4 border-2 border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.6)]" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
                             {section.title}
                           </h3>
