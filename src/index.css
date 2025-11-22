@@ -69,7 +69,7 @@
 
 @layer components {
   .text-glow {
-    text-shadow: 0 0 8px #ff1b8d, 0 0 15px #ff1b8d, 0 0 20px #ff006b;
+    text-shadow: 0 0 8px #ef4444, 0 0 15px #dc2626, 0 0 20px #b91c1c;
   }
   
   .text-glow-purple {
