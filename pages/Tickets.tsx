@@ -124,9 +124,23 @@ const TicketsPage: React.FC = () => {
               to={section.link}
               className="group block"
             >
-              <div className="relative bg-black rounded-2xl overflow-hidden h-[500px] transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-red-900/30">
-                {/* Red accent line at top */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-600"></div>
+              <div className={`relative bg-black rounded-2xl overflow-hidden h-[500px] transform transition-all duration-300 hover:scale-105 border ${
+                section.id === 'venta-general' 
+                  ? 'border-red-500/50 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.5)]' 
+                  : 'border-red-900/30 hover:shadow-2xl'
+              }`}>
+                {/* Red neon lines - only for Venta General */}
+                {section.id === 'venta-general' && (
+                  <>
+                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
+                  </>
+                )}
+                
+                {/* Red accent line at top for others */}
+                {section.id !== 'venta-general' && (
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-600"></div>
+                )}
                 
                 {/* Background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-black"></div>
