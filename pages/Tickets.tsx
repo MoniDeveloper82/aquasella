@@ -132,10 +132,11 @@ const TicketsPage: React.FC = () => {
                 {section.id === 'venta-general' ? (
                   <>
                     {/* Background image for Venta General - contain to fit better */}
-                    <div 
-                      className="absolute inset-0 bg-contain bg-center bg-no-repeat"
-                      style={{ backgroundImage: "url('/img/VENTA.png')" }}
-                    ></div>
+                    <img 
+                      src="/img/VENTA.png" 
+                      alt="Venta General"
+                      className="absolute inset-0 w-full h-full object-contain"
+                    />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </>
