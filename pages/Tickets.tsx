@@ -130,7 +130,7 @@ const TicketsPage: React.FC = () => {
                   : 'border-red-900/30 hover:shadow-2xl'
               }`}>
                 {section.id === 'venta-general' ? (
-                  <div className="relative w-full h-full flex items-center justify-center p-4">
+                  <div className="relative w-full h-full flex items-center justify-center p-2">
                     {/* Image for Venta General */}
                     <img 
                       src="/img/VENTA.png" 
