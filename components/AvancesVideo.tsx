@@ -80,7 +80,7 @@ const AvancesVideo: React.FC = () => {
           {/* Title just before the video */}
             <div className="w-full text-center mt-6 mb-6">
               {/* Replaced image with large text title as requested */}
-              <h2 className="mx-auto text-white font-extrabold uppercase tracking-wider px-4"
+              <h2 className="mx-auto text-white font-extrabold uppercase tracking-wider px-4 text-glow-red"
                   style={{
                     fontSize: 'clamp(2.25rem, 6vw, 5rem)',
                     lineHeight: 1.02,
