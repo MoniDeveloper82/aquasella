@@ -82,7 +82,7 @@ const AvancesVideo: React.FC = () => {
               {/* Replaced image with large text title as requested */}
               <h2 className="mx-auto text-white font-extrabold uppercase tracking-wider px-4 text-glow-red"
                   style={{
-                    fontSize: 'clamp(2.25rem, 6vw, 5rem)',
+                    fontSize: 'clamp(1.75rem, 4vw, 3.5rem)',
                     lineHeight: 1.02,
                     fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
                     fontWeight: 'bold',
