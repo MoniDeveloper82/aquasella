@@ -162,12 +162,10 @@ const TicketsPage: React.FC = () => {
                           <div className="absolute -top-12 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
                           <div className="absolute -bottom-12 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
                         </div>
-                        {/* Title box */}
-                        <div className="relative inline-block mx-auto">
-                          <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider text-white px-8 py-4 border-2 border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.6)]" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
-                            {section.title}
-                          </h3>
-                        </div>
+                        {/* Title without box */}
+                        <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider text-white mb-4" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+                          {section.title}
+                        </h3>
                       </div>
                     ) : (
                       <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider mb-4 text-white" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
