@@ -157,10 +157,10 @@ const TicketsPage: React.FC = () => {
                     <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">DISPONIBLE AHORA</p>
                     {section.id === 'venta-general' ? (
                       <div className="relative mb-4">
-                        {/* Neon flash lines - full width of card */}
-                        <div className="absolute -left-8 -right-8 top-1/2 -translate-y-1/2">
-                          <div className="absolute -top-12 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
-                          <div className="absolute -bottom-12 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_15px_rgba(239,68,68,0.9)]"></div>
+                        {/* Neon flash lines - full width of card, thicker */}
+                        <div className="absolute -left-8 -right-8">
+                          <div className="absolute -top-16 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_20px_rgba(239,68,68,1)]"></div>
+                          <div className="absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_20px_rgba(239,68,68,1)]"></div>
                         </div>
                         {/* Title without box */}
                         <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider text-white mb-4" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
