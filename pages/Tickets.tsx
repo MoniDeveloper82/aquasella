@@ -158,9 +158,9 @@ const TicketsPage: React.FC = () => {
                     {section.id === 'venta-general' ? (
                       <div className="relative mb-4">
                         {/* Neon flash lines - full width of card, thicker */}
-                        <div className="absolute -left-8 -right-8">
-                          <div className="absolute -top-20 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_20px_rgba(239,68,68,1)]"></div>
-                          <div className="absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_20px_rgba(239,68,68,1)]"></div>
+                        <div className="absolute -left-8 -right-8 top-1/2 -translate-y-1/2">
+                          <div className="absolute -top-24 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_20px_rgba(239,68,68,1)]"></div>
+                          <div className="absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_20px_rgba(239,68,68,1)]"></div>
                         </div>
                         {/* Title without box */}
                         <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider text-white mb-4" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
