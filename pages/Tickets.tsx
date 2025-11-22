@@ -129,75 +129,57 @@ const TicketsPage: React.FC = () => {
                   ? 'border-red-500/50 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.5)]' 
                   : 'border-red-900/30 hover:shadow-2xl'
               }`}>
-                {/* Background image for Venta General */}
-                {section.id === 'venta-general' && (
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-40"
-                    style={{ backgroundImage: "url('/img/VENTA.png')" }}
-                  ></div>
-                )}
-                
-                {/* Red neon lines - only for Venta General */}
-                {section.id === 'venta-general' && (
+                {section.id === 'venta-general' ? (
                   <>
-                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
-                    <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_10px_rgba(239,68,68,0.8)]"></div>
+                    {/* Background image for Venta General - full card */}
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: "url('/img/VENTA.png')" }}
+                    ></div>
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </>
-                )}
-                
-                {/* Red accent line at top for others */}
-                {section.id !== 'venta-general' && (
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-600"></div>
-                )}
-                
-                {/* Background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-black"></div>
-                
-                {/* Content */}
-                <div className="relative h-full flex flex-col justify-between p-8">
-                  {/* Top section - Logo placeholder */}
-                  <div className="flex justify-center mb-6">
-                    <div className="text-6xl">{section.icon}</div>
-                  </div>
-                  
-                  {/* Middle section - Title */}
-                  <div className="flex-1 flex flex-col justify-center text-center relative">
-                    <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">DISPONIBLE AHORA</p>
-                    {section.id === 'venta-general' ? (
-                      <div className="relative mb-4">
-                        {/* Neon flash lines - full width of card, thicker */}
-                        <div className="absolute -left-8 -right-8 top-1/2 -translate-y-1/2">
-                          <div className="absolute -top-24 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_20px_rgba(239,68,68,1)]"></div>
-                          <div className="absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_20px_rgba(239,68,68,1)]"></div>
-                        </div>
-                        {/* Title without box */}
-                        <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider text-white mb-4" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+                ) : (
+                  <>
+                    {/* Red accent line at top for others */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-600"></div>
+                    
+                    {/* Background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-black"></div>
+                    
+                    {/* Content */}
+                    <div className="relative h-full flex flex-col justify-between p-8">
+                      {/* Top section - Logo placeholder */}
+                      <div className="flex justify-center mb-6">
+                        <div className="text-6xl">{section.icon}</div>
+                      </div>
+                      
+                      {/* Middle section - Title */}
+                      <div className="flex-1 flex flex-col justify-center text-center relative">
+                        <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">DISPONIBLE AHORA</p>
+                        <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider mb-4 text-white" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
                           {section.title}
                         </h3>
+                        <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                          {section.description}
+                        </p>
                       </div>
-                    ) : (
-                      <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider mb-4 text-white" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
-                        {section.title}
-                      </h3>
-                    )}
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                      {section.description}
-                    </p>
-                  </div>
-                  
-                  {/* Bottom section - Dates */}
-                  <div className="text-center border-t border-red-900/30 pt-6">
-                    <div className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
-                      13 | 14 | 15 | 16 AGOSTO 2026
+                      
+                      {/* Bottom section - Dates */}
+                      <div className="text-center border-t border-red-900/30 pt-6">
+                        <div className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+                          13 | 14 | 15 | 16 AGOSTO 2026
+                        </div>
+                        <div className="text-sm uppercase tracking-widest text-gray-400">
+                          29TH EDITION
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-sm uppercase tracking-widest text-gray-400">
-                      29TH EDITION
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </>
+                )}
               </div>
             </Link>
           ))}
