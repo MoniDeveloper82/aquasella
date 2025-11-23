@@ -4,8 +4,19 @@ import { AllowedIcon } from './icons';
 
 const HomeTicketsSection: React.FC = () => {
   return (
-    <section className="bg-gradient-to-b from-gray-900/80 via-gray-900/60 to-transparent py-24">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      className="py-24 relative"
+      style={{
+        backgroundImage: 'url(/img/FondoTicketsHome.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Overlay opcional para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-black/40"></div>
+      
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10">
           <h2 className="text-5xl font-extrabold uppercase text-white tracking-tight drop-shadow-[0_10px_20px_rgba(7,89,133,0.25)] text-glow">Tickets</h2>
           <p className="mt-3 text-gray-300 max-w-2xl mx-auto">No te quedes fuera — entradas limitadas. Asegura tu plaza ahora y vive Aquasella al máximo.</p>

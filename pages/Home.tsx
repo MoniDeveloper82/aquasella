@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoHero from '../components/VideoHero';
+import Countdown from '../components/Countdown';
 import AvancesVideo from '../components/AvancesVideo';
 import HomeTicketsSection from '../components/HomeTicketsSection';
 import PartnersStrip from '../components/PartnersStrip';
@@ -8,6 +9,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <VideoHero />
+      <Countdown />
       <div 
         className="relative min-h-screen"
         style={{
