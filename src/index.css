@@ -60,9 +60,9 @@
   }
   
   body {
-    @apply bg-gray-900 text-gray-200;
+    @apply bg-black text-gray-200;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1a0b14 0%, #2d0a1e 25%, #1f0a1a 50%, #0f0008 100%);
+    background: #000000;
     min-height: 100vh;
   }
 }

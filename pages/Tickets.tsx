@@ -30,9 +30,9 @@ const TicketsPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white pt-0">
+    <div className="min-h-screen bg-black text-white pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 mt-2">
+        <div className="text-center mb-10 -mt-20">
           <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase tracking-wider mb-4 text-glow font-extrabold" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', fontWeight: 'bold' }}>
             Tickets Aquasella 2026
           </h1>
@@ -42,7 +42,7 @@ const TicketsPage: React.FC = () => {
         </div>
 
         {/* Guía de Compra Section */}
-        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 mb-12 shadow-2xl">
+        <div className="bg-gradient-to-br from-red-950 to-red-900 rounded-2xl p-8 mb-12 shadow-2xl border border-red-800">
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-6 text-center text-white">
             GUÍA DE COMPRA - AQUASELLA 2026
           </h2>
@@ -82,8 +82,8 @@ const TicketsPage: React.FC = () => {
               <div className="mt-4 p-4 bg-yellow-900/30 border-l-4 border-yellow-500 rounded">
                 <p className="text-yellow-200">⚠️ El acceso al evento es exclusivamente para mayores de 18 años.</p>
               </div>
-              <div className="mt-3 p-4 bg-blue-900/30 border-l-4 border-blue-500 rounded">
-                <p className="text-blue-200">ℹ️ Durante el proceso de compra, se solicitarán los siguientes datos del comprador:<br />
+              <div className="mt-3 p-4 bg-black border-l-4 border-red-500 rounded">
+                <p className="text-gray-200">ℹ️ Durante el proceso de compra, se solicitarán los siguientes datos del comprador:<br />
                 Nombre y Apellidos, DNI, Email, Teléfono, Fecha de Nacimiento y Código Postal.</p>
               </div>
             </div>
@@ -186,7 +186,7 @@ const TicketsPage: React.FC = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-8 text-center">
+        <div className="bg-black rounded-xl p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">🎵 Venta de Entradas</h3>
           <p className="text-gray-300 mb-4">
             Las entradas ya están disponibles. ¡Consigue la tuya antes de que se agoten!
