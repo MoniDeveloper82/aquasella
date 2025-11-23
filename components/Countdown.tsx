@@ -41,22 +41,18 @@ const Countdown: React.FC = () => {
       }}
     >
       {/* Overlay oscuro para mejorar legibilidad */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/75"></div>
       
       <div className="max-w-6xl mx-auto text-center relative z-10">
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase text-white mb-2 md:mb-4 text-glow" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase text-white mb-4 md:mb-8 text-glow" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
           Cuenta Atrás
         </h2>
-        <div className="flex justify-center mb-4 md:mb-8">
-          <img src="/img/AQS.PNG" alt="Aquasella" className="h-12 md:h-20 object-contain" />
-        </div>
         
         <div className="grid grid-cols-4 gap-2 md:gap-8 max-w-4xl mx-auto">
           <div 
-            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 border-[2px] md:border-[3px] shadow-2xl transition-all duration-300"
+            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
             style={{
-              borderColor: '#8B0000',
-              boxShadow: '0 0 20px rgba(255, 0, 0, 0.4), 0 0 40px rgba(255, 0, 0, 0.2)'
+              boxShadow: '0 4px 8px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -2px 4px rgba(0,0,0,0.5), 0 0 40px rgba(255, 0, 0, 0.3), 0 0 80px rgba(255, 0, 0, 0.15), inset 0 0 60px rgba(255, 0, 0, 0.05), 0 0 8px rgba(255, 0, 0, 0.4)'
             }}
           >
             <div className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
@@ -66,10 +62,9 @@ const Countdown: React.FC = () => {
           </div>
           
           <div 
-            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 border-[2px] md:border-[3px] shadow-2xl transition-all duration-300"
+            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
             style={{
-              borderColor: '#8B0000',
-              boxShadow: '0 0 20px rgba(255, 0, 0, 0.4), 0 0 40px rgba(255, 0, 0, 0.2)'
+              boxShadow: '0 4px 8px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -2px 4px rgba(0,0,0,0.5), 0 0 40px rgba(255, 0, 0, 0.3), 0 0 80px rgba(255, 0, 0, 0.15), inset 0 0 60px rgba(255, 0, 0, 0.05), 0 0 8px rgba(255, 0, 0, 0.4)'
             }}
           >
             <div className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
@@ -79,10 +74,9 @@ const Countdown: React.FC = () => {
           </div>
           
           <div 
-            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 border-[2px] md:border-[3px] shadow-2xl transition-all duration-300"
+            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
             style={{
-              borderColor: '#8B0000',
-              boxShadow: '0 0 20px rgba(255, 0, 0, 0.4), 0 0 40px rgba(255, 0, 0, 0.2)'
+              boxShadow: '0 4px 8px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -2px 4px rgba(0,0,0,0.5), 0 0 40px rgba(255, 0, 0, 0.3), 0 0 80px rgba(255, 0, 0, 0.15), inset 0 0 60px rgba(255, 0, 0, 0.05), 0 0 8px rgba(255, 0, 0, 0.4)'
             }}
           >
             <div className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
@@ -92,10 +86,9 @@ const Countdown: React.FC = () => {
           </div>
           
           <div 
-            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 border-[2px] md:border-[3px] shadow-2xl transition-all duration-300"
+            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
             style={{
-              borderColor: '#8B0000',
-              boxShadow: '0 0 20px rgba(255, 0, 0, 0.4), 0 0 40px rgba(255, 0, 0, 0.2)'
+              boxShadow: '0 4px 8px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -2px 4px rgba(0,0,0,0.5), 0 0 40px rgba(255, 0, 0, 0.3), 0 0 80px rgba(255, 0, 0, 0.15), inset 0 0 60px rgba(255, 0, 0, 0.05), 0 0 8px rgba(255, 0, 0, 0.4)'
             }}
           >
             <div className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
@@ -103,10 +96,6 @@ const Countdown: React.FC = () => {
             </div>
             <div className="text-sm md:text-base uppercase tracking-widest text-gray-300 font-semibold">Segundos</div>
           </div>
-        </div>
-        
-        <div className="flex justify-center mt-6 md:mt-10">
-          <img src="/img/29.png" alt="29" className="h-16 md:h-24 object-contain" />
         </div>
       </div>
     </div>
