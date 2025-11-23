@@ -47,7 +47,9 @@ const Countdown: React.FC = () => {
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase text-white mb-2 md:mb-4 text-glow" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
           Cuenta Atrás
         </h2>
-        <p className="text-sm md:text-xl text-gray-300 mb-4 md:mb-8">Hasta Aquasella 2026</p>
+        <div className="flex justify-center mb-4 md:mb-8">
+          <img src="/img/AQS.PNG" alt="Aquasella" className="h-12 md:h-20 object-contain" />
+        </div>
         
         <div className="grid grid-cols-4 gap-2 md:gap-8 max-w-4xl mx-auto">
           <div 
@@ -101,6 +103,10 @@ const Countdown: React.FC = () => {
             </div>
             <div className="text-sm md:text-base uppercase tracking-widest text-gray-300 font-semibold">Segundos</div>
           </div>
+        </div>
+        
+        <div className="flex justify-center mt-6 md:mt-10">
+          <img src="/img/29.png" alt="29" className="h-16 md:h-24 object-contain" />
         </div>
       </div>
     </div>
