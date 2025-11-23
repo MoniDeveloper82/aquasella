@@ -1,7 +1,103 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const TicketsPage: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const guideSlides = [
+    {
+      title: "ABONOS GENERALES",
+      content: (
+        <>
+          <h4 className="text-lg font-bold mb-2 text-white">¿Cuándo comienza la venta?</h4>
+          <p className="text-gray-300 leading-relaxed">
+            Este martes 11 de noviembre a las 13:00h, pondremos a la venta una nueva promoción de Abonos Generales desde <strong>79,90€ + gastos de gestión</strong>. La Zona de Descanso (Acampada) se podrá adquirir por separado más adelante como complemento.
+          </p>
+          <p className="mt-3 text-gray-300">
+            La venta se realizará desde nuestra Web Oficial: <a href="https://www.aquasella.com" className="text-red-400 hover:text-red-300 underline">www.aquasella.com</a><br />
+            Siendo nuestra Ticketera oficial Vivaticket: <a href="https://www.vivaticket.es/" className="text-red-400 hover:text-red-300 underline">https://www.vivaticket.es/</a>
+          </p>
+        </>
+      )
+    },
+    {
+      title: "TIPOS DE ABONOS",
+      content: (
+        <>
+          <h4 className="text-lg font-bold mb-2 text-white">¿Qué tipos de Abonos hay a la venta?</h4>
+          <ul className="space-y-2 text-gray-300">
+            <li>✅ Abono General</li>
+            <li>✅ Precio mínimo garantizado para la próxima edición AQUASELLA 2026.</li>
+            <li>✅ El abono general da acceso al recinto del festival desde el jueves 13 hasta el domingo 16 de agosto de 2026.</li>
+          </ul>
+        </>
+      )
+    },
+    {
+      title: "FORMAS DE VENTA",
+      content: (
+        <>
+          <h4 className="text-lg font-bold mb-2 text-white">¿Qué tipos de venta se realizarán?</h4>
+          <ul className="space-y-2 text-gray-300">
+            <li>✅ Venta General en un único pago</li>
+            <li>✅ Venta a Plazos: Tres pagos mensuales</li>
+            <li>✅ Venta con Bono Cultural Joven</li>
+          </ul>
+          <div className="mt-4 p-4 bg-yellow-900/30 border-l-4 border-yellow-500 rounded">
+            <p className="text-yellow-200">⚠️ El acceso al evento es exclusivamente para mayores de 18 años.</p>
+          </div>
+          <div className="mt-3 p-4 bg-black border-l-4 border-red-500 rounded">
+            <p className="text-gray-200">ℹ️ Durante el proceso de compra, se solicitarán los siguientes datos del comprador:<br />
+            Nombre y Apellidos, DNI, Email, Teléfono, Fecha de Nacimiento y Código Postal.</p>
+          </div>
+        </>
+      )
+    },
+    {
+      title: "MÉTODOS DE PAGO",
+      content: (
+        <>
+          <h4 className="text-lg font-bold mb-2 text-white">¿Cómo comprar los bonos?</h4>
+          <p className="text-gray-300 mb-3">
+            Se podrán realizar en un mismo proceso la compra de hasta 6 abonos. Los métodos de pago aceptados son los siguientes:
+          </p>
+          <ul className="space-y-2 text-gray-300">
+            <li>✅ Tarjeta crédito / débito: Visa, Mastercard.</li>
+            <li className="ml-6 text-sm">ℹ️ Importante: Deberás tener activado el 'comercio electrónico seguro'.</li>
+            <li>✅ Bizum.</li>
+            <li className="ml-6 text-sm">ℹ️ Importante: Deberás tener activado el servicio de Bizum en la aplicación de tu banco.</li>
+          </ul>
+        </>
+      )
+    },
+    {
+      title: "SOPORTE",
+      content: (
+        <>
+          <h4 className="text-lg font-bold mb-2 text-white">¿Problemas con la compra?</h4>
+          <p className="text-gray-300 mb-3">
+            En el caso de no recibir el correo con los abonos en tu bandeja de entrada tras un tiempo de espera, revisa tu carpeta de spam.
+          </p>
+          <p className="text-gray-300">
+            Si aún así no lo ha recibido, puedes ponerte en contacto con el servicio de atención al cliente a través de:
+          </p>
+          <ul className="mt-3 space-y-1 text-gray-300">
+            <li>📧 Email: <a href="mailto:info.es@vivaticket.com" className="text-red-400 hover:text-red-300 underline">info.es@vivaticket.com</a></li>
+            <li>📞 Tfno: <a href="tel:+34910053595" className="text-red-400 hover:text-red-300 underline">+34 910 05 35 95</a></li>
+          </ul>
+        </>
+      )
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % guideSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + guideSlides.length) % guideSlides.length);
+  };
+
   const ticketSections = [
     {
       id: 'venta-general',
@@ -41,79 +137,66 @@ const TicketsPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Guía de Compra Section */}
-        <div className="bg-gradient-to-br from-red-950 to-red-900 rounded-2xl p-8 mb-12 shadow-2xl border border-red-800">
+        {/* Guía de Compra Carousel */}
+        <div className="bg-gradient-to-br from-red-950 to-red-900 rounded-2xl p-8 mb-12 shadow-2xl border border-red-800 relative">
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-6 text-center text-white">
             GUÍA DE COMPRA - AQUASELLA 2026
           </h2>
           
-          <div className="space-y-6 text-gray-200">
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-red-400">ABONOS GENERALES</h3>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-2 text-white">¿Cuándo comienza la venta?</h4>
-              <p className="text-gray-300 leading-relaxed">
-                Este martes 11 de noviembre a las 13:00h, pondremos a la venta una nueva promoción de Abonos Generales desde <strong>79,90€ + gastos de gestión</strong>. La Zona de Descanso (Acampada) se podrá adquirir por separado más adelante como complemento.
-              </p>
-              <p className="mt-3 text-gray-300">
-                La venta se realizará desde nuestra Web Oficial: <a href="https://www.aquasella.com" className="text-red-400 hover:text-red-300 underline">www.aquasella.com</a><br />
-                Siendo nuestra Ticketera oficial Vivaticket: <a href="https://www.vivaticket.es/" className="text-red-400 hover:text-red-300 underline">https://www.vivaticket.es/</a>
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-2 text-white">¿Qué tipos de Abonos hay a la venta?</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>✅ Abono General</li>
-                <li>✅ Precio mínimo garantizado para la próxima edición AQUASELLA 2026.</li>
-                <li>✅ El abono general da acceso al recinto del festival desde el jueves 13 hasta el domingo 16 de agosto de 2026.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-2 text-white">¿Qué tipos de venta se realizarán?</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>✅ Venta General en un único pago</li>
-                <li>✅ Venta a Plazos: Tres pagos mensuales</li>
-                <li>✅ Venta con Bono Cultural Joven</li>
-              </ul>
-              <div className="mt-4 p-4 bg-yellow-900/30 border-l-4 border-yellow-500 rounded">
-                <p className="text-yellow-200">⚠️ El acceso al evento es exclusivamente para mayores de 18 años.</p>
-              </div>
-              <div className="mt-3 p-4 bg-black border-l-4 border-red-500 rounded">
-                <p className="text-gray-200">ℹ️ Durante el proceso de compra, se solicitarán los siguientes datos del comprador:<br />
-                Nombre y Apellidos, DNI, Email, Teléfono, Fecha de Nacimiento y Código Postal.</p>
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden">
+            <div 
+              className="transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              <div className="flex">
+                {guideSlides.map((slide, index) => (
+                  <div key={index} className="min-w-full px-4">
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-bold mb-4 text-red-400 text-center">{slide.title}</h3>
+                      {slide.content}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
+          </div>
 
-            <div>
-              <h4 className="text-lg font-bold mb-2 text-white">¿Cómo comprar los bonos?</h4>
-              <p className="text-gray-300 mb-3">
-                Se podrán realizar en un mismo proceso la compra de hasta 6 abonos. Los métodos de pago aceptados son los siguientes:
-              </p>
-              <ul className="space-y-2 text-gray-300">
-                <li>✅ Tarjeta crédito / débito: Visa, Mastercard.</li>
-                <li className="ml-6 text-sm">ℹ️ Importante: Deberás tener activado el 'comercio electrónico seguro'.</li>
-                <li>✅ Bizum.</li>
-                <li className="ml-6 text-sm">ℹ️ Importante: Deberás tener activado el servicio de Bizum en la aplicación de tu banco.</li>
-              </ul>
+          {/* Navigation Buttons */}
+          <div className="flex justify-between items-center mt-6">
+            <button
+              onClick={prevSlide}
+              className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-colors"
+              aria-label="Anterior"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="flex gap-2">
+              {guideSlides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    currentSlide === index ? 'bg-red-400' : 'bg-gray-500'
+                  }`}
+                  aria-label={`Ir a slide ${index + 1}`}
+                />
+              ))}
             </div>
 
-            <div>
-              <h4 className="text-lg font-bold mb-2 text-white">¿Problemas con la compra?</h4>
-              <p className="text-gray-300 mb-3">
-                En el caso de no recibir el correo con los abonos en tu bandeja de entrada tras un tiempo de espera, revisa tu carpeta de spam.
-              </p>
-              <p className="text-gray-300">
-                Si aún así no lo ha recibido, puedes ponerte en contacto con el servicio de atención al cliente a través de:
-              </p>
-              <ul className="mt-3 space-y-1 text-gray-300">
-                <li>📧 Email: <a href="mailto:info.es@vivaticket.com" className="text-red-400 hover:text-red-300 underline">info.es@vivaticket.com</a></li>
-                <li>📞 Tfno: <a href="tel:+34910053595" className="text-red-400 hover:text-red-300 underline">+34 910 05 35 95</a></li>
-              </ul>
-            </div>
+            <button
+              onClick={nextSlide}
+              className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-colors"
+              aria-label="Siguiente"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
 
