@@ -124,10 +124,10 @@ const TicketsPage: React.FC = () => {
               to={section.link}
               className="group block"
             >
-              <div className={`relative bg-black rounded-2xl overflow-hidden h-[500px] transform transition-all duration-300 hover:scale-105 border ${
+              <div className={`relative bg-black rounded-2xl overflow-hidden h-[500px] transform transition-all duration-300 hover:scale-105 ${
                 section.id === 'venta-general' 
-                  ? 'border-red-500/50 hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.5)]' 
-                  : 'border-red-900/30 hover:shadow-2xl'
+                  ? 'border-[3px] border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.5),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]' 
+                  : 'border border-red-900/30 hover:shadow-2xl'
               }`}>
                 {section.id === 'venta-general' ? (
                   <div className="relative w-full h-full flex items-center justify-center">
