@@ -207,11 +207,7 @@ const TicketsPage: React.FC = () => {
               to={section.link}
               className="group block"
             >
-              <div className={`relative bg-black rounded-2xl overflow-hidden h-[500px] transform transition-all duration-300 hover:scale-105 ${
-                section.id === 'venta-general' 
-                  ? 'border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]' 
-                  : 'border border-red-900/30 hover:shadow-2xl'
-              }`} style={section.id === 'venta-general' ? { borderColor: '#8B0000' } : {}}>
+              <div className={`relative bg-black rounded-2xl overflow-hidden h-[500px] transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`} style={{ borderColor: '#8B0000' }}>
                 {section.id === 'venta-general' ? (
                   <div className="relative w-full h-full flex items-center justify-center">
                     {/* Image for Venta General */}
@@ -223,47 +219,29 @@ const TicketsPage: React.FC = () => {
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                ) : (
-                  <>
-                    {/* Red accent line at top for others */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-600"></div>
-                    
-                    {/* Background gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-black"></div>
-                    
-                    {/* Content */}
-                    <div className="relative h-full flex flex-col justify-between p-8">
-                      {/* Top section - Logo placeholder */}
-                      <div className="flex justify-center mb-6">
-                        <div className="text-6xl">{section.icon}</div>
-                      </div>
-                      
-                      {/* Middle section - Title */}
-                      <div className="flex-1 flex flex-col justify-center text-center relative">
-                        <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">DISPONIBLE AHORA</p>
-                        <h3 className="text-4xl md:text-5xl font-black uppercase tracking-wider mb-4 text-white" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
-                          {section.title}
-                        </h3>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                          {section.description}
-                        </p>
-                      </div>
-                      
-                      {/* Bottom section - Dates */}
-                      <div className="text-center border-t border-red-900/30 pt-6">
-                        <div className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
-                          13 | 14 | 15 | 16 AGOSTO 2026
-                        </div>
-                        <div className="text-sm uppercase tracking-widest text-gray-400">
-                          29TH EDITION
-                        </div>
-                      </div>
-                    </div>
-                    
+                ) : section.id === 'venta-plazos' ? (
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    {/* Image for Venta a Plazos */}
+                    <img 
+                      src="/img/Plazos.png" 
+                      alt="Venta a Plazos"
+                      className="w-full h-full object-contain"
+                    />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </>
-                )}
+                  </div>
+                ) : section.id === 'bono-cultural' ? (
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    {/* Image for Bono Cultural */}
+                    <img 
+                      src="/img/Bono.png" 
+                      alt="Bono Cultural"
+                      className="w-full h-full object-contain"
+                    />
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                ) : null}
               </div>
             </Link>
           ))}
