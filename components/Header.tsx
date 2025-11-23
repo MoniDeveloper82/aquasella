@@ -59,7 +59,7 @@ const Header: React.FC = () => {
         <nav
           className="w-full px-4 sm:px-6 lg:px-8"
         >
-          <div className="flex items-center justify-between h-24 lg:h-28 xl:h-32 max-w-7xl mx-auto">
+          <div className="flex items-center justify-between h-24 lg:h-28 xl:h-32 max-w-full px-4 sm:px-6 lg:px-8">
             <div className="flex-shrink-0">
               <NavLink 
                 to="/" 
@@ -75,7 +75,7 @@ const Header: React.FC = () => {
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-3 lg:space-x-4 xl:space-x-5 header-nav mr-4 lg:mr-8 xl:mr-12">
+            <div className="hidden md:flex items-center space-x-3 lg:space-x-4 xl:space-x-5 header-nav">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.to}
