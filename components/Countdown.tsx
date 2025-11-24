@@ -185,6 +185,7 @@ const Countdown: React.FC = () => {
           </button>
         </Link>
       </div>
+    </div>
   );
 };
 
