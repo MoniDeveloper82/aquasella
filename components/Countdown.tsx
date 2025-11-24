@@ -170,15 +170,6 @@ const Countdown: React.FC = () => {
             maxHeight: '600px',
           }}
         >
-          <style>{`
-            @media (max-width: 768px) {
-              .countdown-bg {
-                background-image: url('/img/CuentaAtrasMobile.png') !important;
-                height: 420px !important;
-                max-height: 100vw !important;
-              }
-            }
-          `}</style>
         <Link to="/tickets">
           <button 
             className="bg-black hover:scale-105 text-white font-black uppercase px-10 md:px-16 py-3.5 md:py-5 rounded-xl md:rounded-2xl transition-all duration-300 mt-8 border border-red-500 countdown-btn"
