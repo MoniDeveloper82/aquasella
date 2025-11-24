@@ -33,7 +33,7 @@ const Countdown: React.FC = () => {
 
   return (
     <div 
-      className="py-8 md:py-16 px-2 md:px-4 relative"
+      className="py-10 md:py-16 px-4 md:px-4 relative"
       style={{
         backgroundImage: 'url(/img/FondoContador.png)',
         backgroundSize: '100% 100%',
@@ -44,75 +44,75 @@ const Countdown: React.FC = () => {
       
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <h2 
-          className="uppercase text-white mb-4 md:mb-8 text-glow" 
+          className="uppercase text-white mb-6 md:mb-8 text-glow" 
           style={{ 
             fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
             fontWeight: 'bold',
-            fontSize: 'clamp(1.75rem, 4vw, 3.5rem)',
-            lineHeight: 1.02
+            fontSize: 'clamp(1.5rem, 4vw, 3.5rem)',
+            lineHeight: 1.1
           }}
         >
           CUENTA ATRÁS AQS 2026
         </h2>
         
-        <div className="grid grid-cols-4 gap-2 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8 max-w-4xl mx-auto">
           <div 
-            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
+            className="bg-black rounded-xl md:rounded-2xl p-4 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
             style={{
               boxShadow: '0 4px 8px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -2px 4px rgba(0,0,0,0.5), 0 0 40px rgba(255, 0, 0, 0.3), 0 0 80px rgba(255, 0, 0, 0.15), inset 0 0 60px rgba(255, 0, 0, 0.05), 0 0 8px rgba(255, 0, 0, 0.4)'
             }}
           >
-            <div className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+            <div className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
               {timeLeft.days}
             </div>
-            <div className="text-xs md:text-sm lg:text-base uppercase tracking-wider md:tracking-widest text-gray-300 font-semibold">Días</div>
+            <div className="text-xs md:text-sm lg:text-base uppercase tracking-wide md:tracking-widest text-gray-300 font-semibold">Días</div>
           </div>
           
           <div 
-            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
+            className="bg-black rounded-xl md:rounded-2xl p-4 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
             style={{
               boxShadow: '0 4px 8px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -2px 4px rgba(0,0,0,0.5), 0 0 40px rgba(255, 0, 0, 0.3), 0 0 80px rgba(255, 0, 0, 0.15), inset 0 0 60px rgba(255, 0, 0, 0.05), 0 0 8px rgba(255, 0, 0, 0.4)'
             }}
           >
-            <div className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+            <div className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
               {timeLeft.hours}
             </div>
-            <div className="text-xs md:text-sm lg:text-base uppercase tracking-wider md:tracking-widest text-gray-300 font-semibold">Horas</div>
+            <div className="text-xs md:text-sm lg:text-base uppercase tracking-wide md:tracking-widest text-gray-300 font-semibold">Horas</div>
           </div>
           
           <div 
-            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
+            className="bg-black rounded-xl md:rounded-2xl p-4 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
             style={{
               boxShadow: '0 4px 8px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -2px 4px rgba(0,0,0,0.5), 0 0 40px rgba(255, 0, 0, 0.3), 0 0 80px rgba(255, 0, 0, 0.15), inset 0 0 60px rgba(255, 0, 0, 0.05), 0 0 8px rgba(255, 0, 0, 0.4)'
             }}
           >
-            <div className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+            <div className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
               {timeLeft.minutes}
             </div>
-            <div className="text-xs md:text-sm lg:text-base uppercase tracking-wider md:tracking-widest text-gray-300 font-semibold">Minutos</div>
+            <div className="text-xs md:text-sm lg:text-base uppercase tracking-wide md:tracking-widest text-gray-300 font-semibold">Minutos</div>
           </div>
           
           <div 
-            className="bg-black rounded-lg md:rounded-2xl p-2 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
+            className="bg-black rounded-xl md:rounded-2xl p-4 md:p-6 shadow-2xl transition-all duration-300 border border-red-900/30"
             style={{
               boxShadow: '0 4px 8px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -2px 4px rgba(0,0,0,0.5), 0 0 40px rgba(255, 0, 0, 0.3), 0 0 80px rgba(255, 0, 0, 0.15), inset 0 0 60px rgba(255, 0, 0, 0.05), 0 0 8px rgba(255, 0, 0, 0.4)'
             }}
           >
-            <div className="text-2xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
+            <div className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif' }}>
               {timeLeft.seconds}
             </div>
-            <div className="text-sm md:text-base uppercase tracking-widest text-gray-300 font-semibold">Segundos</div>
+            <div className="text-xs md:text-sm lg:text-base uppercase tracking-wide md:tracking-widest text-gray-300 font-semibold">Segundos</div>
           </div>
         </div>
 
         {/* Comprar Entradas Button */}
-        <div className="mt-8 md:mt-12 flex justify-center">
+        <div className="mt-10 md:mt-12 flex justify-center">
           <Link to="/tickets">
             <button 
-              className="bg-black hover:scale-105 text-white font-black uppercase px-12 md:px-16 py-4 md:py-5 rounded-xl md:rounded-2xl transition-all duration-300 border-2 border-red-600"
+              className="bg-black hover:scale-105 text-white font-black uppercase px-10 md:px-16 py-3.5 md:py-5 rounded-xl md:rounded-2xl transition-all duration-300 border-2 border-red-600"
               style={{
                 fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
-                fontSize: 'clamp(1.25rem, 3vw, 2rem)',
+                fontSize: 'clamp(1.1rem, 3vw, 2rem)',
                 letterSpacing: '0.1em',
                 boxShadow: '0 8px 16px rgba(0,0,0,0.6), 0 0 40px rgba(255, 0, 0, 0.5), 0 0 80px rgba(255, 0, 0, 0.3), inset 0 0 60px rgba(255, 0, 0, 0.15), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -2px 4px rgba(0,0,0,0.5)'
               }}
