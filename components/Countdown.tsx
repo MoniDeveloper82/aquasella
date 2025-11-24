@@ -49,8 +49,11 @@ const Countdown: React.FC = () => {
             height: 90vw !important;
             min-height: 420px !important;
             max-height: 100vw !important;
+            background-image: url(/img/CuentaAtrasMovil.png) !important;
             background-position: top center !important;
-            background-size: cover !important;
+            background-size: 100vw auto !important;
+            background-repeat: no-repeat !important;
+            background-color: #000 !important;
           }
         }
       `}</style>
