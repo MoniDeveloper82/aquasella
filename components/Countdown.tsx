@@ -37,12 +37,23 @@ const Countdown: React.FC = () => {
       style={{
         backgroundImage: 'url(/img/CuentaAtras.png)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
         height: '600px',
-        maxHeight: '600px'
+        maxHeight: '600px',
       }}
     >
+      <style>{`
+        @media (max-width: 768px) {
+          .countdown-mobile {
+            height: 90vw !important;
+            min-height: 420px !important;
+            max-height: 100vw !important;
+            background-position: top center !important;
+            background-size: cover !important;
+          }
+        }
+      `}</style>
       <h2 
         className="uppercase text-white text-glow-red mt-10 mb-8 text-center"
         style={{ 
