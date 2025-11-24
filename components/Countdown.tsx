@@ -159,17 +159,26 @@ const Countdown: React.FC = () => {
 
       {/* Comprar Entradas Button */}
       <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 countdown-center" style={{ top: '25%' }}>
-        <h2 
-          className="uppercase text-white text-glow-red countdown-title" 
-          style={{ 
-            fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
-            fontWeight: 'bold',
-            fontSize: 'clamp(1.75rem, 4vw, 3.5rem)',
-            lineHeight: 1.02
+        <div 
+          className="relative w-full countdown-bg countdown-mobile"
+          style={{
+            backgroundImage: 'url(/img/CuentaAtras.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            height: '600px',
+            maxHeight: '600px',
           }}
         >
-          CUENTA ATRÁS AQS 2026
-        </h2>
+          <style>{`
+            @media (max-width: 768px) {
+              .countdown-bg {
+                background-image: url('/img/CuentaAtrasMobile.png') !important;
+                height: 420px !important;
+                max-height: 100vw !important;
+              }
+            }
+          `}</style>
         <Link to="/tickets">
           <button 
             className="bg-black hover:scale-105 text-white font-black uppercase px-10 md:px-16 py-3.5 md:py-5 rounded-xl md:rounded-2xl transition-all duration-300 mt-8 border border-red-500 countdown-btn"
@@ -184,6 +193,7 @@ const Countdown: React.FC = () => {
             Entradas
           </button>
         </Link>
+      </div>
       </div>
     </div>
   );
