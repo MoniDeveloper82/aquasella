@@ -54,15 +54,15 @@ const VideoHero: React.FC = () => {
         {/* GRADIENT OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 z-10"></div>
         {/* TEXT & IMAGES OVERLAY */}
-        <div className="absolute inset-x-0 bottom-0 flex flex-col items-center z-20 text-center text-white px-4 pb-4">
+        <div className="absolute inset-x-0 bottom-0 flex flex-col items-center z-20 text-center text-white px-4 pb-2 sm:pb-6">
           <img
             src="/img/FECHAS AQS.png"
             alt="Aquasella Festival 2026 - 13-16 Agosto"
-            className="w-auto max-w-[95vw] h-64 md:h-80 lg:h-96 xl:h-[110px] 2xl:h-[128px] mx-auto"
+            className="w-auto max-w-[95vw] h-24 sm:h-64 md:h-80 lg:h-96 xl:h-[110px] 2xl:h-[128px] mx-auto mb-0"
             style={{
               filter:
                 "drop-shadow(0 0 20px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 40px rgba(220, 38, 38, 0.4))",
-              height: "clamp(256px, 20vw, 512px)",
+              height: "clamp(96px, 20vw, 512px)",
               margin: 0,
             }}
           />
