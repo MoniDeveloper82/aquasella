@@ -33,19 +33,47 @@ const Countdown: React.FC = () => {
 
   return (
     <div
-      className="relative w-full flex flex-col items-center justify-center countdown-mobile"
+      className="relative w-screen h-screen min-h-[100svh] flex flex-col items-center justify-center countdown-bg"
       style={{
-          backgroundImage: 'url(/img/CuentaAtras.png)',
-          backgroundSize: 'contain',
-        backgroundPosition: 'center',
+        backgroundImage: 'url(/img/CuentaAtras.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',
-        width: '100%',
-        height: '100%',
-        minHeight: '320px',
-        maxHeight: '824px',
-        backgroundColor: '#000'
+        width: '100vw',
+        height: '100svh',
+        minHeight: '100svh',
+        backgroundColor: '#000',
+        margin: 0,
+        padding: 0,
       }}
     >
+      <style>{`
+        @media (max-width: 768px) {
+          .countdown-bg {
+            min-height: 100svh !important;
+            width: 100vw !important;
+            background-size: cover !important;
+            background-position: center top !important;
+          }
+        }
+      `}</style>
+      <style>{`
+        @media (max-width: 768px) {
+          .countdown-bg {
+            background-image: url(/img/CuentaAtrasMovil.png) !important;
+            background-size: cover !important;
+            background-position: top center !important;
+            min-height: 100vh !important;
+            height: 100vh !important;
+            width: 100vw !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+          }
+        }
+      `}</style>
       <style>{`
                         @media (min-width: 1500px) {
                           .countdown-btn {
@@ -192,7 +220,7 @@ const Countdown: React.FC = () => {
       >
         CUENTA ATRÁS
       </h2>
-      <div className="flex flex-row items-center justify-center gap-8 mb-6 countdown-row" style={{marginTop: '4rem'}}>
+      <div className="flex flex-row items-center justify-center gap-8 countdown-row">
         <div className="flex flex-col items-center">
           <span className="text-2xl md:text-4xl font-black text-white mb-2 countdown-value" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', textShadow: '0 4px 8px rgba(0,0,0,0.9)' }}>{timeLeft.days}</span>
           <span className="text-base md:text-xl uppercase tracking-wide font-bold countdown-label" style={{ color: '#fff', fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', WebkitTextStroke: '1px #dc2626', textStroke: '1px #dc2626', fontWeight: 'bold' }}>Días</span>
@@ -218,8 +246,7 @@ const Countdown: React.FC = () => {
             fontSize: 'clamp(0.5rem, 0.8vw, 0.7rem)',
             letterSpacing: '0.13em',
             boxShadow: '0 0 18px 4px rgba(255,0,0,0.45), 0 0 48px 8px rgba(255,0,0,0.32), 0 8px 16px rgba(0,0,0,0.6)',
-            borderColor: 'rgba(255,0,0,0.55)',
-            marginTop: '36rem'
+            borderColor: 'rgba(255,0,0,0.55)'
           }}
         >
           Entradas
