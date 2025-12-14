@@ -58,11 +58,11 @@ const VideoHero: React.FC = () => {
           <img
             src="/img/FECHAS AQS.png"
             alt="Aquasella Festival 2026 - 13-16 Agosto"
-            className="w-auto max-w-[95vw] h-24 sm:h-64 md:h-80 lg:h-96 xl:h-[110px] 2xl:h-[128px] mx-auto mb-0"
+            className="w-auto max-w-[98vw] h-32 sm:h-72 md:h-96 lg:h-[420px] xl:h-[150px] 2xl:h-[180px] mx-auto mb-0"
             style={{
               filter:
                 "drop-shadow(0 0 20px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 40px rgba(220, 38, 38, 0.4))",
-              height: "clamp(96px, 20vw, 512px)",
+              height: "clamp(128px, 28vw, 600px)",
               margin: 0,
             }}
           />
