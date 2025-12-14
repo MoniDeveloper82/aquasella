@@ -78,18 +78,18 @@ const AvancesVideo: React.FC = () => {
           <div className="w-full h-1 sm:h-1 bg-black" />
 
           {/* Title just before the video */}
-            <div className="w-full text-center mt-6 mb-6">
-              {/* Replaced image with large text title as requested */}
-              <h2 className="mx-auto text-white font-extrabold uppercase tracking-wider px-4 text-glow-red"
-                  style={{
-                    fontSize: 'clamp(1.75rem, 4vw, 3.5rem)',
-                    lineHeight: 1.02,
-                    fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
-                    fontWeight: 'bold',
-                  }}>
-                PRIMERAS CONFIRMACIONES
-              </h2>
-            </div>
+          <div className="w-full text-center mt-6 mb-6">
+            {/* Replaced image with large text title as requested */}
+            <h2 className="mx-auto text-white font-extrabold uppercase tracking-wider px-4 text-glow-red"
+                style={{
+                  fontSize: 'clamp(1.75rem, 4vw, 3.5rem)',
+                  lineHeight: 1.02,
+                  fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
+                  fontWeight: 'bold',
+                }}>
+              PRIMERAS CONFIRMACIONES
+            </h2>
+          </div>
 
           {/* Larger video container to prevent text cropping, using object-contain to maintain aspect ratio */}
           <div className="relative w-full h-auto sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black">
@@ -133,19 +133,15 @@ const AvancesVideo: React.FC = () => {
               <source src="/videos/avances1.webm?v=2" type="video/webm" />
               Tu navegador no soporta la reproducción de video.
             </video>
-            
             {/* Indicador de estado */}
             {!isVideoLoaded && forceShow && (
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
                 <div className="text-white text-lg font-bold">
-                  🎬 Cargando video avances1...
+                  Cargando video...
                 </div>
               </div>
             )}
           </div>
-
-          {/* thin black line below the video */}
-          <div className="w-full h-1 sm:h-1 bg-black" />
         </div>
       </div>
     </section>

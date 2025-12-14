@@ -50,17 +50,16 @@ const Header: React.FC = () => {
   };
 
   const headerClass = !isHomePage || scrolled || isMenuOpen
-    ? 'bg-black/95 backdrop-blur-sm shadow-lg'
-    : 'bg-transparent';
+    ? 'bg-black backdrop-blur-sm shadow-lg'
+    : 'bg-black';
 
   return (
     <>
-      {/* Video de fondo solo en móvil */}
-      <div className="absolute top-0 left-0 w-full h-24 lg:h-28 xl:h-32 overflow-hidden z-0">
+      {/* Video de fondo debajo del header */}
+      <div className="fixed top-0 left-0 w-full h-24 lg:h-28 xl:h-32 overflow-hidden z-0 pointer-events-none">
         <video
           className="w-full h-full object-cover"
-          src={"/videos/hederDefinitivo.mp4?v=" + Date.now()}
-          key={"hederDefinitivo-" + Date.now()}
+          src="/videos/hederDefinitivo.mp4"
           autoPlay
           loop
           muted
