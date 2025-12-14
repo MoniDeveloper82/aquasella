@@ -54,7 +54,7 @@ const VideoHero: React.FC = () => {
         {/* GRADIENT OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 z-10"></div>
         {/* TEXT & IMAGES OVERLAY */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-center text-white px-4">
+        <div className="absolute inset-x-0 bottom-0 flex flex-col items-center z-20 text-center text-white px-4 pb-4">
           <img
             src="/img/FECHAS AQS.png"
             alt="Aquasella Festival 2026 - 13-16 Agosto"
