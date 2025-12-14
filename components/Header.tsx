@@ -55,6 +55,19 @@ const Header: React.FC = () => {
 
   return (
     <>
+      {/* Video de fondo solo en móvil */}
+      <div className="absolute top-0 left-0 w-full h-24 lg:h-28 xl:h-32 overflow-hidden z-0">
+        <video
+          className="w-full h-full object-cover"
+          src={"/videos/hederDefinitivo.mp4?v=" + Date.now()}
+          key={"hederDefinitivo-" + Date.now()}
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/videos/heder_fallback.gif"
+        />
+      </div>
       <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${headerClass}`}>
         <nav
           className="w-full px-4 sm:px-6 lg:px-8"
