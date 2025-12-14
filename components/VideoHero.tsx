@@ -35,7 +35,7 @@ const VideoHero: React.FC = () => {
   return (
     <section className="w-full">
       <div
-        className="relative flex items-center justify-center min-h-screen overflow-hidden"
+        className="relative flex items-center justify-center h-screen overflow-hidden"
         style={{ width: "100vw", background: "#000" }}
       >
         
@@ -79,6 +79,7 @@ const VideoHero: React.FC = () => {
                 background: "#000",
               }}
             >
+              <source src="/videos/hederDefinitivo.webm" type="video/webm" />
               <source src="/videos/hederDefinitivo.mp4" type="video/mp4" />
               <source src="https://github.com/MoniDeveloper82/aquasella/raw/main/public/videos/hederDefinitivo.mp4" type="video/mp4" />
               Tu navegador no soporta video HTML5.
