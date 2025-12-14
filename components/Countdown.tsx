@@ -32,15 +32,13 @@ const Countdown: React.FC = () => {
   }, [targetDate]);
 
   return (
-    <div className="relative w-full aspect-[21/9]">
+    <div className="relative w-full">
       <img
         src="/img/CuentaAtras.png"
         alt="Cuenta atrás Aquasella"
-        className="w-full h-full object-contain select-none pointer-events-none"
+        className="w-full max-w-full object-contain select-none pointer-events-none block"
         draggable="false"
-        style={{ background: '#000', userSelect: 'none' }}
       />
-      {/* CONTENIDO DEL CONTADOR ENCIMA */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
         <h2 
           className="uppercase text-white text-glow-red countdown-title text-center"
