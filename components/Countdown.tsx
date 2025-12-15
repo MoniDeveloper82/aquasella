@@ -39,46 +39,94 @@ const Countdown: React.FC = () => {
         className="w-full max-w-full object-contain select-none pointer-events-none block"
         draggable="false"
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-        <h2 
-          className="uppercase text-white text-glow-red countdown-title text-center"
-          style={{ 
-            fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
-            fontWeight: 'bold',
-            fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-            lineHeight: 1.02,
-            marginTop: '8rem',
-            marginBottom: '2.5rem'
+      <div
+        className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4"
+        style={{ transform: "translateY(5%)" }}
+      >
+        <h2
+          className="uppercase font-extrabold text-white mb-2 sm:mb-4 mt-10 sm:mt-8"
+          style={{
+            fontFamily: "ClashDisplay, system-ui, -apple-system, sans-serif",
+            fontSize: "clamp(0.8rem, 2.5vw, 1.4rem)", // la mitad
+            lineHeight: "1.1",
           }}
         >
           CUENTA ATRÁS
         </h2>
-        <div className="flex flex-row items-center justify-center gap-8 countdown-row">
+
+        <div className="flex flex-wrap justify-center items-center gap-4 mb-1">
+          {/* DÍAS */}
           <div className="flex flex-col items-center">
-            <span className="text-2xl md:text-4xl font-black text-white mb-2 countdown-value" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', textShadow: '0 4px 8px rgba(0,0,0,0.9)' }}>{timeLeft.days}</span>
-            <span className="text-base md:text-xl uppercase tracking-wide font-bold countdown-label" style={{ color: '#fff', fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', WebkitTextStroke: '1px #dc2626', textStroke: '1px #dc2626', fontWeight: 'bold' }}>Días</span>
+            <span
+              className="font-black text-white mt-2"
+              style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
+            >
+              {timeLeft.days}
+            </span>
+            <span
+              className="uppercase font-bold text-white"
+              style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
+            >
+              DÍAS
+            </span>
           </div>
+
+          {/* HORAS */}
           <div className="flex flex-col items-center">
-            <span className="text-2xl md:text-4xl font-black text-white mb-2 countdown-value" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', textShadow: '0 4px 8px rgba(0,0,0,0.9)' }}>{timeLeft.hours}</span>
-            <span className="text-base md:text-xl uppercase tracking-wide font-bold countdown-label" style={{ color: '#fff', fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', WebkitTextStroke: '1px #dc2626', textStroke: '1px #dc2626', fontWeight: 'bold' }}>Horas</span>
+            <span
+              className="font-black text-white mt-2"
+              style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
+            >
+              {timeLeft.hours}
+            </span>
+            <span
+              className="uppercase font-bold text-white"
+              style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
+            >
+              HORAS
+            </span>
           </div>
+
+          {/* MINUTOS */}
           <div className="flex flex-col items-center">
-            <span className="text-2xl md:text-4xl font-black text-white mb-2 countdown-value" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', textShadow: '0 4px 8px rgba(0,0,0,0.9)' }}>{timeLeft.minutes}</span>
-            <span className="text-base md:text-xl uppercase tracking-wide font-bold countdown-label" style={{ color: '#fff', fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', WebkitTextStroke: '1px #dc2626', textStroke: '1px #dc2626', fontWeight: 'bold' }}>Minutos</span>
+            <span
+              className="font-black text-white mt-2"
+              style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
+            >
+              {timeLeft.minutes}
+            </span>
+            <span
+              className="uppercase font-bold text-white"
+              style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
+            >
+              MINUTOS
+            </span>
           </div>
+
+          {/* SEGUNDOS */}
           <div className="flex flex-col items-center">
-            <span className="text-2xl md:text-4xl font-black text-white mb-2 countdown-value" style={{ fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', textShadow: '0 4px 8px rgba(0,0,0,0.9)' }}>{timeLeft.seconds}</span>
-            <span className="text-base md:text-xl uppercase tracking-wide font-bold countdown-label" style={{ color: '#fff', fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif', WebkitTextStroke: '1px #dc2626', textStroke: '1px #dc2626', fontWeight: 'bold' }}>Segundos</span>
+            <span
+              className="font-black text-white mt-2"
+              style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
+            >
+              {timeLeft.seconds}
+            </span>
+            <span
+              className="uppercase font-bold text-white"
+              style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
+            >
+              SEGUNDOS
+            </span>
           </div>
         </div>
+
         <Link to="/tickets">
           <button
-            className="mt-16 md:mt-20 lg:mt-24 px-8 md:px-10 py-4 md:py-5 bg-black hover:scale-110 text-white font-black uppercase rounded-2xl transition-transform duration-300 border border-red-500"
+            className="mt-2 px-6 py-2 bg-black hover:scale-105 text-white font-black uppercase rounded-xl transition-transform duration-300 border border-red-500"
             style={{
-              fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
-              letterSpacing: '0.13em',
-              boxShadow: '0 0 18px 4px rgba(255,0,0,0.45), 0 0 48px 8px rgba(255,0,0,0.32), 0 8px 16px rgba(0,0,0,0.6)',
-              borderColor: 'rgba(255,0,0,0.55)'
+              fontFamily: "ClashDisplay, system-ui, -apple-system, sans-serif",
+              fontSize: "clamp(0.45rem, 1vw, 0.6rem)",
+              letterSpacing: "0.12em",
             }}
           >
             Entradas
