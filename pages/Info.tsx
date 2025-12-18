@@ -78,17 +78,14 @@ const InfoPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">
-            Información Aquasella 2026
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Todo lo que necesitas saber para vivir la mejor experiencia en el festival. 
-            Servicios, ubicación, historia y mucho más.
-          </p>
-        </div>
+    <div className="min-h-screen bg-black text-white">
+      <img 
+        src="/img/i1.png" 
+        alt="Información Aquasella 2026" 
+        className="w-full max-w-full h-auto object-cover block" 
+        style={{display: 'block', margin: 0, padding: 0}} 
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
           {infoSections.map((section) => (

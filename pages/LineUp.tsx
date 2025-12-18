@@ -27,16 +27,15 @@ const LineUpPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-wider mb-6 text-glow">
-            Line Up
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Toda la información sobre los artistas, cartel y horarios de Aquasella 2026
-          </p>
-        </div>
+    <div className="min-h-screen bg-black text-white">
+      <img 
+        src="/img/l1.png" 
+        alt="Lineup Aquasella 2026" 
+        className="w-full max-w-full h-auto object-cover block" 
+        style={{display: 'block', margin: 0, padding: 0}} 
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        {/* Título eliminado por solicitud */}
 
         <div className="grid gap-8 md:grid-cols-3">
           {sections.map((section) => (

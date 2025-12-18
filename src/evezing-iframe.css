@@ -1,0 +1,13 @@
+/* Asegura que el iframe ocupe todo el ancho del contenedor */
+.evezing-wrapper iframe {
+  width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .evezing-wrapper iframe {
+    transform: scale(0.90);
+    transform-origin: top center;
+  }
+}
