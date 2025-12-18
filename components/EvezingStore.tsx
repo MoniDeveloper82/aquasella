@@ -22,7 +22,7 @@ const EvezingStore: React.FC = () => {
     <div className="w-full max-w-4xl mx-auto px-4">
       <div className="text-center mb-6">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">
-          🎫 Entradas Oficiales
+          🎫 Selecciona tus entradas
         </h2>
         <p className="text-gray-300 text-sm sm:text-base mt-1">
           Elige tu entrada y completa tu compra segura
@@ -33,7 +33,7 @@ const EvezingStore: React.FC = () => {
       <div className="relative overflow-visible">
         {/* Contenido del widget con borde, sin fondo ni esquinas redondeadas */}
         <div ref={containerRef} className="relative z-10 flex justify-center items-center">
-          <div className="border-2 border-red-300" style={{width: '100%', maxWidth: 1100, borderRadius: 0, overflow: 'hidden', background: '#fff'}}>
+          <div className="border-2 border-red-300" style={{width: '100%', borderRadius: 0, overflow: 'hidden', background: '#fff'}}>
             <div id="evezing-shop-aquasella-2026" style={{ paddingBottom: "15px" }}>
             {/* Forzar ajuste de texto en botones del widget Evezing */}
             <style>{`
