@@ -37,6 +37,27 @@ const EvezingStore: React.FC = () => {
         {/* Contenido del widget */}
         <div ref={containerRef} className="relative z-10">
           <div id="evezing-shop-aquasella-2026" style={{ paddingBottom: "15px" }}>
+            {/* Forzar ajuste de texto en botones del widget Evezing */}
+            <style>{`
+              #evezing-shop-aquasella-2026 button {
+                white-space: normal !important;
+                word-break: break-word !important;
+                font-size: 1rem !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                text-align: center !important;
+                line-height: 1.2 !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+              }
+              @media (max-width: 640px) {
+                #evezing-shop-aquasella-2026 button {
+                  font-size: 0.95rem !important;
+                  padding-left: 0.5rem !important;
+                  padding-right: 0.5rem !important;
+                }
+              }
+            `}</style>
             <p
               className="evezing-shop-checking text-center text-gray-300"
               style={{ padding: "15px", fontSize: "16px" }}

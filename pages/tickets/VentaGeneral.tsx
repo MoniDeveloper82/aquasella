@@ -76,13 +76,13 @@ const VentaGeneralPage: React.FC = () => {
                 relative
                 bg-black bg-opacity-90 backdrop-blur-md
                 border-4 border-red-600
-                shadow-[0_0_30px_rgba(255,0,60,0.9),0_0_60px_rgba(255,0,60,0.7)]
+                shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)]
                 rounded-3xl
                 p-6 sm:p-8 lg:p-10
                 overflow-hidden
                 transition-all duration-300
                 hover:-translate-y-2
-                hover:shadow-[0_0_50px_10px_rgba(255,0,60,0.95),0_0_80px_20px_rgba(255,0,60,0.7)]
+                hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)]
                 hover:z-10
               "
             >
