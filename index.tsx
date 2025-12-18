@@ -13,7 +13,7 @@ import HorariosPage from './pages/Horarios';
 import InfoPage from './pages/Info';
 import TicketsPage from './pages/Tickets';
 import VentaGeneral from './pages/tickets/VentaGeneral';
-import BonoCultural from './pages/tickets/BonoCultural';
+import BonoCulturalJoven from './pages/tickets/BonoCulturalJoven';
 import UpgradesGeneral from './pages/tickets/UpgradesGeneral';
 import UpgradesBono from './pages/tickets/UpgradesBono';
 import Glamping from './pages/tickets/Glamping';
@@ -38,6 +38,7 @@ import ShopPage from './pages/Shop';
 import PrivacyPage from './pages/Privacy';
 import CookiesPage from './pages/Cookies';
 import LegalPage from './pages/Legal';
+import VentaPlazosPage from './pages/tickets/VentaPlazos';
 
 const router = createHashRouter([
   {
@@ -130,7 +131,7 @@ const router = createHashRouter([
       },
       {
         path: 'tickets/bono-cultural',
-        element: <BonoCultural />,
+        element: <BonoCulturalJoven />,
       },
       {
         path: 'tickets/upgrades-general',
@@ -163,6 +164,10 @@ const router = createHashRouter([
       {
         path: 'tickets/pack-asturias',
         element: <PackAsturias />,
+      },
+      {
+        path: 'tickets/venta-plazos',
+        element: <VentaPlazosPage />,
       },
       {
         path: 'services',

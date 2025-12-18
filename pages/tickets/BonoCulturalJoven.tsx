@@ -1,34 +1,20 @@
-import React from 'react';
-import EvezingStore from '../../components/EvezingStore';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const VentaGeneralPage: React.FC = () => {
-  const ticketTypes = [
-    {
-      id: 'general-4-dias',
-      name: 'Entrada General 4 Días',
-      price: '120€',
-      description: 'Acceso completo a los 4 días del festival',
-      features: ['Acceso a todos los escenarios', 'Horario: 13/08 - 16/08', 'Sin camping incluido'],
-      color: 'from-rose-600 to-red-800'
-    },
-    {
-      id: 'general-1-dia',
-      name: 'Entrada 1 Día',
-      price: 'Desde 35€',
-      description: 'Entrada para un día específico del festival',
-      features: ['Acceso día completo', 'Elige tu día favorito', 'Jueves, Viernes, Sábado o Domingo'],
-      color: 'from-green-600 to-green-800'
-    },
-    {
-      id: 'general-camping',
-      name: 'Entrada + Camping 4 Días',
-      price: '150€',
-      description: 'Entrada completa con acceso al camping',
-      features: ['Entrada 4 días incluida', 'Camping del 13-17/08', 'Zona de acampada oficial'],
-      color: 'from-purple-600 to-purple-800'
+const BonoCulturalJovenPage: React.FC = () => {
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const scriptId = 'evezing-script-aquasella-2026-bono-cultural';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.src = 'https://aquasella.evezing.com/iframe-shop/event/aquasella-2026-bono-cultural';
+      script.id = scriptId;
+      script.async = true;
+      document.body.appendChild(script);
+      setScriptLoaded(true);
     }
-  ];
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white py-20">
@@ -48,13 +34,12 @@ const VentaGeneralPage: React.FC = () => {
           </Link>
         </div>
 
-
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">
-            Venta General
+            Bono Cultural Joven
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Entradas estándar para vivir la experiencia completa de Aquasella 2026
+            Compra tu entrada con el Bono Cultural Joven para Aquasella 2026.
           </p>
         </div>
 
@@ -72,27 +57,40 @@ const VentaGeneralPage: React.FC = () => {
           </div>
 
           {/* CONTENEDOR DEL IFRAME WIDGET */}
-            <div
-              className="relative border-2 border-red-300 shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)] rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)] hover:z-10"
-              style={{
-                backgroundImage: "url('/img/fondo-aqs-web.png')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundColor: 'rgba(0,0,0,0.90)',
-                backdropFilter: 'blur(8px)'
-              }}
-            >
-              <div className="absolute inset-0 bg-black bg-opacity-30 pointer-events-none z-0" />
-              <div className="relative z-10">
-                <EvezingStore />
+          <div
+            className="relative border-2 border-red-300 shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)] rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)] hover:z-10"
+            style={{
+              backgroundImage: "url('/img/fondo-aqs-web.png')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundColor: 'rgba(0,0,0,0.90)',
+              backdropFilter: 'blur(8px)'
+            }}
+          >
+            <div className="absolute inset-0 bg-black bg-opacity-30 pointer-events-none z-0" />
+            <div className="relative z-10">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center justify-center gap-2">
+                  <span className="text-yellow-400 text-2xl">🎫</span>
+                  Selecciona tus entradas
+                </h2>
+                <p className="text-gray-300 mt-2 text-sm sm:text-base">
+                  Elige tu entrada y completa tu compra segura
+                </p>
+                <div className="w-24 h-1 bg-red-500 mx-auto mt-3 rounded-full"></div>
+              </div>
+              <div
+                id="evezing-shop-aquasella-2026-bono-cultural"
+                style={{ paddingBottom: '15px' }}
+              >
+                <p className="evezing-shop-checking text-center text-gray-300" style={{ padding: '15px', fontSize: '16px' }}>
+                  Comprobando disponibilidad de entradas...
+                </p>
               </div>
             </div>
-
-          {/* Texto de seguridad eliminado por solicitud */}
+          </div>
         </div>
-
-        {/* Tipos de entradas eliminados por solicitud */}
 
         {/* Información adicional */}
         <div className="grid gap-8 md:grid-cols-2 mb-12">
@@ -107,7 +105,6 @@ const VentaGeneralPage: React.FC = () => {
               <li>• Las entradas son nominativas e intransferibles</li>
               <li>• Se requiere DNI/Pasaporte para el acceso</li>
               <li>• Mayores de 18 años</li>
-             
             </ul>
           </div>
           <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:rotate-2 hover:scale-105 transition-all duration-300" style={{
@@ -125,16 +122,9 @@ const VentaGeneralPage: React.FC = () => {
             </ul>
           </div>
         </div>
-
-        {/* <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">🎟️ Compra Segura</h3>
-          <p className="text-gray-300">
-            Todas las compras están protegidas. Entradas oficiales únicamente a través de canales autorizados.
-          </p>
-        </div> */}
       </div>
     </div>
   );
 };
 
-export default VentaGeneralPage;
+export default BonoCulturalJovenPage;
