@@ -44,7 +44,9 @@ const Countdown: React.FC = () => {
         style={{ transform: "translateY(5%)" }}
       >
         <h2
-          className="uppercase font-extrabold text-white mb-2 sm:mb-4 mt-10 sm:mt-8"
+          className="uppercase font-extrabold text-white mb-2 sm:mb-4 mt-10 sm:mt-8
+           md:text-[clamp(1.8rem,4vw,3rem)]
+           lg:text-[clamp(2rem,4vw,4rem)]"
           style={{
             fontFamily: "ClashDisplay, system-ui, -apple-system, sans-serif",
             fontSize: "clamp(0.8rem, 2.5vw, 1.4rem)", // la mitad
@@ -58,13 +60,17 @@ const Countdown: React.FC = () => {
           {/* DÍAS */}
           <div className="flex flex-col items-center">
             <span
-              className="font-black text-white mt-2"
+              className="font-black text-white mfont-black text-white mt-2
+           md:text-[clamp(2rem,6vw,4rem)]
+           lg:text-[clamp(2.8rem,6vw,5rem)]t-2"
               style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
             >
               {timeLeft.days}
             </span>
             <span
-              className="uppercase font-bold text-white"
+              className="uppercase font-bold text-white
+           md:text-[clamp(1rem,2.5vw,2rem)]
+           lg:text-[clamp(1.2rem,2.5vw,2.5rem)]"
               style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
             >
               DÍAS
@@ -74,13 +80,17 @@ const Countdown: React.FC = () => {
           {/* HORAS */}
           <div className="flex flex-col items-center">
             <span
-              className="font-black text-white mt-2"
+              className="font-black text-white mfont-black text-white mt-2
+           md:text-[clamp(2rem,6vw,4rem)]
+           lg:text-[clamp(2.8rem,6vw,5rem)]t-2"
               style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
             >
               {timeLeft.hours}
             </span>
             <span
-              className="uppercase font-bold text-white"
+              className="uppercase font-bold text-white
+           md:text-[clamp(1rem,2.5vw,2rem)]
+           lg:text-[clamp(1.2rem,2.5vw,2.5rem)]"
               style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
             >
               HORAS
@@ -90,13 +100,17 @@ const Countdown: React.FC = () => {
           {/* MINUTOS */}
           <div className="flex flex-col items-center">
             <span
-              className="font-black text-white mt-2"
+              className="font-black text-white mfont-black text-white mt-2
+           md:text-[clamp(2rem,6vw,4rem)]
+           lg:text-[clamp(2.8rem,6vw,5rem)]t-2"
               style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
             >
               {timeLeft.minutes}
             </span>
             <span
-              className="uppercase font-bold text-white"
+              className="uppercase font-bold text-white
+           md:text-[clamp(1rem,2.5vw,2rem)]
+           lg:text-[clamp(1.2rem,2.5vw,2.5rem)]"
               style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
             >
               MINUTOS
@@ -106,13 +120,17 @@ const Countdown: React.FC = () => {
           {/* SEGUNDOS */}
           <div className="flex flex-col items-center">
             <span
-              className="font-black text-white mt-2"
+              className="font-black text-white mfont-black text-white mt-2
+           md:text-[clamp(2rem,6vw,4rem)]
+           lg:text-[clamp(2.8rem,6vw,5rem)]t-2"
               style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
             >
               {timeLeft.seconds}
             </span>
             <span
-              className="uppercase font-bold text-white"
+              className="uppercase font-bold text-white
+           md:text-[clamp(1rem,2.5vw,2rem)]
+           lg:text-[clamp(1.2rem,2.5vw,2.5rem)]"
               style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
             >
               SEGUNDOS
@@ -122,10 +140,14 @@ const Countdown: React.FC = () => {
 
         <Link to="/tickets">
           <button
-            className="mt-2 px-6 py-2 bg-black hover:scale-105 text-white font-black uppercase rounded-xl transition-transform duration-300 border border-red-500"
+            className="mt-2 px-6 py-2 bg-black hover:scale-105 text-white font-black uppercase rounded-xl transition-transform duration-300 border border-red-500
+           md:text-[clamp(1rem,2vw,1.6rem)]
+           lg:text-[clamp(1.2rem,2vw,1.8rem)]
+           xl:text-[clamp(1.4rem,2vw,2rem)]
+"
             style={{
               fontFamily: "ClashDisplay, system-ui, -apple-system, sans-serif",
-              fontSize: "clamp(0.45rem, 1vw, 0.6rem)",
+              fontSize: "clamp(0.45rem, 1vw, 0.6rem",
               letterSpacing: "0.12em",
             }}
           >
