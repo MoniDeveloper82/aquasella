@@ -29,14 +29,12 @@ const EvezingStore: React.FC = () => {
         </p>
       </div>
 
-      {/* Contenedor con estilizado decorativo */}
-      <div className="relative border-2 border-red-500 rounded-2xl overflow-hidden shadow-2xl bg-gray-800 shadow-[0_0_40px_10px_rgba(239,68,68,0.6)]">
-        {/* Outline animado */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-600 via-pink-500 to-red-600 opacity-30 animate-pulse"></div>
-
-        {/* Contenido del widget */}
-        <div ref={containerRef} className="relative z-10">
-          <div id="evezing-shop-aquasella-2026" style={{ paddingBottom: "15px" }}>
+      {/* Contenedor decorativo */}
+      <div className="relative overflow-visible">
+        {/* Contenido del widget con borde, sin fondo ni esquinas redondeadas */}
+        <div ref={containerRef} className="relative z-10 flex justify-center items-center">
+          <div className="border-2 border-red-300" style={{width: '100%', maxWidth: 1100, borderRadius: 0, overflow: 'hidden', background: '#fff'}}>
+            <div id="evezing-shop-aquasella-2026" style={{ paddingBottom: "15px" }}>
             {/* Forzar ajuste de texto en botones del widget Evezing */}
             <style>{`
               #evezing-shop-aquasella-2026 button {
@@ -72,10 +70,10 @@ const EvezingStore: React.FC = () => {
           </div>
         </div>
       </div>
-
       <p className="text-gray-400 text-xs text-center mt-3">
         Compra segura con encriptación y procesadores oficiales.
       </p>
+    </div>
     </div>
   );
 };

@@ -58,7 +58,7 @@ const VentaGeneralPage: React.FC = () => {
         </div>
 
         {/* Tienda Evezing con diseño avanzado */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
           {/* TITULO SECCION */}
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -72,7 +72,7 @@ const VentaGeneralPage: React.FC = () => {
 
           {/* CONTENEDOR DEL IFRAME WIDGET */}
             <div
-              className="relative border-4 border-red-600 shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)] rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)] hover:z-10"
+              className="relative border-2 border-red-300 shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)] rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)] hover:z-10"
               style={{
                 backgroundImage: "url('/img/fondo-aqs-web.png')",
                 backgroundSize: 'cover',
@@ -95,16 +95,26 @@ const VentaGeneralPage: React.FC = () => {
 
         {/* Información adicional */}
         <div className="grid gap-8 md:grid-cols-2 mb-12">
-          <div className="bg-red-600 rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:-rotate-2 hover:scale-105 transition-all duration-300">
+          <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:-rotate-2 hover:scale-105 transition-all duration-300" style={{
+            backgroundImage: "url('/img/fondo-aqs-web.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}>
             <h3 className="text-xl font-bold mb-4">📋 Información Importante</h3>
             <ul className="space-y-2 text-white">
               <li>• Las entradas son nominativas e intransferibles</li>
               <li>• Se requiere DNI/Pasaporte para el acceso</li>
-              <li>• Menores de 16 años acompañados por adultos</li>
-              <li>• Política de cambios y devoluciones disponible</li>
+              <li>• Mayores de 18 años</li>
+             
             </ul>
           </div>
-          <div className="bg-red-600 rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:rotate-2 hover:scale-105 transition-all duration-300">
+          <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:rotate-2 hover:scale-105 transition-all duration-300" style={{
+            backgroundImage: "url('/img/fondo-aqs-web.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}>
             <h3 className="text-xl font-bold mb-4">🎵 ¿Qué incluye?</h3>
             <ul className="space-y-2 text-white">
               <li>• Acceso a todos los escenarios</li>
