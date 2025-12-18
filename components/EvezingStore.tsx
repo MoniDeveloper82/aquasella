@@ -49,12 +49,17 @@ const EvezingStore: React.FC = () => {
                 line-height: 1.2 !important;
                 min-width: 0 !important;
                 max-width: 100% !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                display: block !important;
               }
               @media (max-width: 640px) {
                 #evezing-shop-aquasella-2026 button {
-                  font-size: 0.95rem !important;
-                  padding-left: 0.5rem !important;
-                  padding-right: 0.5rem !important;
+                  font-size: 0.85rem !important;
+                  padding-left: 0.25rem !important;
+                  padding-right: 0.25rem !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
                 }
               }
             `}</style>

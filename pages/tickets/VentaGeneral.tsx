@@ -72,21 +72,20 @@ const VentaGeneralPage: React.FC = () => {
 
           {/* CONTENEDOR DEL IFRAME WIDGET */}
             <div
-              className="
-                relative
-                bg-black bg-opacity-90 backdrop-blur-md
-                border-4 border-red-600
-                shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)]
-                rounded-3xl
-                p-6 sm:p-8 lg:p-10
-                overflow-hidden
-                transition-all duration-300
-                hover:-translate-y-2
-                hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)]
-                hover:z-10
-              "
+              className="relative border-4 border-red-600 shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)] rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)] hover:z-10"
+              style={{
+                backgroundImage: "url('/img/fondo-aqs-web.png')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundColor: 'rgba(0,0,0,0.90)',
+                backdropFilter: 'blur(8px)'
+              }}
             >
-              <EvezingStore />
+              <div className="absolute inset-0 bg-black bg-opacity-30 pointer-events-none z-0" />
+              <div className="relative z-10">
+                <EvezingStore />
+              </div>
             </div>
 
           {/* Texto de seguridad eliminado por solicitud */}
