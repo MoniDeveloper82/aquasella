@@ -15,7 +15,7 @@ type BannerProps = {
 };
 
 const defaultItems: BannerItem[] = [
-  { message: 'PROXIMOS TICKETS', ctaText: 'Comprar', ctaLink: '/tickets' },
+  { message: 'COMPRA TUS TICKETS', ctaText: 'Comprar', ctaLink: '/tickets' },
 ];
 
 const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, id = 'site-banner' }) => {
@@ -121,35 +121,31 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
                         animationDelay: paused ? undefined : `-${Math.max(0, Math.round(marqueeDuration / 2))}s`,
                       }}
                     >
-                      {it.message && it.message.toUpperCase().includes('PROXIMOS TICKETS') ? (
-                        <>
-                          <span ref={sampleRef} style={{ position: 'absolute', left: -9999, top: 0, whiteSpace: 'nowrap', visibility: 'hidden' }} className="font-extrabold text-lg md:text-2xl lg:text-3xl tracking-wide text-white mr-3">
-                            {it.message}
-                            <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 inline-block ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                      {/* Siempre mostrar el formato animado con icono */}
+                      <>
+                        <span ref={sampleRef} style={{ position: 'absolute', left: -9999, top: 0, whiteSpace: 'nowrap', visibility: 'hidden' }} className="font-extrabold text-lg md:text-2xl lg:text-3xl tracking-wide text-white mr-3">
+                          {it.message}
+                          <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 inline-block ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                            <path d="M21 10V8a2 2 0 0 0-2-2h-2.2a1 1 0 0 1-.98-.8L14.4 2H9.6l-1.42 3.2a1 1 0 0 1-.98.8H5a2 2 0 0 0-2 2v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h2.2a1 1 0 0 1 .98.8L9.6 22h4.8l1.42-3.2a1 1 0 0 1 .98-.8H19a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4z" fill="#FFFFFF"/>
+                          </svg>
+                        </span>
+                        {Array.from({ length: repeatCount }).map((_, k) => (
+                          <span key={`a-${k}`} className="inline-flex items-center pr-8">
+                            <span className="font-extrabold text-lg md:text-2xl lg:text-3xl tracking-wide text-white mr-3">{it.message}</span>
+                            <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                               <path d="M21 10V8a2 2 0 0 0-2-2h-2.2a1 1 0 0 1-.98-.8L14.4 2H9.6l-1.42 3.2a1 1 0 0 1-.98.8H5a2 2 0 0 0-2 2v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h2.2a1 1 0 0 1 .98.8L9.6 22h4.8l1.42-3.2a1 1 0 0 1 .98-.8H19a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4z" fill="#FFFFFF"/>
                             </svg>
                           </span>
-                          {/** render sequence twice to create seamless loop */}
-                          {Array.from({ length: repeatCount }).map((_, k) => (
-                            <span key={`a-${k}`} className="inline-flex items-center pr-8">
-                              <span className="font-extrabold text-lg md:text-2xl lg:text-3xl tracking-wide text-white mr-3">{it.message}</span>
-                              <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                                <path d="M21 10V8a2 2 0 0 0-2-2h-2.2a1 1 0 0 1-.98-.8L14.4 2H9.6l-1.42 3.2a1 1 0 0 1-.98.8H5a2 2 0 0 0-2 2v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h2.2a1 1 0 0 1 .98.8L9.6 22h4.8l1.42-3.2a1 1 0 0 1 .98-.8H19a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4z" fill="#FFFFFF"/>
-                              </svg>
-                            </span>
-                          ))}
-                          {Array.from({ length: repeatCount }).map((_, k) => (
-                            <span key={`b-${k}`} className="inline-flex items-center pr-8">
-                              <span className="font-extrabold text-lg md:text-2xl lg:text-3xl tracking-wide text-white mr-3">{it.message}</span>
-                              <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                                <path d="M21 10V8a2 2 0 0 0-2-2h-2.2a1 1 0 0 1-.98-.8L14.4 2H9.6l-1.42 3.2a1 1 0 0 1-.98.8H5a2 2 0 0 0-2 2v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h2.2a1 1 0 0 1 .98.8L9.6 22h4.8l1.42-3.2a1 1 0 0 1 .98-.8H19a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4z" fill="#FFFFFF"/>
-                              </svg>
-                            </span>
-                          ))}
-                        </>
-                      ) : (
-                        <span className="font-extrabold text-lg md:text-2xl lg:text-3xl tracking-wide pr-12 block text-white">{it.message}</span>
-                      )}
+                        ))}
+                        {Array.from({ length: repeatCount }).map((_, k) => (
+                          <span key={`b-${k}`} className="inline-flex items-center pr-8">
+                            <span className="font-extrabold text-lg md:text-2xl lg:text-3xl tracking-wide text-white mr-3">{it.message}</span>
+                            <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                              <path d="M21 10V8a2 2 0 0 0-2-2h-2.2a1 1 0 0 1-.98-.8L14.4 2H9.6l-1.42 3.2a1 1 0 0 1-.98.8H5a2 2 0 0 0-2 2v2a2 2 0 0 1 0 4v2a2 2 0 0 0 2 2h2.2a1 1 0 0 1 .98.8L9.6 22h4.8l1.42-3.2a1 1 0 0 1 .98-.8H19a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-4z" fill="#FFFFFF"/>
+                            </svg>
+                          </span>
+                        ))}
+                      </>
                     </div>
                   </div>
                 </div>
