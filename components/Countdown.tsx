@@ -125,7 +125,7 @@ const Countdown: React.FC = () => {
           <div className="mt-4 sm:mt-6">
             <Link to="/tickets">
               <button
-                className="px-6 py-2 bg-black text-white font-black uppercase rounded-xl border-2 border-red-500 hover:shadow-[0_0_20px_4px_#dc2626,0_0_32px_8px_#b91c1c] hover:scale-110 transition-transform transition-shadow duration-300"
+                className="px-6 py-2 bg-black text-white font-black uppercase rounded-xl border-2 border-red-500 hover:shadow-[0_0_8px_2px_#dc2626,0_0_12px_3px_#b91c1c] sm:hover:shadow-[0_0_20px_4px_#dc2626,0_0_32px_8px_#b91c1c] hover:scale-110 transition-transform transition-shadow duration-300"
                 style={{
                   fontFamily: "ClashDisplay, system-ui, -apple-system, sans-serif",
                   fontSize: "clamp(0.45rem, 1vw, 0.6rem)",
