@@ -5,10 +5,9 @@ import { TwitterIcon, InstagramIcon, FacebookIcon, YoutubeIcon } from './icons';
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { Icon: TwitterIcon, href: '#', label: 'Twitter' },
-    { Icon: InstagramIcon, href: '#', label: 'Instagram' },
-    { Icon: FacebookIcon, href: '#', label: 'Facebook' },
-    { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
+    { Icon: InstagramIcon, href: 'https://www.instagram.com/aquasellafest/?hl=es', label: 'Instagram', target: '_blank', rel: 'noopener noreferrer' },
+    { Icon: FacebookIcon, href: 'https://www.facebook.com/aquasellafest', label: 'Facebook', target: '_blank', rel: 'noopener noreferrer' },
+    { Icon: YoutubeIcon, href: 'https://www.youtube.com/user/AquasellaChannel', label: 'YouTube', target: '_blank', rel: 'noopener noreferrer' },
   ];
   return (
     <footer
@@ -32,8 +31,15 @@ const Footer: React.FC = () => {
                 />
                 <p className="text-gray-400">El corazón de la música electrónica en el norte de España.</p>
                 <div className="flex space-x-6">
-                 {socialLinks.map(({ Icon, href, label }) => (
-                     <a key={label} href={href} className="text-gray-400 hover:text-rose-400 transition-colors" aria-label={label}>
+                 {socialLinks.map(({ Icon, href, label, target, rel }) => (
+                     <a
+                       key={label}
+                       href={href}
+                       className="text-gray-400 hover:text-rose-400 transition-colors"
+                       aria-label={label}
+                       target={target}
+                       rel={rel}
+                     >
                         <Icon className="h-6 w-6" />
                     </a>
                  ))}
