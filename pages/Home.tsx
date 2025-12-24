@@ -5,6 +5,7 @@ import Countdown from '../components/Countdown';
 import AvancesVideo from '../components/AvancesVideo';
 import HomeTicketsSection from '../components/HomeTicketsSection';
 import PartnersStrip from '../components/PartnersStrip';
+import HomeMain from '../components/HomeMain';
 
 const HomePage: React.FC = () => {
   return (
@@ -31,6 +32,17 @@ const HomePage: React.FC = () => {
         CUENTA ATRÁS AQUASELLA 2026
       </div>
       <Countdown />
+      {/* Raya roja fina con degradado igual que PRIMERAS CONFIRMACIONES */}
+      <div
+        style={{
+          width: '100%',
+          height: '32px',
+          background: 'linear-gradient(90deg, #7f1d1d 0%, #b91c1c 50%, #a94444 100%)',
+          margin: 0,
+          border: 'none',
+        }}
+      />
+      <HomeMain />
       <div 
         className="relative min-h-screen"
         style={{

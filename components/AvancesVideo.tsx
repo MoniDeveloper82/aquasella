@@ -87,60 +87,21 @@ const AvancesVideo: React.FC = () => {
                   fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
                   fontWeight: 'bold',
                 }}>
-              PRIMERAS CONFIRMACIONES
+              AFTERMOVIE 2025
             </h2>
           </div>
 
           {/* Larger video container to prevent text cropping, using object-contain to maintain aspect ratio */}
           <div className="relative w-full h-auto sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black">
-            {/* Forzar visibilidad del video */}
-            <video
-              ref={videoRef}
-              className={`w-full h-full object-contain object-center bg-black ${forceShow ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              controls={!isVideoLoaded}
-              aria-label="Video de avances Aquasella"
-              webkit-playsinline="true"
-              style={{
-                display: 'block',
-                visibility: 'visible',
-                zIndex: 10
-              }}
-              onLoadedData={() => {
-                console.log('🎬 Video data loaded');
-                if (videoRef.current) {
-                  videoRef.current.play().catch(e => console.log('Play failed:', e));
-                }
-              }}
-              onCanPlay={() => {
-                console.log('▶️ Video can play');
-                if (videoRef.current) {
-                  videoRef.current.play().catch(e => console.log('Play failed:', e));
-                }
-              }}
-              onPlay={() => {
-                console.log('🎉 VIDEO STARTED PLAYING!');
-                setIsVideoLoaded(true);
-              }}
-            >
-              {/* Solo el video más pequeño para evitar problemas */}
-              <source src="/videos/avances1_micro.webm?v=2" type="video/webm" />
-              <source src="/videos/avances1_vercel.webm?v=2" type="video/webm" />
-              <source src="/videos/avances1.webm?v=2" type="video/webm" />
-              Tu navegador no soporta la reproducción de video.
-            </video>
-            {/* Indicador de estado */}
-            {!isVideoLoaded && forceShow && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                <div className="text-white text-lg font-bold">
-                  Cargando video...
-                </div>
-              </div>
-            )}
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/sidOukngdlg?start=100"
+              title="Aftermovie Aquasella 2025"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>

@@ -20,33 +20,25 @@ const HomeMain: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
-      {backgroundImages.map((src, index) => (
-         <img
-          key={src}
-          src={src}
-          alt="Festival background"
-          className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-          }`}
+    <section className="w-full flex flex-col items-center justify-center text-center text-white py-12 bg-black">
+      <h2
+        className="text-5xl md:text-6xl font-extrabold uppercase tracking-widest mb-8 text-white"
+        style={{
+          fontFamily: "ClashDisplay, 'Arial Black', sans-serif",
+          fontWeight: 800,
+          letterSpacing: '0.12em',
+          textShadow: '0 0 8px #dc2626, 0 0 16px #b91c1c, 0 0 24px #dc2626'
+        }}
+      >
+        CONFIRMACIONES
+      </h2>
+      <div className="flex flex-col items-center w-full">
+        <img
+          src="/img/cartel.png"
+          alt="Cartel Aquasella 2026"
+          className="w-full max-w-4xl h-auto object-contain rounded-xl shadow-2xl border-4 border-red-700 bg-black mb-8"
+          draggable="false"
         />
-      ))}
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
-      <div className="relative z-20 p-4 flex flex-col items-center justify-center">
-        {/* Festival Info */}
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-6xl font-black uppercase tracking-widest" style={{fontFamily: "'Arial Black', sans-serif"}}>
-            AQUASELLA
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wider mt-4">
-            13 - 16 AGOSTO 2026
-          </h2>
-          <p className="text-sm md:text-base font-light tracking-widest border-t border-b border-white/50 py-1 mt-2 inline-block">
-            ARRIONDAS, ASTURIAS
-          </p>
-        </div>
-
-        {/* Tickets info removed from HomeMain. Use `HomeTicketsSection` or re-add JSX here if needed. */}
       </div>
     </section>
   );

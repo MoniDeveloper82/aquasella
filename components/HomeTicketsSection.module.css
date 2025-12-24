@@ -1,0 +1,22 @@
+.cardHaloRed {
+  position: relative;
+}
+.cardHaloRed::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 30;
+  box-shadow:
+    8px 8px 32px 8px #dc2626,
+    0px 12px 48px 8px #b91c1c;
+  border-bottom-right-radius: 0.75rem;
+}
+.cardHaloRed:hover::after, .cardHaloRed:focus-visible::after {
+  opacity: 1;
+}

@@ -42,7 +42,7 @@ const ArtistsPage: React.FC = () => {
   }, []);
 
   return (
-    <section id="artistas" className="py-20 bg-gray-900">
+    <section id="artistas" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Navegación de regreso */}
         <div className="mb-8">
@@ -68,13 +68,13 @@ const ArtistsPage: React.FC = () => {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base font-bold uppercase tracking-wider rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-sky-500 ${
+              className={`px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base font-bold uppercase tracking-wider rounded-full transition-all duration-300 focus:outline-none focus:ring-2 ${
                 activeFilter === filter
-                  ? 'bg-sky-500 text-white'
+                  ? 'bg-red-600 text-white focus:ring-red-600'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
               }`}
             >
-              {filter}
+              {filter === 'Todos' ? '|A-Z|' : filter}
             </button>
           ))}
         </div>
