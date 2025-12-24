@@ -49,29 +49,27 @@ const Countdown: React.FC = () => {
            lg:text-[clamp(2rem,4vw,4rem)]"
           style={{
             fontFamily: "ClashDisplay, system-ui, -apple-system, sans-serif",
-            fontSize: "clamp(0.8rem, 2.5vw, 1.4rem)", // la mitad
+            fontSize: "clamp(0.8rem, 2.5vw, 1.4rem)",
             lineHeight: "1.1",
           }}
         >
-          CUENTA ATRÁS
         </h2>
-
         <div className="flex flex-wrap justify-center items-center gap-4 mb-1">
           {/* DÍAS */}
           <div className="flex flex-col items-center">
             <span
               className="font-black text-white mfont-black text-white mt-2
-           md:text-[clamp(2rem,6vw,4rem)]
-           lg:text-[clamp(2.8rem,6vw,5rem)]t-2"
-              style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
+            md:text-[clamp(3rem,8vw,7rem)]
+            lg:text-[clamp(4.5rem,11vw,10rem)]t-2"
+              style={{ fontSize: "clamp(1.7rem, 4vw, 3.5rem)" }}
             >
               {timeLeft.days}
             </span>
             <span
               className="uppercase font-bold text-white
-           md:text-[clamp(1rem,2.5vw,2rem)]
-           lg:text-[clamp(1.2rem,2.5vw,2.5rem)]"
-              style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
+            md:text-[clamp(1.7rem,4vw,3.2rem)]
+            lg:text-[clamp(2.2rem,4.5vw,4.2rem)]"
+              style={{ fontSize: "clamp(1.1rem, 2vw, 2rem)" }}
             >
               DÍAS
             </span>
@@ -81,17 +79,17 @@ const Countdown: React.FC = () => {
           <div className="flex flex-col items-center">
             <span
               className="font-black text-white mfont-black text-white mt-2
-           md:text-[clamp(2rem,6vw,4rem)]
-           lg:text-[clamp(2.8rem,6vw,5rem)]t-2"
-              style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
+           md:text-[clamp(3rem,8vw,7rem)]
+           lg:text-[clamp(4.5rem,11vw,10rem)]t-2"
+              style={{ fontSize: "clamp(1.7rem, 4vw, 3.5rem)" }}
             >
               {timeLeft.hours}
             </span>
             <span
               className="uppercase font-bold text-white
-           md:text-[clamp(1rem,2.5vw,2rem)]
-           lg:text-[clamp(1.2rem,2.5vw,2.5rem)]"
-              style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
+           md:text-[clamp(1.7rem,4vw,3.2rem)]
+           lg:text-[clamp(2.2rem,4.5vw,4.2rem)]"
+              style={{ fontSize: "clamp(1.1rem, 2vw, 2rem)" }}
             >
               HORAS
             </span>
@@ -101,17 +99,17 @@ const Countdown: React.FC = () => {
           <div className="flex flex-col items-center">
             <span
               className="font-black text-white mfont-black text-white mt-2
-           md:text-[clamp(2rem,6vw,4rem)]
-           lg:text-[clamp(2.8rem,6vw,5rem)]t-2"
-              style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
+            md:text-[clamp(3rem,8vw,7rem)]
+            lg:text-[clamp(4.5rem,11vw,10rem)]t-2"
+              style={{ fontSize: "clamp(1.7rem, 4vw, 3.5rem)" }}
             >
               {timeLeft.minutes}
             </span>
             <span
               className="uppercase font-bold text-white
-           md:text-[clamp(1rem,2.5vw,2rem)]
-           lg:text-[clamp(1.2rem,2.5vw,2.5rem)]"
-              style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
+            md:text-[clamp(1.7rem,4vw,3.2rem)]
+            lg:text-[clamp(2.2rem,4.5vw,4.2rem)]"
+              style={{ fontSize: "clamp(1.1rem, 2vw, 2rem)" }}
             >
               MINUTOS
             </span>
@@ -121,17 +119,17 @@ const Countdown: React.FC = () => {
           <div className="flex flex-col items-center">
             <span
               className="font-black text-white mfont-black text-white mt-2
-           md:text-[clamp(2rem,6vw,4rem)]
-           lg:text-[clamp(2.8rem,6vw,5rem)]t-2"
-              style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.75rem)" }}
+            md:text-[clamp(3rem,8vw,7rem)]
+            lg:text-[clamp(4.5rem,11vw,10rem)]t-2"
+              style={{ fontSize: "clamp(1.7rem, 4vw, 3.5rem)" }}
             >
               {timeLeft.seconds}
             </span>
             <span
               className="uppercase font-bold text-white
-           md:text-[clamp(1rem,2.5vw,2rem)]
-           lg:text-[clamp(1.2rem,2.5vw,2.5rem)]"
-              style={{ fontSize: "clamp(0.425rem, 1vw, 0.65rem)" }}
+            md:text-[clamp(1.7rem,4vw,3.2rem)]
+            lg:text-[clamp(2.2rem,4.5vw,4.2rem)]"
+              style={{ fontSize: "clamp(1.1rem, 2vw, 2rem)" }}
             >
               SEGUNDOS
             </span>
@@ -140,18 +138,17 @@ const Countdown: React.FC = () => {
 
         <Link to="/tickets">
           <button
-            className="mt-2 px-6 py-2 bg-black hover:scale-105 text-white font-black uppercase rounded-xl transition-transform duration-300 border border-red-500
-           md:text-[clamp(1rem,2vw,1.6rem)]
-           lg:text-[clamp(1.2rem,2vw,1.8rem)]
-           xl:text-[clamp(1.4rem,2vw,2rem)]
-"
+            className="mt-10 px-6 py-2 bg-black hover:scale-105 text-white font-black uppercase rounded-xl transition-transform duration-300 border-2 border-red-500 md:text-[clamp(1rem,2vw,1.6rem)] lg:text-[clamp(2rem,3vw,2.8rem)] lg:px-12 lg:py-4 xl:text-[clamp(2.4rem,4vw,3.2rem)] xl:px-16 xl:py-5 hover:shadow-[0_0_16px_4px_#dc2626,0_0_32px_8px_#b91c1c]"
             style={{
+              ...(typeof window !== 'undefined' && window.innerWidth <= 430
+                ? { marginTop: '1.5rem' }
+                : {}),
               fontFamily: "ClashDisplay, system-ui, -apple-system, sans-serif",
-              fontSize: "clamp(0.45rem, 1vw, 0.6rem",
+              fontSize: "clamp(0.45rem, 1vw, 0.6rem)",
               letterSpacing: "0.12em",
             }}
           >
-            Entradas
+            <span className="block lg:text-[2.2rem] xl:text-[2.7rem]">Entradas</span>
           </button>
         </Link>
       </div>

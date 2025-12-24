@@ -10,7 +10,26 @@ const HomePage: React.FC = () => {
   return (
     <>
       <VideoHero />
-      <Banner />
+      {/* Banner fijo en NEGRO con texto, después del video */}
+      <div style={{
+        position: 'sticky',
+        top: 0,
+        left: 0,
+        width: '100%',
+        zIndex: 1000,
+        background: '#000',
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 'clamp(1.2rem, 3vw, 2.5rem)',
+        textAlign: 'center',
+        padding: '0.4rem 0',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
+        borderTop: '4px solid #b91c1c',
+        borderBottom: '4px solid #b91c1c',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.07), 0 0 16px 2px #dc2626, 0 0 32px 4px #b91c1c'
+      }}>
+        CUENTA ATRÁS AQUASELLA 2026
+      </div>
       <Countdown />
       <div 
         className="relative min-h-screen"
