@@ -20,7 +20,15 @@ const HomeMain: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full text-center mt-6 mb-6">
+    <section
+      className="w-full text-center mt-6 mb-6 min-h-[300px] md:min-h-[500px] flex flex-col justify-center"
+      style={{
+        backgroundImage: "url('/img/1.png')",
+        backgroundSize: '100% 100%',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       <h2
        className="text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 w-full"
               style={{
@@ -35,7 +43,7 @@ const HomeMain: React.FC = () => {
         <img
           src="/img/cartel.png"
           alt="Cartel Aquasella 2026"
-          className="w-full max-w-[220px] sm:max-w-xs md:max-w-2xl lg:max-w-4xl h-auto object-contain rounded-xl shadow-2xl border-4 border-red-700 bg-black mb-8"
+          className="w-full max-w-[220px] sm:max-w-xs md:max-w-2xl lg:max-w-4xl h-auto object-contain rounded-xl shadow-2xl border-4 border-red-700 mb-8 mt-6"
           draggable="false"
         />
       </div>
