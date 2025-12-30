@@ -20,15 +20,14 @@ const HomeMain: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full flex flex-col items-center justify-center text-center text-white py-12 bg-black">
+    <section className="w-full text-center mt-6 mb-6">
       <h2
-        className="text-5xl md:text-6xl font-extrabold uppercase tracking-widest mb-8 text-white"
-        style={{
-          fontFamily: "ClashDisplay, 'Arial Black', sans-serif",
-          fontWeight: 800,
-          letterSpacing: '0.12em',
-          textShadow: '0 0 8px #dc2626, 0 0 16px #b91c1c, 0 0 24px #dc2626'
-        }}
+       className="text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 w-full"
+              style={{
+                fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
+                fontWeight: 'bold',
+                lineHeight: 1.02
+              }}
       >
         CONFIRMACIONES
       </h2>
@@ -36,7 +35,7 @@ const HomeMain: React.FC = () => {
         <img
           src="/img/cartel.png"
           alt="Cartel Aquasella 2026"
-          className="w-full max-w-4xl h-auto object-contain rounded-xl shadow-2xl border-4 border-red-700 bg-black mb-8"
+          className="w-full max-w-[220px] sm:max-w-xs md:max-w-2xl lg:max-w-4xl h-auto object-contain rounded-xl shadow-2xl border-4 border-red-700 bg-black mb-8"
           draggable="false"
         />
       </div>
