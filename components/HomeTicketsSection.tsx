@@ -6,7 +6,7 @@ import { AllowedIcon } from './icons';
 const HomeTicketsSection: React.FC = () => {
   return (
     <section 
-      className="py-24 relative"
+      className="relative"
       style={{
         backgroundImage: 'url(/img/FondoTicketsHome.png)',
         backgroundSize: 'cover',
@@ -16,13 +16,21 @@ const HomeTicketsSection: React.FC = () => {
     >
       {/* Overlay opcional para mejorar legibilidad */}
       <div className="absolute inset-0 bg-black/40"></div>
-      
+      <h2
+        className="w-full text-center m-0 text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 relative z-10"
+        style={{
+          fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
+          fontWeight: 'bold',
+          lineHeight: 1.02,
+          background: 'transparent'
+        }}
+      >
+        TICKETS
+      </h2>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10">
-          <h2 className="text-5xl font-extrabold uppercase text-white tracking-tight drop-shadow-[0_10px_20px_rgba(7,89,133,0.25)] text-glow">Tickets</h2>
           <p className="mt-3 text-gray-300 max-w-2xl mx-auto">No te quedes fuera — entradas limitadas. Asegura tu plaza ahora y vive Aquasella al máximo.</p>
         </div>
-
         <div className="flex flex-col md:flex-row gap-6 items-stretch">
           {/* Main fair-ticket style card */}
           <div className={`relative flex-1 group rounded-xl overflow-hidden border-2 border-rose-600 bg-gradient-to-r from-rose-900/5 via-rose-800/10 to-slate-800/10 shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-red-600/60 ${styles.cardHaloRed}`}>
