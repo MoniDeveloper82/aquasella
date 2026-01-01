@@ -49,7 +49,7 @@ const LineUpPage: React.FC = () => {
         <div className="w-full h-full px-0 sm:px-0 lg:px-0 pt-20">
           {/* Título eliminado por solicitud */}
 
-          <div className="flex flex-row gap-6 justify-center mb-16 w-full">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 w-full">
             {sections.map((section) => {
               let bgImg = '';
               if (section.title === 'ARTISTAS') bgImg = "/img/ARTISTAS.png";
@@ -60,12 +60,12 @@ const LineUpPage: React.FC = () => {
                 <Link
                   key={section.title}
                   to={section.link}
-                  className="group block max-w-[400px] w-full"
+                  className="group block w-full max-w-xs mx-auto"
                   style={{ textDecoration: 'none' }}
                 >
                   <div
                     className={
-                      `relative bg-black rounded-2xl overflow-hidden h-[500px] transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
+                      `relative bg-black rounded-2xl overflow-hidden h-[500px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
                     }
                     style={{ borderColor: '#8B0000', backgroundImage: `url('${bgImg}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                   >
