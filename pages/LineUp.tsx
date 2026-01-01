@@ -27,51 +27,55 @@ const LineUpPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <img 
-        src="/img/l1.png" 
-        alt="Lineup Aquasella 2026" 
-        className="w-full max-w-full h-auto object-cover block" 
-        style={{display: 'block', margin: 0, padding: 0}} 
+    <div className="relative min-h-screen text-white overflow-hidden">
+      {/* Background image overlay */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundColor: 'black',
+          backgroundImage: "url('/img/1.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-        {/* Título eliminado por solicitud */}
+      <div className="relative z-10">
+        <img 
+          src="/img/l1.png" 
+          alt="Lineup Aquasella 2026" 
+          className="w-full max-w-full h-auto object-cover block" 
+          style={{display: 'block', margin: 0, padding: 0}} 
+        />
+        <div className="w-full h-full px-0 sm:px-0 lg:px-0 pt-20">
+          {/* Título eliminado por solicitud */}
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {sections.map((section) => (
-            <Link
-              key={section.title}
-              to={section.link}
-              className="group block transform transition-all duration-300 hover:scale-105 hover:-translate-y-2"
-            >
-              <div className={`bg-gradient-to-br ${section.color} rounded-2xl p-8 h-full shadow-2xl group-hover:shadow-3xl transition-shadow duration-300`}>
-                <div className="text-center">
-                  <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    {section.icon}
+          <div className="flex flex-row gap-6 justify-center mb-16 w-full">
+            {sections.map((section) => {
+              let bgImg = '';
+              if (section.title === 'ARTISTAS') bgImg = "/img/ARTISTAS.png";
+              if (section.title === 'CARTEL') bgImg = "/img/CARTEL1.png";
+              if (section.title === 'HORARIOS') bgImg = "/img/HORARIOS.png";
+              if (!bgImg) return null;
+              return (
+                <Link
+                  key={section.title}
+                  to={section.link}
+                  className="group block max-w-[400px] w-full"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <div
+                    className={
+                      `relative bg-black rounded-2xl overflow-hidden h-[500px] transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
+                    }
+                    style={{ borderColor: '#8B0000', backgroundImage: `url('${bgImg}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  >
+                    {/* Overlay hover igual que tickets */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <h2 className="text-3xl font-black uppercase tracking-wider mb-4">
-                    {section.title}
-                  </h2>
-                  <p className="text-gray-100 text-lg leading-relaxed">
-                    {section.description}
-                  </p>
-                  <div className="mt-6 inline-flex items-center text-white font-bold group-hover:translate-x-2 transition-transform duration-300">
-                    Ver más
-                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-16 bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">🎵 Aquasella 2026</h3>
-          <p className="text-gray-300 text-lg">
-            13-16 de Agosto • Arriondas, Asturias
-          </p>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

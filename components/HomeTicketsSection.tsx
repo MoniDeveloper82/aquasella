@@ -6,16 +6,17 @@ import { AllowedIcon } from './icons';
 const HomeTicketsSection: React.FC = () => {
   return (
     <section 
-      className="relative"
+      className="relative min-h-[600px] pb-0 mb-0"
       style={{
         backgroundImage: 'url(/img/FondoTicketsHome.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        marginBottom: 0,
+        paddingBottom: 0
       }}
     >
-      {/* Overlay opcional para mejorar legibilidad */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Overlay eliminado para mostrar la imagen de fondo sin filtro */}
       <h2
         className="w-full text-center m-0 text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 relative z-10"
         style={{
@@ -27,20 +28,18 @@ const HomeTicketsSection: React.FC = () => {
       >
         TICKETS
       </h2>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-0 pb-16">
         <div className="text-center mb-10">
           <p className="mt-3 text-gray-300 max-w-2xl mx-auto">No te quedes fuera — entradas limitadas. Asegura tu plaza ahora y vive Aquasella al máximo.</p>
         </div>
         <div className="flex flex-col md:flex-row gap-6 items-stretch">
           {/* Main fair-ticket style card */}
-          <div className={`relative flex-1 group rounded-xl overflow-hidden border-2 border-rose-600 bg-gradient-to-r from-rose-900/5 via-rose-800/10 to-slate-800/10 shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-red-600/60 ${styles.cardHaloRed}`}>
+          <div className={`relative flex-1 group rounded-xl overflow-hidden border-2 border-rose-600 bg-black shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-red-600/60 ${styles.cardHaloRed}`}>
             {/* glow layer that appears on hover */}
             <div className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute inset-0 bg-gradient-to-r from-rose-500/10 via-rose-400/8 to-purple-500/6 blur-3xl" />
             </div>
             {/* punch holes / notches */}
-            <div className="hidden md:block absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
-            <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
 
             <div className="p-6 md:p-10 flex flex-col md:flex-row items-stretch">
               <div className="flex-1">
@@ -107,7 +106,7 @@ const HomeTicketsSection: React.FC = () => {
           </div>
           <div className="w-full md:w-[38%] flex flex-col gap-6 h-full mt-32" style={{height: '100%'}}>
             {/* Primer tramo - sold out */}
-            <div className="relative w-full max-w-lg mx-auto rounded-xl overflow-hidden border-2 border-rose-600 bg-gradient-to-r from-rose-900/5 via-rose-800/10 to-slate-800/10 flex flex-col min-h-0 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_8px_2px_#dc2626,0_0_12px_3px_#b91c1c]" style={{height: '160%'}}>
+            <div className="relative w-full max-w-lg mx-auto rounded-xl overflow-hidden border-2 border-rose-600 bg-black flex flex-col min-h-0 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_8px_2px_#dc2626,0_0_12px_3px_#b91c1c]" style={{height: '160%'}}>
               {/* Semilunas blancas laterales */}
               <div className="hidden md:block absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
               <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
@@ -122,7 +121,7 @@ const HomeTicketsSection: React.FC = () => {
             </div>
 
             {/* Segundo tramo - sold out */}
-            <div className="relative flex-1 w-full max-w-lg mx-auto rounded-xl overflow-hidden border-2 border-rose-600 bg-gradient-to-r from-rose-900/5 via-rose-800/10 to-slate-800/10 flex flex-col min-h-0 h-1/2 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_8px_2px_#dc2626,0_0_12px_3px_#b91c1c]" style={{height: '200%'}}>
+            <div className="relative flex-1 w-full max-w-lg mx-auto rounded-xl overflow-hidden border-2 border-rose-600 bg-black flex flex-col min-h-0 h-1/2 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_8px_2px_#dc2626,0_0_12px_3px_#b91c1c]" style={{height: '200%'}}>
               {/* Semilunas blancas laterales */}
               <div className="hidden md:block absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
               <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />

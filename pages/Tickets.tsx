@@ -126,13 +126,17 @@ const TicketsPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <img 
-        src="/img/t1.png" 
-        alt="Tickets Aquasella 2026" 
-        className="w-full max-w-full h-auto object-cover block" 
-        style={{display: 'block', margin: 0, padding: 0}} 
-      />
+    <div
+      className="min-h-screen text-white relative overflow-hidden"
+      style={{
+        backgroundColor: 'black',
+        backgroundImage: "url('/img/1.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 mt-0 p-0">
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-4">
@@ -259,6 +263,7 @@ const TicketsPage: React.FC = () => {
             Al comprar una entrada, aceptas nuestros Términos y Condiciones y nuestra Política de Privacidad
           </p>
         </div>
+      </div>
       </div>
     </div>
   );

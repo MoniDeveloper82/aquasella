@@ -23,8 +23,8 @@ const HomeMain: React.FC = () => {
     <section
       className="w-full text-center min-h-[300px] md:min-h-[500px] flex flex-col justify-center"
       style={{
-        backgroundImage: "url('/img/1.png')",
-        backgroundSize: '100% 100%',
+        backgroundImage: "url('/img/FondoTicketsHome.png')",
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}

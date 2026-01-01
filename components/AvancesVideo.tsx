@@ -71,8 +71,16 @@ const AvancesVideo: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-6 sm:py-10">
-      <div className="w-full bg-black">
+    <section
+      className="py-6 sm:py-10 min-h-[300px] md:min-h-[500px]"
+      style={{
+        backgroundImage: "url('/img/2.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Title just before the video */}
           <div className="w-full text-center mt-6 mb-6">
@@ -89,15 +97,18 @@ const AvancesVideo: React.FC = () => {
           </div>
           {/* Video */}
           <div className="relative w-full h-auto sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black mb-8">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/sidOukngdlg?start=100"
-              title="Aftermovie Aquasella 2025"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+            <div className="w-full h-full border-4 border-rose-600 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_32px_8px_#fb7185,0_0_64px_16px_#be123c] hover:scale-105">
+              <div className="relative w-full h-full">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/sidOukngdlg?start=100"
+                  title="Aftermovie Aquasella 2025"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
