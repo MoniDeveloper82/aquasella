@@ -95,8 +95,8 @@ const AvancesVideo: React.FC = () => {
               AFTERMOVIE 2025
             </h2>
           </div>
-          {/* Video */}
-          <div className="relative w-full h-auto sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black mb-8">
+          {/* Video - always visible, with fallback */}
+          <div className="relative w-full h-[220px] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black mb-8">
             <div className="w-full h-full border-4 border-rose-600 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_32px_8px_#fb7185,0_0_64px_16px_#be123c] hover:scale-105">
               <div className="relative w-full h-full">
                 <iframe
@@ -106,7 +106,13 @@ const AvancesVideo: React.FC = () => {
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
+                  style={{ minHeight: 180 }}
                 ></iframe>
+                <noscript>
+                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black text-white text-center p-4">
+                    El video no se puede mostrar. Activa JavaScript o abre en la app de YouTube.
+                  </div>
+                </noscript>
               </div>
             </div>
           </div>
