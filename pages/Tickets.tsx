@@ -6,6 +6,12 @@ const TicketsPage: React.FC = () => {
 
   const guideSlides = [
     {
+      title: "",
+      content: (
+        <div className="w-full h-full flex items-center justify-center overflow-hidden"></div>
+      )
+    },
+    {
       title: "ABONOS GENERALES",
       content: (
         <>
@@ -43,10 +49,10 @@ const TicketsPage: React.FC = () => {
             <li>✅ Venta a Plazos: Tres pagos mensuales</li>
             <li>✅ Venta con Bono Cultural Joven</li>
           </ul>
-          <div className="mt-4 p-4 bg-yellow-900/30 border-l-4 border-yellow-500 rounded">
+          <div className="mt-4 p-4 bg-yellow-900/30 border-4 border-yellow-500 rounded">
             <p className="text-yellow-200">⚠️ El acceso al evento es exclusivamente para mayores de 18 años.</p>
           </div>
-          <div className="mt-3 p-4 bg-black border-l-4 border-red-500 rounded">
+          <div className="mt-3 p-4 bg-black border-4 border-red-500 rounded">
             <p className="text-gray-200">ℹ️ Durante el proceso de compra, se solicitarán los siguientes datos del comprador:<br />
             Nombre y Apellidos, DNI, Email, Teléfono, Fecha de Nacimiento y Código Postal.</p>
           </div>
@@ -145,11 +151,24 @@ const TicketsPage: React.FC = () => {
         </div>
 
         {/* Guía de Compra Carousel */}
-        <div className="bg-gradient-to-br from-red-950 to-red-900 rounded-2xl p-8 mb-12 shadow-2xl border border-red-800 relative">
+        <div
+          className="rounded-2xl p-8 mb-12 relative"
+          style={currentSlide === 0 ? {
+            backgroundImage: "url('/img/aquasella 2.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            border: '3px solid #ff003c',
+            boxShadow: '0 0 32px 8px #ff003c, 0 0 8px 2px #ff003c, 0 0 1px 1px #ff003c',
+          } : {
+            backgroundColor: 'black',
+            border: '3px solid #ff003c',
+            boxShadow: '0 0 32px 8px #ff003c, 0 0 8px 2px #ff003c, 0 0 1px 1px #ff003c',
+          }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-6 text-center text-white">
             GUÍA DE COMPRA - AQUASELLA 2026
           </h2>
-          
           {/* Carousel Container */}
           <div className="relative overflow-hidden">
             <div 
@@ -158,9 +177,15 @@ const TicketsPage: React.FC = () => {
             >
               <div className="flex">
                 {guideSlides.map((slide, index) => (
-                  <div key={index} className="min-w-full px-4">
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-bold mb-4 text-red-400 text-center">{slide.title}</h3>
+                  <div
+                    key={index}
+                    className="min-w-full h-[420px] flex flex-col items-center justify-center relative overflow-hidden"
+                    style={index === 0 ? { height: '420px' } : { height: '420px', backgroundColor: 'black' }}
+                  >
+                    <div className="space-y-4 w-full h-full flex flex-col items-center justify-center relative z-10">
+                      {slide.title && (
+                        <h3 className="text-2xl font-bold mb-4 text-red-400 text-center">{slide.title}</h3>
+                      )}
                       {slide.content}
                     </div>
                   </div>
@@ -172,9 +197,10 @@ const TicketsPage: React.FC = () => {
           {/* Navigation Buttons */}
           <div className="flex justify-between items-center mt-6">
             <button
-              onClick={prevSlide}
-              className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-colors"
+              onClick={currentSlide === 0 ? undefined : prevSlide}
+              className={`bg-red-600 text-white p-3 rounded-full transition-colors ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-red-700'}`}
               aria-label="Anterior"
+              disabled={currentSlide === 0}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
