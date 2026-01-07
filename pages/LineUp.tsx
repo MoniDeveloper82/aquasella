@@ -27,7 +27,7 @@ const LineUpPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden"
+    <div className="min-h-screen text-white relative overflow-x-hidden pb-10"
       style={{
         backgroundColor: 'black',
         backgroundImage: "url('/img/1.png')",
