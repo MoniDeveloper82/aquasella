@@ -8,9 +8,9 @@ const HomeTicketsSection: React.FC = () => {
     <section 
       className="relative min-h-[600px] pb-0 mb-0"
       style={{
-        backgroundImage: 'url(/img/FondoTicketsHome.png)',
+        backgroundImage: "url('/img/fondo3.jpg')",
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat',
         marginBottom: 0,
         paddingBottom: 0

@@ -105,7 +105,6 @@ const TicketsPage: React.FC = () => {
       id: 'venta-general',
       title: 'Venta General',
       description: 'Entradas individuales para todos los días del festival',
-      icon: '🎫',
       color: 'from-rose-600 to-red-800',
       link: '/tickets/venta-general'
     },
@@ -113,7 +112,6 @@ const TicketsPage: React.FC = () => {
       id: 'venta-plazos',
       title: 'Venta a Plazos',
       description: 'Paga tu entrada cómodamente en varios plazos',
-      icon: '💳',
       color: 'from-blue-600 to-blue-800',
       link: '/tickets/venta-plazos'
     },
@@ -121,7 +119,6 @@ const TicketsPage: React.FC = () => {
       id: 'bono-cultural',
       title: 'Bono Cultural Joven',
       description: 'Aprovecha el Bono Cultural para jóvenes de 18 años',
-      icon: '🎓',
       color: 'from-green-600 to-green-800',
       link: '/tickets/bono-cultural'
     }

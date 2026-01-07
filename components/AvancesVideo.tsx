@@ -72,11 +72,11 @@ const AvancesVideo: React.FC = () => {
 
   return (
     <section
-      className="py-6 sm:py-10 min-h-[300px] md:min-h-[500px]"
+      className="py-6 sm:py-10 min-h-[700px]"
       style={{
-        backgroundImage: "url('/img/2.png')",
+        backgroundImage: "url('/img/fondo2.jpg')",
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat',
       }}
     >
@@ -96,7 +96,7 @@ const AvancesVideo: React.FC = () => {
             </h2>
           </div>
           {/* Video - always visible, with fallback */}
-          <div className="relative w-full h-[220px] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden bg-black mb-8">
+          <div className="relative w-full h-[220px] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden mb-8">
             <div className="w-full h-full border-4 border-rose-600 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_32px_8px_#fb7185,0_0_64px_16px_#be123c] hover:scale-105">
               <div className="relative w-full h-full">
                 <iframe

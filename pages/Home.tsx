@@ -34,14 +34,11 @@ const HomePage: React.FC = () => {
         CUENTA ATRÁS AQUASELLA 2026
       </div>
       <Countdown />
+      {/* Fondo solo para la sección de confirmaciones */}
       <HomeMain />
-      <div className="relative min-h-screen bg-black">
-        <div className="relative z-10">
-          <AvancesVideo />
-          <HomeTicketsSection />
-          <PartnersStrip />
-        </div>
-      </div>
+      <AvancesVideo />
+      <HomeTicketsSection />
+      <PartnersStrip />
     </>
   );
 };
