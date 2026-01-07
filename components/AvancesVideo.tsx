@@ -72,11 +72,11 @@ const AvancesVideo: React.FC = () => {
 
   return (
     <section
-      className="py-6 sm:py-10 min-h-[700px]"
+      className="py-6 sm:py-10 min-h-[400px] sm:min-h-[700px]"
       style={{
         backgroundImage: "url('/img/fondo2.jpg')",
         backgroundSize: 'cover',
-        backgroundPosition: 'top center',
+        backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',
       }}
     >

@@ -21,11 +21,11 @@ const HomeMain: React.FC = () => {
 
   return (
     <section
-      className="min-h-[700px] w-full text-center flex flex-col justify-center p-0 m-0"
+      className="min-h-[400px] sm:min-h-[700px] w-full text-center flex flex-col justify-center p-0 m-0"
       style={{
         backgroundImage: "url('/img/fondo1.jpg')",
         backgroundSize: 'cover',
-        backgroundPosition: 'top center',
+        backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',
         width: '100%',
         height: '100%',
@@ -36,7 +36,7 @@ const HomeMain: React.FC = () => {
       }}
     >
       <h2
-      className="text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white break-words px-2 w-full"
+      className="text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 w-full"
               style={{
                 fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
                 fontWeight: 'bold',
