@@ -27,50 +27,65 @@ const LineUpPage: React.FC = () => {
   ];
 
   return (
-    <div className="relative min-h-screen text-white overflow-hidden">
-      {/* Background image overlay */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundColor: 'black',
-          backgroundImage: "url('/img/1.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+    <div className="min-h-screen text-white relative overflow-hidden"
+      style={{
+        backgroundColor: 'black',
+        backgroundImage: "url('/img/1.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       <div className="relative z-10">
-        <img 
-          src="/img/l1.png" 
-          alt="Lineup Aquasella 2026" 
-          className="w-full max-w-full h-auto object-cover block" 
-          style={{display: 'block', margin: 0, padding: 0}} 
-        />
-        <div className="w-full h-full px-0 sm:px-0 lg:px-0 pt-20">
-          {/* Título eliminado por solicitud */}
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 mt-0 p-0">
+            <img 
+              src="/img/l1.png" 
+              alt="Lineup Aquasella 2026" 
+              className="w-full max-w-full h-auto object-cover block mx-auto" 
+              style={{display: 'block', margin: 0, padding: 0}} 
+            />
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16 justify-center justify-items-center">
             {sections.map((section) => {
               let bgImg = '';
               if (section.title === 'ARTISTAS') bgImg = "/img/ARTISTAS.png";
               if (section.title === 'CARTEL') bgImg = "/img/CARTEL1.png";
               if (section.title === 'HORARIOS') bgImg = "/img/HORARIOS.png";
-              if (!bgImg) return null;
+              const hideContent = section.title === 'ARTISTAS' || section.title === 'CARTEL' || section.title === 'HORARIOS';
               return (
                 <Link
                   key={section.title}
                   to={section.link}
-                  className="group block w-full max-w-xs mx-auto"
-                  style={{ textDecoration: 'none' }}
+                  className="group block"
                 >
                   <div
                     className={
-                      `relative bg-black rounded-2xl overflow-hidden h-[500px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
+                      `relative bg-black rounded-2xl overflow-hidden h-[500px] w-full max-w-xs mx-auto min-w-[280px] min-h-[500px] block transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
                     }
-                    style={{ borderColor: '#8B0000', backgroundImage: `url('${bgImg}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    style={hideContent ? {
+                      borderColor: '#8B0000',
+                      backgroundImage: `url('${bgImg}')`,
+                      backgroundSize: 'contain',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center center',
+                      minHeight: '500px',
+                      minWidth: '280px',
+                      display: 'block',
+                    } : {
+                      borderColor: '#8B0000',
+                    }}
                   >
-                    {/* Overlay hover igual que tickets */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {hideContent ? (
+                      <div className="relative z-10 flex items-center justify-center h-full w-full min-h-[500px]">&nbsp;</div>
+                    ) : (
+                      <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                        <span className="text-6xl mb-4 drop-shadow-lg">{section.icon}</span>
+                        <h3 className="text-2xl font-bold mb-2 text-center text-white drop-shadow-lg">{section.title}</h3>
+                        <p className="text-base text-gray-200 text-center px-2 drop-shadow-lg">{section.description}</p>
+                      </div>
+                    )}
                   </div>
                 </Link>
               );

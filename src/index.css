@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+/* Slide hero background for Tickets */
+.slide-hero {
+  background-image: url("/img/aquasella-3.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .slide-hero {
+    background-size: cover;
+    height: 420px;
+  }
+}
 /* Ajuste de fondo de página para Tickets (cover en desktop) */
 .page-bg {
   background-size: contain;
@@ -8,7 +24,6 @@
     background-size: cover;
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
 
 /* Custom font faces */
 @font-face {
