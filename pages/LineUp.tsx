@@ -48,10 +48,10 @@ const LineUpPage: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16 justify-center justify-items-center">
             {sections.map((section) => {
-              let bgImg = '';
-              if (section.title === 'ARTISTAS') bgImg = "/img/ARTISTAS.png";
-              if (section.title === 'CARTEL') bgImg = "/img/CARTEL1.png";
-              if (section.title === 'HORARIOS') bgImg = "/img/HORARIOS.png";
+              let imgSrc = '';
+              if (section.title === 'ARTISTAS') imgSrc = '/img/ARTISTAS.png';
+              if (section.title === 'CARTEL') imgSrc = '/img/CARTEL1.png';
+              if (section.title === 'HORARIOS') imgSrc = '/img/HORARIOS.png';
               const hideContent = section.title === 'ARTISTAS' || section.title === 'CARTEL' || section.title === 'HORARIOS';
               return (
                 <Link
@@ -59,26 +59,18 @@ const LineUpPage: React.FC = () => {
                   to={section.link}
                   className="group block"
                 >
-                  <div
-                    className={
-                      `relative bg-black rounded-2xl overflow-hidden h-[500px] w-full max-w-xs mx-auto min-w-[280px] min-h-[500px] block transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
-                    }
-                    style={hideContent ? {
-                      borderColor: '#8B0000',
-                      backgroundImage: `url('${bgImg}')`,
-                      backgroundSize: 'contain',
-                      backgroundRepeat: 'no-repeat',
-                      backgroundPosition: 'center center',
-                      minHeight: '500px',
-                      minWidth: '280px',
-                      display: 'block',
-                    } : {
-                      borderColor: '#8B0000',
-                    }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className={
+                    `relative bg-black rounded-2xl overflow-hidden h-[500px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
+                  } style={{ borderColor: '#8B0000' }}>
                     {hideContent ? (
-                      <div className="relative z-10 flex items-center justify-center h-full w-full min-h-[500px]">&nbsp;</div>
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <img 
+                          src={imgSrc}
+                          alt={section.title}
+                          className="w-full h-full object-contain"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
                     ) : (
                       <div className="relative z-10 flex flex-col items-center justify-center h-full">
                         <span className="text-6xl mb-4 drop-shadow-lg">{section.icon}</span>
