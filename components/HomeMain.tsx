@@ -24,9 +24,9 @@ const HomeMain: React.FC = () => {
       className="min-h-[400px] sm:min-h-[700px] w-full text-center flex flex-col justify-center p-0 m-0"
       style={{
         backgroundImage: "url('/img/fondo1.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center top',
-        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'repeat',
         width: '100%',
         height: '100%',
         boxShadow: 'none',

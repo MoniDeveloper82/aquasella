@@ -75,9 +75,9 @@ const AvancesVideo: React.FC = () => {
       className="py-6 sm:py-10 min-h-[400px] sm:min-h-[700px]"
       style={{
         backgroundImage: "url('/img/fondo2.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center top',
-        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'repeat',
       }}
     >
       <div className="w-full">

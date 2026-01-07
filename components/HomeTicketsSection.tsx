@@ -6,12 +6,12 @@ import { AllowedIcon } from './icons';
 const HomeTicketsSection: React.FC = () => {
   return (
     <section 
-      className="relative min-h-[500px] sm:min-h-[900px] pb-0 mb-0"
+      className="relative min-h-[700px] pb-0 mb-0"
       style={{
         backgroundImage: "url('/img/fondo3.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center top',
-        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'repeat',
         marginBottom: 0,
         paddingBottom: 0
       }}
@@ -34,7 +34,7 @@ const HomeTicketsSection: React.FC = () => {
         </div>
         <div className="flex flex-col md:flex-row gap-6 items-stretch">
           {/* Main fair-ticket style card */}
-          <div className={`relative flex-1 group rounded-xl overflow-hidden border-2 border-rose-600 bg-black shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-red-600/60 ${styles.cardHaloRed} w-full max-w-[260px] sm:max-w-md md:max-w-none mx-auto`}>
+          <div className={`relative flex-1 group rounded-xl overflow-hidden border-2 border-rose-600 bg-black shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-red-600/60 ${styles.cardHaloRed} w-full max-w-[240px] sm:max-w-md md:max-w-none mx-auto min-h-[120px] sm:min-h-[340px]`}>
             {/* glow layer that appears on hover */}
             <div className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute inset-0 bg-gradient-to-r from-rose-500/10 via-rose-400/8 to-purple-500/6 blur-3xl" />
@@ -46,26 +46,9 @@ const HomeTicketsSection: React.FC = () => {
                 <div className="inline-block px-3 py-1 bg-rose-600 text-white text-xs font-bold rounded-full">ABONO</div>
                 <h3 className="mt-4 text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight">Abono General AQS 2026</h3>
                 <p className="mt-2 text-sm text-rose-200 font-semibold uppercase">Acceso general del 13 al 16 de agosto</p>
-                <p className="mt-4 text-gray-200 max-w-xl">Disfruta del festival con acceso total a todos los escenarios, zonas chill y zona de dia. Ideal para vivir la experiencia completa.</p>
+                {/* Texto eliminado a petición del usuario */}
 
-                <ul className="mt-4 text-sm text-gray-300 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  <li className="flex items-start gap-3">
-                    <AllowedIcon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-200">Acceso a todos los escenarios</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <AllowedIcon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-200">Zona de acampada (con suplemento de Acampada)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <AllowedIcon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-200">Foodtrucks en la zona de Día</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <AllowedIcon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-200">Zona Vip (con suplemento Vip)</span>
-                  </li>
-                </ul>
+                {/* Lista de características eliminada a petición del usuario */}
               </div>
 
               {/* Perforation line */}
@@ -76,18 +59,9 @@ const HomeTicketsSection: React.FC = () => {
               {/* Stub with price */}
               <div
                 className="w-full md:w-56 flex-none flex flex-col items-center justify-start p-0 md:p-0 text-white relative overflow-hidden rounded-b-xl"
-                style={{ minHeight: '340px', height: '100%' }}
+                style={{ minHeight: '60px', height: '100%' }}
               >
-                {/* Imagen cartel de fondo arriba */}
-                <div className="w-full relative" style={{ minHeight: '320px', height: '320px' }}>
-                  <img
-                    src="/img/cartel.png"
-                    alt="Cartel Aquasella 2026"
-                    className="absolute inset-0 w-full h-full object-contain z-0"
-                    style={{ minHeight: '320px', height: '320px', background: 'black' }}
-                    draggable="false"
-                  />
-                </div>
+                {/* Imagen del cartel eliminada a petición del usuario */}
                 {/* Info y botón debajo de la imagen */}
                 <div className="relative z-20 w-full flex flex-col items-center justify-end p-4 md:p-6 bg-transparent h-full" style={{minHeight: '120px'}}>
                   <div className="w-full flex flex-col items-center mt-16 mb-2">
