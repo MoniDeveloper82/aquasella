@@ -129,7 +129,7 @@ const TicketsPage: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen text-white relative overflow-hidden"
+      className="min-h-screen text-white relative overflow-x-hidden pb-10"
       style={{
         backgroundColor: 'black',
         backgroundImage: "url('/img/1.png')",
@@ -149,7 +149,7 @@ const TicketsPage: React.FC = () => {
         {/* Guía de Compra Carousel */}
         <div
           className={[
-            "rounded-2xl mb-12 relative mx-auto overflow-hidden",
+            "rounded-2xl mb-12 relative mx-auto overflow-visible", // <-- overflow-visible para evitar corte
             "border-[3px] border-[#ff003c]",
             "shadow-[0_0_32px_8px_#ff003c,0_0_8px_2px_#ff003c,0_0_1px_1px_#ff003c]",
             "w-full max-w-[500px] lg:max-w-[700px] xl:max-w-[900px] 2xl:max-w-[1100px]",
@@ -173,18 +173,14 @@ const TicketsPage: React.FC = () => {
                   <div key={index} className="min-w-full h-full">
                     {index === 0 ? (
                       <div className="w-full h-full flex items-center justify-center overflow-hidden">
-                        <img
-                          src="/img/aquasella3.png"
-                          alt="Aquasella"
-                          draggable={false}
-                          className={[
-                            "w-full h-full object-contain object-center",
-                            "scale-[1.15]",
-                            "sm:scale-[1.2]",
-                            "md:scale-[1.25]",
-                            "lg:scale-[1.3]",
-                          ].join(" ")}
-                        />
+                        <div className="w-full h-full flex items-center justify-center bg-black">
+                          <img
+                            src="/img/aquasella3.png"
+                            alt="Aquasella"
+                            draggable={false}
+                            className={["w-full h-full object-contain object-center","scale-[1.15]","sm:scale-[1.2]","md:scale-[1.25]","lg:scale-[1.3]",].join(" ")}
+                          />
+                        </div>
                       </div>
                     ) : (
                       // Slides de texto con scroll interno
