@@ -32,7 +32,7 @@ const HomeMain: React.FC = () => {
         filter: 'none',
         margin: 0,
         padding: 0,
-        marginBottom: 0,
+        marginBottom: '1.5rem',
         marginTop: 0,
       }}
     >

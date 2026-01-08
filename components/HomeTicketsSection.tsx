@@ -6,7 +6,7 @@ import { AllowedIcon } from './icons';
 const HomeTicketsSection: React.FC = () => {
   return (
     <section 
-      className="relative min-h-[700px] pb-0 mb-0 bg-black"
+      className="relative pb-0 mb-16 mt-0 bg-black"
       style={{
         backgroundImage: 'none',
         backgroundSize: 'none',
@@ -30,7 +30,7 @@ const HomeTicketsSection: React.FC = () => {
       >
         TICKETS
       </h2>
-      <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 mb-0 pb-16 pt-0 sm:pt-0">
+      <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 mb-0 pb-0 pt-0 sm:pt-0">
         <div className="text-center mb-10">
           <p className="mt-3 text-gray-300 max-w-2xl mx-auto">No te quedes fuera — entradas limitadas. Asegura tu plaza ahora y vive Aquasella al máximo.</p>
         </div>
@@ -111,6 +111,7 @@ const HomeTicketsSection: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="w-full h-8" />
 
         {/* <div className="mt-6 text-center text-gray-400 text-sm">
           <span className="font-semibold text-white">+20.000</span> asistentes felices — pagado seguro • devolución hasta 14 días antes

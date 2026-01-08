@@ -72,17 +72,16 @@ const AvancesVideo: React.FC = () => {
 
   return (
     <section
-      className="min-h-[400px] sm:min-h-[700px] p-0 m-0 w-full h-full"
+      className="min-h-[220px] sm:min-h-[400px] p-0 m-0 w-full h-full"
       style={{
-        backgroundImage: "url('/img/fondo2.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundImage: 'none',
+        backgroundSize: 'none',
+        backgroundPosition: 'none',
         backgroundRepeat: 'no-repeat',
         marginTop: 0,
-        marginBottom: 0,
+        marginBottom: '2rem',
         paddingTop: 0,
         paddingBottom: 0,
-        minHeight: '700px',
         height: '100%',
         width: '100%',
       }}
@@ -103,7 +102,7 @@ const AvancesVideo: React.FC = () => {
             </h2>
           </div>
           {/* Video - always visible, with fallback */}
-          <div className="relative w-full h-[220px] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] xl:h-[85vh] rounded-none sm:rounded-lg overflow-hidden mb-8">
+          <div className="relative w-full h-[220px] lg:h-[400px] xl:h-[500px] 2xl:h-[600px] rounded-none sm:rounded-lg overflow-hidden mb-0">
             <div className="w-full h-full border-4 border-rose-600 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_0_32px_8px_#fb7185,0_0_64px_16px_#be123c] hover:scale-105">
               <div className="relative w-full h-full">
                 <iframe
