@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 const backgroundImages = [
@@ -21,40 +20,47 @@ const HomeMain: React.FC = () => {
 
   return (
     <section
-      className="min-h-[400px] sm:min-h-[700px] w-full text-center flex flex-col justify-center p-0 m-0"
+      className="min-h-[400px] sm:min-h-[700px] w-full text-center flex flex-col justify-center p-0 m-0 bg-black"
       style={{
-        backgroundImage: "url('/img/fondo1.jpg')",
-        backgroundSize: 'contain',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'repeat',
+        backgroundImage: 'none',
+        backgroundSize: 'none',
+        backgroundPosition: 'none',
+        backgroundRepeat: 'no-repeat',
         width: '100%',
         height: '100%',
         boxShadow: 'none',
         filter: 'none',
         margin: 0,
-        padding: 0,
-      }}
-    >
-      <h2
-      className="text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 w-full"
-              style={{
-                fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
-                fontWeight: 'bold',
-                lineHeight: 1.02
-              }}
-      >
-        CONFIRMACIONES
-      </h2>
-      <div className="flex flex-col items-center w-full">
-        <img
-          src="/img/cartel.png"
-          alt="Cartel Aquasella 2026"
-          className="w-full max-w-[220px] sm:max-w-xs md:max-w-2xl lg:max-w-4xl h-auto object-contain rounded-xl border-4 border-red-700 mb-8 mt-6"
-          draggable="false"
-        />
-      </div>
-    </section>
-  );
-};
-
-export default HomeMain;
+        <section className="min-h-[200px] sm:min-h-[700px] w-full text-center flex flex-col items-center justify-center p-0 m-0 bg-black"
+          style={{
+            backgroundImage: 'none',
+            backgroundSize: 'none',
+            backgroundPosition: 'none',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%',
+            boxShadow: 'none',
+            filter: 'none',
+            margin: 0,
+            padding: 0,
+            marginBottom: 0,
+            marginTop: 0,
+          }}
+        >
+          <h2
+            className="text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 w-full"
+            style={{
+              fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
+              fontWeight: 'bold',
+              lineHeight: 1.02
+            }}
+          >
+            CONFIRMACIONES
+          </h2>
+          <img
+            src="/img/cartel.png"
+            alt="Cartel Aquasella 2026"
+            className="w-full max-w-[220px] sm:max-w-xs md:max-w-2xl lg:max-w-4xl h-auto object-contain rounded-xl border-4 border-red-700 mt-6 mb-0"
+            draggable="false"
+          />
+        </section>

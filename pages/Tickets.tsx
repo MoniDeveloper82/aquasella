@@ -126,15 +126,9 @@ const TicketsPage: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen text-white relative overflow-x-hidden pb-10"
-      style={{
-        backgroundColor: 'black',
-        backgroundImage: "url('/img/1.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'top center',
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="min-h-screen bg-black text-white"
     >
+      <img src="/img/t1.png" alt="Tickets Aquasella" className="w-full block" style={{margin: 0, padding: 0, display: 'block'}} />
       <div className="relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 mt-0 p-0">

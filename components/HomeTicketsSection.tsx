@@ -6,14 +6,16 @@ import { AllowedIcon } from './icons';
 const HomeTicketsSection: React.FC = () => {
   return (
     <section 
-      className="relative min-h-[700px] pb-0 mb-0"
+      className="relative min-h-[700px] pb-0 mb-0 bg-black"
       style={{
-        backgroundImage: "url('/img/fondo3.jpg')",
-        backgroundSize: 'contain',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'repeat',
+        backgroundImage: 'none',
+        backgroundSize: 'none',
+        backgroundPosition: 'none',
+        backgroundRepeat: 'no-repeat',
         marginBottom: 0,
-        paddingBottom: 0
+        paddingBottom: 0,
+        marginTop: 0,
+        paddingTop: 0,
       }}
     >
       {/* Overlay eliminado para mostrar la imagen de fondo sin filtro */}
@@ -28,7 +30,7 @@ const HomeTicketsSection: React.FC = () => {
       >
         TICKETS
       </h2>
-      <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 mb-0 pb-16 pt-6 sm:pt-10">
+      <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 mb-0 pb-16 pt-0 sm:pt-0">
         <div className="text-center mb-10">
           <p className="mt-3 text-gray-300 max-w-2xl mx-auto">No te quedes fuera — entradas limitadas. Asegura tu plaza ahora y vive Aquasella al máximo.</p>
         </div>

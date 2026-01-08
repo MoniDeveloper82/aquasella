@@ -72,12 +72,19 @@ const AvancesVideo: React.FC = () => {
 
   return (
     <section
-      className="py-6 sm:py-10 min-h-[400px] sm:min-h-[700px]"
+      className="min-h-[400px] sm:min-h-[700px] p-0 m-0 w-full h-full"
       style={{
         backgroundImage: "url('/img/fondo2.jpg')",
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'repeat',
+        backgroundRepeat: 'no-repeat',
+        marginTop: 0,
+        marginBottom: 0,
+        paddingTop: 0,
+        paddingBottom: 0,
+        minHeight: '700px',
+        height: '100%',
+        width: '100%',
       }}
     >
       <div className="w-full">
@@ -123,3 +130,4 @@ const AvancesVideo: React.FC = () => {
 };
 
 export default AvancesVideo;
+

@@ -36,15 +36,10 @@ const LineUpPage: React.FC = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
+      <img src="/img/l1.png" alt="Lineup Aquasella 2026" className="w-full block" style={{margin: 0, padding: 0, display: 'block'}} />
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 mt-0 p-0">
-            <img 
-              src="/img/l1.png" 
-              alt="Lineup Aquasella 2026" 
-              className="w-full max-w-full h-auto object-cover block mx-auto" 
-              style={{display: 'block', margin: 0, padding: 0}} 
-            />
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16 justify-center justify-items-center">
             {sections.map((section) => {
