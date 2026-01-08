@@ -20,7 +20,7 @@ const HomeMain: React.FC = () => {
 
   return (
     <section
-      className="min-h-[400px] sm:min-h-[700px] w-full text-center flex flex-col justify-center p-0 m-0 bg-black"
+      className="min-h-[400px] sm:min-h-[700px] w-full text-center flex flex-col justify-center items-center p-0 m-0 bg-black"
       style={{
         backgroundImage: 'none',
         backgroundSize: 'none',
@@ -45,7 +45,7 @@ const HomeMain: React.FC = () => {
       <img
         src="/img/cartel.png"
         alt="Cartel Aquasella 2026"
-        className="w-full max-w-[220px] sm:max-w-xs md:max-w-2xl lg:max-w-4xl h-auto object-contain rounded-xl border-4 border-red-700 mt-6 mb-0"
+        className="mx-auto w-full max-w-[220px] sm:max-w-xs md:max-w-2xl lg:max-w-4xl h-auto object-contain rounded-xl border-4 border-red-700 mt-6 mb-0"
         draggable="false"
       />
     </section>
