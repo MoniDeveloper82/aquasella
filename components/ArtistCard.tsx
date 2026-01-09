@@ -14,7 +14,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist, onClick }) => {
       className="group relative rounded-lg overflow-hidden cursor-pointer shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-red-600/60"
       onClick={() => onClick(artist)}
     >
-      <img src={artist.image} alt={artist.name} className="w-full h-full object-cover" style={artist.name === 'Adiel' ? { objectPosition: 'center 25%' } : {}} />
+      <img src={artist.image} alt={artist.name} className="w-full h-full object-cover" loading="eager" style={artist.name === 'Adiel' ? { objectPosition: 'center 25%' } : {}} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
       <div className="absolute bottom-0 left-0 p-4">
         <h3 className="text-lg font-bold text-white uppercase tracking-wide">{artist.name}</h3>
