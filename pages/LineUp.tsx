@@ -27,21 +27,27 @@ const LineUpPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white relative overflow-x-hidden pb-10"
-      style={{
-        backgroundColor: 'black',
-        backgroundImage: "url('/img/1.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'top center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden pb-10 z-10" style={{
+      backgroundImage: "url('/img/vertical2.png')",
+      backgroundSize: '100% auto',
+      backgroundPosition: 'center bottom',
+      backgroundRepeat: 'no-repeat'
+    }}>
       <img src="/img/l1.png" alt="Lineup Aquasella 2026" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} />
-      <div className="relative z-10">
+      <div className="relative z-10 min-h-screen">
+      <style>{`
+        @media (max-width: 768px) {
+          div[style*="vertical2.png"] {
+            background-size: contain !important;
+            background-position: center top !important;
+            background-repeat: repeat !important;
+          }
+        }
+      `}</style>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 mt-0 p-0">
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16 justify-center justify-items-center">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-24 justify-center justify-items-center items-center">
             {sections.map((section) => {
               let imgSrc = '';
               if (section.title === 'ARTISTAS') imgSrc = '/img/ARTISTAS.png';
