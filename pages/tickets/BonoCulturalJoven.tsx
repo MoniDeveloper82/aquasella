@@ -17,11 +17,10 @@ const BonoCulturalJovenPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white py-20">
-      <img src="/img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Navegación de regreso */}
-        <div className="mb-8">
+    <div className="min-h-screen bg-black text-white pt-0 pb-10">
+      <>
+        {/* Navegación de regreso - Por encima del banner */}
+        <div className="mb-4 px-4 sm:px-6 lg:px-8">
           <Link 
             to="/tickets" 
             className="inline-flex items-center text-gray-300 hover:text-white transition-colors group"
@@ -33,6 +32,8 @@ const BonoCulturalJovenPage: React.FC = () => {
             Volver a Tickets
           </Link>
         </div>
+        
+        <img src="/img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" />
 
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">
@@ -45,8 +46,8 @@ const BonoCulturalJovenPage: React.FC = () => {
 
         {/* Tienda Evezing con diseño avanzado */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
-          {/* TITULO SECCION */}
-          <div className="text-center mb-8">
+          {/* TITULO SECCION - Movido arriba en móvil */}
+          <div className="text-center mb-8 hidden md:block">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               🎫 Entradas Oficiales AQUASELLA 2026
             </h2>
@@ -122,7 +123,7 @@ const BonoCulturalJovenPage: React.FC = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </>
     </div>
   );
 };
