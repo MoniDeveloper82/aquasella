@@ -36,7 +36,7 @@ const LineUpPage: React.FC = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <img src="/img/l1.png" alt="Lineup Aquasella 2026" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} />
+      <img src="/img/l1.png" alt="Lineup Aquasella 2026" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="eager" />
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 mt-0 p-0">
@@ -63,6 +63,7 @@ const LineUpPage: React.FC = () => {
                           src={imgSrc}
                           alt={section.title}
                           className="w-full h-full object-contain"
+                          loading="eager"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>
