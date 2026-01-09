@@ -7,13 +7,14 @@ const App: React.FC = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
+  const isShopPage = location.pathname === '/shop';
   return (
     <div className="bg-black min-h-screen flex flex-col">
       <Header />
-      <main className={`flex-grow ${isHomePage ? '' : 'pt-20'}`}>
+      <main className={`flex-grow ${isHomePage || isShopPage ? '' : 'pt-20'}`}>
         <Outlet />
       </main>
-      <Footer />
+      {!isShopPage && <Footer />}
     </div>
   );
 };

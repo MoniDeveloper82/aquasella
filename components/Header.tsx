@@ -8,6 +8,7 @@ const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isShopPage = location.pathname === '/shop';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,7 +95,6 @@ const Header: React.FC = () => {
                   to={link.to}
                   onClick={handleLinkClick}
                   className={({ isActive }) => {
-                    // If the link is 'INICIO' use a silver hover; otherwise keep red hover
                     const hoverClass = link.label === 'INICIO' ? 'hover:text-[#cfcfcf]' : 'hover:text-rose-600';
                     const extra = link.label === 'INICIO' ? ' silver-hover' : '';
                     return `text-base lg:text-lg xl:text-xl font-semibold uppercase tracking-tight transition-all duration-300 transform hover:scale-105 ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
@@ -126,9 +126,11 @@ const Header: React.FC = () => {
         </nav>
       </header>
       {/* Banner just under the fixed header: use top margin to account for fixed header height */}
-      <div className="mt-24 lg:mt-28 xl:mt-32">
-        <Banner />
-      </div>
+      {!isShopPage && (
+        <div className="mt-24 lg:mt-28 xl:mt-32">
+          <Banner />
+        </div>
+      )}
       
       {/* Halo de luz debajo del header */}
       <div className="fixed top-24 lg:top-28 xl:top-32 left-0 right-0 h-16 bg-gradient-to-b from-red-500/50 via-red-600/35 to-transparent blur-md z-40"></div>
@@ -150,6 +152,7 @@ const Header: React.FC = () => {
                   return `text-xl font-semibold uppercase tracking-tight transition-all duration-300 transform hover:scale-105 border-b border-gray-700 pb-3 mobile-nav-item ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
                 }}
                 style={{ fontFamily: 'ClashDisplay, sans-serif' }}
+                onClick={handleLinkClick}
               >
                 {link.label}
               </NavLink>
