@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
         CUENTA ATRÁS AQUASELLA 2026
       </div>
       <Countdown />
-      {/* Fondo con vertical2.png desde confirmaciones hasta el final */}
+      {/* Fondo con vertical2.png desde confirmaciones hasta tickets */}
       <div
         style={{
           backgroundImage: "url('/img/vertical2.png')",
@@ -47,8 +47,8 @@ const HomePage: React.FC = () => {
         <HomeMain />
         <AvancesVideo />
         <HomeTicketsSection />
-        <PartnersStrip />
       </div>
+      <PartnersStrip />
     </>
   );
 };
