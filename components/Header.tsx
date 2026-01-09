@@ -152,7 +152,6 @@ const Header: React.FC = () => {
                   return `text-xl font-semibold uppercase tracking-tight transition-all duration-300 transform hover:scale-105 border-b border-gray-700 pb-3 mobile-nav-item ${isActive ? 'text-rose-600' : `text-gray-300 ${hoverClass}`} ${extra}`;
                 }}
                 style={{ fontFamily: 'ClashDisplay, sans-serif' }}
-                onClick={handleLinkClick}
               >
                 {link.label}
               </NavLink>

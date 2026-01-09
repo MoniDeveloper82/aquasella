@@ -34,16 +34,37 @@ const HomePage: React.FC = () => {
         CUENTA ATRÁS AQUASELLA 2026
       </div>
       <Countdown />
-      {/* Fondo con vertical2.png desde confirmaciones hasta tickets */}
+      {/* Fondo fijo para móviles */}
       <div
+        className="fixed inset-0 z-0 md:hidden"
+        style={{
+          backgroundImage: "url('/img/vertical2.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+      {/* Fondo para desktop */}
+      <div
+        className="hidden md:block"
         style={{
           backgroundImage: "url('/img/vertical2.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
+          backgroundAttachment: 'fixed',
+          minHeight: '100vh'
         }}
       >
+        {/* Contenido principal */}
+        <div className="relative z-10">
+          <HomeMain />
+          <AvancesVideo />
+          <HomeTicketsSection />
+        </div>
+      </div>
+      {/* Contenido para móviles */}
+      <div className="md:hidden relative z-10">
         <HomeMain />
         <AvancesVideo />
         <HomeTicketsSection />
