@@ -127,8 +127,23 @@ const TicketsPage: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen bg-black text-white"
+      className="min-h-screen text-white"
+      style={{
+        backgroundImage: "url('/img/vertical2.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
+    <style>{`
+      @media (max-width: 768px) {
+        div[style*="vertical2.png"] {
+          background-size: contain !important;
+          background-position: center top !important;
+          background-repeat: repeat !important;
+        }
+      }
+    `}</style>
       <img src="/img/t1.png" alt="Tickets Aquasella" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
       <div className="relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
