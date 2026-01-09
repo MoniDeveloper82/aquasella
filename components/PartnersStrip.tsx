@@ -4,12 +4,10 @@ import React from 'react';
 const PartnersStrip: React.FC = () => {
   // In a real app, this would come from a data source
   const partners = [
-    { name: 'Sponsor 1', logo: 'https://via.placeholder.com/150x60/C0C0C0/FFFFFF?text=Sponsor+1' },
-    { name: 'Sponsor 2', logo: 'https://via.placeholder.com/150x60/C0C0C0/FFFFFF?text=Sponsor+2' },
-    { name: 'Sponsor 3', logo: 'https://via.placeholder.com/150x60/C0C0C0/FFFFFF?text=Sponsor+3' },
-    { name: 'Sponsor 4', logo: 'https://via.placeholder.com/150x60/C0C0C0/FFFFFF?text=Sponsor+4' },
-    { name: 'Sponsor 5', logo: 'https://via.placeholder.com/150x60/C0C0C0/FFFFFF?text=Sponsor+5' },
-    { name: 'Sponsor 6', logo: 'https://via.placeholder.com/150x60/C0C0C0/FFFFFF?text=Sponsor+6' },
+    { name: 'Sponsor 1', logo: '/img/sponsor1.png' },
+    { name: 'Sponsor 2', logo: '/img/sponsor2.png' },
+    { name: 'Sponsor 3', logo: '/img/sponsor3.png' },
+    { name: 'Sponsor 4', logo: '/img/sponsor4.png' },
   ];
 
   return (
@@ -38,7 +36,7 @@ const PartnersStrip: React.FC = () => {
               key={index}
               src={partner.logo}
               alt={partner.name}
-              className="h-10 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              className="h-12 object-contain transition-all duration-300"
             />
           ))}
         </div>
