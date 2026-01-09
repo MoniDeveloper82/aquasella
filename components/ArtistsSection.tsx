@@ -79,7 +79,8 @@ const ArtistsSection: React.FC = () => {
           onClick={closeModal}
         >
           <div 
-            className="bg-gray-800 rounded-lg shadow-2xl overflow-hidden max-w-3xl w-full relative transform transition-all duration-300 scale-95 animate-fade-in"
+            className="bg-black rounded-lg shadow-2xl overflow-hidden max-w-3xl w-full relative transform transition-all duration-300 scale-95 animate-fade-in"
+            style={{ boxShadow: '0 0 40px rgba(255, 0, 0, 0.8)' }}
             onClick={(e) => e.stopPropagation()}
           >
              <button onClick={closeModal} className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10">
@@ -87,14 +88,14 @@ const ArtistsSection: React.FC = () => {
              </button>
              <div className="md:flex">
                 <img src={selectedArtist.image} alt={selectedArtist.name} className="w-full md:w-1/2 h-64 md:h-auto object-cover" />
-                <div className="p-8">
-                    <h3 className="text-3xl font-black uppercase text-sky-400">{selectedArtist.name}</h3>
-                    <p className="text-lg font-semibold text-gray-300 mt-1">{selectedArtist.style}</p>
-                    <div className="mt-4 space-y-2 text-gray-400">
-                        <p><span className="font-bold text-gray-200">Escenario:</span> {selectedArtist.stage}</p>
-                        <p><span className="font-bold text-gray-200">Horario:</span> {selectedArtist.schedule}</p>
+                <div className="p-8 bg-black">
+                    <h3 className="text-3xl font-black uppercase text-white">{selectedArtist.name}</h3>
+                    <div className="mt-4 space-y-2 text-white">
+                        <p><span className="font-bold text-white">Día:</span> Próximamente</p>
+                        <p><span className="font-bold text-white">Escenario:</span> Próximamente</p>
+                        <p><span className="font-bold text-white">Horario:</span> Próximamente</p>
                     </div>
-                    <p className="mt-6 text-gray-300">{selectedArtist.description}</p>
+                    <p>Próximamente</p>
                 </div>
              </div>
           </div>
