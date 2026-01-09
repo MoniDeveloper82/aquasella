@@ -129,7 +129,7 @@ const TicketsPage: React.FC = () => {
     <div
       className="min-h-screen bg-black text-white"
     >
-      <img src="/img/t1.png" alt="Tickets Aquasella" className="w-full block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
+      <img src="/img/t1.png" alt="Tickets Aquasella" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
       <div className="relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 mt-0 p-0">
@@ -250,7 +250,6 @@ const TicketsPage: React.FC = () => {
                       src="/img/VENTA.png" 
                       alt="Venta General"
                       className="w-full h-full object-contain"
-                      loading="lazy"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -262,7 +261,6 @@ const TicketsPage: React.FC = () => {
                       src="/img/Plazos.png" 
                       alt="Venta a Plazos"
                       className="w-full h-full object-contain"
-                      loading="lazy"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -274,7 +272,6 @@ const TicketsPage: React.FC = () => {
                       src="/img/Bono.png" 
                       alt="Bono Cultural"
                       className="w-full h-full object-contain"
-                      loading="lazy"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
