@@ -55,7 +55,7 @@ const LineUpPage: React.FC = () => {
                   className="group block"
                 >
                   <div className={
-                    `relative bg-black rounded-2xl overflow-hidden h-[500px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
+                    `relative bg-black rounded-2xl overflow-hidden h-80 md:h-[500px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
                   } style={{ borderColor: '#8B0000' }}>
                     {hideContent ? (
                       <div className="relative w-full h-full flex items-center justify-center">
@@ -63,6 +63,7 @@ const LineUpPage: React.FC = () => {
                           src={imgSrc}
                           alt={section.title}
                           className="w-full h-full object-contain"
+                          loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>

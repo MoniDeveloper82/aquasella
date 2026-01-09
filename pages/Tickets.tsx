@@ -12,6 +12,7 @@ const TicketsPage: React.FC = () => {
           src="/img/aquasella3.png"
           alt="Aquasella"
           className="w-full h-full object-cover object-center"
+          loading="lazy"
         />
       )
     },
@@ -128,7 +129,7 @@ const TicketsPage: React.FC = () => {
     <div
       className="min-h-screen bg-black text-white"
     >
-      <img src="/img/t1.png" alt="Tickets Aquasella" className="w-full block" style={{margin: 0, padding: 0, display: 'block'}} />
+      <img src="/img/t1.png" alt="Tickets Aquasella" className="w-full block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
       <div className="relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 mt-0 p-0">
@@ -241,7 +242,7 @@ const TicketsPage: React.FC = () => {
               className="group block"
             >
               {/* Las cards están centradas en móvil usando mx-auto y max-w-xs */}
-              <div className={`relative bg-black rounded-2xl overflow-hidden h-[500px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`} style={{ borderColor: '#8B0000' }}>
+              <div className={`relative bg-black rounded-2xl overflow-hidden h-80 md:h-[500px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`} style={{ borderColor: '#8B0000' }}>
                 {section.id === 'venta-general' ? (
                   <div className="relative w-full h-full flex items-center justify-center">
                     {/* Image for Venta General */}
@@ -249,6 +250,7 @@ const TicketsPage: React.FC = () => {
                       src="/img/VENTA.png" 
                       alt="Venta General"
                       className="w-full h-full object-contain"
+                      loading="lazy"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -260,6 +262,7 @@ const TicketsPage: React.FC = () => {
                       src="/img/Plazos.png" 
                       alt="Venta a Plazos"
                       className="w-full h-full object-contain"
+                      loading="lazy"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -271,6 +274,7 @@ const TicketsPage: React.FC = () => {
                       src="/img/Bono.png" 
                       alt="Bono Cultural"
                       className="w-full h-full object-contain"
+                      loading="lazy"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
