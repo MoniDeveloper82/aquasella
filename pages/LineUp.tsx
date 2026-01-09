@@ -62,7 +62,7 @@ const LineUpPage: React.FC = () => {
                         <img 
                           src={imgSrc}
                           alt={section.title}
-                          className="w-full h-full object-contain"
+                          className={`w-full h-full ${section.title === 'ARTISTAS' ? 'object-cover' : 'object-contain'}`}
                           loading="eager"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
