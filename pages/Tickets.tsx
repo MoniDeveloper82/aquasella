@@ -250,6 +250,7 @@ const TicketsPage: React.FC = () => {
                       src="/img/VENTA.png" 
                       alt="Venta General"
                       className="w-full h-full object-contain"
+                      loading="eager"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -261,6 +262,7 @@ const TicketsPage: React.FC = () => {
                       src="/img/Plazos.png" 
                       alt="Venta a Plazos"
                       className="w-full h-full object-contain"
+                      loading="eager"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -271,7 +273,8 @@ const TicketsPage: React.FC = () => {
                     <img 
                       src="/img/Bono.png" 
                       alt="Bono Cultural"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
+                      loading="eager"
                     />
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
