@@ -20,7 +20,7 @@ const HomeMain: React.FC = () => {
 
   return (
     <section
-      className="min-h-[400px] sm:min-h-[700px] w-full text-center flex flex-col justify-center items-center p-0 m-0 bg-black"
+      className="min-h-[400px] sm:min-h-[700px] w-full text-center flex flex-col justify-center items-center p-0 m-0"
       style={{
         backgroundImage: 'none',
         backgroundSize: 'none',

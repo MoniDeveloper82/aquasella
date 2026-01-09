@@ -34,11 +34,21 @@ const HomePage: React.FC = () => {
         CUENTA ATRÁS AQUASELLA 2026
       </div>
       <Countdown />
-      {/* Fondo solo para la sección de confirmaciones */}
-      <HomeMain />
-      <AvancesVideo />
-      <HomeTicketsSection />
-      <PartnersStrip />
+      {/* Fondo con vertical2.png desde confirmaciones hasta el final */}
+      <div
+        style={{
+          backgroundImage: "url('/img/vertical2.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <HomeMain />
+        <AvancesVideo />
+        <HomeTicketsSection />
+        <PartnersStrip />
+      </div>
     </>
   );
 };

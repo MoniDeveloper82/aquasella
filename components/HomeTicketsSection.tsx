@@ -6,7 +6,7 @@ import { AllowedIcon } from './icons';
 const HomeTicketsSection: React.FC = () => {
   return (
     <section 
-      className="relative pb-0 mb-16 mt-0 bg-black"
+      className="relative pb-0 mb-16 mt-0"
       style={{
         backgroundImage: 'none',
         backgroundSize: 'none',
