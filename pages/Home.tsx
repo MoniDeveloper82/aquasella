@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
       <div
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: "url('/img/vertical2.png')",
+          backgroundImage: "url('/img/vertical3.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

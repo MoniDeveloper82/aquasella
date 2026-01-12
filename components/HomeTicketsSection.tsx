@@ -36,18 +36,22 @@ const HomeTicketsSection: React.FC = () => {
         </div>
         <div className="flex flex-col md:flex-row gap-6 items-stretch">
           {/* Main fair-ticket style card */}
-          <div className={`relative flex-1 group rounded-xl overflow-hidden border-2 border-rose-600 bg-black shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-red-600/60 ${styles.cardHaloRed} w-full max-w-[240px] sm:max-w-md md:max-w-none mx-auto min-h-[120px] sm:min-h-[340px]`}>
+          <div className={`relative flex-1 group rounded-xl overflow-hidden border-2 border-rose-600 bg-black shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-red-600/60 ${styles.cardHaloRed} w-full max-w-[300px] sm:max-w-md md:max-w-none mx-auto min-h-[120px] sm:min-h-[340px]`}>
             {/* glow layer that appears on hover */}
             <div className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute inset-0 bg-gradient-to-r from-rose-500/10 via-rose-400/8 to-purple-500/6 blur-3xl" />
             </div>
+            {/* Overlay for better text visibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            {/* Bottom image background */}
+            <div className="absolute bottom-0 left-0 right-0 h-1/2 rounded-b-xl" style={{backgroundImage: "url('/img/AQS15.jpg')", backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
             {/* punch holes / notches */}
 
             <div className="p-3 sm:p-6 md:p-10 flex flex-col md:flex-row items-stretch">
               <div className="flex-1">
                 <div className="inline-block px-3 py-1 bg-rose-600 text-white text-xs font-bold rounded-full">ABONO</div>
-                <h3 className="mt-4 text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight">Abono General AQS 2026</h3>
-                <p className="mt-2 text-sm text-rose-200 font-semibold uppercase">Acceso general del 13 al 16 de agosto</p>
+                <h3 className="mt-2 text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight">Abono General AQS 2026</h3>
+                <p className="mt-2 text-sm text-rose-600 font-semibold uppercase">Acceso general del 13 al 16 de agosto</p>
                 {/* Texto eliminado a petición del usuario */}
 
                 {/* Lista de características eliminada a petición del usuario */}
@@ -66,10 +70,10 @@ const HomeTicketsSection: React.FC = () => {
                 {/* Imagen del cartel eliminada a petición del usuario */}
                 {/* Info y botón debajo de la imagen */}
                 <div className="relative z-20 w-full flex flex-col items-center justify-end p-4 md:p-6 bg-transparent h-full" style={{minHeight: '120px'}}>
-                  <div className="w-full flex flex-col items-center mt-16 mb-2">
+                  <div className="w-full flex flex-col items-center mt-4 mb-2">
                     <div className="text-xs uppercase tracking-widest drop-shadow font-bold">Desde</div>
                     <div className="text-3xl md:text-4xl font-extrabold drop-shadow-lg">86,90€</div>
-                    <NavLink to="/tickets" className="mt-6 inline-flex items-center justify-center bg-white text-rose-800 px-4 py-2 rounded-full text-sm font-semibold hover:brightness-95 transition drop-shadow w-full" aria-label="Comprar Abono General">
+                    <NavLink to="/tickets" className="mt-6 inline-flex items-center justify-center bg-white text-rose-800 px-4 py-2 rounded-full text-sm font-semibold hover:brightness-95 transition drop-shadow w-full hover:shadow-[0_0_10px_#dc2626,0_0_20px_#b91c1c]" aria-label="Comprar Abono General">
                       Comprar
                     </NavLink>
                   </div>
@@ -91,7 +95,7 @@ const HomeTicketsSection: React.FC = () => {
                 <div className="bg-rose-600 text-white text-xs font-bold uppercase px-4 py-1 rounded-lg shadow">Sold out</div>
               </div>
               <div className="p-3 sm:p-6 pt-8 sm:pt-12">
-                <h4 className="text-2xl font-bold text-white uppercase whitespace-nowrap text-center">Abono Primer Tramo</h4>
+                <h4 className="mt-4 text-2xl font-bold text-white uppercase whitespace-nowrap text-center">Abono Primer Tramo</h4>
                 <p className="mt-3 text-gray-400 text-center">Entrada del primer tramo — actualmente <span className="text-rose-500 font-bold uppercase">AGOTADA</span>.</p>
               </div>
             </div>
@@ -105,7 +109,7 @@ const HomeTicketsSection: React.FC = () => {
                 <div className="bg-rose-600 text-white text-xs font-bold uppercase px-4 py-1 rounded-lg shadow">Sold out</div>
               </div>
               <div className="p-3 sm:p-6 pt-8 sm:pt-12">
-                <h4 className="text-2xl font-bold text-white uppercase whitespace-nowrap text-center">Abono Segundo Tramo</h4>
+                <h4 className="mt-4 text-2xl font-bold text-white uppercase whitespace-nowrap text-center">Abono Segundo Tramo</h4>
                 <p className="mt-3 text-gray-400 text-center">Entrada del segundo tramo — actualmente <span className="text-rose-500 font-bold uppercase">AGOTADA</span>.</p>
               </div>
             </div>
