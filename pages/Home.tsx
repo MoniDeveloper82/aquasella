@@ -76,20 +76,18 @@ const HomePage: React.FC = () => {
             GALERÍA DE FOTOS
           </h2>
           <div className="max-w-4xl mx-auto mt-20 mb-12">
-            <div className="relative w-full h-48 md:h-64" style={{ perspective: '1000px' }}>
+            <div className="relative w-full h-40 md:h-64" style={{ perspective: '1000px' }}>
               <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d', animation: 'rotate 90s infinite linear', animationPlayState: paused ? 'paused' : 'running' }} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
                 {images.map((img, index) => (
                   <img
                     key={img}
                     src={`/img/${img}`}
                     alt={`Galería ${index + 1}`}
-                    className="absolute w-40 h-40 md:w-56 md:h-56 object-cover rounded-lg"
+                    className="absolute w-40 h-40 md:w-56 h-56 object-cover rounded-lg bg-black"
                     style={{
-                      transform: `rotateY(${index * (360 / images.length)}deg) translateZ(400px)`,
+                      transform: `translate(-50%, -50%) rotateY(${index * (360 / images.length)}deg) translateZ(350px)`,
                       left: '50%',
                       top: '50%',
-                      marginLeft: '-80px',
-                      marginTop: '-80px',
                     }}
                     loading="lazy"
                   />
