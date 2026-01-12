@@ -1,5 +1,6 @@
 // Cleaned up duplicate and broken code. Only the correct HomePage component remains below.
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import VideoHero from '../components/VideoHero';
 import Banner from '../components/Banner';
 import Countdown from '../components/Countdown';
@@ -11,6 +12,7 @@ import HomeMain from '../components/HomeMain';
 const HomePage: React.FC = () => {
   const images = ['AQS1.jpg', 'AQS2.jpg', 'AQS3.jpg', 'AQS4.jpg', 'AQS5.jpg', 'AQS6.jpg', 'AQS7.jpg', 'AQS8.jpg', 'AQS16.jpg', 'AQS17.jpg', 'AQS18.jpg', 'AQS19.jpg', 'AQS21.jpg'];
   const [currentImage, setCurrentImage] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,9 +63,19 @@ const HomePage: React.FC = () => {
         <HomeTicketsSection />
         {/* Galería de fotos */}
         <section className="py-16 px-4">
-          <h2 className="text-center text-4xl font-bold text-white mb-8">Galería</h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="relative w-full h-96 overflow-hidden rounded-lg shadow-2xl">
+          <h2
+            className="w-full text-center m-0 text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 relative z-10"
+            style={{
+              fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
+              fontWeight: 'bold',
+              lineHeight: 1.02,
+              background: 'transparent'
+            }}
+          >
+            GALERÍA DE FOTOS
+          </h2>
+          <div className="max-w-4xl mx-auto mt-12">
+            <div className="relative w-full h-96 overflow-hidden rounded-lg shadow-2xl cursor-pointer" onClick={() => navigate('/galeria')}>
               {images.map((img, index) => (
                 <img
                   key={img}

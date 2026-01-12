@@ -39,6 +39,7 @@ import PrivacyPage from './pages/Privacy';
 import CookiesPage from './pages/Cookies';
 import LegalPage from './pages/Legal';
 import VentaPlazosPage from './pages/tickets/VentaPlazos';
+import GaleriaPage from './pages/Galeria';
 
 const router = createHashRouter([
   {
@@ -48,6 +49,10 @@ const router = createHashRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: 'galeria',
+        element: <GaleriaPage />,
       },
       {
         path: 'lineup',
