@@ -28,7 +28,7 @@ const LineUpPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden pb-10 z-10" style={{
-      backgroundImage: "url('/img/vertical2.png')",
+      backgroundImage: "url('/img/vertical3.png')",
       backgroundSize: '100% auto',
       backgroundPosition: 'center bottom',
       backgroundRepeat: 'no-repeat'
@@ -37,7 +37,7 @@ const LineUpPage: React.FC = () => {
       <div className="relative z-10 min-h-screen">
       <style>{`
         @media (max-width: 768px) {
-          div[style*="vertical2.png"] {
+          div[style*="vertical3.png"] {
             background-size: contain !important;
             background-position: center top !important;
             background-repeat: repeat !important;

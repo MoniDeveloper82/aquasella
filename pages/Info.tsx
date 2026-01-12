@@ -71,14 +71,14 @@ const InfoPage: React.FC = () => {
 
   return (
     <div className="min-h-screen text-white" style={{
-      backgroundImage: "url('/img/vertical2.png')",
+      backgroundImage: "url('/img/vertical3.png')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
     <style>{`
       @media (max-width: 768px) {
-        div[style*="vertical2.png"] {
+        div[style*="vertical3.png"] {
           background-size: contain !important;
           background-position: center top !important;
           background-repeat: repeat !important;
