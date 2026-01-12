@@ -34,7 +34,7 @@ const GaleriaPage: React.FC = () => {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
-      <div className="relative z-10 p-2 md:p-4">
+      <div className="relative z-10 p-1 md:p-2">
         <Link to="/" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
           ← Volver al Inicio
         </Link>
@@ -49,17 +49,17 @@ const GaleriaPage: React.FC = () => {
         >
           GALERÍA DE FOTOS
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-1 max-w-5xl mx-auto">
           {images.map((img, index) => (
             <div
               key={img}
-              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group"
+              className="relative overflow-hidden rounded-lg shadow-lg h-64 flex items-center justify-center cursor-pointer group"
               onClick={() => openModal(index)}
             >
               <img
                 src={`/img/${img}`}
                 alt={`Galería ${index + 1}`}
-                className="w-full h-36 object-contain bg-black"
+                className="w-full h-64 object-contain bg-black"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
@@ -72,7 +72,7 @@ const GaleriaPage: React.FC = () => {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50" onClick={closeModal}>
-          <div className="relative max-w-5xl max-h-full p-4">
+          <div className="relative max-w-7xl max-h-full p-4">
             <img
               src={`/img/${images[currentImageIndex]}`}
               alt="Modal"
