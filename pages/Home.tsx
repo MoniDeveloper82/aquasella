@@ -85,7 +85,7 @@ const HomePage: React.FC = () => {
                     alt={`Galería ${index + 1}`}
                     className="absolute w-40 h-40 md:w-56 md:h-56 object-cover rounded-lg"
                     style={{
-                      transform: `rotateY(${index * (360 / images.length)}deg) translateZ(450px)`,
+                      transform: `rotateY(${index * (360 / images.length)}deg) translateZ(400px)`,
                       left: '50%',
                       top: '50%',
                       marginLeft: '-80px',
