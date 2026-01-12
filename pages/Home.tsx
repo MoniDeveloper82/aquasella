@@ -13,6 +13,16 @@ const HomePage: React.FC = () => {
   const images = ['AQS1.jpg', 'AQS2.jpg', 'AQS3.jpg', 'AQS4.jpg', 'AQS5.jpg', 'AQS6.jpg', 'AQS7.jpg', 'AQS8.jpg', 'AQS16.jpg', 'AQS17.jpg', 'AQS18.jpg', 'AQS19.jpg', 'AQS21.jpg'];
   const [currentImage, setCurrentImage] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [translateZ, setTranslateZ] = useState(350);
+
+  useEffect(() => {
+    const updateTranslateZ = () => {
+      setTranslateZ(window.innerWidth >= 768 ? 500 : 350);
+    };
+    updateTranslateZ();
+    window.addEventListener('resize', updateTranslateZ);
+    return () => window.removeEventListener('resize', updateTranslateZ);
+  }, []);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -85,7 +95,7 @@ const HomePage: React.FC = () => {
                     alt={`Galería ${index + 1}`}
                     className="absolute w-40 h-40 md:w-56 h-56 object-cover rounded-lg bg-black"
                     style={{
-                      transform: `translate(-50%, -50%) rotateY(${index * (360 / images.length)}deg) translateZ(350px)`,
+                      transform: `translate(-50%, -50%) rotateY(${index * (360 / images.length)}deg) translateZ(${translateZ}px)`,
                       left: '50%',
                       top: '50%',
                     }}
