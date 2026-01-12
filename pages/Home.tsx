@@ -12,6 +12,7 @@ import HomeMain from '../components/HomeMain';
 const HomePage: React.FC = () => {
   const images = ['AQS1.jpg', 'AQS2.jpg', 'AQS3.jpg', 'AQS4.jpg', 'AQS5.jpg', 'AQS6.jpg', 'AQS7.jpg', 'AQS8.jpg', 'AQS16.jpg', 'AQS17.jpg', 'AQS18.jpg', 'AQS19.jpg', 'AQS21.jpg'];
   const [currentImage, setCurrentImage] = useState(0);
+  const [paused, setPaused] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -64,7 +65,7 @@ const HomePage: React.FC = () => {
         {/* Galería de fotos */}
         <section className="py-16 px-4">
           <h2
-            className="w-full text-center m-0 text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 relative z-10"
+            className="w-full text-center m-0 -mt-4 text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 relative z-10"
             style={{
               fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
               fontWeight: 'bold',
@@ -74,17 +75,40 @@ const HomePage: React.FC = () => {
           >
             GALERÍA DE FOTOS
           </h2>
-          <div className="max-w-4xl mx-auto mt-12">
-            <div className="relative w-full h-96 overflow-hidden rounded-lg shadow-2xl cursor-pointer" onClick={() => navigate('/galeria')}>
-              {images.map((img, index) => (
-                <img
-                  key={img}
-                  src={`/img/${img}`}
-                  alt={`Galería ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImage ? 'opacity-100' : 'opacity-0'}`}
-                  loading="lazy"
-                />
-              ))}
+          <div className="max-w-4xl mx-auto mt-20 mb-32">
+            <div className="relative w-full h-48 md:h-80" style={{ perspective: '1000px' }} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+              <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d', animation: 'rotate 90s infinite linear', animationPlayState: paused ? 'paused' : 'running' }}>
+                {images.map((img, index) => (
+                  <img
+                    key={img}
+                    src={`/img/${img}`}
+                    alt={`Galería ${index + 1}`}
+                    className="absolute w-40 h-40 md:w-56 h-56 object-cover rounded-lg"
+                    style={{
+                      transform: `rotateY(${index * (360 / images.length)}deg) translateZ(400px)`,
+                      left: '50%',
+                      top: '50%',
+                      marginLeft: '-80px',
+                      marginTop: '-80px',
+                    }}
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            </div>
+            <style>{`
+              @keyframes rotate {
+                from { transform: rotateY(0deg); }
+                to { transform: rotateY(360deg); }
+              }
+            `}</style>
+            <div className="text-center mt-20">
+              <button
+                onClick={() => navigate('/galeria')}
+                className="px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition"
+              >
+                Ver Galería Completa
+              </button>
             </div>
           </div>
         </section>
