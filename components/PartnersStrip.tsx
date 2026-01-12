@@ -12,7 +12,7 @@ const PartnersStrip: React.FC = () => {
 
   return (
     <div 
-      className="py-12 border-2 border-red-500"
+      className="py-8 border-2 border-red-500"
       style={{
         backgroundColor: '#000000',
         backgroundImage: `

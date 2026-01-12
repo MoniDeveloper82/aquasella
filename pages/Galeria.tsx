@@ -53,13 +53,13 @@ const GaleriaPage: React.FC = () => {
           {images.map((img, index) => (
             <div
               key={img}
-              className="relative overflow-hidden rounded-lg shadow-lg h-32 flex items-center justify-center cursor-pointer group"
+              className="relative overflow-hidden rounded-lg shadow-lg h-32 md:h-64 flex items-center justify-center cursor-pointer group"
               onClick={() => openModal(index)}
             >
               <img
                 src={`/img/${img}`}
                 alt={`Galería ${index + 1}`}
-                className="w-full h-32 object-contain bg-black"
+                className="w-full h-32 md:h-64 object-contain bg-black"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
