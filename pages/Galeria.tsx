@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const GaleriaPage: React.FC = () => {
   const images = ['AQS1.jpg', 'AQS2.jpg', 'AQS3.jpg', 'AQS4.jpg', 'AQS5.jpg', 'AQS6.jpg', 'AQS7.jpg', 'AQS8.jpg', 'AQS16.jpg', 'AQS17.jpg', 'AQS18.jpg', 'AQS19.jpg', 'AQS21.jpg'];
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const openModal = (index: number) => {
     setCurrentImageIndex(index);
@@ -30,7 +34,7 @@ const GaleriaPage: React.FC = () => {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
-      <div className="relative z-10 p-4">
+      <div className="relative z-10 p-2 md:p-4">
         <Link to="/" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
           ← Volver al Inicio
         </Link>
@@ -45,7 +49,7 @@ const GaleriaPage: React.FC = () => {
         >
           GALERÍA DE FOTOS
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-4">
           {images.map((img, index) => (
             <div
               key={img}
@@ -55,7 +59,7 @@ const GaleriaPage: React.FC = () => {
               <img
                 src={`/img/${img}`}
                 alt={`Galería ${index + 1}`}
-                className="w-full h-64 object-contain bg-black"
+                className="w-full h-36 object-contain bg-black"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
