@@ -12,34 +12,40 @@ const PartnersStrip: React.FC = () => {
 
   return (
     <div 
-      className="py-8 border-2 border-red-500"
+      className="py-8"
       style={{
-        backgroundColor: '#000000',
-        backgroundImage: `
-          linear-gradient(45deg, rgba(255,255,255,0.08) 25%, transparent 25%), 
-          linear-gradient(-45deg, rgba(255,255,255,0.08) 25%, transparent 25%), 
-          linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.08) 75%), 
-          linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.08) 75%)
-        `,
-        backgroundSize: '15px 15px',
-        backgroundPosition: '0 0, 0 7.5px, 7.5px -7.5px, -7.5px 0px',
-        boxShadow: '0 0 20px rgba(239, 68, 68, 0.5), inset 0 0 20px rgba(239, 68, 68, 0.1)'
+        boxShadow: '0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.1)'
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">
-          Colaboradores
-        </h3>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {partners.map((partner, index) => (
-            <img
-              key={index}
-              src={partner.logo}
-              alt={partner.name}
-              className="h-12 object-contain transition-all duration-300"
-              loading="lazy"
-            />
-          ))}
+        <div className="flex justify-center mb-8">
+          <h3 className="text-sm font-bold text-white uppercase tracking-widest drop-shadow-lg px-4 py-2 rounded-full">
+            Colaboradores
+          </h3>
+        </div>
+        <div className="relative">
+          {/* Cuadro 3D detrás de los logos */}
+          <div 
+            className="absolute inset-0 transform -rotate-x-12 rotate-y-6 scale-105"
+            style={{
+              background: 'white',
+              border: '2px solid rgba(255,255,255,0.2)',
+              borderRadius: '12px',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              transform: 'perspective(1000px) rotateX(-8deg) rotateY(2deg) translateZ(-20px)'
+            }}
+          />
+          <div className="flex justify-center items-center gap-4 md:gap-12 overflow-x-auto relative z-10">
+            {partners.map((partner, index) => (
+              <img
+                key={index}
+                src={partner.logo}
+                alt={partner.name}
+                className="h-20 object-contain transition-all duration-300 hover:scale-110"
+                loading="lazy"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

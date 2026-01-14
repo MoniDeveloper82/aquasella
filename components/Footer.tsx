@@ -19,31 +19,33 @@ const Footer: React.FC = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* softer red overlay for readability */}
-      <div className="absolute inset-0 bg-red-700/70" />
+      {/* filtro negro */}
+      <div className="absolute inset-0 bg-black/50" />
       <div className="relative z-10 max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
-            <div className="space-y-4">
+            <div>
                 <img 
-                  src="/img/HEADER_2.png" 
+                  src="/img/AQS.png" 
                   alt="Aquasella Festival Logo"
-                  className="h-12 md:h-16 lg:h-20 w-auto filter brightness-110 contrast-110"
-                  loading="lazy"
+                  className="h-40"
                 />
                 <p>El corazón de la música electrónica en el norte de España.</p>
-                <div className="flex space-x-6">
-                 {socialLinks.map(({ Icon, href, label, target, rel }) => (
-                     <a
-                       key={label}
-                       href={href}
-                       className="text-gray-400 hover:text-rose-400 transition-colors"
-                       aria-label={label}
-                       target={target}
-                       rel={rel}
-                     >
-                        <Icon className="h-6 w-6 text-white" />
-                    </a>
-                 ))}
+                <div className="mt-4 text-center">
+                  <p className="text-sm text-gray-300 mb-3">Síguenos en nuestras redes sociales</p>
+                  <div className="flex justify-center space-x-6">
+                   {socialLinks.map(({ Icon, href, label, target, rel }) => (
+                       <a
+                         key={label}
+                         href={href}
+                         className="text-gray-400 hover:text-rose-400 transition-colors"
+                         aria-label={label}
+                         target={target}
+                         rel={rel}
+                       >
+                          <Icon className="h-8 w-8 text-white" />
+                      </a>
+                   ))}
+                  </div>
                 </div>
             </div>
 
