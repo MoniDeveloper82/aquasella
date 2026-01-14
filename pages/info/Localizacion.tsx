@@ -58,7 +58,7 @@ const LocalizacionPage: React.FC = () => {
       backgroundImage: "url('/img/vertical3.png')",
       backgroundSize: '100% auto',
       backgroundPosition: 'center bottom',
-      backgroundRepeat: 'no-repeat'
+      backgroundRepeat: 'repeat'
     }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Link to="/info" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
@@ -76,9 +76,9 @@ const LocalizacionPage: React.FC = () => {
         </div>
 
         {/* Ubicación principal */}
-        <div className="rounded-2xl p-8 mb-12 text-center border-2 border-red-300" style={{ backgroundColor: 'rgb(0, 177, 0)' }}>
+        <div className="rounded-2xl p-2 md:p-8 mb-12 text-center border-2 border-white md:max-w-none mx-auto" style={{ backgroundColor: 'rgb(0, 177, 0)' }}>
           <h2 className="text-3xl font-black uppercase mb-6">Valle de la musica, Asturias</h2>
-          <div className="grid gap-6 md:grid-cols-3 text-left">
+          <div className="grid gap-6 md:grid-cols-3 text-center md:text-left">
             <div>
               <h3 className="text-xl font-bold mb-3 text-white">📍 Dirección Exacta</h3>
               <p className="text-sm opacity-90">
@@ -152,9 +152,9 @@ const LocalizacionPage: React.FC = () => {
         </div>
 
         {/* Mapa interactivo */}
-        <div className="bg-white rounded-xl p-8 mb-12 shadow-[0_0_35px_rgba(0,177,0,0.6),0_0_60px_rgba(0,177,0,0.3)]">
+        <div className="bg-white rounded-xl p-8 mb-12 shadow-[0_0_35px_rgba(0,177,0,0.6),0_0_60px_rgba(0,177,0,0.3)] border-4" style={{ borderColor: 'rgb(0, 177, 0)' }}>
           <h3 className="text-2xl font-bold text-center mb-6" style={{ color: 'rgb(0, 177, 0)' }}>🗺️ Mapa Interactivo</h3>
-          <div className="mt-6 rounded-lg overflow-hidden shadow-2xl shadow-sky-900/20 border-4" style={{ borderColor: 'rgb(0, 177, 0)' }}>
+          <div className="mt-6 rounded-lg overflow-hidden shadow-2xl shadow-sky-900/20 border-4" style={{ borderColor: 'rgb(0, 177, 0)', boxShadow: '0 0 20px rgba(0, 177, 0, 0.5), 0 0 40px rgba(0, 177, 0, 0.3)' }}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11598.78923363351!2d-5.194511630132837!3d43.28801991414439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4a159954f85e49%3A0x33351336e2056981!2sArriondas%2C%20Asturias%2C%20Spain!5e0!3m2!1sen!2sus!4v1620000000000"
               width="100%"
