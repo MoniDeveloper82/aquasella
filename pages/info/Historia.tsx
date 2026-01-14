@@ -37,10 +37,12 @@ const HistoriaPage: React.FC = () => {
 
         {/* Historia narrativa */}
         <div className="mb-16">
-          <div className="rounded-xl p-8 border-2 border-white bg-red-900 md:flex md:items-center md:justify-center md:min-h-[400px]" style={{
-            boxShadow: '0 4px 8px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.1)'
+          <div className="rounded-xl p-6 border-4 border-double border-white bg-gradient-to-b from-red-800 via-red-900 to-red-950 md:flex md:items-center md:justify-center md:min-h-[200px]" style={{
+            boxShadow: '0 12px 24px rgba(0,0,0,0.5), 0 24px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.1), 0 0 40px rgba(255,255,255,0.7), 0 0 80px rgba(255,255,255,0.3), inset 0 2px 0 rgba(255,255,255,0.1), inset 0 -2px 0 rgba(0,0,0,0.3)',
+            transform: 'perspective(1000px) rotateX(2deg)',
+            backgroundImage: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 50%, rgba(0,0,0,0.15) 100%)'
           }}>
-            <div className="prose prose-lg max-w-2xl text-white text-center">
+            <div className="prose prose-lg max-w-xl text-white text-center md:bg-transparent bg-black/70 md:p-0 p-4 rounded-lg">
               <p className="text-lg leading-relaxed mb-6 text-center">
                 El festival Aquasella nació en 1997 en Arriondas/ Cangas de Onís, Asturias, impulsado por La Real Producciones, 
                 con el objetivo de crear un espacio dedicado a la música electrónica en el norte de España. Lo que comenzó como 
@@ -78,9 +80,9 @@ const HistoriaPage: React.FC = () => {
         <FanPosters />
 
         {/* Cierre */}
-        <div className="bg-white rounded-xl p-4 sm:p-6 md:p-8 text-center text-red-900 border-2 border-red-900">
+        <div className="bg-black rounded-xl p-4 sm:p-6 md:p-8 text-center text-white border-2 border-white">
           <h3 className="text-2xl font-bold mb-4">La Esencia de Aquasella</h3>
-          <p className="text-red-900 text-sm text-left md:text-center">
+          <p className="text-white text-sm text-left md:text-center">
             Más de dos décadas creando momentos inolvidables. Aquasella es la historia viva de la música electrónica 
             en España, un legado que continúa escribiéndose con cada edición.
           </p>
