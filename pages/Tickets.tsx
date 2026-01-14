@@ -303,7 +303,7 @@ const TicketsPage: React.FC = () => {
                             src="/img/aquasella3.png"
                             alt="Aquasella"
                             draggable={false}
-                            className="w-full h-full object-cover object-top"
+                            className="w-full h-full object-contain object-center"
                             loading="lazy"
                           />
                         </div>
