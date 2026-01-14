@@ -47,7 +47,12 @@ const LineUpPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 mt-0 p-0">
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-24 justify-center justify-items-center items-center">
+          <div className="
+  grid grid-cols-1 gap-6 mb-24
+  place-items-center
+  md:grid-cols-2 md:place-items-stretch
+  lg:grid-cols-3
+">
             {sections.map((section) => {
               let imgSrc = '';
               if (section.title === 'ARTISTAS') imgSrc = '/img/ARTISTAS.png';
@@ -61,7 +66,7 @@ const LineUpPage: React.FC = () => {
                   className="group block"
                 >
                   <div className={
-                    `relative bg-black rounded-2xl overflow-hidden h-80 md:h-[500px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
+                    `relative bg-black rounded-2xl overflow-hidden h-[400px] md:h-[500px] w-[320px] md:w-[340px] transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`
                   } style={{ borderColor: '#8B0000' }}>
                     {hideContent ? (
                       <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: `url(${imgSrc})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
