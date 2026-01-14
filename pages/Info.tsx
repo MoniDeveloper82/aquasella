@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BaseCard from '../components/BaseCard';
 
 const InfoPage: React.FC = () => {
   const infoSections = [
@@ -90,19 +91,16 @@ const InfoPage: React.FC = () => {
       <div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           {/* Banner superior si existe */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12 place-items-center">
                         {/* Card Zona de Descanso como Link */}
                         <Link
                           to="/info/zona-descanso"
                           className="group block"
                         >
-                          <div
-                            className="relative bg-black rounded-2xl overflow-hidden h-[400px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]"
-                            style={{ borderColor: '#8B0000' }}
-                          >
+                          <BaseCard>
                             <img src="/img/ZONA%20DE%20DESCANSO.png" alt="Zona de Descanso" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
                             <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
-                          </div>
+                          </BaseCard>
                         </Link>
             {infoSections.map((section) => (
               section.id === 'glamping' ? (
@@ -111,13 +109,10 @@ const InfoPage: React.FC = () => {
                   to={section.link}
                   className="group block"
                 >
-                  <div
-                    className="relative bg-black rounded-2xl overflow-hidden h-[400px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]"
-                    style={{ borderColor: '#8B0000' }}
-                  >
+                  <BaseCard>
                     <img src="/img/GLAMPING.png" alt="Glamping" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
-                  </div>
+                  </BaseCard>
                 </Link>
               ) : section.id === 'lockers' ? (
                 <Link
@@ -125,13 +120,10 @@ const InfoPage: React.FC = () => {
                   to={section.link}
                   className="group block"
                 >
-                  <div
-                    className="relative bg-black rounded-2xl overflow-hidden h-[400px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]"
-                    style={{ borderColor: '#8B0000' }}
-                  >
+                  <BaseCard>
                     <img src="/img/LOCKERS.png" alt="Lockers" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
-                  </div>
+                  </BaseCard>
                 </Link>
               ) : section.id === 'baterias' ? (
                 <Link
@@ -139,13 +131,10 @@ const InfoPage: React.FC = () => {
                   to={section.link}
                   className="group block"
                 >
-                  <div
-                    className="relative bg-black rounded-2xl overflow-hidden h-[400px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]"
-                    style={{ borderColor: '#8B0000' }}
-                  >
+                  <BaseCard>
                     <img src="/img/BATERIAS.png" alt="Baterías Móvil" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
-                  </div>
+                  </BaseCard>
                 </Link>
               ) : section.id === 'tour-road' ? (
                 <Link
@@ -153,13 +142,10 @@ const InfoPage: React.FC = () => {
                   to={section.link}
                   className="group block"
                 >
-                  <div
-                    className="relative bg-black rounded-2xl overflow-hidden h-[400px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]"
-                    style={{ borderColor: '#8B0000' }}
-                  >
+                  <BaseCard>
                     <img src="/img/AUTOBUSES.png" alt="Tour On The Road" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
-                  </div>
+                  </BaseCard>
                 </Link>
               ) : section.id === 'localizacion' ? (
                 <Link
@@ -167,13 +153,10 @@ const InfoPage: React.FC = () => {
                   to={section.link}
                   className="group block"
                 >
-                  <div
-                    className="relative bg-black rounded-2xl overflow-hidden h-[400px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]"
-                    style={{ borderColor: '#8B0000' }}
-                  >
+                  <BaseCard>
                     <img src="/img/LOCALIZACIÓN.png" alt="Localización" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
-                  </div>
+                  </BaseCard>
                 </Link>
               ) : section.id === 'plano' ? (
                 <Link
@@ -181,13 +164,10 @@ const InfoPage: React.FC = () => {
                   to={section.link}
                   className="group block"
                 >
-                  <div
-                    className="relative bg-black rounded-2xl overflow-hidden h-[400px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]"
-                    style={{ borderColor: '#8B0000' }}
-                  >
+                  <BaseCard>
                     <img src="/img/PLANO.png" alt="Plano" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
-                  </div>
+                  </BaseCard>
                 </Link>
               ) : section.id === 'colaboradores' ? (
                 <Link
@@ -195,13 +175,10 @@ const InfoPage: React.FC = () => {
                   to={section.link}
                   className="group block"
                 >
-                  <div
-                    className="relative bg-black rounded-2xl overflow-hidden h-[400px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]"
-                    style={{ borderColor: '#8B0000' }}
-                  >
+                  <BaseCard>
                     <img src="/img/COLABORADORES.png" alt="Colaboradores" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
-                  </div>
+                  </BaseCard>
                 </Link>
               ) : section.id === 'historia' ? (
                 <Link
@@ -209,13 +186,10 @@ const InfoPage: React.FC = () => {
                   to={section.link}
                   className="group block"
                 >
-                  <div
-                    className="relative bg-black rounded-2xl overflow-hidden h-[400px] w-full max-w-xs mx-auto transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]"
-                    style={{ borderColor: '#8B0000' }}
-                  >
+                  <BaseCard>
                     <img src="/img/HISTORIA.png" alt="Historia" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
-                  </div>
+                  </BaseCard>
                 </Link>
               ) : (
                 <Link

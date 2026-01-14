@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import BaseCard from '../components/BaseCard';
 
 const TicketsPage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -263,7 +264,7 @@ const TicketsPage: React.FC = () => {
                 className="group block"
               >
                 {/* Las cards están centradas en móvil usando mx-auto y max-w-xs */}
-                <div className={`relative bg-black rounded-2xl overflow-hidden h-[400px] md:h-[500px] w-[320px] md:w-[340px] transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(255,0,0,0.6),0_0_60px_rgba(255,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)]`} style={{ borderColor: '#8B0000' }}>
+                <BaseCard>
                 {section.id === 'venta-general' ? (
                   <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: 'url(/img/VENTA.png)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                     {/* Hover overlay */}
@@ -280,7 +281,7 @@ const TicketsPage: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 ) : null}
-                </div>
+                </BaseCard>
               </Link>
             );
           })}
