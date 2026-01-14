@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
+import './src/i18n'; // Import i18n configuration
 import App from './App';
 import HomePage from './pages/Home';
 import LineUpPage from './pages/LineUp';

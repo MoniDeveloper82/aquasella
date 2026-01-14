@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { MenuIcon, XMarkIcon } from './icons';
 import Banner from './Banner';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -107,6 +108,11 @@ const Header: React.FC = () => {
               ))}
             </div>
 
+            {/* Language Switcher - Desktop */}
+            <div className="hidden md:block ml-4">
+              <LanguageSwitcher />
+            </div>
+
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button
@@ -157,6 +163,11 @@ const Header: React.FC = () => {
                 {link.label}
               </NavLink>
             ))}
+
+            {/* Language Switcher - Mobile */}
+            <div className="pt-2">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       )}
