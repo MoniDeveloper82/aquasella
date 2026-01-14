@@ -87,33 +87,38 @@ const VentaGeneralPage: React.FC = () => {
 
         {/* Información adicional */}
         <div className="grid gap-8 md:grid-cols-2 mb-12">
-          <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:-rotate-2 hover:scale-105 transition-all duration-300" style={{
+          <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:-rotate-2 hover:scale-105 transition-all duration-300 relative" style={{
             backgroundImage: "url('/img/fondo-aqs-web.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}>
-            <h3 className="text-xl font-bold mb-4">📋 Información Importante</h3>
-            <ul className="space-y-2 text-white">
-              <li>• Las entradas son nominativas e intransferibles</li>
-              <li>• Se requiere DNI/Pasaporte para el acceso</li>
-              <li>• Mayores de 18 años</li>
-             
-            </ul>
+            <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold mb-4">Información Importante</h3>
+              <ul className="space-y-2 text-white">
+                <li>• Las entradas son nominativas e intransferibles</li>
+                <li>• Se requiere DNI/Pasaporte para el acceso</li>
+                <li>• Mayores de 18 años</li>
+               
+              </ul>
+            </div>
           </div>
-          <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:rotate-2 hover:scale-105 transition-all duration-300" style={{
+          <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:rotate-2 hover:scale-105 transition-all duration-300 relative" style={{
             backgroundImage: "url('/img/fondo-aqs-web.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
           }}>
-            <h3 className="text-xl font-bold mb-4"> ¿Qué incluye?</h3>
-            <ul className="space-y-2 text-white">
-              <li>• Acceso a todos los escenarios</li>
-              <li>• Pulsera oficial del festival</li>
-              <li>•Acceso al recinto los dias del festival</li>
-              <li>• Acceso a zonas de descanso</li>
-            </ul>
+            <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold mb-4"> ¿Qué incluye?</h3>
+              <ul className="space-y-2 text-white">
+                <li>• Acceso a todas las áreas musicales</li>
+                <li>• Pulsera oficial del festival</li>
+                <li>•Acceso a la zona de dia del festival (restauración)</li>
+              </ul>
+            </div>
           </div>
         </div>
 

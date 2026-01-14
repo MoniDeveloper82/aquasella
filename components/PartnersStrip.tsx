@@ -12,7 +12,7 @@ const PartnersStrip: React.FC = () => {
 
   return (
     <div 
-      className="py-8"
+      className="py-12"
       style={{
         boxShadow: '0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.1)'
       }}
@@ -35,13 +35,13 @@ const PartnersStrip: React.FC = () => {
               transform: 'perspective(1000px) rotateX(-8deg) rotateY(2deg) translateZ(-20px)'
             }}
           />
-          <div className="flex justify-center items-center gap-4 md:gap-12 overflow-x-auto relative z-10">
+          <div className="flex justify-center items-center gap-1 md:gap-2 overflow-hidden relative z-10">
             {partners.map((partner, index) => (
               <img
                 key={index}
                 src={partner.logo}
                 alt={partner.name}
-                className="h-20 object-contain transition-all duration-300 hover:scale-110"
+                className="h-16 object-contain transition-all duration-300 hover:scale-110"
                 loading="lazy"
               />
             ))}

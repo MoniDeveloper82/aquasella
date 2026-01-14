@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                 <p className="mt-2">Recibe las últimas noticias y ofertas exclusivas.</p>
                 <form className="mt-4 flex">
                     <input type="email" placeholder="tu.email@ejemplo.com" className="w-full bg-gray-800 border border-gray-700 text-white rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-500" />
-                    <button type="submit" className="bg-rose-500 hover:bg-rose-600 text-white font-bold px-4 py-2 rounded-r-md transition-colors">
+                    <button type="submit" className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-r-md transition-colors">
                         Suscribir
                     </button>
                 </form>
