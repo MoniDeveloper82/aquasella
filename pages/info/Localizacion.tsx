@@ -9,9 +9,9 @@ const LocalizacionPage: React.FC = () => {
       icon: '🚗',
       description: 'La opción más cómoda para grupos',
       details: [
-        'Desde Madrid: 4h 30min por A-6',
-        'Desde Barcelona: 6h 45min por A-2 y A-231',
-        'Desde Valencia: 5h 30min por A-23 y A-231',
+        'Desde Madrid: 4h 30min por A-6 y N-601',
+        'Desde Barcelona: 7h 15min por A-2, A-23 y N-260',
+        'Desde Bilbao: 2h 30min por A-8 y N-601',
         'Parking gratuito en el recinto'
       ],
       color: 'from-blue-600 to-blue-800'
@@ -22,10 +22,10 @@ const LocalizacionPage: React.FC = () => {
       icon: '🚌',
       description: 'Transporte oficial y económico',
       details: [
-        'Líneas desde principales ciudades',
-        'Llegada directa al festival',
-        'Horarios coordinados',
-        'Reserva con entrada'
+        'Líneas ALSA desde Madrid, Barcelona y Bilbao',
+        'Parada directa en Arriondas',
+        'Horarios coordinados con el festival',
+        'Reserva con entrada disponible'
       ],
       color: 'from-green-600 to-green-800'
     },
@@ -35,27 +35,32 @@ const LocalizacionPage: React.FC = () => {
       icon: '✈️',
       description: 'Para visitantes de larga distancia',
       details: [
-        'Aeropuerto más cercano: Oviedo (45min)',
-        'Estación de tren: Mieres (20min)',
-        'Conexiones con shuttle',
-        'Ideal para extranjeros'
+        'Aeropuerto Avilés: 1h por A-8',
+        'Aeropuerto Santander: 1h por A-8',
+        'Aeropuerto Bilbao: 1h 30min por A-8',
+        'Tren Santander-Madrid: conexiones directas'
       ],
       color: 'from-purple-600 to-purple-800'
     }
   ];
 
   const nearbyServices = [
-    { name: 'Hospital más cercano', distance: '15 km', icon: '🏥' },
-    { name: 'Gasolinera', distance: '8 km', icon: '⛽' },
-    { name: 'Supermercado', distance: '12 km', icon: '🛒' },
-    { name: 'Farmacia', distance: '10 km', icon: '💊' },
-    { name: 'Cajero automático', distance: '5 km', icon: '🏧' },
-    { name: 'Estación de servicio', distance: '8 km', icon: '🔧' }
+    { name: 'Hospital más cercano', distance: '25 km (Potes)', icon: '🏥' },
+    { name: 'Gasolinera', distance: '3 km', icon: '⛽' },
+    { name: 'Supermercado', distance: '2 km', icon: '🛒' },
+    { name: 'Farmacia', distance: '1 km', icon: '💊' },
+    { name: 'Cajero automático', distance: '500 m', icon: '🏧' },
+    { name: 'Estación de servicio', distance: '5 km', icon: '🔧' }
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-black text-white py-20 relative overflow-x-hidden" style={{
+      backgroundImage: "url('/img/vertical3.png')",
+      backgroundSize: '100% auto',
+      backgroundPosition: 'center bottom',
+      backgroundRepeat: 'no-repeat'
+    }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Link to="/info" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
           ← Volver a Información
         </Link>
@@ -66,32 +71,32 @@ const LocalizacionPage: React.FC = () => {
             Localización
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Aquasella 2026 se celebra en el Valle de Laciana, Asturias. Descubre cómo llegar y todo lo que necesitas saber sobre la ubicación.
+            Aquasella 2026 se celebra en el Valle de la musica, Asturias. Descubre cómo llegar y todo lo que necesitas saber sobre la ubicación.
           </p>
         </div>
 
         {/* Ubicación principal */}
-        <div className="bg-gradient-to-br from-emerald-600 to-green-800 rounded-2xl p-8 mb-12 text-center">
-          <h2 className="text-3xl font-black uppercase mb-6">Valle de Laciana, Asturias</h2>
+        <div className="rounded-2xl p-8 mb-12 text-center border-2 border-red-300" style={{ backgroundColor: 'rgb(0, 177, 0)' }}>
+          <h2 className="text-3xl font-black uppercase mb-6">Valle de la musica, Asturias</h2>
           <div className="grid gap-6 md:grid-cols-3 text-left">
             <div>
-              <h3 className="text-xl font-bold mb-3">📍 Dirección Exacta</h3>
+              <h3 className="text-xl font-bold mb-3 text-white">📍 Dirección Exacta</h3>
               <p className="text-sm opacity-90">
-                Polígono Industrial de Villablino<br/>
-                24100 Villablino, León<br/>
-                Castilla y León, España
+                Praú El Merediz<br/>
+                33540 Arriondas, Asturias<br/>
+                España
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-3">🌍 Coordenadas GPS</h3>
+              <h3 className="text-xl font-bold mb-3 text-white">🌍 Coordenadas GPS</h3>
               <p className="text-sm opacity-90">
-                Latitud: 42.9167° N<br/>
-                Longitud: 6.3000° W<br/>
-                <span className="text-xs opacity-80">42°55'0"N 6°18'0"W</span>
+                Latitud: 43.288° N<br/>
+                Longitud: 5.195° W<br/>
+                <span className="text-xs opacity-80">43°17'17"N 5°11'42"W</span>
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-3">🏔️ Entorno</h3>
+              <h3 className="text-xl font-bold mb-3 text-white">🏔️ Entorno</h3>
               <p className="text-sm opacity-90">
                 Valle montañoso<br/>
                 Rodeado de naturaleza<br/>
@@ -103,28 +108,43 @@ const LocalizacionPage: React.FC = () => {
 
         {/* Cómo llegar */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-center mb-8">🚗 Cómo Llegar</h2>
-          <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+          <h2 className="text-3xl font-bold text-center mb-8">Cómo Llegar</h2>
+          <div className="
+  grid grid-cols-1 gap-6 mb-12
+  place-items-center
+  md:grid-cols-2 md:place-items-stretch
+  lg:grid-cols-3
+">
             {transportOptions.map((option) => (
               <div
                 key={option.id}
-                className={`bg-gradient-to-br ${option.color} rounded-2xl p-6`}
+                className="bg-cover bg-center rounded-2xl overflow-hidden h-[400px] md:h-[500px] w-[320px] md:w-[340px] relative transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(0,255,0,0.6),0_0_60px_8px_rgba(0,255,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] card-glow"
+                style={{
+                  backgroundImage: `url('/img/verde.png')`,
+                  backgroundPosition: 'center 20%',
+                  backgroundSize: '100% auto',
+                  backgroundRepeat: 'no-repeat',
+                  borderColor: '#90EE90'
+                }}
               >
-                <div className="text-5xl text-center mb-4">{option.icon}</div>
-                <h3 className="text-xl font-black uppercase text-center mb-4">
-                  {option.name}
-                </h3>
-                <p className="text-sm opacity-90 text-center mb-6">{option.description}</p>
-                
-                <div className="space-y-3">
-                  {option.details.map((detail, index) => (
-                    <div key={index} className="flex items-start">
-                      <svg className="w-4 h-4 mr-2 mt-0.5 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-xs">{detail}</span>
-                    </div>
-                  ))}
+                {/* Overlay para mejor legibilidad del texto */}
+                <div className="absolute inset-0 bg-black bg-opacity-60 rounded-2xl"></div>
+                <div className="relative z-10 pt-20 pb-6 px-6">
+                  <h3 className="text-xl font-black uppercase text-center mb-12">
+                    {option.name}
+                  </h3>
+                  <p className="text-sm opacity-90 text-center mb-10">{option.description}</p>
+                  
+                  <div className="space-y-3">
+                    {option.details.map((detail, index) => (
+                      <div key={index} className="flex items-start">
+                        <svg className="w-4 h-4 mr-2 mt-0.5 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-xs">{detail}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -132,9 +152,9 @@ const LocalizacionPage: React.FC = () => {
         </div>
 
         {/* Mapa interactivo */}
-        <div className="bg-gray-800 rounded-xl p-8 mb-12">
-          <h3 className="text-2xl font-bold text-center mb-6">🗺️ Mapa Interactivo</h3>
-          <div className="mt-6 rounded-lg overflow-hidden shadow-2xl shadow-sky-900/20">
+        <div className="bg-white rounded-xl p-8 mb-12 shadow-[0_0_35px_rgba(0,177,0,0.6),0_0_60px_rgba(0,177,0,0.3)]">
+          <h3 className="text-2xl font-bold text-center mb-6" style={{ color: 'rgb(0, 177, 0)' }}>🗺️ Mapa Interactivo</h3>
+          <div className="mt-6 rounded-lg overflow-hidden shadow-2xl shadow-sky-900/20 border-4" style={{ borderColor: 'rgb(0, 177, 0)' }}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11598.78923363351!2d-5.194511630132837!3d43.28801991414439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4a159954f85e49%3A0x33351336e2056981!2sArriondas%2C%20Asturias%2C%20Spain!5e0!3m2!1sen!2sus!4v1620000000000"
               width="100%"
@@ -149,15 +169,15 @@ const LocalizacionPage: React.FC = () => {
         </div>
 
         {/* Servicios cercanos */}
-        <div className="bg-gray-800 rounded-xl p-8 mb-12">
-          <h3 className="text-2xl font-bold text-center mb-8">🏪 Servicios Cercanos</h3>
+        <div className="rounded-xl p-8 mb-12 border-2 border-white" style={{ backgroundColor: 'rgb(0, 177, 0)' }}>
+          <h3 className="text-2xl font-bold text-center mb-8 text-white">🏪 Servicios Cercanos</h3>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {nearbyServices.map((service, index) => (
-              <div key={index} className="flex items-center bg-gray-700 rounded-lg p-4">
+              <div key={index} className="flex items-center bg-white rounded-lg p-4">
                 <div className="text-2xl mr-3">{service.icon}</div>
                 <div>
-                  <div className="text-sm font-medium">{service.name}</div>
-                  <div className="text-xs text-gray-400">{service.distance}</div>
+                  <div className="text-sm font-bold" style={{ color: 'rgb(0, 177, 0)' }}>{service.name}</div>
+                  <div className="text-xs text-gray-600">{service.distance}</div>
                 </div>
               </div>
             ))}
@@ -166,9 +186,9 @@ const LocalizacionPage: React.FC = () => {
 
         {/* Información adicional */}
         <div className="grid gap-8 md:grid-cols-2 mb-12">
-          <div className="bg-gray-800 rounded-xl p-6">
-            <h3 className="text-xl font-bold mb-4">🌦️ Clima Esperado</h3>
-            <ul className="space-y-2 text-gray-300">
+          <div className="bg-white rounded-xl p-6 border-4" style={{ borderColor: 'rgb(0, 177, 0)' }}>
+            <h3 className="text-xl font-bold mb-4" style={{ color: 'rgb(0, 177, 0)' }}>🌦️ Clima Esperado</h3>
+            <ul className="space-y-2" style={{ color: 'rgb(0, 177, 0)' }}>
               <li>• <strong>Agosto en Asturias:</strong> 18-25°C</li>
               <li>• <strong>Noches:</strong> Frescas (12-16°C)</li>
               <li>• <strong>Probabilidad lluvia:</strong> Baja</li>
@@ -176,21 +196,20 @@ const LocalizacionPage: React.FC = () => {
             </ul>
           </div>
           
-          <div className="bg-gray-800 rounded-xl p-6">
-            <h3 className="text-xl font-bold mb-4">📱 Apps Recomendadas</h3>
-            <ul className="space-y-2 text-gray-300">
+          <div className="bg-white rounded-xl p-6 border-4" style={{ borderColor: 'rgb(0, 177, 0)' }}>
+            <h3 className="text-xl font-bold mb-4" style={{ color: 'rgb(0, 177, 0)' }}>📱 Apps Recomendadas</h3>
+            <ul className="space-y-2" style={{ color: 'rgb(0, 177, 0)' }}>
               <li>• <strong>Google Maps:</strong> Navegación</li>
               <li>• <strong>What3Words:</strong> Ubicación exacta</li>
               <li>• <strong>Waze:</strong> Tráfico en tiempo real</li>
-              <li>• <strong>Aquasella App:</strong> Info del festival</li>
             </ul>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">🏔️ Un Entorno Único</h3>
-          <p className="text-gray-300">
-            El Valle de Laciana ofrece un marco incomparable para Aquasella. Naturaleza, montañas y música se unen para crear una experiencia única.
+        <div className="rounded-xl p-8 text-center border-2 border-white" style={{ backgroundColor: 'rgb(0, 177, 0)' }}>
+          <h3 className="text-2xl font-bold mb-4 text-white">🏔️ Un Entorno Único</h3>
+          <p className="text-white">
+            El Valle de la Música ofrece un marco incomparable para Aquasella. Naturaleza, montañas y música se unen para crear una experiencia única.
           </p>
         </div>
       </div>
