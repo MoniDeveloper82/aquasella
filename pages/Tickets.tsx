@@ -247,20 +247,24 @@ const TicketsPage: React.FC = () => {
   ];
 
   return (
-    <div
-      className="min-h-screen text-white bg-black"
-    >
-    <style>{`
-      @media (max-width: 768px) {
-        div[style*="vertical3.png"] {
-          background-size: contain !important;
-          background-position: center top !important;
-          background-repeat: repeat !important;
-        }
-      }
-    `}</style>
-      <img src="/img/t1.png" alt="Tickets Aquasella" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
-      <div className="relative z-10">
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden pb-10 z-10" style={{
+      backgroundImage: "url('/img/vertical3.png')",
+      backgroundSize: '100% auto',
+      backgroundPosition: 'center bottom',
+      backgroundRepeat: 'no-repeat'
+    }}>
+      <>
+        <img src="/img/t1.png" alt="Tickets Aquasella" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
+        <div className="relative z-10 min-h-screen">
+          <style>{`
+            @media (max-width: 768px) {
+              div[style*="vertical3.png"] {
+                background-size: contain !important;
+                background-position: center top !important;
+                background-repeat: repeat !important;
+              }
+            }
+          `}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 mt-0 p-0">
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-4">
@@ -414,6 +418,7 @@ const TicketsPage: React.FC = () => {
         </div>
       </div>
       </div>
+      </>
     </div>
   );
 };
