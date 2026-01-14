@@ -88,14 +88,14 @@ const HomeTicketsSection: React.FC = () => {
             {/* Primer tramo - sold out */}
             <div className="relative w-full max-w-xs sm:max-w-md mx-auto rounded-xl overflow-hidden border-2 border-rose-600 bg-black flex flex-col min-h-0 shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-red-600/60 ${styles.cardHaloRed}" style={{height: '160%'}}>
               {/* Semilunas blancas laterales */}
-              <div className="hidden md:block absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
-              <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
+              <div className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
+              <div className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
               {/* full-width sold out ribbon */}
               <div className="absolute left-0 right-0 top-3 flex justify-center pointer-events-none">
                 <div className="bg-rose-600 text-white text-xs font-bold uppercase px-4 py-1 rounded-lg shadow">Sold out</div>
               </div>
               <div className="p-3 sm:p-6 pt-8 sm:pt-12">
-                <h4 className="mt-4 text-2xl font-bold text-white uppercase whitespace-nowrap text-center">Abono Primer Tramo</h4>
+                <h4 className="mt-4 text-xl font-bold text-white uppercase whitespace-nowrap text-center">Abono Primer Tramo</h4>
                 <p className="mt-3 text-gray-400 text-center">Entrada del primer tramo — actualmente <span className="text-rose-500 font-bold uppercase">AGOTADA</span>.</p>
               </div>
             </div>
@@ -103,13 +103,13 @@ const HomeTicketsSection: React.FC = () => {
             {/* Segundo tramo - sold out */}
             <div className="relative flex-1 w-full max-w-xs sm:max-w-md mx-auto rounded-xl overflow-hidden border-2 border-rose-600 bg-black flex flex-col min-h-0 h-1/2 shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-red-600/60 ${styles.cardHaloRed}" style={{height: '200%'}}>
               {/* Semilunas blancas laterales */}
-              <div className="hidden md:block absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
-              <div className="hidden md:block absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
+              <div className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
+              <div className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-inner" />
               <div className="absolute left-0 right-0 top-3 flex justify-center pointer-events-none">
                 <div className="bg-rose-600 text-white text-xs font-bold uppercase px-4 py-1 rounded-lg shadow">Sold out</div>
               </div>
               <div className="p-3 sm:p-6 pt-8 sm:pt-12">
-                <h4 className="mt-4 text-2xl font-bold text-white uppercase whitespace-nowrap text-center">Abono Segundo Tramo</h4>
+                <h4 className="mt-4 text-xl font-bold text-white uppercase whitespace-nowrap text-center">Abono Segundo Tramo</h4>
                 <p className="mt-3 text-gray-400 text-center">Entrada del segundo tramo — actualmente <span className="text-rose-500 font-bold uppercase">AGOTADA</span>.</p>
               </div>
             </div>
