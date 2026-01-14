@@ -28,6 +28,7 @@ const Footer: React.FC = () => {
                   src="/img/HEADER_2.png" 
                   alt="Aquasella Festival Logo"
                   className="h-12 md:h-16 lg:h-20 w-auto filter brightness-110 contrast-110"
+                  loading="lazy"
                 />
                 <p>El corazón de la música electrónica en el norte de España.</p>
                 <div className="flex space-x-6">

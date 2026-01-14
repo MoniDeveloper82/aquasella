@@ -11,6 +11,8 @@ const Countdown: React.FC = () => {
     seconds: 0
   });
 
+  const [animate, setAnimate] = useState(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -23,6 +25,8 @@ const Countdown: React.FC = () => {
           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((distance % (1000 * 60)) / 1000)
         });
+        setAnimate(true);
+        setTimeout(() => setAnimate(false), 300);
       } else {
         clearInterval(interval);
       }
@@ -38,6 +42,7 @@ const Countdown: React.FC = () => {
         alt="Cuenta atrás Aquasella"
         className="w-full max-w-full object-contain select-none pointer-events-none block"
         draggable="false"
+        loading="lazy"
       />
       <div className="absolute inset-0 flex items-center justify-center px-4 text-white">
         <div className="relative flex flex-col items-center">
@@ -45,9 +50,7 @@ const Countdown: React.FC = () => {
             {/* DÍAS */}
             <div className="flex flex-col items-center">
               <span
-                className="font-black text-white mfont-black text-white mt-2
-              md:text-[clamp(3rem,8vw,7rem)]
-              lg:text-[clamp(4.5rem,11vw,10rem)]t-2"
+                className={`font-black text-white mt-2 transition-transform duration-300 ${animate ? 'scale-110' : 'scale-100'} ${timeLeft.days < 30 ? 'animate-pulse' : ''}`}
                 style={{ fontSize: "clamp(1.7rem, 4vw, 3.5rem)" }}
               >
                 {timeLeft.days}
@@ -65,9 +68,7 @@ const Countdown: React.FC = () => {
             {/* HORAS */}
             <div className="flex flex-col items-center">
               <span
-                className="font-black text-white mfont-black text-white mt-2
-             md:text-[clamp(3rem,8vw,7rem)]
-             lg:text-[clamp(4.5rem,11vw,10rem)]t-2"
+                className={`font-black text-white mt-2 transition-transform duration-300 ${animate ? 'scale-110' : 'scale-100'}`}
                 style={{ fontSize: "clamp(1.7rem, 4vw, 3.5rem)" }}
               >
                 {timeLeft.hours}
@@ -85,9 +86,7 @@ const Countdown: React.FC = () => {
             {/* MINUTOS */}
             <div className="flex flex-col items-center">
               <span
-                className="font-black text-white mfont-black text-white mt-2
-              md:text-[clamp(3rem,8vw,7rem)]
-              lg:text-[clamp(4.5rem,11vw,10rem)]t-2"
+                className={`font-black text-white mt-2 transition-transform duration-300 ${animate ? 'scale-110' : 'scale-100'}`}
                 style={{ fontSize: "clamp(1.7rem, 4vw, 3.5rem)" }}
               >
                 {timeLeft.minutes}
@@ -105,9 +104,7 @@ const Countdown: React.FC = () => {
             {/* SEGUNDOS */}
             <div className="flex flex-col items-center">
               <span
-                className="font-black text-white mfont-black text-white mt-2
-              md:text-[clamp(3rem,8vw,7rem)]
-              lg:text-[clamp(4.5rem,11vw,10rem)]t-2"
+                className={`font-black text-white mt-2 transition-transform duration-300 ${animate ? 'scale-110' : 'scale-100'}`}
                 style={{ fontSize: "clamp(1.7rem, 4vw, 3.5rem)" }}
               >
                 {timeLeft.seconds}

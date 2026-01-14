@@ -87,7 +87,7 @@ const ArtistsSection: React.FC = () => {
                 <XMarkIcon className="w-8 h-8" />
              </button>
              <div className="md:flex">
-                <img src={selectedArtist.image} alt={selectedArtist.name} className="w-full md:w-1/2 h-[30rem] md:h-auto object-cover" />
+                <img src={selectedArtist.image} alt={selectedArtist.name} className="w-full md:w-1/2 h-[30rem] md:h-auto object-cover" loading="lazy" />
                 <div className="p-8 bg-black">
                     <h3 className="text-3xl font-black uppercase text-white">{selectedArtist.name}</h3>
                     <div className="mt-4 space-y-2 text-white">

@@ -52,7 +52,7 @@ const HomeCarousel: React.FC = () => {
                   index === currentIndex ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                <img src={url} alt={`Slide ${index + 1}`} className="w-full h-full object-contain" />
+                <img src={url} alt={`Slide ${index + 1}`} className="w-full h-full object-contain" loading="lazy" />
                 <div className="absolute inset-0 bg-black/10"></div>
               </div>
             ))}

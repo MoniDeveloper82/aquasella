@@ -7,7 +7,7 @@ const TicketsSection: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl font-black uppercase text-white mb-4 text-glow">Entradas</h2>
         <p className="text-gray-300 mb-8">
-          Asegura tu sitio en la catedral de la música electrónica. ¡No te quedes fuera!
+          Asegura tu sitio en el valle de la música electrónica. ¡No te quedes fuera!
         </p>
         <div className="w-full h-96 bg-gray-700 rounded-lg flex items-center justify-center shadow-lg">
            {/* The real ticket provider iframe would be placed here.

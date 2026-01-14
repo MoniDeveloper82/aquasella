@@ -77,6 +77,7 @@ const GaleriaPage: React.FC = () => {
               src={`/img/${images[currentImageIndex]}`}
               alt="Modal"
               className="max-w-full max-h-full object-contain"
+              loading="lazy"
             />
             <button
               className="absolute top-2 right-2 text-white text-2xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition"

@@ -37,6 +37,7 @@ const PartnersStrip: React.FC = () => {
               src={partner.logo}
               alt={partner.name}
               className="h-12 object-contain transition-all duration-300"
+              loading="lazy"
             />
           ))}
         </div>

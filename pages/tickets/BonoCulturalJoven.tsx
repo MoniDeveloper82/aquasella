@@ -33,7 +33,7 @@ const BonoCulturalJovenPage: React.FC = () => {
           </Link>
         </div>
         
-        <img src="/img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" />
+        <img src="/img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" loading="lazy" />
 
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">

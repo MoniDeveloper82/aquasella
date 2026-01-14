@@ -34,7 +34,7 @@ const LineUpPage: React.FC = () => {
       backgroundPosition: 'center bottom',
       backgroundRepeat: 'no-repeat'
     }}>
-      <img src="/img/l1.png" alt="Lineup Aquasella 2026" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} />
+      <img src="/img/l1.png" alt="Lineup Aquasella 2026" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
       <div className="relative z-10 min-h-screen">
       <style>{`
         @media (max-width: 768px) {

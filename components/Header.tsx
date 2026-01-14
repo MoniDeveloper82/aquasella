@@ -83,6 +83,7 @@ const Header: React.FC = () => {
                   src="/img/FOTOPERFIL_AQS.png" 
                   alt="Aquasella"
                   className="h-20 lg:h-24 xl:h-28 w-auto"
+                  loading="lazy"
                 />
               </NavLink>
             </div>

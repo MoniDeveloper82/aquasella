@@ -53,6 +53,8 @@ const VideoHero: React.FC = () => {
         </video>
         {/* GRADIENT OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 z-10"></div>
+        {/* BOTTOM TRANSITION GRADIENT */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 z-15" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%)' }}></div>
         {/* TEXT & IMAGES OVERLAY */}
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-center z-20 text-center text-white px-4 pb-2 sm:pb-6">
           <img
@@ -65,6 +67,7 @@ const VideoHero: React.FC = () => {
               height: "clamp(128px, 28vw, 600px)",
               margin: 0,
             }}
+            loading="lazy"
           />
         </div>
       </div>

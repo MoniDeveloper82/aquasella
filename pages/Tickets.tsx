@@ -20,45 +20,125 @@ const TicketsPage: React.FC = () => {
     {
       title: "ABONOS GENERALES",
       content: (
-        <div className="w-full h-full flex flex-col items-center justify-start text-white bg-black rounded-2xl pt-1 px-4 pb-2">
-          <h3 className="text-lg font-bold mb-2 text-white text-center">¿Cuándo comienza la venta?</h3>
-          <p className="text-base text-gray-200 text-center mb-2">
-            Este martes 11 de noviembre a las 13:00h, pondremos a la venta una nueva promoción de Abonos Generales desde <span className="font-bold">79,90€ + gastos de gestión.</span> La Zona de Descanso (Acampada) se podrá adquirir por separado más adelante como complemento.
-          </p>
-          <p className="text-base text-gray-200 text-center mb-2">
-            La venta se realizará desde nuestra Web Oficial: <a href="https://www.aquasella.com" className="text-red-400 underline" target="_blank" rel="noopener noreferrer">www.aquasella.com</a><br/>
-            Siendo nuestra Ticketera oficial Vivaticket: <a href="https://www.vivaticket.es/" className="text-red-400 underline" target="_blank" rel="noopener noreferrer">https://www.vivaticket.es/</a>
-          </p>
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden">
+          {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
+          <div className="p-4 sm:p-6">
+            <h3 className="text-lg font-bold mb-2 text-white text-center">
+              ¿Cuándo comienza la venta?
+            </h3>
+
+            <p className="text-base text-gray-200 text-center mb-2">
+              Este martes 11 de noviembre a las 13:00h, pondremos a la venta una nueva promoción de Abonos Generales desde{" "}
+              <span className="font-bold">79,90€ + gastos de gestión.</span>{" "}
+              La Zona de Descanso (Acampada) se podrá adquirir por separado más adelante como complemento.
+            </p>
+
+            <p className="text-base text-gray-200 text-center">
+              La venta se realizará desde nuestra Web Oficial:{" "}
+              <a
+                href="https://www.aquasella.com"
+                className="text-red-400 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                www.aquasella.com
+              </a>
+              <br />
+              Siendo nuestra Ticketera oficial Vivaticket:{" "}
+              <a
+                href="https://www.vivaticket.es/"
+                className="text-red-400 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.vivaticket.es/
+              </a>
+            </p>
+          </div>
+
+          {/* Parte de abajo: IMAGEN (rellena TODO el resto) */}
+          <div
+            className="flex-1 relative"
+            style={{
+              backgroundImage: "url('/img/AQS4.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* overlay suave opcional */}
+            <div className="absolute inset-0 bg-black/15" />
+          </div>
         </div>
       )
     },
     {
       title: "TIPOS DE ABONOS",
       content: (
-        <div className="w-full h-full flex flex-col items-center justify-start px-4 pb-2 mt-8">
-          <h4 className="text-lg font-bold mb-2 text-white">¿Qué tipos de Abonos hay a la venta?</h4>
-          <ul className="space-y-2 text-gray-300 mt-2">
-            <li>✅ Abono General</li>
-            <li>✅ Precio mínimo garantizado para la próxima edición AQUASELLA 2026.</li>
-            <li>✅ El abono general da acceso al recinto del festival desde el jueves 13 hasta el domingo 16 de agosto de 2026.</li>
-          </ul>
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden">
+          {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
+          <div className="p-4 sm:p-6">
+            <h3 className="text-lg font-bold mb-2 text-white text-center">
+              ¿Qué tipos de Abonos hay a la venta?
+            </h3>
+
+            <ul className="space-y-2 text-gray-200 mt-2">
+              <li>✅ Abono General</li>
+              <li>✅ Precio mínimo garantizado para la próxima edición AQUASELLA 2026.</li>
+              <li>✅ El abono general da acceso al recinto del festival desde el jueves 13 hasta el domingo 16 de agosto de 2026.</li>
+            </ul>
+          </div>
+
+          {/* Parte de abajo: IMAGEN (rellena TODO el resto) */}
+          <div
+            className="flex-1 relative"
+            style={{
+              backgroundImage: "url('/img/AQS5.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* overlay suave opcional */}
+            <div className="absolute inset-0 bg-black/15" />
+          </div>
         </div>
       )
     },
     {
       title: "FORMAS DE VENTA",
       content: (
-        <div className="w-full h-full flex flex-col items-start justify-start px-4 pb-2">
-          <h4 className="text-lg font-bold mb-2 text-white">¿Qué tipos de venta se realizarán?</h4>
-          <p className="text-gray-300 mb-1 block">✅ Venta General en un único pago</p>
-          <p className="text-gray-300 mb-1 block">✅ Venta a Plazos: Tres pagos mensuales</p>
-          <p className="text-gray-300 mb-4 block">✅ Venta con Bono Cultural Joven</p>
-          <div className="mt-2 p-4 bg-yellow-900/30 border-4 border-yellow-500 rounded w-full">
-            <p className="text-yellow-200">⚠️ El acceso al evento es exclusivamente para mayores de 18 años.</p>
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden bg-black">
+          {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
+          <div className="p-4 sm:p-6">
+            <h3 className="text-lg font-bold mb-2 text-white text-center">
+              ¿Qué tipos de venta se realizarán?
+            </h3>
+
+            <p className="text-gray-200 mb-1 block">✅ Venta General en un único pago</p>
+            <p className="text-gray-200 mb-1 block">✅ Venta a Plazos: Tres pagos mensuales</p>
+            <p className="text-gray-200 mb-4 block">✅ Venta con Bono Cultural Joven</p>
+            <div className="mt-2 p-4 bg-yellow-900/30 border-4 border-yellow-500 rounded w-full">
+              <p className="text-yellow-200">⚠️ El acceso al evento es exclusivamente para mayores de 18 años.</p>
+            </div>
+            <div className="mt-3 p-4 bg-black border-4 border-red-500 rounded w-full">
+              <p className="text-gray-200">ℹ️ Durante el proceso de compra, se solicitarán los siguientes datos del comprador:<br />
+              Nombre y Apellidos, DNI, Email, Teléfono, Fecha de Nacimiento y Código Postal.</p>
+            </div>
           </div>
-          <div className="mt-3 p-4 bg-black border-4 border-red-500 rounded w-full">
-            <p className="text-gray-200">ℹ️ Durante el proceso de compra, se solicitarán los siguientes datos del comprador:<br />
-            Nombre y Apellidos, DNI, Email, Teléfono, Fecha de Nacimiento y Código Postal.</p>
+
+          {/* Parte de abajo: IMAGEN (rellena TODO el resto) */}
+          <div
+            className="flex-1 relative"
+            style={{
+              backgroundImage: "url('/img/AQS8.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* overlay suave opcional */}
+            <div className="absolute inset-0 bg-black/15" />
           </div>
         </div>
       )
@@ -66,14 +146,34 @@ const TicketsPage: React.FC = () => {
     {
       title: "MÉTODOS DE PAGO",
       content: (
-        <div className="w-full h-full flex flex-col items-start justify-start px-4 pb-2">
-          <h4 className="text-lg font-bold mb-2 text-white">¿Cómo comprar los bonos?</h4>
-          <p className="text-gray-300 mb-2 block">Se podrán realizar en un mismo proceso la compra de hasta 6 abonos. Los métodos de pago aceptados son los siguientes:</p>
-          <div className="mt-2 mb-2 p-4 bg-black border-4 border-red-600 rounded-xl w-full">
-            <p className="text-gray-300 mb-1 block">✅ Tarjeta crédito / débito: Visa, Mastercard.</p>
-            <p className="text-gray-400 mb-1 block ml-6 text-sm">ℹ️ Importante: Deberás tener activado el 'comercio electrónico seguro'.</p>
-            <p className="text-gray-300 mb-1 block">✅ Bizum.</p>
-            <p className="text-gray-400 mb-1 block ml-6 text-sm">ℹ️ Importante: Deberás tener activado el servicio de Bizum en la aplicación de tu banco.</p>
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden bg-black">
+          {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
+          <div className="p-4 sm:p-6">
+            <h3 className="text-lg font-bold mb-2 text-white text-center">
+              ¿Cómo comprar los bonos?
+            </h3>
+
+            <p className="text-gray-200 mb-2 block">Se podrán realizar en un mismo proceso la compra de hasta 6 abonos. Los métodos de pago aceptados son los siguientes:</p>
+            <div className="mt-2 mb-2 p-4 bg-black border-4 border-red-600 rounded-xl w-full">
+              <p className="text-gray-200 mb-1 block">✅ Tarjeta crédito / débito: Visa, Mastercard.</p>
+              <p className="text-gray-400 mb-1 block ml-6 text-sm">ℹ️ Importante: Deberás tener activado el 'comercio electrónico seguro'.</p>
+              <p className="text-gray-200 mb-1 block">✅ Bizum.</p>
+              <p className="text-gray-400 mb-1 block ml-6 text-sm">ℹ️ Importante: Deberás tener activado el servicio de Bizum en la aplicación de tu banco.</p>
+            </div>
+          </div>
+
+          {/* Parte de abajo: IMAGEN (rellena TODO el resto) */}
+          <div
+            className="flex-1 relative"
+            style={{
+              backgroundImage: "url('/img/AQS18.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* overlay suave opcional */}
+            <div className="absolute inset-0 bg-black/15" />
           </div>
         </div>
       )
@@ -81,13 +181,33 @@ const TicketsPage: React.FC = () => {
     {
       title: "SOPORTE",
       content: (
-        <div className="w-full h-full flex flex-col items-start justify-start px-4 pb-2">
-          <h4 className="text-lg font-bold mb-2 text-white">¿Problemas con la compra?</h4>
-          <p className="text-gray-300 mb-2 block">En el caso de no recibir el correo con los abonos en tu bandeja de entrada tras un tiempo de espera, revisa tu carpeta de spam.</p>
-          <p className="text-gray-300 mb-2 block">Si aún así no lo has recibido, puedes ponerte en contacto con el servicio de atención al cliente a través de los siguientes medios:</p>
-          <div className="mt-4 p-4 bg-black border-4 border-red-600 rounded w-full">
-            <p className="text-gray-300 mb-2 block">📧 Email: <a href="mailto:info.es@vivaticket.com" className="text-red-400 hover:text-red-300 underline">info.es@vivaticket.com</a></p>
-            <p className="text-gray-300 mb-1 block">📞 Tfno: <a href="tel:+34910053595" className="text-red-400 hover:text-red-300 underline">+34 910 05 35 95</a></p>
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden bg-black">
+          {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
+          <div className="p-4 sm:p-6">
+            <h3 className="text-lg font-bold mb-2 text-white text-center">
+              ¿Problemas con la compra?
+            </h3>
+
+            <p className="text-gray-200 mb-2 block">En el caso de no recibir el correo con los abonos en tu bandeja de entrada tras un tiempo de espera, revisa tu carpeta de spam.</p>
+            <p className="text-gray-200 mb-2 block">Si aún así no lo has recibido, puedes ponerte en contacto con el servicio de atención al cliente a través de los siguientes medios:</p>
+            <div className="mt-4 p-4 bg-black border-4 border-red-600 rounded w-full">
+              <p className="text-gray-200 mb-2 block">📧 Email: <a href="mailto:info.es@vivaticket.com" className="text-red-400 hover:text-red-300 underline">info.es@vivaticket.com</a></p>
+              <p className="text-gray-200 mb-1 block">📞 Tfno: <a href="tel:+34910053595" className="text-red-400 hover:text-red-300 underline">+34 910 05 35 95</a></p>
+            </div>
+          </div>
+
+          {/* Parte de abajo: IMAGEN (rellena TODO el resto) */}
+          <div
+            className="flex-1 relative"
+            style={{
+              backgroundImage: "url('/img/AQS20.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* overlay suave opcional */}
+            <div className="absolute inset-0 bg-black/15" />
           </div>
         </div>
       )
@@ -128,13 +248,7 @@ const TicketsPage: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen text-white"
-      style={{
-        backgroundImage: "url('/img/vertical3.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="min-h-screen text-white bg-black"
     >
     <style>{`
       @media (max-width: 768px) {
@@ -150,7 +264,10 @@ const TicketsPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 mt-0 p-0">
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-4">
-            Asegura tu sitio en la catedral de la música electrónica. Elige la opción que mejor se adapte a ti.
+            Asegura tu sitio en el valle de la música electrónica.
+          </p>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-2">
+            Elige la opción que mejor se adapte a ti.
           </p>
         </div>
 
@@ -186,23 +303,22 @@ const TicketsPage: React.FC = () => {
                             src="/img/aquasella3.png"
                             alt="Aquasella"
                             draggable={false}
-                            className={["w-full h-full object-contain object-center","scale-[1.15]","sm:scale-[1.2]","md:scale-[1.25]","lg:scale-[1.3]",].join(" ")}
+                            className="w-full h-full object-cover object-top"
+                            loading="lazy"
                           />
                         </div>
                       </div>
                     ) : (
-                      // Slides de texto con scroll interno
+                      // Slides de texto sin scroll
                       <div className="h-full w-full flex items-start justify-center">
-                        <div className="w-full h-full overflow-y-auto pr-1 sm:pr-2">
-                          <div className="p-3 sm:p-4 md:p-6">
-                            {slide.title && (
-                              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 text-red-400 text-center">
-                                {slide.title}
-                              </h3>
-                            )}
-                            <div className="text-sm sm:text-base">
-                              {slide.content}
-                            </div>
+                        <div className="p-3 sm:p-4 md:p-6 h-full w-full">
+                          {slide.title && (
+                            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 text-red-400 text-center">
+                              {slide.title}
+                            </h3>
+                          )}
+                          <div className="text-sm sm:text-base h-full">
+                            {slide.content}
                           </div>
                         </div>
                       </div>

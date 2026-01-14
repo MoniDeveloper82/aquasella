@@ -87,7 +87,7 @@ const InfoPage: React.FC = () => {
       }
     `}</style>
       {/* Banner superior si existe */}
-      <img src="/img/i1.png" alt="Título Aquasella" className="w-full block" style={{margin: 0, padding: 0, display: 'block'}} />
+      <img src="/img/i1.png" alt="Título Aquasella" className="w-full block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
       <div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           {/* Banner superior si existe */}
@@ -98,7 +98,7 @@ const InfoPage: React.FC = () => {
                           className="group block"
                         >
                           <BaseCard>
-                            <img src="/img/ZONA%20DE%20DESCANSO.png" alt="Zona de Descanso" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
+                            <img src="/img/ZONA%20DE%20DESCANSO.png" alt="Zona de Descanso" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} loading="lazy" />
                             <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
                           </BaseCard>
                         </Link>
@@ -110,7 +110,7 @@ const InfoPage: React.FC = () => {
                   className="group block"
                 >
                   <BaseCard>
-                    <img src="/img/GLAMPING.png" alt="Glamping" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
+                    <img src="/img/GLAMPING.png" alt="Glamping" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} loading="lazy" />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
                   </BaseCard>
                 </Link>
@@ -121,7 +121,7 @@ const InfoPage: React.FC = () => {
                   className="group block"
                 >
                   <BaseCard>
-                    <img src="/img/LOCKERS.png" alt="Lockers" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
+                    <img src="/img/LOCKERS.png" alt="Lockers" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} loading="lazy" />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
                   </BaseCard>
                 </Link>
@@ -132,7 +132,7 @@ const InfoPage: React.FC = () => {
                   className="group block"
                 >
                   <BaseCard>
-                    <img src="/img/BATERIAS.png" alt="Baterías Móvil" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
+                    <img src="/img/BATERIAS.png" alt="Baterías Móvil" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} loading="lazy" />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
                   </BaseCard>
                 </Link>
@@ -143,7 +143,7 @@ const InfoPage: React.FC = () => {
                   className="group block"
                 >
                   <BaseCard>
-                    <img src="/img/AUTOBUSES.png" alt="Tour On The Road" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
+                    <img src="/img/AUTOBUSES.png" alt="Tour On The Road" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} loading="lazy" />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
                   </BaseCard>
                 </Link>
@@ -154,7 +154,7 @@ const InfoPage: React.FC = () => {
                   className="group block"
                 >
                   <BaseCard>
-                    <img src="/img/LOCALIZACIÓN.png" alt="Localización" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
+                    <img src="/img/LOCALIZACIÓN.png" alt="Localización" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} loading="lazy" />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
                   </BaseCard>
                 </Link>
@@ -165,7 +165,7 @@ const InfoPage: React.FC = () => {
                   className="group block"
                 >
                   <BaseCard>
-                    <img src="/img/PLANO.png" alt="Plano" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
+                    <img src="/img/PLANO.png" alt="Plano" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} loading="lazy" />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
                   </BaseCard>
                 </Link>
@@ -176,7 +176,7 @@ const InfoPage: React.FC = () => {
                   className="group block"
                 >
                   <BaseCard>
-                    <img src="/img/COLABORADORES.png" alt="Colaboradores" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
+                    <img src="/img/COLABORADORES.png" alt="Colaboradores" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} loading="lazy" />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
                   </BaseCard>
                 </Link>
@@ -187,7 +187,7 @@ const InfoPage: React.FC = () => {
                   className="group block"
                 >
                   <BaseCard>
-                    <img src="/img/HISTORIA.png" alt="Historia" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} />
+                    <img src="/img/HISTORIA.png" alt="Historia" className="w-full h-full object-contain absolute inset-0" style={{zIndex: 0, opacity: 1}} loading="lazy" />
                     <div className="absolute inset-0 flex items-center justify-center" style={{zIndex: 1}}></div>
                   </BaseCard>
                 </Link>

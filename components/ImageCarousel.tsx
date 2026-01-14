@@ -33,6 +33,7 @@ const ImageCarousel: React.FC = () => {
                 src={src}
                 alt={`Festival moment ${index + 1}`}
                 className="w-full h-56 md:h-96 object-cover rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
           ))}
