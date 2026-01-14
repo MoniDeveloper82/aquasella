@@ -86,14 +86,14 @@ const HomePage: React.FC = () => {
             GALERÍA DE FOTOS
           </h2>
           <div className="max-w-4xl mx-auto mt-24 mb-12">
-            <div className="relative w-full h-40 md:h-64" style={{ perspective: '1000px', overflow: 'hidden' }}>
+            <div className="relative w-full h-72 md:h-96" style={{ perspective: '1000px', overflow: 'hidden' }}>
               <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d', animation: 'rotate 90s infinite linear', animationPlayState: paused ? 'paused' : 'running' }} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
                 {images.map((img, index) => (
                   <img
                     key={img}
                     src={`/img/${img}`}
                     alt={`Galería ${index + 1}`}
-                    className="absolute w-40 h-40 md:w-56 h-56 object-cover rounded-lg bg-black"
+                    className="absolute w-40 h-56 md:w-56 md:h-72 object-cover rounded-lg bg-black"
                     style={{
                       transform: `translate(-50%, -50%) rotateY(${index * (360 / images.length)}deg) translateZ(${translateZ}px)`,
                       left: '50%',
@@ -110,7 +110,7 @@ const HomePage: React.FC = () => {
                 to { transform: rotateY(360deg); }
               }
             `}</style>
-            <div className="text-center mt-48">
+            <div className="text-center mt-16 md:mt-24">
               <button
                 onClick={() => navigate('/galeria')}
                 className="px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition"
