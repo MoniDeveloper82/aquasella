@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import { trackPageView } from './src/analytics';
 
-const App: React.FC = () => {
+const App = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
