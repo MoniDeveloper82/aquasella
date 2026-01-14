@@ -34,7 +34,7 @@ const InfoPage: React.FC = () => {
       description: 'Síguenos por toda España antes del festival',
       icon: '🚐',
       color: 'from-purple-600 to-purple-800',
-      link: '/info/tour-road'
+      link: '/info/tour-on-the-road'
     },
     {
       id: 'localizacion',

@@ -44,23 +44,13 @@ const ArtistsPage: React.FC = () => {
   return (
     <section id="artistas" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Navegación de regreso */}
-        <div className="mb-8">
-          <Link 
-            to="/lineup" 
-            className="inline-flex items-center text-gray-300 hover:text-white transition-colors group"
-          >
-            <svg className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" 
-                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Volver a Line Up
-          </Link>
-        </div>
+        <Link to="/lineup" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
+          ← Volver a Line Up
+        </Link>
 
         <h2 className="text-4xl font-black text-center uppercase text-white mb-4 text-glow">Artistas</h2>
         <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-          Descubre el pulso electrónico que hará vibrar Aquasella. Desde leyendas del techno hasta las nuevas promesas del house, aquí tienes a los artífices de tu experiencia.
+          Descubre el pulso electrónico que hará vibrar Aquasella. Desde leyendas del techno hasta las nuevas promesas que vienen pisando fuerte.<br />Aquí tienes a los artífices de tu experiencia.
         </p>
 
         <div className="flex justify-center space-x-2 md:space-x-4 mb-12">
@@ -68,10 +58,13 @@ const ArtistsPage: React.FC = () => {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
+              disabled={filter !== 'Todos'}
               className={`px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base font-bold uppercase tracking-wider rounded-full transition-all duration-300 focus:outline-none focus:ring-2 ${
                 activeFilter === filter
                   ? 'bg-red-600 text-white focus:ring-red-600'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  : filter === 'Todos'
+                  ? 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  : 'bg-gray-600 text-gray-500 cursor-not-allowed'
               }`}
             >
               {filter === 'Todos' ? '|A-Z|' : filter}

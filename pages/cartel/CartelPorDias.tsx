@@ -43,19 +43,9 @@ const CartelPorDiasPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Navegación de regreso */}
-        <div className="mb-8">
-          <Link 
-            to="/lineup/cartel" 
-            className="inline-flex items-center text-gray-300 hover:text-white transition-colors group"
-          >
-            <svg className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" 
-                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Volver al Cartel
-          </Link>
-        </div>
+        <Link to="/lineup/cartel" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
+          ← Volver al Cartel
+        </Link>
 
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">

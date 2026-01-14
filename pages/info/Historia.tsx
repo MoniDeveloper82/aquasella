@@ -95,21 +95,11 @@ const HistoriaPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-20">
+    <div className="min-h-screen bg-black text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Navegación de regreso */}
-        <div className="mb-8">
-          <Link 
-            to="/info" 
-            className="inline-flex items-center text-gray-300 hover:text-white transition-colors group"
-          >
-            <svg className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" 
-                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Volver a Información
-          </Link>
-        </div>
+        <Link to="/info" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
+          ← Volver a Información
+        </Link>
 
         <div className="text-center mb-12">
           <div className="text-6xl mb-6">📜</div>

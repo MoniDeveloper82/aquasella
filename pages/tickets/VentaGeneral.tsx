@@ -33,19 +33,9 @@ const VentaGeneralPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white pt-0 pb-10">
       <>
-        {/* Navegación de regreso - Por encima del banner */}
-        <div className="mb-4 px-4 sm:px-6 lg:px-8">
-          <Link 
-            to="/tickets" 
-            className="inline-flex items-center text-gray-300 hover:text-white transition-colors group"
-          >
-            <svg className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" 
-                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Volver a Tickets
-          </Link>
-        </div>
+        <Link to="/tickets" className="inline-block mb-4 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
+          ← Volver a Tickets
+        </Link>
         
         <img src="/img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" loading="lazy" />
 

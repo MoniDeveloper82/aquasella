@@ -55,107 +55,15 @@ const ZonaDescansoPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-20">
+    <div className="min-h-screen bg-black text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Navegación de regreso */}
-        <div className="mb-8">
-          <Link 
-            to="/info" 
-            className="inline-flex items-center text-gray-300 hover:text-white transition-colors group"
-          >
-            <svg className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" 
-                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Volver a Información
-          </Link>
-        </div>
+        <Link to="/info" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
+          ← Volver a Información
+        </Link>
 
-        <div className="text-center mb-12">
-          <div className="text-6xl mb-6">🛋️</div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">
-            Zonas de Descanso
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Espacios especialmente diseñados para que puedas relajarte, recargar energías y disfrutar de momentos de calma durante el festival.
-          </p>
-        </div>
-
-        {/* Áreas de descanso */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 mb-12">
-          {restAreas.map((area) => (
-            <div
-              key={area.id}
-              className={`bg-gradient-to-br ${area.color} rounded-2xl p-8`}
-            >
-              <div className="flex items-center justify-between mb-6">
-                <div className="text-5xl">{area.icon}</div>
-                <div className="text-right">
-                  <div className="text-sm opacity-80">{area.location}</div>
-                  <div className="text-sm font-bold">{area.capacity}</div>
-                </div>
-              </div>
-              
-              <h3 className="text-2xl font-black uppercase tracking-wider mb-4">
-                {area.name}
-              </h3>
-              <p className="text-lg opacity-90 mb-6">{area.description}</p>
-              
-              <div className="space-y-3">
-                {area.features.map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <svg className="w-5 h-5 mr-3 text-green-300" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Servicios disponibles */}
-        <div className="bg-gray-800 rounded-xl p-8 mb-12">
-          <h3 className="text-2xl font-bold text-center mb-8">🌟 Servicios Disponibles en Todas las Zonas</h3>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <div key={index} className="flex items-center bg-gray-700 rounded-lg p-4">
-                <div className="text-2xl mr-3">{service.icon}</div>
-                <span className="text-sm font-medium">{service.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Horarios y normas */}
-        <div className="grid gap-8 md:grid-cols-2 mb-12">
-          <div className="bg-gray-800 rounded-xl p-6">
-            <h3 className="text-xl font-bold mb-4">🕐 Horarios</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>• <strong>Apertura:</strong> 13 Agosto 10:00h</li>
-              <li>• <strong>Horario:</strong> 24 horas durante el festival</li>
-              <li>• <strong>Limpieza:</strong> Diaria de 06:00 a 08:00h</li>
-              <li>• <strong>Cierre:</strong> 17 Agosto 12:00h</li>
-            </ul>
-          </div>
-          
-          <div className="bg-gray-800 rounded-xl p-6">
-            <h3 className="text-xl font-bold mb-4">📋 Normas de Uso</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>• Respeta el silencio en Zen Garden</li>
-              <li>• No consumo de alcohol en Área Familiar</li>
-              <li>• Máximo 2 horas de ocupación continua</li>
-              <li>• Mantén limpio el espacio</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">😌 Tu Oasis en el Festival</h3>
-          <p className="text-gray-300">
-            Las zonas de descanso están pensadas para que recargues energías y disfrutes del festival de forma cómoda y relajada.
-          </p>
+        <div className="text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">PROXIMAMENTE MÁS INFORMACIÓN SOBRE LA ZONA DE DESCANSO</h1>
+          <p className="text-xl md:text-2xl text-gray-300">Estamos trabajando en los detalles de las zonas de descanso. ¡Mantente atento!</p>
         </div>
       </div>
     </div>
