@@ -86,21 +86,28 @@ const HomePage: React.FC = () => {
             GALERÍA DE FOTOS
           </h2>
           <div className="max-w-4xl mx-auto mt-24 mb-12">
-            <div className="relative w-full h-72 md:h-96" style={{ perspective: '1000px', overflow: 'hidden' }}>
-              <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d', animation: 'rotate 90s infinite linear', animationPlayState: paused ? 'paused' : 'running' }} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+            <div className="relative w-full h-96 md:h-[28rem]" style={{ perspective: '1000px', overflow: 'hidden' }}>
+              <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d', animation: 'rotate 140s infinite linear', animationPlayState: paused ? 'paused' : 'running' }} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
                 {images.map((img, index) => (
-                  <img
+                  <div
                     key={img}
-                    src={`/img/${img}`}
-                    alt={`Galería ${index + 1}`}
-                    className="absolute w-40 h-56 md:w-56 md:h-72 object-cover rounded-lg bg-black"
                     style={{
                       transform: `translate(-50%, -50%) rotateY(${index * (360 / images.length)}deg) translateZ(${translateZ}px)`,
                       left: '50%',
                       top: '50%',
+                      position: 'absolute',
                     }}
-                    loading="lazy"
-                  />
+                  >
+                    <img
+                      src={`/img/${img}`}
+                      alt={`Galería ${index + 1}`}
+                      className="w-40 h-56 md:w-56 md:h-72 object-cover rounded-lg bg-black transition-transform duration-300 md:hover:scale-105"
+                      style={{
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
+                      }}
+                      loading="lazy"
+                    />
+                  </div>
                 ))}
               </div>
             </div>
