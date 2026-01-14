@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const LineUpPage: React.FC = () => {
@@ -49,6 +49,9 @@ const LineUpPage: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-24 justify-center justify-items-center items-center">
             {sections.map((section) => {
+              const [imageLoaded, setImageLoaded] = useState(false);
+              const [imageError, setImageError] = useState(false);
+
               let imgSrc = '';
               if (section.title === 'ARTISTAS') imgSrc = '/img/ARTISTAS.png';
               if (section.title === 'CARTEL') imgSrc = '/img/CARTEL1.png';
@@ -65,10 +68,25 @@ const LineUpPage: React.FC = () => {
                   } style={{ borderColor: '#8B0000' }}>
                     {hideContent ? (
                       <div className="relative w-full h-full flex items-center justify-center">
+                        {!imageLoaded && !imageError && (
+                          <div className="absolute inset-0 bg-gray-800 animate-pulse flex items-center justify-center">
+                            <div className="text-red-500 text-2xl">⟳</div>
+                          </div>
+                        )}
+                        {imageError && (
+                          <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
+                            <div className="text-red-500 text-center">
+                              <div className="text-2xl mb-2">⚠</div>
+                              <div className="text-sm">Error loading</div>
+                            </div>
+                          </div>
+                        )}
                         <img 
                           src={imgSrc}
                           alt={section.title}
-                          className="w-full h-full object-contain"
+                          className={`w-full h-full object-contain ${imageLoaded ? 'block' : 'hidden'}`}
+                          onLoad={() => setImageLoaded(true)}
+                          onError={() => setImageError(true)}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>
