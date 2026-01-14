@@ -75,7 +75,7 @@ const HomePage: React.FC = () => {
         {/* Galería de fotos */}
         <section className="py-16 px-4">
           <h2
-            className="w-full text-center m-0 -mt-4 text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 relative z-10"
+            className="w-full text-center m-0 -mt-8 md:-mt-6 text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 relative z-10"
             style={{
               fontFamily: 'ClashDisplay, system-ui, -apple-system, sans-serif',
               fontWeight: 'bold',
@@ -85,8 +85,8 @@ const HomePage: React.FC = () => {
           >
             GALERÍA DE FOTOS
           </h2>
-          <div className="max-w-4xl mx-auto mt-20 mb-12">
-            <div className="relative w-full h-40 md:h-64" style={{ perspective: '1000px' }}>
+          <div className="max-w-4xl mx-auto mt-24 mb-12">
+            <div className="relative w-full h-40 md:h-64" style={{ perspective: '1000px', overflow: 'hidden' }}>
               <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d', animation: 'rotate 90s infinite linear', animationPlayState: paused ? 'paused' : 'running' }} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
                 {images.map((img, index) => (
                   <img
