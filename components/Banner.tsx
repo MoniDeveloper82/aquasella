@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 type BannerItem = {
   id?: string;
@@ -14,11 +15,14 @@ type BannerProps = {
   id?: string;
 };
 
-const defaultItems: BannerItem[] = [
-  { message: 'COMPRA TUS TICKETS', ctaText: 'Comprar', ctaLink: '/tickets' },
-];
+const Banner: React.FC<BannerProps> = ({ items, rotateMs = 4000, id = 'site-banner' }) => {
+  const { t } = useTranslation();
 
-const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, id = 'site-banner' }) => {
+  const defaultItems: BannerItem[] = [
+    { message: t('buy_tickets'), ctaText: t('buy'), ctaLink: '/tickets' },
+  ];
+
+  const bannerItems = items || defaultItems;
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const navigate = useNavigate();
@@ -34,13 +38,13 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
   }, []);
 
   useEffect(() => {
-    if (items.length <= 1) return;
-    const tick = () => setIndex((i) => (i + 1) % items.length);
+    if (bannerItems.length <= 1) return;
+    const tick = () => setIndex((i) => (i + 1) % bannerItems.length);
     const interval = setInterval(() => {
       if (!paused && mounted.current) tick();
     }, rotateMs);
     return () => clearInterval(interval);
-  }, [items.length, rotateMs, paused]);
+  }, [bannerItems.length, rotateMs, paused]);
 
   useLayoutEffect(() => {
     const calc = () => {
@@ -72,7 +76,7 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
       if (ro) ro.disconnect();
       window.removeEventListener('resize', calc);
     };
-  }, [items]);
+  }, [bannerItems]);
 
   return (
     <div className="w-full">
@@ -81,10 +85,10 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
           className="relative w-full h-10 md:h-11 lg:h-12 overflow-hidden shadow-lg z-[45] cursor-pointer rounded-b-2xl bg-transparent"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
-          onClick={() => navigate(items[index]?.ctaLink ?? '/tickets')}
+          onClick={() => navigate(bannerItems[index]?.ctaLink ?? '/tickets')}
           role="link"
           tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { navigate(items[index]?.ctaLink ?? '/tickets'); } }}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { navigate(bannerItems[index]?.ctaLink ?? '/tickets'); } }}
         >
           {/* metallic shine overlay (static base + animated highlight) */}
           <div aria-hidden className="pointer-events-none absolute inset-0 rounded-b-2xl overflow-hidden">
@@ -110,7 +114,7 @@ const Banner: React.FC<BannerProps> = ({ items = defaultItems, rotateMs = 4000, 
           <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-700 to-red-800">
             <style>{`@keyframes marquee2 { 0% { transform: translateX(0%);} 100% { transform: translateX(-50%);} }`}</style>
             <div ref={containerRef} className="h-10 md:h-11 lg:h-12 w-full overflow-hidden">
-              {items.map((it, i) => (
+              {bannerItems.map((it, i) => (
                 <div key={i} className={`w-full h-full ${i === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} aria-hidden={i === index ? 'false' : 'true'}>
                   <div className="h-full flex items-center">
                     <div

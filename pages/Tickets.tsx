@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import BaseCard from '../components/BaseCard';
 
 const TicketsPage: React.FC = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const guideSlides = [
@@ -18,23 +20,23 @@ const TicketsPage: React.FC = () => {
       )
     },
     {
-      title: "ABONOS GENERALES",
+      title: t('tickets_general_title'),
       content: (
         <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
-              ¿Cuándo comienza la venta?
+              {t('tickets_general_question')}
             </h3>
 
             <p className="text-base text-gray-200 text-center mb-2">
-              Este martes 11 de noviembre a las 13:00h, pondremos a la venta una nueva promoción de Abonos Generales desde{" "}
-              <span className="font-bold">79,90€ + gastos de gestión.</span>{" "}
-              La Zona de Descanso (Acampada) se podrá adquirir por separado más adelante como complemento.
+              {t('tickets_general_answer')}{" "}
+              <span className="font-bold">{t('tickets_general_price')}</span>{" "}
+              {t('tickets_general_rest')}
             </p>
 
             <p className="text-base text-gray-200 text-center">
-              La venta se realizará desde nuestra Web Oficial:{" "}
+              {t('tickets_general_web')}{" "}
               <a
                 href="https://www.aquasella.com"
                 className="text-red-400 underline"
@@ -44,7 +46,7 @@ const TicketsPage: React.FC = () => {
                 www.aquasella.com
               </a>
               <br />
-              Siendo nuestra Ticketera oficial Vivaticket:{" "}
+              {t('tickets_general_ticketer')}{" "}
               <a
                 href="https://www.vivaticket.es/"
                 className="text-red-400 underline"
@@ -73,19 +75,19 @@ const TicketsPage: React.FC = () => {
       )
     },
     {
-      title: "TIPOS DE ABONOS",
+      title: t('tickets_types_title'),
       content: (
         <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
-              ¿Qué tipos de Abonos hay a la venta?
+              {t('tickets_types_question')}
             </h3>
 
             <ul className="space-y-2 text-gray-200 mt-2">
-              <li>✅ Abono General</li>
-              <li>✅ Precio mínimo garantizado para la próxima edición AQUASELLA 2026.</li>
-              <li>✅ El abono general da acceso al recinto del festival desde el jueves 13 hasta el domingo 16 de agosto de 2026.</li>
+              <li>{t('tickets_types_list1')}</li>
+              <li>{t('tickets_types_list2')}</li>
+              <li>{t('tickets_types_list3')}</li>
             </ul>
           </div>
 
@@ -106,24 +108,24 @@ const TicketsPage: React.FC = () => {
       )
     },
     {
-      title: "FORMAS DE VENTA",
+      title: t('tickets_sales_title'),
       content: (
         <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden bg-black">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
-              ¿Qué tipos de venta se realizarán?
+              {t('tickets_sales_question')}
             </h3>
 
-            <p className="text-gray-200 mb-1 block">✅ Venta General en un único pago</p>
-            <p className="text-gray-200 mb-1 block">✅ Venta a Plazos: Tres pagos mensuales</p>
-            <p className="text-gray-200 mb-4 block">✅ Venta con Bono Cultural Joven</p>
+            <p className="text-gray-200 mb-1 block">{t('tickets_sales_list1')}</p>
+            <p className="text-gray-200 mb-1 block">{t('tickets_sales_list2')}</p>
+            <p className="text-gray-200 mb-4 block">{t('tickets_sales_list3')}</p>
             <div className="mt-2 p-4 bg-yellow-900/30 border-4 border-yellow-500 rounded w-full">
-              <p className="text-yellow-200">⚠️ El acceso al evento es exclusivamente para mayores de 18 años.</p>
+              <p className="text-yellow-200">{t('tickets_sales_warning')}</p>
             </div>
             <div className="mt-3 p-4 bg-black border-4 border-red-500 rounded w-full">
-              <p className="text-gray-200">ℹ️ Durante el proceso de compra, se solicitarán los siguientes datos del comprador:<br />
-              Nombre y Apellidos, DNI, Email, Teléfono, Fecha de Nacimiento y Código Postal.</p>
+              <p className="text-gray-200">{t('tickets_sales_info')}<br />
+              {t('tickets_sales_data')}</p>
             </div>
           </div>
 
@@ -144,21 +146,21 @@ const TicketsPage: React.FC = () => {
       )
     },
     {
-      title: "MÉTODOS DE PAGO",
+      title: t('tickets_payment_title'),
       content: (
         <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden bg-black">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
-              ¿Cómo comprar los bonos?
+              {t('tickets_payment_question')}
             </h3>
 
-            <p className="text-gray-200 mb-2 block">Se podrán realizar en un mismo proceso la compra de hasta 6 abonos. Los métodos de pago aceptados son los siguientes:</p>
+            <p className="text-gray-200 mb-2 block">{t('tickets_payment_text')}</p>
             <div className="mt-2 mb-2 p-4 bg-black border-4 border-red-600 rounded-xl w-full">
-              <p className="text-gray-200 mb-1 block">✅ Tarjeta crédito / débito: Visa, Mastercard.</p>
-              <p className="text-gray-400 mb-1 block ml-6 text-sm">ℹ️ Importante: Deberás tener activado el 'comercio electrónico seguro'.</p>
-              <p className="text-gray-200 mb-1 block">✅ Bizum.</p>
-              <p className="text-gray-400 mb-1 block ml-6 text-sm">ℹ️ Importante: Deberás tener activado el servicio de Bizum en la aplicación de tu banco.</p>
+              <p className="text-gray-200 mb-1 block">{t('tickets_payment_credit')}</p>
+              <p className="text-gray-400 mb-1 block ml-6 text-sm">{t('tickets_payment_credit_info')}</p>
+              <p className="text-gray-200 mb-1 block">{t('tickets_payment_bizum')}</p>
+              <p className="text-gray-400 mb-1 block ml-6 text-sm">{t('tickets_payment_bizum_info')}</p>
             </div>
           </div>
 
@@ -179,20 +181,20 @@ const TicketsPage: React.FC = () => {
       )
     },
     {
-      title: "SOPORTE",
+      title: t('tickets_support_title'),
       content: (
         <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden bg-black">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
-              ¿Problemas con la compra?
+              {t('tickets_support_question')}
             </h3>
 
-            <p className="text-gray-200 mb-2 block">En el caso de no recibir el correo con los abonos en tu bandeja de entrada tras un tiempo de espera, revisa tu carpeta de spam.</p>
-            <p className="text-gray-200 mb-2 block">Si aún así no lo has recibido, puedes ponerte en contacto con el servicio de atención al cliente a través de los siguientes medios:</p>
+            <p className="text-gray-200 mb-2 block">{t('tickets_support_text1')}</p>
+            <p className="text-gray-200 mb-2 block">{t('tickets_support_text2')}</p>
             <div className="mt-4 p-4 bg-black border-4 border-red-600 rounded w-full">
-              <p className="text-gray-200 mb-2 block">📧 Email: <a href="mailto:info.es@vivaticket.com" className="text-red-400 hover:text-red-300 underline">info.es@vivaticket.com</a></p>
-              <p className="text-gray-200 mb-1 block">📞 Tfno: <a href="tel:+34910053595" className="text-red-400 hover:text-red-300 underline">+34 910 05 35 95</a></p>
+              <p className="text-gray-200 mb-2 block">{t('tickets_support_email')} <a href="mailto:info.es@vivaticket.com" className="text-red-400 hover:text-red-300 underline">info.es@vivaticket.com</a></p>
+              <p className="text-gray-200 mb-1 block">{t('tickets_support_phone')} <a href="tel:+34910053595" className="text-red-400 hover:text-red-300 underline">+34 910 05 35 95</a></p>
             </div>
           </div>
 
@@ -225,22 +227,22 @@ const TicketsPage: React.FC = () => {
   const ticketSections = [
     {
       id: 'venta-general',
-      title: 'Venta General',
-      description: 'Entradas individuales para todos los días del festival',
+      title: t('tickets_sections_general_title'),
+      description: t('tickets_sections_general_desc'),
       color: 'from-rose-600 to-red-800',
       link: '/tickets/venta-general'
     },
     {
       id: 'venta-plazos',
-      title: 'Venta a Plazos',
-      description: 'Paga tu entrada cómodamente en varios plazos',
+      title: t('tickets_sections_installments_title'),
+      description: t('tickets_sections_installments_desc'),
       color: 'from-blue-600 to-blue-800',
       link: '/tickets/venta-plazos'
     },
     {
       id: 'bono-cultural',
-      title: 'Bono Cultural Joven',
-      description: 'Aprovecha el Bono Cultural para jóvenes de 18 años',
+      title: t('tickets_sections_bono_title'),
+      description: t('tickets_sections_bono_desc'),
       color: 'from-green-600 to-green-800',
       link: '/tickets/bono-cultural'
     }
@@ -268,10 +270,10 @@ const TicketsPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 mt-0 p-0">
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-4">
-            Asegura tu sitio en el valle de la música electrónica.
+            {t('tickets_subtitle')}
           </p>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-2">
-            Elige la opción que mejor se adapte a ti.
+            {t('tickets_subtitle2')}
           </p>
         </div>
 
@@ -288,7 +290,7 @@ const TicketsPage: React.FC = () => {
           {/* Header responsive */}
           <div className="text-center mb-3 sm:mb-4">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-wider text-white leading-tight">
-              GUÍA DE COMPRA - AQUASELLA 2026
+              {t('tickets_guide_title')}
             </h2>
           </div>
           {/* Viewport responsive y scrollable */}
@@ -386,17 +388,17 @@ const TicketsPage: React.FC = () => {
                 {/* Las cards están centradas en móvil usando mx-auto y max-w-xs */}
                 <BaseCard>
                 {section.id === 'venta-general' ? (
-                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: 'url(/img/VENTA.png)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: "url('/img/VENTA.png')", backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 ) : section.id === 'venta-plazos' ? (
-                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: 'url(/img/Plazos.png)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: "url('/img/Plazos.png')", backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 ) : section.id === 'bono-cultural' ? (
-                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: 'url(/img/Bono.png)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: "url('/img/Bono.png')", backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -408,12 +410,12 @@ const TicketsPage: React.FC = () => {
         </div>
 
         <div className="bg-black rounded-xl p-8 text-center mb-16 border-[3px]" style={{ borderColor: '#8B0000' }}>
-          <h3 className="text-2xl font-bold mb-4">Venta de Entradas</h3>
+          <h3 className="text-2xl font-bold mb-4">{t('tickets_bottom_title')}</h3>
           <p className="text-gray-300 mb-4">
-            Las entradas ya están disponibles. ¡Consigue la tuya antes de que se agoten!
+            {t('tickets_bottom_text')}
           </p>
           <p className="text-sm text-gray-400">
-            Al comprar una entrada, aceptas nuestros Términos y Condiciones y nuestra Política de Privacidad
+            {t('tickets_bottom_terms')}
           </p>
         </div>
       </div>
