@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const LocalizacionPage: React.FC = () => {
@@ -53,35 +53,6 @@ const LocalizacionPage: React.FC = () => {
     { name: 'Estación de servicio', distance: '5 km', icon: '🔧' }
   ];
 
-  const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({
-    transport: false,
-    services: false,
-    map: false
-  });
-
-  const toggleSection = (section: string) => {
-    setExpandedSections(prev => ({
-      ...prev,
-      [section]: !prev[section]
-    }));
-  };
-
-  const expandAllSections = () => {
-    setExpandedSections({
-      transport: true,
-      services: true,
-      map: true
-    });
-  };
-
-  const collapseAllSections = () => {
-    setExpandedSections({
-      transport: false,
-      services: false,
-      map: false
-    });
-  };
-
   return (
     <div className="min-h-screen bg-black text-white py-20 relative overflow-x-hidden" style={{
       backgroundImage: "url('/img/vertical3.png')",
@@ -102,22 +73,6 @@ const LocalizacionPage: React.FC = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
             Aquasella 2026 se celebra en el Valle de la musica, Asturias. Descubre cómo llegar y todo lo que necesitas saber sobre la ubicación.
           </p>
-          
-          {/* Botones de control para móvil */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button
-              onClick={expandAllSections}
-              className="px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition font-semibold"
-            >
-              📱 Expandir Todo (Móvil)
-            </button>
-            <button
-              onClick={collapseAllSections}
-              className="px-6 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700 transition font-semibold"
-            >
-              🔽 Colapsar Todo
-            </button>
-          </div>
         </div>
 
         {/* Ubicación principal */}
@@ -153,24 +108,10 @@ const LocalizacionPage: React.FC = () => {
 
         {/* Cómo llegar - Colapsable */}
         <div className="mb-12">
-          <div className="bg-gray-900 bg-opacity-80 rounded-xl p-6 border-2 border-green-500">
-            <button
-              onClick={() => toggleSection('transport')}
-              className="w-full flex items-center justify-between text-left"
-            >
-              <h2 className="text-3xl font-bold">Cómo Llegar</h2>
-              <svg
-                className={`w-6 h-6 transform transition-transform duration-200 ${expandedSections.transport ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+          <div className="rounded-xl p-6 border-2 border-green-500">
+            <h2 className="text-3xl font-bold mb-6">Cómo Llegar</h2>
             
-            {expandedSections.transport && (
-              <div className="mt-6">
+            <div className="mt-6">
                 <div className="
   grid grid-cols-1 gap-6 mb-12
   place-items-center
@@ -212,28 +153,13 @@ const LocalizacionPage: React.FC = () => {
                   ))}
                 </div>
               </div>
-            )}
           </div>
         </div>
 
         {/* Mapa interactivo - Colapsable */}
         <div className="bg-white rounded-xl p-8 mb-12 shadow-[0_0_35px_rgba(0,177,0,0.6),0_0_60px_rgba(0,177,0,0.3)] border-4" style={{ borderColor: 'rgb(0, 177, 0)' }}>
-          <button
-            onClick={() => toggleSection('map')}
-            className="w-full flex items-center justify-between text-left mb-6"
-          >
-            <h3 className="text-2xl font-bold" style={{ color: 'rgb(0, 177, 0)' }}>🗺️ Mapa Interactivo</h3>
-            <svg
-              className={`w-6 h-6 transform transition-transform duration-200 ${expandedSections.map ? 'rotate-180' : ''}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          
-          {expandedSections.map && (
+            <h3 className="text-2xl font-bold mb-6" style={{ color: 'rgb(0, 177, 0)' }}>🗺️ Mapa Interactivo</h3>
+            
             <div className="mt-6">
               {/* Versión desktop */}
               <div className="hidden md:block rounded-lg overflow-hidden shadow-2xl shadow-sky-900/20 border-4" style={{ borderColor: 'rgb(0, 177, 0)', boxShadow: '0 0 20px rgba(0, 177, 0, 0.5), 0 0 40px rgba(0, 177, 0, 0.3)' }}>
@@ -273,27 +199,12 @@ const LocalizacionPage: React.FC = () => {
                 </div>
               </div>
             </div>
-          )}
-        </div>
+          </div>
 
         {/* Servicios cercanos - Colapsable */}
         <div className="rounded-xl p-8 mb-12 border-2 border-white" style={{ backgroundColor: 'rgb(0, 177, 0)' }}>
-          <button
-            onClick={() => toggleSection('services')}
-            className="w-full flex items-center justify-between text-left mb-6"
-          >
-            <h3 className="text-2xl font-bold text-white">🏪 Servicios Cercanos</h3>
-            <svg
-              className={`w-6 h-6 transform transition-transform duration-200 ${expandedSections.services ? 'rotate-180' : ''}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          
-          {expandedSections.services && (
+            <h3 className="text-2xl font-bold text-white mb-6">🏪 Servicios Cercanos</h3>
+            
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {nearbyServices.map((service, index) => (
                 <div key={index} className="flex items-center bg-white rounded-lg p-4">
@@ -305,7 +216,6 @@ const LocalizacionPage: React.FC = () => {
                 </div>
               ))}
             </div>
-          )}
         </div>
 
         {/* Información adicional */}
