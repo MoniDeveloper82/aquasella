@@ -11,8 +11,16 @@ const LanguageSwitcher: React.FC = () => {
   };
 
   const languages = [
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'en', name: 'English', flag: '🇺🇸' }
+    {
+      code: 'es',
+      name: 'Español',
+      flagImg: `data:image/svg+xml;base64,${btoa('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" width="750" height="500"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>')}`
+    },
+    {
+      code: 'en',
+      name: 'English',
+      flagImg: `data:image/svg+xml;base64,${btoa('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 741 390" width="741" height="390"><rect width="741" height="390" fill="#B22234"/><rect width="741" height="390" fill="#FFFFFF"/><rect width="741" height="260" y="65" fill="#B22234"/><rect width="741" height="130" y="195" fill="#FFFFFF"/><rect width="494" height="390" fill="#3C3B6E"/><circle cx="123" cy="65" r="15" fill="#FFFFFF"/><circle cx="185" cy="65" r="15" fill="#FFFFFF"/><circle cx="247" cy="65" r="15" fill="#FFFFFF"/><circle cx="309" cy="65" r="15" fill="#FFFFFF"/><circle cx="371" cy="65" r="15" fill="#FFFFFF"/><circle cx="433" cy="65" r="15" fill="#FFFFFF"/><circle cx="154" cy="130" r="15" fill="#FFFFFF"/><circle cx="216" cy="130" r="15" fill="#FFFFFF"/><circle cx="278" cy="130" r="15" fill="#FFFFFF"/><circle cx="340" cy="130" r="15" fill="#FFFFFF"/><circle cx="402" cy="130" r="15" fill="#FFFFFF"/><circle cx="185" cy="195" r="15" fill="#FFFFFF"/><circle cx="247" cy="195" r="15" fill="#FFFFFF"/><circle cx="309" cy="195" r="15" fill="#FFFFFF"/><circle cx="371" cy="195" r="15" fill="#FFFFFF"/></svg>')}`
+    }
   ];
 
   const currentLang = languages.find(lang => lang.code === i18n.language) || languages[0];
@@ -29,7 +37,7 @@ const LanguageSwitcher: React.FC = () => {
               : 'bg-gradient-to-r from-gray-300 to-gray-400 hover:from-gray-400 hover:to-gray-500 text-red-600 border-gray-400'
           }`}
         >
-          <span className="text-base">{currentLang.flag}</span>
+          <img src={currentLang.flagImg} alt={`${currentLang.name} flag`} className="w-5 h-4 object-cover rounded-sm" />
           <span className="font-semibold">{currentLang.name}</span>
           <svg
             className={`w-3 h-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
@@ -60,7 +68,7 @@ const LanguageSwitcher: React.FC = () => {
                     i18n.language === lang.code ? 'bg-red-800 text-white' : 'text-white'
                   }`}
                 >
-                  <span className="text-base">{lang.flag}</span>
+                  <img src={lang.flagImg} alt={`${lang.name} flag`} className="w-5 h-4 object-cover rounded-sm" />
                   <span className="font-medium text-sm">{lang.name}</span>
                   {i18n.language === lang.code && (
                     <svg className="w-3 h-3 ml-auto text-white" fill="currentColor" viewBox="0 0 20 20">

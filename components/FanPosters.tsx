@@ -226,24 +226,24 @@ export default function FanPosters() {
 
   // Primer abanico: 1997-2004
   const posters1997_2004: Poster[] = Array.from({ length: 8 }).map((_, i) => ({
-    src: `/img/${1997 + i}.jpg`,
+    src: `img/${1997 + i}.jpg`,
     title: `Festival ${1997 + i}`,
   }));
 
   // Segundo abanico: 2005-2012
   const posters2005_2012: Poster[] = Array.from({ length: 8 }).map((_, i) => ({
-    src: `/img/${2005 + i}.jpg`,
+    src: `img/${2005 + i}.jpg`,
     title: `Festival ${2005 + i}`,
   }));
 
   // Tercer abanico: 2013-2015, 2022-2024
   const posters2013_2025: Poster[] = [
-    { src: '/img/2013.jpg', title: 'Festival 2013' },
-    { src: '/img/2014.jpg', title: 'Festival 2014' },
-    { src: '/img/2015.jpg', title: 'Festival 2015' },
-    { src: '/img/2022.png', title: 'Festival 2022' },
-    { src: '/img/2023.png', title: 'Festival 2023' },
-    { src: '/img/2024.png', title: 'Festival 2024' },
+    { src: 'img/2013.jpg', title: 'Festival 2013' },
+    { src: 'img/2014.jpg', title: 'Festival 2014' },
+    { src: 'img/2015.jpg', title: 'Festival 2015' },
+    { src: 'img/2022.png', title: 'Festival 2022' },
+    { src: 'img/2023.png', title: 'Festival 2023' },
+    { src: 'img/2024.png', title: 'Festival 2024' },
   ];
 
   return (

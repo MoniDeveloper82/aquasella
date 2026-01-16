@@ -38,7 +38,7 @@ const Countdown: React.FC = () => {
   return (
     <div className="relative w-full">
       <img
-        src="/img/CuentaAtras.png"
+        src="img/CuentaAtras.png"
         alt="Cuenta atrás Aquasella"
         className="w-full max-w-full object-contain select-none pointer-events-none block"
         draggable="false"
@@ -140,3 +140,4 @@ const Countdown: React.FC = () => {
 };
 
 export default Countdown;
+

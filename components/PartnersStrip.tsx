@@ -4,10 +4,10 @@ import React from 'react';
 const PartnersStrip: React.FC = () => {
   // In a real app, this would come from a data source
   const partners = [
-    { name: 'Sponsor 1', logo: '/img/sponsor1.png' },
-    { name: 'Sponsor 2', logo: '/img/sponsor2.png' },
-    { name: 'Sponsor 3', logo: '/img/sponsor3.png' },
-    { name: 'Sponsor 4', logo: '/img/sponsor4.png' },
+    { name: 'Sponsor 1', logo: 'img/sponsor1.png' },
+    { name: 'Sponsor 2', logo: 'img/sponsor2.png' },
+    { name: 'Sponsor 3', logo: 'img/sponsor3.png' },
+    { name: 'Sponsor 4', logo: 'img/sponsor4.png' },
   ];
 
   return (
@@ -53,3 +53,4 @@ const PartnersStrip: React.FC = () => {
 };
 
 export default PartnersStrip;
+

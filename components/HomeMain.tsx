@@ -43,7 +43,7 @@ const HomeMain: React.FC = () => {
         CONFIRMACIONES
       </h2>
       <img
-        src="/img/cartel.png"
+        src="img/cartel.png"
         alt="Cartel Aquasella 2026"
         className="mx-auto w-full max-w-[220px] sm:max-w-xs md:max-w-2xl lg:max-w-4xl h-auto object-contain rounded-xl border-4 border-red-700 mt-6 mb-0"
         draggable="false"
@@ -54,3 +54,4 @@ const HomeMain: React.FC = () => {
 };
 
 export default HomeMain;
+

@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const VentaPlazosPage: React.FC = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState(false);
 
@@ -32,18 +34,18 @@ const VentaPlazosPage: React.FC = () => {
                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Volver a Tickets
+            {t('back_to_tickets')}
           </Link>
         </div>
         
-        <img src="/img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" loading="lazy" />
+        <img src="img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" loading="lazy" />
 
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">
-            Venta a Plazos
+            {t('installments_sale_title')}
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Compra tu entrada pagando en varios plazos cómodamente.
+            {t('installments_sale_subtitle')}
           </p>
         </div>
 
@@ -65,7 +67,7 @@ const VentaPlazosPage: React.FC = () => {
           <div
             className="relative border-2 border-red-300 shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)] rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)] hover:z-10"
             style={{
-              backgroundImage: "url('/img/fondo-aqs-web.png')",
+              backgroundImage: "url('img/fondo-aqs-web.png')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
@@ -99,7 +101,7 @@ const VentaPlazosPage: React.FC = () => {
           {/* Información adicional */}
           <div className="grid gap-8 md:grid-cols-2 mt-12">
             <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:-rotate-2 hover:scale-105 transition-all duration-300 relative" style={{
-              backgroundImage: "url('/img/fondo-aqs-web.png')",
+              backgroundImage: "url('img/fondo-aqs-web.png')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
@@ -115,7 +117,7 @@ const VentaPlazosPage: React.FC = () => {
               </div>
             </div>
             <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:rotate-2 hover:scale-105 transition-all duration-300 relative" style={{
-              backgroundImage: "url('/img/fondo-aqs-web.png')",
+              backgroundImage: "url('img/fondo-aqs-web.png')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
@@ -138,3 +140,4 @@ const VentaPlazosPage: React.FC = () => {
 };
 
 export default VentaPlazosPage;
+

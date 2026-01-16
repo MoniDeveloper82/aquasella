@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from './icons';
 
 const carouselImages = [
-  '/img/POSTINFOFINAL_AQS.jpg',
+  'img/POSTINFOFINAL_AQS.jpg',
   'https://picsum.photos/seed/slide2/1920/1080',
   'https://picsum.photos/seed/slide3/1920/1080',
   'https://picsum.photos/seed/slide4/1920/1080',
@@ -82,3 +82,4 @@ const HomeCarousel: React.FC = () => {
 };
 
 export default HomeCarousel;
+

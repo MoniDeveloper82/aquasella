@@ -1,31 +1,33 @@
 import React from 'react';
 import EvezingStore from '../../components/EvezingStore';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const VentaGeneralPage: React.FC = () => {
+  const { t } = useTranslation();
   const ticketTypes = [
     {
       id: 'general-4-dias',
-      name: 'Entrada General 4 Días',
+      name: t('ticket_general_4_days'),
       price: '120€',
-      description: 'Acceso completo a los 4 días del festival',
-      features: ['Acceso a todos los escenarios', 'Horario: 13/08 - 16/08', 'Sin camping incluido'],
+      description: t('ticket_general_4_days_desc'),
+      features: [t('ticket_general_4_days_feature1'), t('ticket_general_4_days_feature2'), t('ticket_general_4_days_feature3')],
       color: 'from-rose-600 to-red-800'
     },
     {
       id: 'general-1-dia',
-      name: 'Entrada 1 Día',
-      price: 'Desde 35€',
-      description: 'Entrada para un día específico del festival',
-      features: ['Acceso día completo', 'Elige tu día favorito', 'Jueves, Viernes, Sábado o Domingo'],
+      name: t('ticket_1_day'),
+      price: t('ticket_1_day_price'),
+      description: t('ticket_1_day_desc'),
+      features: [t('ticket_1_day_feature1'), t('ticket_1_day_feature2'), t('ticket_1_day_feature3')],
       color: 'from-green-600 to-green-800'
     },
     {
       id: 'general-camping',
-      name: 'Entrada + Camping 4 Días',
-      price: '150€',
-      description: 'Entrada completa con acceso al camping',
-      features: ['Entrada 4 días incluida', 'Camping del 13-17/08', 'Zona de acampada oficial'],
+      name: t('ticket_camping_4_days'),
+      price: t('ticket_camping_4_days_price'),
+      description: t('ticket_camping_4_days_desc'),
+      features: [t('ticket_camping_4_days_feature1'), t('ticket_camping_4_days_feature2'), t('ticket_camping_4_days_feature3')],
       color: 'from-purple-600 to-purple-800'
     }
   ];
@@ -34,18 +36,18 @@ const VentaGeneralPage: React.FC = () => {
     <div className="min-h-screen bg-black text-white pt-0 pb-10">
       <>
         <Link to="/tickets" className="inline-block mb-4 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
-          ← Volver a Tickets
+          {t('back_to_tickets')}
         </Link>
         
-        <img src="/img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" loading="lazy" />
+        <img src="img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" loading="lazy" />
 
 
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">
-            Venta General
+            {t('general_sale_title')}
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Entradas estándar para vivir la experiencia completa de Aquasella 2026
+            {t('general_sale_subtitle')}
           </p>
         </div>
 
@@ -66,7 +68,7 @@ const VentaGeneralPage: React.FC = () => {
             <div
               className="relative border-2 border-red-300 shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)] rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)] hover:z-10"
               style={{
-                backgroundImage: "url('/img/fondo-aqs-web.png')",
+                backgroundImage: "url('img/fondo-aqs-web.png')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -88,7 +90,7 @@ const VentaGeneralPage: React.FC = () => {
         {/* Información adicional */}
         <div className="grid gap-8 md:grid-cols-2 mb-12">
           <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:-rotate-2 hover:scale-105 transition-all duration-300 relative" style={{
-            backgroundImage: "url('/img/fondo-aqs-web.png')",
+            backgroundImage: "url('img/fondo-aqs-web.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -105,7 +107,7 @@ const VentaGeneralPage: React.FC = () => {
             </div>
           </div>
           <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:rotate-2 hover:scale-105 transition-all duration-300 relative" style={{
-            backgroundImage: "url('/img/fondo-aqs-web.png')",
+            backgroundImage: "url('img/fondo-aqs-web.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',

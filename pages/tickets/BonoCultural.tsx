@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const BonoCulturalPage: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-gray-900 text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,27 +17,26 @@ const BonoCulturalPage: React.FC = () => {
                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Volver a Tickets
+            {t('back_to_tickets')}
           </Link>
         </div>
 
         <div className="text-center mb-12">
           <div className="text-6xl mb-6">🎓</div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wider mb-4 text-glow">
-            Bono Cultural Joven
+            {t('cultural_voucher_title')}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            ¡Aprovecha tu Bono Cultural para vivir Aquasella! Descuentos especiales para jóvenes de 18 años.
+            {t('cultural_voucher_subtitle')}
           </p>
         </div>
 
         {/* Información del Bono Cultural */}
         <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-8 mb-12">
           <div className="text-center">
-            <h2 className="text-3xl font-black uppercase mb-6">¿Qué es el Bono Cultural?</h2>
+            <h2 className="text-3xl font-black uppercase mb-6">{t('what_is_cultural_voucher')}</h2>
             <p className="text-lg opacity-90 max-w-3xl mx-auto">
-              El Bono Cultural Joven es una ayuda de 400€ del Ministerio de Cultura para jóvenes que cumplan 18 años 
-              en 2025, destinada a actividades culturales como festivales de música.
+              {t('cultural_voucher_description')}
             </p>
           </div>
         </div>
@@ -44,67 +45,67 @@ const BonoCulturalPage: React.FC = () => {
         <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2 mb-12">
           <div className="bg-gradient-to-br from-rose-600 to-red-800 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-black uppercase tracking-wider mb-4">
-              Entrada General 4 Días
+              {t('general_entry_4_days')}
             </h3>
             <div className="text-4xl font-black mb-2">120€</div>
-            <div className="text-lg opacity-90 mb-6">Con Bono Cultural</div>
+            <div className="text-lg opacity-90 mb-6">{t('with_cultural_voucher')}</div>
             
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center">
                 <svg className="w-5 h-5 mr-2 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">Acceso completo 4 días</span>
+                <span className="text-sm">{t('full_access_4_days')}</span>
               </div>
               <div className="flex items-center justify-center">
                 <svg className="w-5 h-5 mr-2 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">Todos los escenarios</span>
+                <span className="text-sm">{t('all_stages')}</span>
               </div>
               <div className="flex items-center justify-center">
                 <svg className="w-5 h-5 mr-2 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">13-16 Agosto 2026</span>
+                <span className="text-sm">{t('august_13_16_2026')}</span>
               </div>
             </div>
 
             <button className="w-full bg-white text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors">
-              Comprar con Bono Cultural
+              {t('buy_with_cultural_voucher')}
             </button>
           </div>
 
           <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-black uppercase tracking-wider mb-4">
-              Entrada + Camping 4 Días
+              {t('entry_plus_camping_4_days')}
             </h3>
             <div className="text-4xl font-black mb-2">150€</div>
-            <div className="text-lg opacity-90 mb-6">Con Bono Cultural</div>
+            <div className="text-lg opacity-90 mb-6">{t('with_cultural_voucher')}</div>
             
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center">
                 <svg className="w-5 h-5 mr-2 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">Entrada 4 días incluida</span>
+                <span className="text-sm">{t('entry_4_days_included')}</span>
               </div>
               <div className="flex items-center justify-center">
                 <svg className="w-5 h-5 mr-2 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">Camping oficial</span>
+                <span className="text-sm">{t('official_camping')}</span>
               </div>
               <div className="flex items-center justify-center">
                 <svg className="w-5 h-5 mr-2 text-green-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">13-17 Agosto 2026</span>
+                <span className="text-sm">{t('august_13_17_2026')}</span>
               </div>
             </div>
 
             <button className="w-full bg-white text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors">
-              Comprar con Bono Cultural
+              {t('buy_with_cultural_voucher')}
             </button>
           </div>
         </div>

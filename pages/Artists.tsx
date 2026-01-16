@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Artist } from '../types';
 import { artists } from '../data/artists';
 import ArtistCard from '../components/ArtistCard';
@@ -8,10 +9,22 @@ import { XMarkIcon } from '../components/icons';
 type DayFilter = 'Todos' | 'Jue' | 'Vie' | 'Sáb' | 'Dom';
 
 const ArtistsPage: React.FC = () => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<DayFilter>('Todos');
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null);
 
   const filters: DayFilter[] = ['Todos', 'Jue', 'Vie', 'Sáb', 'Dom'];
+
+  const getFilterDisplay = (filter: DayFilter) => {
+    switch (filter) {
+      case 'Todos': return t('artists_filter_all');
+      case 'Jue': return t('artists_filter_thu');
+      case 'Vie': return t('artists_filter_fri');
+      case 'Sáb': return t('artists_filter_sat');
+      case 'Dom': return t('artists_filter_sun');
+      default: return filter;
+    }
+  };
 
   const filteredArtists = useMemo(() => {
     if (activeFilter === 'Todos') {
@@ -45,12 +58,12 @@ const ArtistsPage: React.FC = () => {
     <section id="artistas" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link to="/lineup" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
-          ← Volver a Line Up
+          {t('back_to_lineup')}
         </Link>
 
-        <h2 className="text-4xl font-black text-center uppercase text-white mb-4 text-glow">Artistas</h2>
+        <h2 className="text-4xl font-black text-center uppercase text-white mb-4 text-glow">{t('artists_title')}</h2>
         <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-          Descubre el pulso electrónico que hará vibrar Aquasella. Desde leyendas del techno hasta las nuevas promesas que vienen pisando fuerte.<br />Aquí tienes a los artífices de tu experiencia.
+          {t('artists_description')}
         </p>
 
         <div className="flex justify-center space-x-2 md:space-x-4 mb-12">
@@ -67,7 +80,7 @@ const ArtistsPage: React.FC = () => {
                   : 'bg-gray-600 text-gray-500 cursor-not-allowed'
               }`}
             >
-              {filter === 'Todos' ? '|A-Z|' : filter}
+              {getFilterDisplay(filter)}
             </button>
           ))}
         </div>
@@ -93,8 +106,8 @@ const ArtistsPage: React.FC = () => {
              <button 
                onClick={closeModal} 
                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
-               title="Cerrar modal"
-               aria-label="Cerrar modal"
+               title={t('artists_close_modal')}
+               aria-label={t('artists_close_modal')}
              >
                 <XMarkIcon className="w-8 h-8" />
              </button>
@@ -103,11 +116,11 @@ const ArtistsPage: React.FC = () => {
         <div className="p-8 bg-black">
           <h3 className="text-3xl font-black uppercase text-white">{selectedArtist.name}</h3>
           <div className="mt-4 space-y-2 text-white">
-                        <p><span className="font-bold text-white">Día:</span> Próximamente</p>
-                        <p><span className="font-bold text-white">Escenario:</span> Próximamente</p>
-                        <p><span className="font-bold text-white">Horario:</span> Próximamente</p>
+                        <p><span className="font-bold text-white">{t('artists_day')}</span> {t('artists_coming_soon')}</p>
+                        <p><span className="font-bold text-white">{t('artists_stage')}</span> {t('artists_coming_soon')}</p>
+                        <p><span className="font-bold text-white">{t('artists_time')}</span> {t('artists_coming_soon')}</p>
                     </div>
-                    <p>Próximamente</p>
+                    <p>{t('artists_coming_soon')}</p>
                 </div>
              </div>
           </div>

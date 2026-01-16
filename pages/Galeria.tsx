@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const GaleriaPage: React.FC = () => {
+  const { t } = useTranslation();
   const images = ['AQS1.jpg', 'AQS2.jpg', 'AQS3.jpg', 'AQS4.jpg', 'AQS5.jpg', 'AQS6.jpg', 'AQS7.jpg', 'AQS8.jpg', 'AQS16.jpg', 'AQS17.jpg', 'AQS18.jpg', 'AQS19.jpg', 'AQS21.jpg'];
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -29,14 +31,14 @@ const GaleriaPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white" style={{
-      backgroundImage: "url('/img/vertical3.png')",
+      backgroundImage: "url('img/vertical3.png')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
       <div className="relative z-10 p-1 md:p-2">
         <Link to="/" className="inline-block mb-8 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
-          ← Volver al Inicio
+          {t('back_to_home')}
         </Link>
         <h1
           className="w-full text-center m-0 text-2xl md:text-6xl font-extrabold uppercase tracking-widest text-white text-glow-red break-words px-2 relative z-10 mb-8"
@@ -47,7 +49,7 @@ const GaleriaPage: React.FC = () => {
             background: 'transparent'
           }}
         >
-          GALERÍA DE FOTOS
+          {t('gallery_title')}
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-1 max-w-5xl mx-auto">
           {images.map((img, index) => (
@@ -57,7 +59,7 @@ const GaleriaPage: React.FC = () => {
               onClick={() => openModal(index)}
             >
               <img
-                src={`/img/${img}`}
+                src={`img/${img}`}
                 alt={`Galería ${index + 1}`}
                 className="w-full h-32 md:h-64 object-contain bg-black"
                 loading="lazy"
@@ -74,7 +76,7 @@ const GaleriaPage: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50" onClick={closeModal}>
           <div className="relative max-w-7xl max-h-full p-4">
             <img
-              src={`/img/${images[currentImageIndex]}`}
+              src={`img/${images[currentImageIndex]}`}
               alt="Modal"
               className="max-w-full max-h-full object-contain"
               loading="lazy"

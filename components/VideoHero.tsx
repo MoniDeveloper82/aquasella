@@ -40,14 +40,15 @@ const VideoHero: React.FC = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
+          loading="lazy"
           onError={handleVideoError}
           onLoadedData={handleVideoLoaded}
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "center center" }}
         >
-          <source src="/videos/hederDefinitivo.webm" type="video/webm" />
-          <source src="/videos/hederDefinitivo.mp4" type="video/mp4" />
+          <source src="videos/hederDefinitivo.webm" type="video/webm" />
+          <source src="videos/hederDefinitivo.mp4" type="video/mp4" />
           <source src="https://github.com/MoniDeveloper82/aquasella/raw/main/public/videos/hederDefinitivo.mp4" type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
@@ -58,7 +59,7 @@ const VideoHero: React.FC = () => {
         {/* TEXT & IMAGES OVERLAY */}
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-center z-20 text-center text-white px-4 pb-2 sm:pb-6">
           <img
-            src="/img/FECHAS AQS.png"
+            src="img/FECHAS AQS.png"
             alt="Aquasella Festival 2026 - 13-16 Agosto"
             className="w-auto max-w-[98vw] h-32 sm:h-72 md:h-96 lg:h-[420px] xl:h-[150px] 2xl:h-[180px] mx-auto mb-0"
             style={{
@@ -76,3 +77,4 @@ const VideoHero: React.FC = () => {
 };
 
 export default VideoHero;
+

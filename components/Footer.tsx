@@ -2,8 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TwitterIcon, InstagramIcon, FacebookIcon, YoutubeIcon } from './icons';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const socialLinks = [
     { Icon: InstagramIcon, href: 'https://www.instagram.com/aquasellafest/?hl=es', label: 'Instagram', target: '_blank', rel: 'noopener noreferrer' },
     { Icon: FacebookIcon, href: 'https://www.facebook.com/aquasellafest', label: 'Facebook', target: '_blank', rel: 'noopener noreferrer' },
@@ -13,7 +15,7 @@ const Footer: React.FC = () => {
     <footer
       className="relative"
       style={{
-        backgroundImage: `url('/img/footer.jpg')`,
+        backgroundImage: `url('img/footer.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center 70%',
         backgroundRepeat: 'no-repeat',
@@ -25,13 +27,13 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
             <div>
                 <img 
-                  src="/img/AQS.png" 
+                  src="img/AQS.png" 
                   alt="Aquasella Festival Logo"
                   className="h-40"
                 />
-                <p>El corazón de la música electrónica en el norte de España.</p>
+                <p>{t('footer_description')}</p>
                 <div className="mt-4 text-center">
-                  <p className="text-sm text-gray-300 mb-3">Síguenos en nuestras redes sociales</p>
+                  <p className="text-sm text-gray-300 mb-3">{t('footer_follow')}</p>
                   <div className="flex justify-center space-x-6">
                    {socialLinks.map(({ Icon, href, label, target, rel }) => (
                        <a

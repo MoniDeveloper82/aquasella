@@ -3,8 +3,10 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { MenuIcon, XMarkIcon } from './icons';
 import Banner from './Banner';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -40,11 +42,11 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   const navLinks = [
-    { to: '/', label: 'INICIO' },
-    { to: '/lineup', label: 'LINE UP' },
-    { to: '/info', label: 'INFO' },
-    { to: '/tickets', label: 'TICKETS' },
-    { to: '/shop', label: 'SHOP' },
+    { to: '/', label: t('home') },
+    { to: '/lineup', label: t('lineup') },
+    { to: '/info', label: t('info') },
+    { to: '/tickets', label: t('tickets') },
+    { to: '/shop', label: t('shop') },
   ];
 
   const handleLinkClick = () => {
@@ -61,12 +63,12 @@ const Header: React.FC = () => {
       <div className="fixed top-0 left-0 w-full h-24 lg:h-28 xl:h-32 overflow-hidden z-0 pointer-events-none">
         <video
           className="w-full h-full object-cover"
-          src="/videos/hederDefinitivo.mp4"
+          src="videos/hederDefinitivo.mp4"
           autoPlay
           loop
           muted
           playsInline
-          poster="/videos/heder_fallback.gif"
+          poster="videos/heder_fallback.gif"
         />
       </div>
       <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${headerClass}`}>
@@ -81,7 +83,7 @@ const Header: React.FC = () => {
                 onClick={handleLinkClick}
               >
                 <img 
-                  src="/img/FOTOPERFIL_AQS.png" 
+                  src="img/FOTOPERFIL_AQS.png" 
                   alt="Aquasella"
                   className="h-20 lg:h-24 xl:h-28 w-auto"
                   loading="lazy"

@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 // Translation files
 const resources = {
@@ -75,6 +76,88 @@ const resources = {
       "tickets_bottom_title": "Venta de Entradas",
       "tickets_bottom_text": "Las entradas ya están disponibles. ¡Consigue la tuya antes de que se agoten!",
       "tickets_bottom_terms": "Al comprar una entrada, aceptas nuestros Términos y Condiciones y nuestra Política de Privacidad",
+
+      // Tickets page navigation
+      "tickets_nav_previous": "Anterior",
+      "tickets_nav_next": "Siguiente",
+      "tickets_nav_go_to_slide": "Ir a slide",
+
+      // Footer
+      "footer_description": "El corazón de la música electrónica en el norte de España.",
+      "footer_follow": "Síguenos en nuestras redes sociales",
+
+      // Home page
+      "countdown_title": "CUENTA ATRÁS AQUASELLA 2026",
+      "gallery_title": "GALERÍA DE FOTOS",
+      "view_full_gallery": "Ver Galería Completa",
+
+      // Gallery page
+      "back_to_home": "← Volver al Inicio",
+
+      // Tickets subpages
+      "back_to_tickets": "← Volver a Tickets",
+      "general_sale_title": "Venta General",
+      "general_sale_subtitle": "Entradas estándar para vivir la experiencia completa de Aquasella 2026",
+      "ticket_general_4_days": "Entrada General 4 Días",
+      "ticket_general_4_days_desc": "Acceso completo a los 4 días del festival",
+      "ticket_general_4_days_feature1": "Acceso a todos los escenarios",
+      "ticket_general_4_days_feature2": "Horario: 13/08 - 16/08",
+      "ticket_general_4_days_feature3": "Sin camping incluido",
+      "ticket_1_day": "Entrada 1 Día",
+      "ticket_1_day_price": "Desde 35€",
+      "ticket_1_day_desc": "Entrada para un día específico del festival",
+      "ticket_1_day_feature1": "Acceso día completo",
+      "ticket_1_day_feature2": "Elige tu día favorito",
+      "ticket_1_day_feature3": "Jueves, Viernes, Sábado o Domingo",
+      "ticket_camping_4_days": "Entrada + Camping 4 Días",
+      "ticket_camping_4_days_price": "150€",
+      "ticket_camping_4_days_desc": "Entrada completa con acceso al camping",
+      "ticket_camping_4_days_feature1": "Entrada 4 días incluida",
+      "ticket_camping_4_days_feature2": "Camping del 13-17/08",
+      "ticket_camping_4_days_feature3": "Zona de acampada oficial",
+
+      // Installments sale page
+      "installments_sale_title": "Venta a Plazos",
+      "installments_sale_subtitle": "Compra tu entrada pagando en varios plazos cómodamente.",
+
+      // Cultural voucher page
+      "cultural_voucher_title": "Bono Cultural Joven",
+      "cultural_voucher_subtitle": "¡Aprovecha tu Bono Cultural para vivir Aquasella! Descuentos especiales para jóvenes de 18 años.",
+      "what_is_cultural_voucher": "¿Qué es el Bono Cultural?",
+      "cultural_voucher_description": "El Bono Cultural Joven es una ayuda de 400€ del Ministerio de Cultura para jóvenes que cumplan 18 años en 2025, destinada a actividades culturales como festivales de música.",
+      "general_entry_4_days": "Entrada General 4 Días",
+      "with_cultural_voucher": "Con Bono Cultural",
+      "full_access_4_days": "Acceso completo 4 días",
+      "all_stages": "Todos los escenarios",
+      "august_13_16_2026": "13-16 Agosto 2026",
+      "buy_with_cultural_voucher": "Comprar con Bono Cultural",
+      "entry_plus_camping_4_days": "Entrada + Camping 4 Días",
+      "entry_4_days_included": "Entrada 4 días incluida",
+      "official_camping": "Camping oficial",
+      "august_13_17_2026": "13-17 Agosto 2026",
+
+      // Schedule page
+      "back_to_lineup": "← Volver a Line Up",
+      "schedule_coming_soon": "PROXIMAMENTE TODA LA INFORMACIÓN",
+      "schedule_working": "Estamos trabajando en los horarios completos. ¡Mantente atento!",
+
+      // Lineup/Cartel page
+      "lineup_coming_soon": "PROXIMAMENTE TODA LA INFORMACIÓN",
+      "lineup_working": "Estamos trabajando en el cartel completo. ¡Mantente atento!",
+
+      // Artists page
+      "artists_title": "Artistas",
+      "artists_description": "Descubre el pulso electrónico que hará vibrar Aquasella. Desde leyendas del techno hasta las nuevas promesas que vienen pisando fuerte. Aquí tienes a los artífices de tu experiencia.",
+      "artists_filter_all": "|A-Z|",
+      "artists_filter_thu": "Jue",
+      "artists_filter_fri": "Vie",
+      "artists_filter_sat": "Sáb",
+      "artists_filter_sun": "Dom",
+      "artists_day": "Día:",
+      "artists_stage": "Escenario:",
+      "artists_time": "Horario:",
+      "artists_coming_soon": "Próximamente",
+      "artists_close_modal": "Cerrar modal",
     }
   },
   en: {
@@ -149,11 +232,94 @@ const resources = {
       "tickets_bottom_title": "Ticket Sale",
       "tickets_bottom_text": "Tickets are now available. Get yours before they sell out!",
       "tickets_bottom_terms": "By purchasing a ticket, you accept our Terms and Conditions and our Privacy Policy",
+
+      // Tickets page navigation
+      "tickets_nav_previous": "Previous",
+      "tickets_nav_next": "Next",
+      "tickets_nav_go_to_slide": "Go to slide",
+
+      // Footer
+      "footer_description": "The heart of electronic music in northern Spain.",
+      "footer_follow": "Follow us on our social networks",
+
+      // Home page
+      "countdown_title": "COUNTDOWN TO AQUASELLA 2026",
+      "gallery_title": "PHOTO GALLERY",
+      "view_full_gallery": "View Full Gallery",
+
+      // Gallery page
+      "back_to_home": "← Back to Home",
+
+      // Tickets subpages
+      "back_to_tickets": "← Back to Tickets",
+      "general_sale_title": "General Sale",
+      "general_sale_subtitle": "Standard tickets to experience the full Aquasella 2026 experience",
+      "ticket_general_4_days": "General Entry 4 Days",
+      "ticket_general_4_days_desc": "Full access to all 4 festival days",
+      "ticket_general_4_days_feature1": "Access to all stages",
+      "ticket_general_4_days_feature2": "Schedule: 13/08 - 16/08",
+      "ticket_general_4_days_feature3": "No camping included",
+      "ticket_1_day": "1 Day Entry",
+      "ticket_1_day_price": "From 35€",
+      "ticket_1_day_desc": "Entry for a specific festival day",
+      "ticket_1_day_feature1": "Full day access",
+      "ticket_1_day_feature2": "Choose your favorite day",
+      "ticket_1_day_feature3": "Thursday, Friday, Saturday or Sunday",
+      "ticket_camping_4_days": "Entry + Camping 4 Days",
+      "ticket_camping_4_days_price": "150€",
+      "ticket_camping_4_days_desc": "Complete entry with camping access",
+      "ticket_camping_4_days_feature1": "4-day entry included",
+      "ticket_camping_4_days_feature2": "Camping from 13-17/08",
+      "ticket_camping_4_days_feature3": "Official camping area",
+
+      // Installments sale page
+      "installments_sale_title": "Installment Sale",
+      "installments_sale_subtitle": "Buy your ticket by paying in several installments comfortably.",
+
+      // Cultural voucher page
+      "cultural_voucher_title": "Young Cultural Voucher",
+      "cultural_voucher_subtitle": "Take advantage of your Cultural Voucher to experience Aquasella! Special discounts for 18-year-old youth.",
+      "what_is_cultural_voucher": "What is the Cultural Voucher?",
+      "cultural_voucher_description": "The Young Cultural Voucher is a 400€ aid from the Ministry of Culture for young people who turn 18 in 2025, intended for cultural activities such as music festivals.",
+      "general_entry_4_days": "General Entry 4 Days",
+      "with_cultural_voucher": "With Cultural Voucher",
+      "full_access_4_days": "Full access 4 days",
+      "all_stages": "All stages",
+      "august_13_16_2026": "August 13-16, 2026",
+      "buy_with_cultural_voucher": "Buy with Cultural Voucher",
+      "entry_plus_camping_4_days": "Entry + Camping 4 Days",
+      "entry_4_days_included": "4-day entry included",
+      "official_camping": "Official camping",
+      "august_13_17_2026": "August 13-17, 2026",
+
+      // Schedule page
+      "back_to_lineup": "← Back to Line Up",
+      "schedule_coming_soon": "COMING SOON ALL INFORMATION",
+      "schedule_working": "We are working on the complete schedules. Stay tuned!",
+
+      // Lineup/Cartel page
+      "lineup_coming_soon": "COMING SOON ALL INFORMATION",
+      "lineup_working": "We are working on the complete lineup. Stay tuned!",
+
+      // Artists page
+      "artists_title": "Artists",
+      "artists_description": "Discover the electronic pulse that will make Aquasella vibrate. From techno legends to the new promises coming strong. Here you have the creators of your experience.",
+      "artists_filter_all": "|A-Z|",
+      "artists_filter_thu": "Thu",
+      "artists_filter_fri": "Fri",
+      "artists_filter_sat": "Sat",
+      "artists_filter_sun": "Sun",
+      "artists_day": "Day:",
+      "artists_stage": "Stage:",
+      "artists_time": "Time:",
+      "artists_coming_soon": "Coming Soon",
+      "artists_close_modal": "Close modal",
     }
   }
 };
 
 i18n
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,

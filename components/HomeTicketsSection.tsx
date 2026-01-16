@@ -44,7 +44,7 @@ const HomeTicketsSection: React.FC = () => {
             {/* Overlay for better text visibility */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
             {/* Bottom image background */}
-            <div className="absolute bottom-0 left-0 right-0 h-1/2 rounded-b-xl" style={{backgroundImage: "url('/img/AQS15.jpg')", backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1/2 rounded-b-xl" style={{backgroundImage: "url('img/AQS15.jpg')", backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
             {/* punch holes / notches */}
 
             <div className="p-3 sm:p-6 md:p-10 flex flex-col md:flex-row items-stretch">

@@ -1,6 +1,7 @@
 // Cleaned up duplicate and broken code. Only the correct HomePage component remains below.
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import VideoHero from '../components/VideoHero';
 import Banner from '../components/Banner';
 import Countdown from '../components/Countdown';
@@ -10,6 +11,7 @@ import PartnersStrip from '../components/PartnersStrip';
 import HomeMain from '../components/HomeMain';
 
 const HomePage: React.FC = () => {
+  const { t } = useTranslation();
   const images = ['AQS1.jpg', 'AQS2.jpg', 'AQS3.jpg', 'AQS4.jpg', 'AQS5.jpg', 'AQS6.jpg', 'AQS7.jpg', 'AQS8.jpg', 'AQS16.jpg', 'AQS17.jpg', 'AQS18.jpg', 'AQS19.jpg', 'AQS21.jpg'];
   const [currentImage, setCurrentImage] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -38,7 +40,7 @@ const HomePage: React.FC = () => {
       <div
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: "url('/img/vertical3.png')",
+          backgroundImage: "url('img/vertical3.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -66,7 +68,7 @@ const HomePage: React.FC = () => {
             boxShadow: '0 2px 8px rgba(0,0,0,0.07), 0 0 16px 2px #dc2626, 0 0 32px 4px #b91c1c'
           }}
         >
-          CUENTA ATRÁS AQUASELLA 2026
+          {t('countdown_title')}
         </div>
         <Countdown />
         <HomeMain />
@@ -83,7 +85,7 @@ const HomePage: React.FC = () => {
               background: 'transparent'
             }}
           >
-            GALERÍA DE FOTOS
+            {t('gallery_title')}
           </h2>
           <div className="max-w-4xl mx-auto mt-24 mb-12">
             <div className="relative w-full h-96 md:h-[28rem]" style={{ perspective: '1000px', overflow: 'hidden' }}>
@@ -99,7 +101,7 @@ const HomePage: React.FC = () => {
                     }}
                   >
                     <img
-                      src={`/img/${img}`}
+                      src={`img/${img}`}
                       alt={`Galería ${index + 1}`}
                       className="w-40 h-56 md:w-56 md:h-72 object-cover rounded-lg bg-black transition-transform duration-300 md:hover:scale-105"
                       style={{
@@ -122,7 +124,7 @@ const HomePage: React.FC = () => {
                 onClick={() => navigate('/galeria')}
                 className="px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition"
               >
-                Ver Galería Completa
+                {t('view_full_gallery')}
               </button>
             </div>
           </div>

@@ -55,7 +55,7 @@ const LocalizacionPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white py-20 relative overflow-x-hidden" style={{
-      backgroundImage: "url('/img/vertical3.png')",
+      backgroundImage: "url('img/vertical3.png')",
       backgroundSize: '100% auto',
       backgroundPosition: 'center bottom',
       backgroundRepeat: 'repeat'
@@ -123,7 +123,7 @@ const LocalizacionPage: React.FC = () => {
                       key={option.id}
                       className="bg-cover bg-center rounded-2xl overflow-hidden h-[400px] md:h-[500px] w-[320px] md:w-[340px] relative transform transition-all duration-300 hover:scale-105 border-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4),0_0_35px_rgba(0,255,0,0.6),0_0_60px_8px_rgba(0,255,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] card-glow"
                       style={{
-                        backgroundImage: `url('/img/verde.png')`,
+                        backgroundImage: `url('img/verde.png')`,
                         backgroundPosition: 'center 20%',
                         backgroundSize: '100% auto',
                         backgroundRepeat: 'no-repeat',

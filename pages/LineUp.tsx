@@ -29,12 +29,12 @@ const LineUpPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden pb-10 z-10" style={{
-      backgroundImage: "url('/img/vertical3.png')",
+      backgroundImage: "url('img/vertical3.png')",
       backgroundSize: '100% auto',
       backgroundPosition: 'center bottom',
       backgroundRepeat: 'no-repeat'
     }}>
-      <img src="/img/l1.png" alt="Lineup Aquasella 2026" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
+      <img src="img/l1.png" alt="Lineup Aquasella 2026" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
       <div className="relative z-10 min-h-screen">
       <style>{`
         @media (max-width: 768px) {
@@ -56,9 +56,9 @@ const LineUpPage: React.FC = () => {
 ">
             {sections.map((section) => {
               let imgSrc = '';
-              if (section.title === 'ARTISTAS') imgSrc = '/img/ARTISTAS.png';
-              if (section.title === 'CARTEL') imgSrc = '/img/CARTEL1.png';
-              if (section.title === 'HORARIOS') imgSrc = '/img/HORARIOS.png';
+              if (section.title === 'ARTISTAS') imgSrc = 'img/ARTISTAS.png';
+              if (section.title === 'CARTEL') imgSrc = 'img/CARTEL1.png';
+              if (section.title === 'HORARIOS') imgSrc = 'img/HORARIOS.png';
               const hideContent = section.title === 'ARTISTAS' || section.title === 'CARTEL' || section.title === 'HORARIOS';
               return (
                 <Link

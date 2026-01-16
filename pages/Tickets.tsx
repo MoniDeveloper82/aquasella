@@ -12,7 +12,7 @@ const TicketsPage: React.FC = () => {
       title: "",
       content: (
         <img
-          src="/img/aquasella3.png"
+          src="img/aquasella3.png"
           alt="Aquasella"
           className="w-full h-full object-cover object-center"
           loading="lazy"
@@ -62,7 +62,7 @@ const TicketsPage: React.FC = () => {
           <div
             className="flex-1 relative"
             style={{
-              backgroundImage: "url('/img/AQS4.jpg')",
+              backgroundImage: "url('img/AQS4.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -95,7 +95,7 @@ const TicketsPage: React.FC = () => {
           <div
             className="flex-1 relative"
             style={{
-              backgroundImage: "url('/img/AQS5.jpg')",
+              backgroundImage: "url('img/AQS5.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -133,7 +133,7 @@ const TicketsPage: React.FC = () => {
           <div
             className="flex-1 relative"
             style={{
-              backgroundImage: "url('/img/AQS8.jpg')",
+              backgroundImage: "url('img/AQS8.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -168,7 +168,7 @@ const TicketsPage: React.FC = () => {
           <div
             className="flex-1 relative"
             style={{
-              backgroundImage: "url('/img/AQS18.jpg')",
+              backgroundImage: "url('img/AQS18.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -202,7 +202,7 @@ const TicketsPage: React.FC = () => {
           <div
             className="flex-1 relative"
             style={{
-              backgroundImage: "url('/img/AQS20.jpg')",
+              backgroundImage: "url('img/AQS20.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -250,13 +250,13 @@ const TicketsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden pb-10 z-10" style={{
-      backgroundImage: "url('/img/vertical3.png')",
+      backgroundImage: "url('img/vertical3.png')",
       backgroundSize: '100% auto',
       backgroundPosition: 'center bottom',
       backgroundRepeat: 'no-repeat'
     }}>
       <>
-        <img src="/img/t1.png" alt="Tickets Aquasella" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
+        <img src="img/t1.png" alt="Tickets Aquasella" className="w-full hidden md:block" style={{margin: 0, padding: 0, display: 'block'}} loading="lazy" />
         <div className="relative z-10 min-h-screen">
           <style>{`
             @media (max-width: 768px) {
@@ -306,7 +306,7 @@ const TicketsPage: React.FC = () => {
                       <div className="w-full h-full flex items-center justify-center overflow-hidden">
                         <div className="w-full h-full flex items-center justify-center bg-black">
                           <img
-                            src="/img/aquasella3.png"
+                            src="img/aquasella3.png"
                             alt="Aquasella"
                             draggable={false}
                             className="w-full h-full object-contain object-center"
@@ -341,7 +341,7 @@ const TicketsPage: React.FC = () => {
               className={`bg-red-600 text-white p-2 sm:p-3 rounded-full transition-colors ${
                 currentSlide === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-red-700"
               }`}
-              aria-label="Anterior"
+              aria-label={t('tickets_nav_previous')}
               disabled={currentSlide === 0}
             >
               <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -356,14 +356,14 @@ const TicketsPage: React.FC = () => {
                   className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-colors ${
                     currentSlide === index ? "bg-red-400" : "bg-gray-500"
                   }`}
-                  aria-label={`Ir a slide ${index + 1}`}
+                  aria-label={`${t('tickets_nav_go_to_slide')} ${index + 1}`}
                 />
               ))}
             </div>
             <button
               onClick={nextSlide}
               className="bg-red-600 hover:bg-red-700 text-white p-2 sm:p-3 rounded-full transition-colors"
-              aria-label="Siguiente"
+              aria-label={t('tickets_nav_next')}
             >
               <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -388,17 +388,17 @@ const TicketsPage: React.FC = () => {
                 {/* Las cards están centradas en móvil usando mx-auto y max-w-xs */}
                 <BaseCard>
                 {section.id === 'venta-general' ? (
-                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: "url('/img/VENTA.png')", backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: "url('img/VENTA.png')", backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 ) : section.id === 'venta-plazos' ? (
-                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: "url('/img/Plazos.png')", backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: "url('img/Plazos.png')", backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 ) : section.id === 'bono-cultural' ? (
-                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: "url('/img/Bono.png')", backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                  <div className="relative w-full h-full flex items-center justify-center" style={{ backgroundImage: "url('img/Bono.png')", backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
