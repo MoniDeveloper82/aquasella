@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     const isVercel = process.env.VERCEL || process.env.VERCEL_ENV;
     return {
-      base: isVercel ? '/' : '/prueba-monica/',
+      base: isVercel ? '/' : '/',
       server: {
         port: 3000,
         host: '0.0.0.0',

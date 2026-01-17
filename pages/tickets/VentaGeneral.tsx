@@ -68,7 +68,7 @@ const VentaGeneralPage: React.FC = () => {
             <div
               className="relative border-2 border-red-300 shadow-[0_0_18px_rgba(255,0,60,0.5),0_0_32px_rgba(255,0,60,0.25)] rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_4px_rgba(255,0,60,0.5),0_0_40px_8px_rgba(255,0,60,0.3)] hover:z-10"
               style={{
-                backgroundImage: "url('img/fondo-aqs-web.png')",
+                backgroundImage: "url('/img/fondo-aqs-web.png')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -90,7 +90,7 @@ const VentaGeneralPage: React.FC = () => {
         {/* Información adicional */}
         <div className="grid gap-8 md:grid-cols-2 mb-12">
           <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:-rotate-2 hover:scale-105 transition-all duration-300 relative" style={{
-            backgroundImage: "url('img/fondo-aqs-web.png')",
+            backgroundImage: "url('/img/fondo-aqs-web.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -107,7 +107,7 @@ const VentaGeneralPage: React.FC = () => {
             </div>
           </div>
           <div className="rounded-xl p-6 shadow-2xl border-2 border-red-300 transform hover:rotate-2 hover:scale-105 transition-all duration-300 relative" style={{
-            backgroundImage: "url('img/fondo-aqs-web.png')",
+            backgroundImage: "url('/img/fondo-aqs-web.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
