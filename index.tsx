@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './src/i18n'; // Import i18n configuration
 import App from './App';
 import HomePage from './pages/Home';
@@ -42,7 +42,7 @@ import LegalPage from './pages/Legal';
 import VentaPlazosPage from './pages/tickets/VentaPlazos';
 import GaleriaPage from './pages/Galeria';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,

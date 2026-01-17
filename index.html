@@ -10,17 +10,17 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://aquasella.com/prueba-monica/" />
+    <meta property="og:url" content="" id="og-url" />
     <meta property="og:title" content="Aquasella Festival 2026 - Arriondas, Asturias" />
     <meta property="og:description" content="Festival Aquasella 2026 - 13-16 Agosto en Arriondas, Asturias. El mejor festival de música electrónica del norte de España." />
-    <meta property="og:image" content="https://aquasella.com/prueba-monica/img/aquasella.png" />
+    <meta property="og:image" content="" id="og-image" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://aquasella.com/prueba-monica/" />
+    <meta property="twitter:url" content="" id="twitter-url" />
     <meta property="twitter:title" content="Aquasella Festival 2026 - Arriondas, Asturias" />
     <meta property="twitter:description" content="Festival Aquasella 2026 - 13-16 Agosto en Arriondas, Asturias. El mejor festival de música electrónica del norte de España." />
-    <meta property="twitter:image" content="https://aquasella.com/prueba-monica/img/aquasella.png" />
+    <meta property="twitter:image" content="" id="twitter-image" />
     
     <title>Aquasella Festival 2026 - Arriondas, Asturias</title>
     
@@ -43,6 +43,21 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       // GA se inicializará desde React cuando se acepten cookies
+    </script>
+    
+    <!-- Dynamic meta tags script -->
+    <script>
+      // Update meta tags dynamically based on current URL
+      const baseUrl = window.location.origin + window.location.pathname.replace(/\/$/, '');
+      const imageUrl = baseUrl + '/img/aquasella.png';
+      
+      // Update Open Graph meta tags
+      document.getElementById('og-url').setAttribute('content', baseUrl + '/');
+      document.getElementById('og-image').setAttribute('content', imageUrl);
+      
+      // Update Twitter meta tags
+      document.getElementById('twitter-url').setAttribute('content', baseUrl + '/');
+      document.getElementById('twitter-image').setAttribute('content', imageUrl);
     </script>
   <script type="importmap">
 {
