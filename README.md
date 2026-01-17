@@ -5,9 +5,33 @@ Repositorio del frontend del festival Aquasella. Contiene la UI (React + Vite), 
 
 <!-- Build trigger: 2025-11-21 -->
 
+## Deployment
+
+### Vercel
+
+1. Instala Vercel CLI: `npm install -g vercel`
+2. Conecta tu repositorio: `vercel`
+3. Deploy: `vercel --prod`
+
+O usa el script: `./deploy-vercel.sh`
+
+**Configuración automática:**
+- `vercel.json` configura el build y rewrites para SPA
+- `vite.config.ts` detecta Vercel y ajusta la base path automáticamente
+- Meta tags se actualizan dinámicamente según el dominio
+
+### FTP (Gnix)
+
+Para deployment en subdirectorio `/prueba-monica/`:
+```bash
+./upload_ftp.ps1
+```
+
 ## Estructura principal
 
-- `index.tsx` — router (createHashRouter) y rutas de la app.
+## Estructura principal
+
+- `index.tsx` — router (createBrowserRouter) y rutas de la app.
 - `App.tsx` — layout principal (Header, Footer, Outlet).
 - `components/` — componentes reutilizables (Hero, VideoHero, InfoSection, HomeTicketsSection, etc.).
 - `pages/` — páginas principales (`Home.tsx`, `Artists.tsx`, `Info.tsx`, `Tickets.tsx`, y páginas legales en `pages/`).
@@ -16,10 +40,10 @@ Repositorio del frontend del festival Aquasella. Contiene la UI (React + Vite), 
 
 ## Rutas importantes
 
-- `/#/` — Home
-- `/#/artistas` — Lista de artistas (con filtro por día)
-- `/#/info` — Información útil (cards y FAQ)
-- `/#/tickets` — Entradas
+- `/` — Home
+- `/artistas` — Lista de artistas (con filtro por día)
+- `/info` — Información útil (cards y FAQ)
+- `/tickets` — Entradas
 - `/#/services/camping` — Página de camping
 - `/#/services/how-to-get-there` — Cómo llegar
 - `/#/services/allowed-items` — Objetos permitidos/prohibidos
