@@ -3,32 +3,32 @@ import React from "react";
 type Poster = { src: string; title: string; year: number };
 
 const posters: Poster[] = [
-  { src: "img/1997.jpg", title: "Festival 1997", year: 1997 },
-  { src: "img/1998.jpg", title: "Festival 1998", year: 1998 },
-  { src: "img/1999.jpg", title: "Festival 1999", year: 1999 },
-  { src: "img/2000.jpg", title: "Festival 2000", year: 2000 },
-  { src: "img/2001.jpg", title: "Festival 2001", year: 2001 },
-  { src: "img/2002.jpg", title: "Festival 2002", year: 2002 },
-  { src: "img/2003.jpg", title: "Festival 2003", year: 2003 },
-  { src: "img/2004.jpg", title: "Festival 2004", year: 2004 },
-  { src: "img/2005.jpg", title: "Festival 2005", year: 2005 },
-  { src: "img/2006.jpg", title: "Festival 2006", year: 2006 },
-  { src: "img/2007.jpg", title: "Festival 2007", year: 2007 },
-  { src: "img/2008.jpg", title: "Festival 2008", year: 2008 },
-  { src: "img/2009.jpg", title: "Festival 2009", year: 2009 },
-  { src: "img/2010.jpg", title: "Festival 2010", year: 2010 },
-  { src: "img/2011.jpg", title: "Festival 2011", year: 2011 },
-  { src: "img/2012.jpg", title: "Festival 2012", year: 2012 },
-  { src: "img/2013.jpg", title: "Festival 2013", year: 2013 },
-  { src: "img/2014.jpg", title: "Festival 2014", year: 2014 },
-  { src: "img/2015.jpg", title: "Festival 2015", year: 2015 },
-  { src: "img/2016.jpg", title: "Festival 2016", year: 2016 },
-  { src: "img/2017.jpg", title: "Festival 2017", year: 2017 },
-  { src: "img/2018.jpg", title: "Festival 2018", year: 2018 },
-  { src: "img/2019.jpg", title: "Festival 2019", year: 2019 },
-  { src: "img/2022.png", title: "Festival 2022", year: 2022 },
-  { src: "img/2023.png", title: "Festival 2023", year: 2023 },
-  { src: "img/2024.png", title: "Festival 2024", year: 2024 },
+  { src: "/img/1997.jpg", title: "Festival 1997", year: 1997 },
+  { src: "/img/1998.jpg", title: "Festival 1998", year: 1998 },
+  { src: "/img/1999.jpg", title: "Festival 1999", year: 1999 },
+  { src: "/img/2000.jpg", title: "Festival 2000", year: 2000 },
+  { src: "/img/2001.jpg", title: "Festival 2001", year: 2001 },
+  { src: "/img/2002.jpg", title: "Festival 2002", year: 2002 },
+  { src: "/img/2003.jpg", title: "Festival 2003", year: 2003 },
+  { src: "/img/2004.jpg", title: "Festival 2004", year: 2004 },
+  { src: "/img/2005.jpg", title: "Festival 2005", year: 2005 },
+  { src: "/img/2006.jpg", title: "Festival 2006", year: 2006 },
+  { src: "/img/2007.jpg", title: "Festival 2007", year: 2007 },
+  { src: "/img/2008.jpg", title: "Festival 2008", year: 2008 },
+  { src: "/img/2009.jpg", title: "Festival 2009", year: 2009 },
+  { src: "/img/2010.jpg", title: "Festival 2010", year: 2010 },
+  { src: "/img/2011.jpg", title: "Festival 2011", year: 2011 },
+  { src: "/img/2012.jpg", title: "Festival 2012", year: 2012 },
+  { src: "/img/2013.jpg", title: "Festival 2013", year: 2013 },
+  { src: "/img/2014.jpg", title: "Festival 2014", year: 2014 },
+  { src: "/img/2015.jpg", title: "Festival 2015", year: 2015 },
+  { src: "/img/2016.jpg", title: "Festival 2016", year: 2016 },
+  { src: "/img/2017.jpg", title: "Festival 2017", year: 2017 },
+  { src: "/img/2018.jpg", title: "Festival 2018", year: 2018 },
+  { src: "/img/2019.jpg", title: "Festival 2019", year: 2019 },
+  { src: "/img/2022.png", title: "Festival 2022", year: 2022 },
+  { src: "/img/2023.png", title: "Festival 2023", year: 2023 },
+  { src: "/img/2024.png", title: "Festival 2024", year: 2024 },
 ];
 
 function FanBlock({
@@ -136,3 +136,4 @@ export default function FanPosters() {
     </section>
   );
 }
+

@@ -238,12 +238,12 @@ export default function FanPosters() {
 
   // Tercer abanico: 2013-2015, 2022-2024
   const posters2013_2025: Poster[] = [
-    { src: 'img/2013.jpg', title: 'Festival 2013' },
-    { src: 'img/2014.jpg', title: 'Festival 2014' },
-    { src: 'img/2015.jpg', title: 'Festival 2015' },
-    { src: 'img/2022.png', title: 'Festival 2022' },
-    { src: 'img/2023.png', title: 'Festival 2023' },
-    { src: 'img/2024.png', title: 'Festival 2024' },
+    { src: '/img/2013.jpg', title: 'Festival 2013' },
+    { src: '/img/2014.jpg', title: 'Festival 2014' },
+    { src: '/img/2015.jpg', title: 'Festival 2015' },
+    { src: '/img/2022.png', title: 'Festival 2022' },
+    { src: '/img/2023.png', title: 'Festival 2023' },
+    { src: '/img/2024.png', title: 'Festival 2024' },
   ];
 
   return (
@@ -352,3 +352,5 @@ export default function FanPosters() {
     </section>
   );
 }
+
+
