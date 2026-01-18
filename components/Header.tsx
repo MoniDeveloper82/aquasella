@@ -42,11 +42,11 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   const navLinks = [
-    { to: '/', label: t('home') },
-    { to: '/lineup', label: t('lineup') },
-    { to: '/info', label: t('info') },
-    { to: '/tickets', label: t('tickets') },
-    { to: '/shop', label: t('shop') },
+    { to: '/', label: 'Home' },
+    { to: '/lineup', label: 'Line Up' },
+    { to: '/info', label: 'Info' },
+    { to: '/tickets', label: 'Tickets' },
+    { to: '/shop', label: 'Shop' },
   ];
 
   const handleLinkClick = () => {
@@ -83,7 +83,7 @@ const Header: React.FC = () => {
                 onClick={handleLinkClick}
               >
                 <img 
-                  src="img/FOTOPERFIL_AQS.png" 
+                  src="/img/FOTOPERFIL_AQS.png" 
                   alt="Aquasella"
                   className="h-20 lg:h-24 xl:h-28 w-auto"
                   loading="lazy"

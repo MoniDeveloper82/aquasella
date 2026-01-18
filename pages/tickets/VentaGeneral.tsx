@@ -39,7 +39,7 @@ const VentaGeneralPage: React.FC = () => {
           {t('back_to_tickets')}
         </Link>
         
-        <img src="img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" loading="lazy" />
+        <img src="/img/t1.png" alt="Aquasella Banner" className="w-full max-h-64 object-cover rounded-b-3xl mb-8" loading="lazy" />
 
 
         <div className="text-center mb-12">
