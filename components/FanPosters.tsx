@@ -7,14 +7,15 @@ function FanRow({
   title,
   isLargeTitle = false,
   onPosterClick,
+  isMobile = false,
 }: {
   items: Poster[];
   title?: string;
   isLargeTitle?: boolean;
   onPosterClick: (poster: Poster) => void;
+  isMobile?: boolean;
 }) {
   // Valores responsive para el abanico
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const spread = isMobile ? 38 : 56;       // menos apertura en móvil
   const curve = isMobile ? 14 : 22;        // menos curva
   const xStep = isMobile ? 26 : 44;        // menos separación lateral
@@ -108,22 +109,32 @@ function FanRow({
 }
 
 export default function FanPosters() {
+  // Estado para detectar móvil (mejor que window.innerWidth directo)
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Estado para el lightbox con navegación y zoom
   const [lightboxState, setLightboxState] = useState<{
     poster: Poster;
     index: number;
-    allPosters: Poster[];
+    posters: Poster[]; // array específico del abanico
     zoom: number;
     isAnimating: boolean;
   } | null>(null);
 
-  // Función para abrir lightbox con navegación
-  const openLightbox = (poster: Poster, allPosters: Poster[]) => {
-    const index = allPosters.findIndex(p => p.src === poster.src);
+  // Función para abrir lightbox con navegación por abanico
+  const openLightbox = (poster: Poster, posters: Poster[]) => {
+    const index = posters.findIndex(p => p.src === poster.src);
     setLightboxState({
       poster,
       index,
-      allPosters,
+      posters,
       zoom: 1,
       isAnimating: true
     });
@@ -155,13 +166,21 @@ export default function FanPosters() {
     if (isRightSwipe) prevPoster();
   };
 
+  // Función para manejar zoom con rueda del mouse
+  const handleZoom = (deltaY: number) => {
+    if (!lightboxState) return;
+    const zoomFactor = deltaY > 0 ? 0.9 : 1.1; // zoom out si scroll down, in si up
+    const newZoom = Math.max(0.5, Math.min(3, lightboxState.zoom * zoomFactor));
+    setLightboxState({ ...lightboxState, zoom: newZoom });
+  };
+
   // Función para ir al siguiente cartel
   const nextPoster = () => {
     if (!lightboxState) return;
-    const nextIndex = (lightboxState.index + 1) % lightboxState.allPosters.length;
+    const nextIndex = (lightboxState.index + 1) % lightboxState.posters.length;
     setLightboxState({
       ...lightboxState,
-      poster: lightboxState.allPosters[nextIndex],
+      poster: lightboxState.posters[nextIndex],
       index: nextIndex,
       zoom: 1,
       isAnimating: true
@@ -174,10 +193,10 @@ export default function FanPosters() {
   // Función para ir al cartel anterior
   const prevPoster = () => {
     if (!lightboxState) return;
-    const prevIndex = lightboxState.index === 0 ? lightboxState.allPosters.length - 1 : lightboxState.index - 1;
+    const prevIndex = lightboxState.index === 0 ? lightboxState.posters.length - 1 : lightboxState.index - 1;
     setLightboxState({
       ...lightboxState,
-      poster: lightboxState.allPosters[prevIndex],
+      poster: lightboxState.posters[prevIndex],
       index: prevIndex,
       zoom: 1,
       isAnimating: true
@@ -226,13 +245,13 @@ export default function FanPosters() {
 
   // Primer abanico: 1997-2004
   const posters1997_2004: Poster[] = Array.from({ length: 8 }).map((_, i) => ({
-    src: `img/${1997 + i}.jpg`,
+    src: `/img/${1997 + i}.jpg`,
     title: `Festival ${1997 + i}`,
   }));
 
   // Segundo abanico: 2005-2012
   const posters2005_2012: Poster[] = Array.from({ length: 8 }).map((_, i) => ({
-    src: `img/${2005 + i}.jpg`,
+    src: `/img/${2005 + i}.jpg`,
     title: `Festival ${2005 + i}`,
   }));
 
@@ -246,6 +265,9 @@ export default function FanPosters() {
     { src: '/img/2024.png', title: 'Festival 2024' },
   ];
 
+  // Array único con TODOS los posters para navegación global
+  const allPosters = [...posters1997_2004, ...posters2005_2012, ...posters2013_2025];
+
   return (
     <section className="w-full py-16 overflow-visible">
       <h2 className="text-center text-white text-2xl md:text-5xl font-extrabold tracking-widest uppercase mb-32">
@@ -253,100 +275,110 @@ export default function FanPosters() {
       </h2>
 
       <div className="flex flex-col gap-10 md:gap-14 overflow-visible">
-        <FanRow items={posters1997_2004} title="Carteles de 1997 a 2004" isLargeTitle={true} onPosterClick={(poster) => openLightbox(poster, posters1997_2004)} />
-        <FanRow items={posters2005_2012} title="Carteles de 2005 a 2012" isLargeTitle={true} onPosterClick={(poster) => openLightbox(poster, posters2005_2012)} />
-        <FanRow items={posters2013_2025} title="Carteles de 2013 a 2025" isLargeTitle={true} onPosterClick={(poster) => openLightbox(poster, posters2013_2025)} />
+        <FanRow items={posters1997_2004} title="Carteles de 1997 a 2004" isLargeTitle={true} onPosterClick={(poster) => openLightbox(poster, posters1997_2004)} isMobile={isMobile} />
+        <FanRow items={posters2005_2012} title="Carteles de 2005 a 2012" isLargeTitle={true} onPosterClick={(poster) => openLightbox(poster, posters2005_2012)} isMobile={isMobile} />
+        <FanRow items={posters2013_2025} title="Carteles de 2013 a 2025" isLargeTitle={true} onPosterClick={(poster) => openLightbox(poster, posters2013_2025)} isMobile={isMobile} />
       </div>
 
       {/* LIGHTBOX / MODAL CON ANIMACIONES AVANZADAS */}
       {lightboxState && (
         <div
-          className={`fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center transition-opacity duration-300 ${
-            lightboxState.isAnimating ? 'opacity-0' : 'opacity-100'
+          className={`fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4 overflow-auto transition-opacity duration-300 ${
+            lightboxState.isAnimating ? "opacity-0" : "opacity-100"
           }`}
           onClick={closeLightbox}
         >
-          {/* Flecha anterior */}
+          {/* X CERRAR - EN EL CENTRO ARRIBA PARA MAXIMA VISIBILIDAD */}
           <button
-            onClick={(e) => { e.stopPropagation(); prevPoster(); }}
-            className="absolute left-1 md:left-4 top-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl hover:text-red-500 transition opacity-70 hover:opacity-100 z-10"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              console.log('X clicked');
+              closeLightbox();
+            }}
+            className="absolute top-4 left-1/2 transform -translate-x-1/2 z-[10010] bg-red-600 text-white hover:bg-red-700 rounded-full w-24 h-24 flex items-center justify-center text-5xl font-black shadow-2xl border-4 border-white"
+            title="CERRAR - CLICK AQUÍ"
           >
-            ‹
+            ✕
           </button>
 
+          {/* FRAME: aquí dentro se posicionan flechas RELATIVAS AL CARTEL */}
           <div
-            className="relative max-w-[90vw] max-h-[90vh]"
+            className="relative mx-auto w-fit max-w-[95vw]"
             onClick={(e) => e.stopPropagation()}
             onTouchStart={(e) => setTouchStart(e.targetTouches[0].clientX)}
             onTouchMove={(e) => setTouchEnd(e.targetTouches[0].clientX)}
             onTouchEnd={handleSwipe}
           >
-            {/* Botón cerrar */}
+            {/* Flecha anterior (fuera del frame para evitar clicks accidentales) */}
             <button
-              onClick={closeLightbox}
-              className="absolute -top-12 right-0 text-white text-4xl hover:text-red-500 transition"
+              onClick={(e) => {
+                e.stopPropagation();
+                prevPoster();
+              }}
+              className="absolute left-[-60px] top-1/2 -translate-y-1/2 z-[10002] text-white text-5xl md:text-6xl hover:text-red-500 transition bg-black/70 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shadow-lg"
+              title="Cartel anterior"
             >
-              ✕
+              ‹
             </button>
 
-            {/* Botón reset zoom */}
+            {/* Flecha siguiente (fuera del frame para evitar clicks accidentales) */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                nextPoster();
+              }}
+              className="absolute right-[-60px] top-1/2 -translate-y-1/2 z-[10002] text-white text-5xl md:text-6xl hover:text-red-500 transition bg-black/70 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shadow-lg"
+              title="Siguiente cartel"
+            >
+              ›
+            </button>
+
+            {/* Imagen (usa vh alto para que no tape controles) */}
+            <img
+              src={lightboxState.poster.src}
+              alt={lightboxState.poster.title}
+              className={`block max-w-[95vw] max-h-[80vh] object-contain rounded-xl shadow-[0_0_60px_rgba(255,0,0,0.35)] transition-transform duration-300 ${
+                lightboxState.isAnimating ? "scale-75" : "scale-100"
+              }`}
+              style={{
+                transform: `scale(${lightboxState.zoom})`,
+                cursor: lightboxState.zoom > 1 ? "zoom-out" : "zoom-in",
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (lightboxState.zoom > 1) setLightboxState({ ...lightboxState, zoom: 1 });
+              }}
+              draggable={false}
+            />
+
+            {/* Reset zoom: evita -top-12 (se perdía arriba). Lo ponemos dentro */}
             {lightboxState.zoom !== 1 && (
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   setLightboxState({ ...lightboxState, zoom: 1 });
                 }}
-                className="absolute -top-12 right-12 text-white text-xl md:text-2xl hover:text-red-500 transition"
+                className="absolute bottom-2 right-2 z-[10002] bg-black/60 text-white hover:text-red-400 rounded-full px-3 py-2 text-sm md:text-base"
                 title="Reset zoom"
               >
-                🔍
+                🔍 Reset
               </button>
             )}
 
-            {/* Imagen con animación y zoom */}
-            <img
-              src={lightboxState.poster.src}
-              alt={lightboxState.poster.title}
-              className={`max-w-full max-h-[90vh] object-contain rounded-xl shadow-[0_0_60px_rgba(255,0,0,0.35)] transition-transform duration-300 ${
-                lightboxState.isAnimating ? 'scale-75' : 'scale-100'
-              }`}
-              style={{
-                transform: `scale(${lightboxState.zoom})`,
-                cursor: lightboxState.zoom > 1 ? 'zoom-out' : 'zoom-in'
-              }}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (lightboxState.zoom > 1) {
-                  setLightboxState({ ...lightboxState, zoom: 1 });
-                }
-              }}
-            />
-
-            {/* Título con contador */}
-            <p className="text-center text-gray-300 mt-4 text-sm tracking-wide">
-              {lightboxState.poster.title} ({lightboxState.index + 1} / {lightboxState.allPosters.length})
-            </p>
-
-            {/* Indicador de zoom */}
-            {lightboxState.zoom !== 1 && (
-              <p className="text-center text-gray-400 mt-2 text-xs md:text-sm">
-                Zoom: {Math.round(lightboxState.zoom * 100)}% - Click para reset
+            {/* Info abajo */}
+            <div className="text-center mt-4">
+              <p className="text-white text-lg md:text-xl font-semibold tracking-wide mb-2">
+                {lightboxState.poster.title}
               </p>
-            )}
-
-            {/* Indicador de swipe para móvil */}
-            <p className="text-center text-gray-500 mt-1 text-xs md:hidden">
-              ← Swipe para navegar →
-            </p>
+              <p className="text-gray-300 text-sm md:text-base bg-black/50 px-4 py-2 rounded-full inline-block">
+                🖼️ {lightboxState.index + 1} de {lightboxState.posters.length} carteles
+              </p>
+              <p className="text-gray-400 text-xs md:text-sm mt-2">
+                ← → Usa las flechas • Click en imagen para zoom
+              </p>
+            </div>
           </div>
-
-          {/* Flecha siguiente */}
-          <button
-            onClick={(e) => { e.stopPropagation(); nextPoster(); }}
-            className="absolute right-1 md:right-4 top-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl hover:text-red-500 transition opacity-70 hover:opacity-100 z-10"
-          >
-            ›
-          </button>
         </div>
       )}
     </section>

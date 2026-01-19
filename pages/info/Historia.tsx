@@ -8,7 +8,7 @@ const HistoriaPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white py-20 relative overflow-x-hidden pb-10 z-10" style={{
-      backgroundImage: "url('img/vertical3.png')",
+      backgroundImage: "url('/img/vertical3.png')",
       backgroundSize: '100% auto',
       backgroundPosition: 'center bottom',
       backgroundRepeat: 'no-repeat'
