@@ -22,7 +22,7 @@ const TicketsPage: React.FC = () => {
     {
       title: t('tickets_general_title'),
       content: (
-        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden">
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-y-auto">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6 bg-black/70 rounded-t-2xl min-h-[150px] sm:min-h-[180px] flex flex-col justify-center">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
@@ -59,15 +59,12 @@ const TicketsPage: React.FC = () => {
           </div>
 
           {/* Parte de abajo: IMAGEN (rellena TODO el resto) */}
-          <div
-            className="flex-1 relative"
-            style={{
-              backgroundImage: "url('/img/AQS4.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
+          <div className="flex-1 relative overflow-hidden">
+            <img
+              src="/img/AQS4.jpg"
+              alt="AQS4"
+              className="w-full h-full object-cover"
+            />
             {/* overlay suave opcional */}
             <div className="absolute inset-0 bg-black/15" />
           </div>
@@ -77,7 +74,7 @@ const TicketsPage: React.FC = () => {
     {
       title: t('tickets_types_title'),
       content: (
-        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden">
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-y-auto">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6 bg-black/70 rounded-t-2xl min-h-[150px] sm:min-h-[180px] flex flex-col justify-center">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
@@ -92,15 +89,12 @@ const TicketsPage: React.FC = () => {
           </div>
 
           {/* Parte de abajo: IMAGEN (rellena TODO el resto) */}
-          <div
-            className="flex-1 relative"
-            style={{
-              backgroundImage: "url('/img/AQS5.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
+          <div className="flex-1 relative overflow-hidden">
+            <img
+              src="/img/AQS5.jpg"
+              alt="AQS5"
+              className="w-full h-full object-cover"
+            />
             {/* overlay suave opcional */}
             <div className="absolute inset-0 bg-black/15" />
           </div>
@@ -110,7 +104,7 @@ const TicketsPage: React.FC = () => {
     {
       title: t('tickets_sales_title'),
       content: (
-        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden bg-black">
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-y-auto bg-black">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
@@ -148,7 +142,7 @@ const TicketsPage: React.FC = () => {
     {
       title: t('tickets_payment_title'),
       content: (
-        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden bg-black">
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-y-auto bg-black">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
@@ -165,15 +159,12 @@ const TicketsPage: React.FC = () => {
           </div>
 
           {/* Parte de abajo: IMAGEN (rellena TODO el resto) */}
-          <div
-            className="flex-1 relative"
-            style={{
-              backgroundImage: "url('/img/AQS18.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
+          <div className="flex-1 relative overflow-hidden">
+            <img
+              src="/img/AQS18.jpg"
+              alt="AQS18"
+              className="w-full h-full object-cover"
+            />
             {/* overlay suave opcional */}
             <div className="absolute inset-0 bg-black/15" />
           </div>
@@ -183,7 +174,7 @@ const TicketsPage: React.FC = () => {
     {
       title: t('tickets_support_title'),
       content: (
-        <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden bg-black">
+        <div className="w-full h-full flex flex-col rounded-2xl overflow-y-auto bg-black">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
           <div className="p-4 sm:p-6">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
@@ -199,15 +190,12 @@ const TicketsPage: React.FC = () => {
           </div>
 
           {/* Parte de abajo: IMAGEN (rellena TODO el resto) */}
-          <div
-            className="flex-1 relative"
-            style={{
-              backgroundImage: "url('/img/AQS20.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
+          <div className="flex-1 relative overflow-hidden">
+            <img
+              src="/img/AQS20.jpg"
+              alt="AQS20"
+              className="w-full h-full object-cover"
+            />
             {/* overlay suave opcional */}
             <div className="absolute inset-0 bg-black/15" />
           </div>
@@ -294,7 +282,7 @@ const TicketsPage: React.FC = () => {
             </h2>
           </div>
           {/* Viewport responsive y scrollable */}
-          <div className="relative overflow-hidden h-[50vh] sm:h-[360px] md:h-[420px] lg:h-[520px] xl:h-[600px] 2xl:h-[700px]">
+          <div className="relative overflow-x-hidden overflow-y-auto h-[60vh] sm:h-[400px] md:h-[480px] lg:h-[580px] xl:h-[680px] 2xl:h-[780px] max-h-[600px]">
             <div
               className="transition-transform duration-500 ease-in-out h-full"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
