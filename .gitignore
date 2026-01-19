@@ -32,3 +32,4 @@ public/videos/*.avi
 !public/videos/AFTERMOVIEOptimizado.webm
 .ffmpeg/
 ffmpeg-release-essentials.zip
+.vercel
