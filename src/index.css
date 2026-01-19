@@ -225,11 +225,13 @@ img, video {
   }
 }
 
-/* Ocultar scrollbar pero mantener scroll */
-.no-scrollbar {
-  -ms-overflow-style: none;   /* IE/Edge */
-  scrollbar-width: none;      /* Firefox */
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;              /* Chrome/Safari */
+/* Ocultar scrollbar en pantallas medianas y grandes para carousel */
+@media (min-width: 768px) {
+  .carousel-content {
+    -ms-overflow-style: none;   /* IE/Edge */
+    scrollbar-width: none;      /* Firefox */
+  }
+  .carousel-content::-webkit-scrollbar {
+    display: none;              /* Chrome/Safari */
+  }
 }
