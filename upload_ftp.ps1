@@ -15,6 +15,8 @@ function Create-FtpDirectory {
         $ftpRequest = [System.Net.FtpWebRequest]::Create($ftpPath)
         $ftpRequest.Method = [System.Net.WebRequestMethods+Ftp]::MakeDirectory
         $ftpRequest.Credentials = New-Object System.Net.NetworkCredential($user, $pass)
+        $ftpRequest.UsePassive = $true
+        $ftpRequest.Timeout = 30000
         $ftpRequest.GetResponse() | Out-Null
         Write-Host "Directorio creado: $ftpPath"
     } catch {
@@ -31,9 +33,20 @@ function Upload-File {
         [string]$remoteFile
     )
     try {
-        $webClient = New-Object System.Net.WebClient
-        $webClient.Credentials = New-Object System.Net.NetworkCredential($user, $pass)
-        $webClient.UploadFile($remoteFile, $localFile)
+        $ftpRequest = [System.Net.FtpWebRequest]::Create($remoteFile)
+        $ftpRequest.Method = [System.Net.WebRequestMethods+Ftp]::UploadFile
+        $ftpRequest.Credentials = New-Object System.Net.NetworkCredential($user, $pass)
+        $ftpRequest.UsePassive = $true
+        $ftpRequest.Timeout = 30000
+        $ftpRequest.UseBinary = $true
+        $ftpRequest.KeepAlive = $false
+        $fileContents = [System.IO.File]::ReadAllBytes($localFile)
+        $ftpRequest.ContentLength = $fileContents.Length
+        $requestStream = $ftpRequest.GetRequestStream()
+        $requestStream.Write($fileContents, 0, $fileContents.Length)
+        $requestStream.Close()
+        $response = $ftpRequest.GetResponse()
+        $response.Close()
         Write-Host "Subido: $localFile -> $remoteFile"
     } catch {
         Write-Host "Error subiendo $localFile : $_"

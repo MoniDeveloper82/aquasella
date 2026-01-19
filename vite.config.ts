@@ -4,9 +4,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
-    const isVercel = process.env.VERCEL || process.env.VERCEL_ENV;
     return {
-      base: isVercel ? '/' : '/',
+      base: mode === 'production' ? '/prueba-monica/' : '/',
       server: {
         port: 3000,
         host: '0.0.0.0',

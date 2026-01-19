@@ -88,7 +88,7 @@ const HomePage: React.FC = () => {
             {t('gallery_title')}
           </h2>
           <div className="max-w-4xl mx-auto mt-24 mb-12">
-            <div className="relative w-full h-96 md:h-[28rem]" style={{ perspective: '1000px', overflow: 'hidden' }}>
+            <div className="relative w-full h-72 md:h-[28rem]" style={{ perspective: '1000px', overflow: 'hidden' }}>
               <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d', animation: 'rotate 140s infinite linear', animationPlayState: paused ? 'paused' : 'running' }} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
                 {images.map((img, index) => (
                   <div

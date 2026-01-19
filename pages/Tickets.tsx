@@ -24,7 +24,7 @@ const TicketsPage: React.FC = () => {
       content: (
         <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
-          <div className="p-4 sm:p-6">
+          <div className="p-4 sm:p-6 bg-black/70 rounded-t-2xl min-h-[150px] sm:min-h-[180px] flex flex-col justify-center">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
               {t('tickets_general_question')}
             </h3>
@@ -79,7 +79,7 @@ const TicketsPage: React.FC = () => {
       content: (
         <div className="w-full h-full flex flex-col rounded-2xl overflow-hidden">
           {/* Parte de arriba: TEXTO (no ocupa todo el alto) */}
-          <div className="p-4 sm:p-6">
+          <div className="p-4 sm:p-6 bg-black/70 rounded-t-2xl min-h-[150px] sm:min-h-[180px] flex flex-col justify-center">
             <h3 className="text-lg font-bold mb-2 text-white text-center">
               {t('tickets_types_question')}
             </h3>
@@ -294,7 +294,7 @@ const TicketsPage: React.FC = () => {
             </h2>
           </div>
           {/* Viewport responsive y scrollable */}
-          <div className="relative overflow-hidden h-[62vh] sm:h-[360px] md:h-[420px] lg:h-[520px] xl:h-[600px] 2xl:h-[700px]">
+          <div className="relative overflow-hidden h-[50vh] sm:h-[360px] md:h-[420px] lg:h-[520px] xl:h-[600px] 2xl:h-[700px]">
             <div
               className="transition-transform duration-500 ease-in-out h-full"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
